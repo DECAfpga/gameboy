@@ -22,7 +22,7 @@
 module gb_mist (
    input [1:0] CLOCK_27,
 	
- 	output LED,
+   output LED,
 	
    // SPI interface to arm io controller
    output        SPI_DO,
@@ -50,13 +50,21 @@ module gb_mist (
    output 			AUDIO_L,
    output 			AUDIO_R,
 
+  output  [15:0]   DAC_L,
+  output  [15:0]   DAC_R,
+  
 	// video
    output 			VGA_HS,
    output 			VGA_VS,
    output [5:0] 	VGA_R,
    output [5:0] 	VGA_G,
-   output [5:0] 	VGA_B
+   output [5:0] 	VGA_B,
+   output 			VGA_BLANK,
+   output			VGA_CLK
 );
+
+assign DAC_L = {~audio_left[15], audio_left[14:1]} ;
+assign DAC_R = {~audio_right[15], audio_right[14:1]} ;
 
 assign LED = ~dio_download;
 
@@ -450,7 +458,8 @@ lcd lcd (
 	 .vs    ( video_vs    ),
 	 .r     ( video_r     ),
 	 .g     ( video_g     ),
-	 .b     ( video_b     )
+	 .b     ( video_b     ),
+	 .vga_blank ( VGA_BLANK )
 );
 
 // include the on screen display
@@ -480,21 +489,25 @@ wire clk4 = ce_cpu;
 wire clk8 = ce_pix;
 
 reg ce_pix, ce_cpu;
+reg ce_pix32;
+
 always @(posedge clk64) begin
 	reg [3:0] div = 0;
 	div <= div + 1'd1;
 	ce_pix   <= !div[2:0];
 	ce_cpu   <= !div[3:0];
+	ce_pix32  <= !div[0];
 end
+
+assign VGA_CLK = ce_pix32;
 
 wire pll_locked;
 wire clk64;
 pll pll (
 	 .inclk0(CLOCK_27[0]),
 	 .c0(clk64),        // 4*16.777216 MHz
+	 .c1(SDRAM_CLK),
 	 .locked(pll_locked)
 );
-
-assign SDRAM_CLK = clk64;
 
 endmodule

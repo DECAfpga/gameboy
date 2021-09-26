@@ -1,3 +1,19 @@
+# Gameboy DeMiSTified
+
+22/09/21 DECA port DeMiSTified by somhic from original MiST gameboy https://github.com/mist-devel/gameboy.   
+
+Thanks to Alastair for his help and I've added also some of his solutions from https://github.com/robinsonb5/gameboy like phase shift at SDRAM_CLK, config.h and overrides.c.
+
+[DeMiSTify guide used](https://github.com/DECAfpga/DECA_board/tree/main/Tutorials/DeMiSTify).
+
+v0.1 VGA version only. I2S audio line out working
+
+v0.2 SDRAM_CLK phase shift -1.5 ns
+
+v0.3 HDMI video&audio 640x576@60Hz
+
+v0.4 Added Demistified versions of Neptuno and Unamiga reloaded
+
 Source code for Gameboy for MIST
 ================================
 

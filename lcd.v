@@ -22,7 +22,8 @@ module lcd (
 	output reg 	vs,
 	output [5:0] r,
 	output [5:0] g,
-	output [5:0] b
+	output [5:0] b,
+	output vga_blank
 );
 
 // Mode 00:  h-blank
@@ -151,5 +152,7 @@ wire [5:0] grey = (pixel==0)?6'd63:(pixel==1)?6'd42:(pixel==2)?6'd24:6'd0;
 assign r = blank?6'b000000:isGBC ? {pixel_reg [4: 0], 1'b0} : (tint?yellow_r:grey);
 assign g = blank?6'b000000:isGBC ? {pixel_reg [9: 5], 1'b0} : (tint?yellow_g:grey);
 assign b = blank?6'b000000:isGBC ? {pixel_reg[14:10], 1'b0} : (tint?yellow_b:grey);
+
+assign vga_blank = blank;
 
 endmodule
