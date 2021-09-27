@@ -2,7 +2,9 @@
 
 22/09/21 DECA port DeMiSTified by somhic from original MiST gameboy https://github.com/mist-devel/gameboy.   
 
-Thanks to Alastair for his help and I've added also some of his solutions from https://github.com/robinsonb5/gameboy like phase shift at SDRAM_CLK, config.h and overrides.c.
+Special thanks to Alastair M. Robinson creator of [DeMiSTify](https://github.com/robinsonb5/DeMiSTify) for helping me. 
+
+I've also added some of his solutions from https://github.com/robinsonb5/gameboy like phase shift at SDRAM_CLK, and content from firmware/config.h and overrides.c.
 
 [DeMiSTify guide used](https://github.com/DECAfpga/DECA_board/tree/main/Tutorials/DeMiSTify).
 
@@ -24,7 +26,7 @@ cd gameboy
 #Do a first make (will finish in error). It will download missing submodules 
 make
 #when asked just accept default settings with Enter key
-#create file site.mk in DeMiSTify folder 
+#Create file site.mk in DeMiSTify folder 
 cd DeMiSTify
 cp site.template site.mk
 #Edit site.mk and add your own PATHs to Quartus (Q19)
