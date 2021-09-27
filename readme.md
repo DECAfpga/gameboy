@@ -21,17 +21,17 @@ v0.4 Added Demistified versions of Neptuno and Unamiga reloaded
 ```sh
 git clone https://github.com/DECAfpga/gameboy
 cd gameboy
-#available boards ATM are deca, neptuno, uareloaded
-make BOARD=deca
+#Do a first make (will finish in error). It will download missing submodules 
+make
 #when asked just accept default settings with Enter key
 #create file site.mk in DeMiSTify folder 
 cd DeMiSTify
 cp site.template site.mk
 #Edit site.mk and add your own PATHs to Quartus (Q19)
 gedit site.mk
-#go back to root folder and do a make with board target (deca, sidi, neptuno, ...)
+#Go back to root folder and do a make with board target (deca, neptuno, uareloaded). If not specified it will compile for all targets.
 cd ..
-make
+make BOARD=deca
 ```
 
 ##### Follows original readme.md content:
