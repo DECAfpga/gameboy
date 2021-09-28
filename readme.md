@@ -18,7 +18,7 @@ v0.3 HDMI video&audio 640x576@60Hz
 
 v0.4 Added Demistified versions of Neptuno and Unamiga reloaded
 
-##### Instructions to compile the project for a specific board:
+### Instructions to compile the project for a specific board:
 
 ```sh
 git clone https://github.com/DECAfpga/gameboy
@@ -36,7 +36,7 @@ cd ..
 make BOARD=deca
 ```
 
-##### Follows original readme.md content:
+### Follows original readme.md content:
 
 Source code for Gameboy for MIST
 ================================
