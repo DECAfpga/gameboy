@@ -18,6 +18,8 @@ v0.3 HDMI video&audio 640x576@60Hz
 
 v0.4 Added Demistified versions of Neptuno and Unamiga reloaded
 
+v0.5 Updated Demistify. Added Joystick pinout
+
 ### Instructions to compile the project for a specific board:
 
 ```sh
@@ -35,6 +37,12 @@ gedit site.mk
 cd ..
 make BOARD=deca
 ```
+
+### Pinout connections:
+
+![pinout_deca](pinout_deca.png)
+
+
 
 ### Follows original readme.md content:
 

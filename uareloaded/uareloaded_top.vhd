@@ -166,6 +166,9 @@ component gb_mist
   );
 end component;
 
+signal vga_clk_o :  std_logic;
+signal vga_blank_o  :  std_logic;
+
 begin
 
 
@@ -192,8 +195,9 @@ ps2_keyboard_clk <= '0' when ps2_keyboard_clk_out='0' else 'Z';
 JOY_SELECT<= '1';
 
 	
-joya<="11" & JOYSTICK1(5) & JOYSTICK1(4) & JOYSTICK1(1) & JOYSTICK1(0) & JOYSTICK1(2) &JOYSTICK1(3);
-joyB<="11" & JOYSTICK2(5) & JOYSTICK2(4) & JOYSTICK2(1) & JOYSTICK2(0) & JOYSTICK2(2) &JOYSTICK2(3);
+joya<="11" & JOYSTICK1(5) & JOYSTICK1(4) & JOYSTICK1(0) & JOYSTICK1(1) & JOYSTICK1(2) &JOYSTICK1(3);
+joyB<="11" & JOYSTICK2(5) & JOYSTICK2(4) & JOYSTICK2(0) & JOYSTICK2(1) & JOYSTICK2(2) &JOYSTICK2(3);
+
 
 joyc<=(others=>'1');
 joyd<=(others=>'1');
@@ -208,18 +212,14 @@ port map (
      locked  => open
 );
 
---process(clk_sys)
---begin
---	if rising_edge(clk_sys) then
+
 		VGA_R<=vga_red;
 		VGA_G<=vga_green;
 		VGA_B<=vga_blue;
 		VGA_HS<=vga_hsync;
 		VGA_VS<=vga_vsync;
-		VGA_BLANK<='1';
-		
---	end if;
---end process;
+		VGA_BLANK<='1';    -- not vga_blank_o
+--		VGA_CLOCK<=CLOCK_50;
 
 ---- I2S out
 
@@ -272,7 +272,9 @@ guest: COMPONENT  gb_mist
 	VGA_VS => vga_vsync,
 	VGA_R => vga_red(7 downto 2),
 	VGA_G => vga_green(7 downto 2),
-	VGA_B => vga_blue(7 downto 2)
+	VGA_B => vga_blue(7 downto 2),
+	  VGA_BLANK => vga_blank_o,
+	  VGA_CLK => vga_clk_o
   );
 
 
