@@ -28,7 +28,7 @@ _bin2bcd:
 						// freereg r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 81
+						//../DeMiSTify/firmware/pcecd.c, line 83
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -44,7 +44,7 @@ _bin2bcd:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 81
+						//../DeMiSTify/firmware/pcecd.c, line 83
 						//Call division routine
 	//mt
 	stdec	r6
@@ -66,7 +66,7 @@ _bin2bcd:
 	mr	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 81
+						//../DeMiSTify/firmware/pcecd.c, line 83
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -75,7 +75,7 @@ _bin2bcd:
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 81
+						//../DeMiSTify/firmware/pcecd.c, line 83
 						//Call division routine
 	mt	r1
 	stdec	r6
@@ -97,7 +97,7 @@ _bin2bcd:
 	mr	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 81
+						//../DeMiSTify/firmware/pcecd.c, line 83
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -112,14 +112,14 @@ _bin2bcd:
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 81
+						//../DeMiSTify/firmware/pcecd.c, line 83
 						//FIXME convert
 						// (convert - reducing type 3 to 101
 						// matchobj comparing flags 1 with 74
 	.liconst	255
 	and	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 81
+						//../DeMiSTify/firmware/pcecd.c, line 83
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 4a type 101
@@ -165,7 +165,7 @@ _bcd2bin:
 						// freereg r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 85
+						//../DeMiSTify/firmware/pcecd.c, line 87
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -181,7 +181,7 @@ _bcd2bin:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 85
+						//../DeMiSTify/firmware/pcecd.c, line 87
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						// (obj to r1) flags 4a type 3
 						// matchobj comparing flags 74 with 66
@@ -197,7 +197,7 @@ _bcd2bin:
 	shr	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 85
+						//../DeMiSTify/firmware/pcecd.c, line 87
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -208,7 +208,7 @@ _bcd2bin:
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 85
+						//../DeMiSTify/firmware/pcecd.c, line 87
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -217,7 +217,7 @@ _bcd2bin:
 	and	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 85
+						//../DeMiSTify/firmware/pcecd.c, line 87
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -233,14 +233,14 @@ _bcd2bin:
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 85
+						//../DeMiSTify/firmware/pcecd.c, line 87
 						//FIXME convert
 						// (convert - reducing type 3 to 101
 						// matchobj comparing flags 1 with 74
 	.liconst	255
 	and	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 85
+						//../DeMiSTify/firmware/pcecd.c, line 87
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 4a type 101
@@ -287,7 +287,7 @@ _gettrackbybcd:
 						// allocreg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 90
+						//../DeMiSTify/firmware/pcecd.c, line 92
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -301,7 +301,7 @@ _gettrackbybcd:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 90
+						//../DeMiSTify/firmware/pcecd.c, line 92
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -310,12 +310,12 @@ _gettrackbybcd:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 90
+						//../DeMiSTify/firmware/pcecd.c, line 92
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 90
+						//../DeMiSTify/firmware/pcecd.c, line 92
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -330,7 +330,7 @@ _gettrackbybcd:
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 91
+						//../DeMiSTify/firmware/pcecd.c, line 93
 						// (test)
 						// (obj to tmp) flags 42 type 3
 						// matchobj comparing flags 66 with 74
@@ -339,7 +339,7 @@ _gettrackbybcd:
 				// flags 42
 	and	r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 91
+						//../DeMiSTify/firmware/pcecd.c, line 93
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -347,7 +347,7 @@ _gettrackbybcd:
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 92
+						//../DeMiSTify/firmware/pcecd.c, line 94
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -361,7 +361,7 @@ _gettrackbybcd:
 						//save_temp done
 l8: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 93
+						//../DeMiSTify/firmware/pcecd.c, line 95
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 2 type 3
 						// extern
@@ -372,14 +372,14 @@ l8: #
 	sgn
 	cmp	r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 93
+						//../DeMiSTify/firmware/pcecd.c, line 95
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l10
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 94
+						//../DeMiSTify/firmware/pcecd.c, line 96
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -394,7 +394,7 @@ l8: #
 l10: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 95
+						//../DeMiSTify/firmware/pcecd.c, line 97
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -405,7 +405,7 @@ l10: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 95
+						//../DeMiSTify/firmware/pcecd.c, line 97
 						//call
 						//pcreltotemp
 	.lipcrel	_cue_parse
@@ -413,7 +413,7 @@ l10: #
 						// Deferred popping of 0 bytes (0 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 96
+						//../DeMiSTify/firmware/pcecd.c, line 98
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 42 type 3
@@ -442,7 +442,7 @@ l13:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 138
+						//../DeMiSTify/firmware/pcecd.c, line 140
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj tmp)
@@ -453,7 +453,7 @@ l13:
 	byt
 	stmpdec	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 139
+						//../DeMiSTify/firmware/pcecd.c, line 141
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -473,7 +473,7 @@ l13:
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 140
+						//../DeMiSTify/firmware/pcecd.c, line 142
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -493,7 +493,7 @@ l13:
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 141
+						//../DeMiSTify/firmware/pcecd.c, line 143
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -542,7 +542,7 @@ l16:
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 146
+						//../DeMiSTify/firmware/pcecd.c, line 148
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 64
@@ -562,7 +562,7 @@ l16:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 147
+						//../DeMiSTify/firmware/pcecd.c, line 149
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -585,7 +585,7 @@ l16:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 148
+						//../DeMiSTify/firmware/pcecd.c, line 150
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -601,7 +601,7 @@ l16:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 148
+						//../DeMiSTify/firmware/pcecd.c, line 150
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
 						// matchobj comparing flags 74 with 66
@@ -630,7 +630,7 @@ l16:
 	st	r0
 						// WARNING - Object is disposable, not bothering to undo exg - check correctness
 
-						//../DeMiSTify/firmware/pcecd.c, line 148
+						//../DeMiSTify/firmware/pcecd.c, line 150
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
@@ -658,7 +658,7 @@ l16:
 						// WARNING - Object is disposable, not bothering to undo exg - check correctness
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 149
+						//../DeMiSTify/firmware/pcecd.c, line 151
 						// (a/p assign)
 						// (prepobj r0)
  						// deref
@@ -693,7 +693,7 @@ l19:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 154
+						//../DeMiSTify/firmware/pcecd.c, line 156
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj tmp)
@@ -704,7 +704,7 @@ l19:
 	hlf
 	stmpdec	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 155
+						//../DeMiSTify/firmware/pcecd.c, line 157
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -755,7 +755,7 @@ l22:
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 159
+						//../DeMiSTify/firmware/pcecd.c, line 161
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 64
@@ -775,7 +775,7 @@ l22:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 160
+						//../DeMiSTify/firmware/pcecd.c, line 162
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -798,7 +798,7 @@ l22:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 161
+						//../DeMiSTify/firmware/pcecd.c, line 163
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -816,7 +816,7 @@ l22:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 161
+						//../DeMiSTify/firmware/pcecd.c, line 163
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
 						// matchobj comparing flags 74 with 2
@@ -845,7 +845,7 @@ l22:
 						// WARNING - Object is disposable, not bothering to undo exg - check correctness
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 162
+						//../DeMiSTify/firmware/pcecd.c, line 164
 						// (bitwise/arithmetic) 	//ops: 0, 0, 3
 						// (obj to r2) flags 2 type 102
 						// var, auto|reg
@@ -860,7 +860,7 @@ l22:
 	shr	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 162
+						//../DeMiSTify/firmware/pcecd.c, line 164
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -872,7 +872,7 @@ l22:
 						// (save result) // isreg
 						// allocreg r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 162
+						//../DeMiSTify/firmware/pcecd.c, line 164
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -888,7 +888,7 @@ l22:
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 162
+						//../DeMiSTify/firmware/pcecd.c, line 164
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -899,7 +899,7 @@ l22:
 	shl	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 162
+						//../DeMiSTify/firmware/pcecd.c, line 164
 						// Q1 disposable
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 4, 3, 1
@@ -928,7 +928,7 @@ l22:
 						// freereg r3
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 163
+						//../DeMiSTify/firmware/pcecd.c, line 165
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -939,7 +939,7 @@ l22:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 163
+						//../DeMiSTify/firmware/pcecd.c, line 165
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -951,7 +951,7 @@ l22:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 163
+						//../DeMiSTify/firmware/pcecd.c, line 165
 						//call
 						//pcreltotemp
 	.lipcrel	_spi_write
@@ -959,7 +959,7 @@ l22:
 						// Deferred popping of 4 bytes (4 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 164
+						//../DeMiSTify/firmware/pcecd.c, line 166
 						// (a/p assign)
 						// (prepobj r0)
  						// deref
@@ -1035,7 +1035,7 @@ l25:
 	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 169
+						//../DeMiSTify/firmware/pcecd.c, line 171
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -1048,7 +1048,7 @@ l25:
 	mr	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 171
+						//../DeMiSTify/firmware/pcecd.c, line 173
 						// (test)
 						// (obj to tmp) flags 42 type 3
 						// matchobj comparing flags 66 with 1
@@ -1057,7 +1057,7 @@ l25:
 				// flags 42
 	and	r4
 
-						//../DeMiSTify/firmware/pcecd.c, line 171
+						//../DeMiSTify/firmware/pcecd.c, line 173
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -1066,7 +1066,7 @@ l25:
 l33: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 173
+						//../DeMiSTify/firmware/pcecd.c, line 175
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1079,89 +1079,13 @@ l33: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 173
+						//../DeMiSTify/firmware/pcecd.c, line 175
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 106
 						// const
 						// matchobj comparing flags 1 with 106
-	.liconst	8
-	shl	r1
-						// (save result) // isreg
-						// allocreg r2
-
-						//../DeMiSTify/firmware/pcecd.c, line 174
-						//FIXME convert
-						//Converting to wider type...
-						//But unsigned, so no need to extend
-						// (prepobj r2)
- 						// reg r2 - no need to prep
-						// (obj to tmp) flags 6a type 301
-						// matchobj comparing flags 106 with 1
-						// deref 
-	ldbinc	r3
-						// (save temp)isreg
-	mr	r2
-						//save_temp done
-
-						//../DeMiSTify/firmware/pcecd.c, line 174
-						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 3, 2, 2
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 4a type 3
-						// matchobj comparing flags 74 with 106
-						// reg r2 - only match against tmp
-	//mt
-	or	r1
-						// (save result) // isreg
-						// freereg r2
-
-						//../DeMiSTify/firmware/pcecd.c, line 174
-						// (bitwise/arithmetic) 	//ops: 2, 0, 2
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 74
-						// const
-						// matchobj comparing flags 1 with 74
-	.liconst	8
-	shl	r1
-						// (save result) // isreg
-						// allocreg r2
-
-						//../DeMiSTify/firmware/pcecd.c, line 175
-						//FIXME convert
-						//Converting to wider type...
-						//But unsigned, so no need to extend
-						// (prepobj r2)
- 						// reg r2 - no need to prep
-						// (obj to tmp) flags 6a type 301
-						// matchobj comparing flags 106 with 1
-						// deref 
-	ldbinc	r3
-						// (save temp)isreg
-	mr	r2
-						//save_temp done
-
-						//../DeMiSTify/firmware/pcecd.c, line 175
-						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 3, 2, 2
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 4a type 3
-						// matchobj comparing flags 74 with 106
-						// reg r2 - only match against tmp
-	//mt
-	or	r1
-						// (save result) // isreg
-						// freereg r2
-
-						//../DeMiSTify/firmware/pcecd.c, line 175
-						// (bitwise/arithmetic) 	//ops: 2, 0, 2
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 74
-						// const
-						// matchobj comparing flags 1 with 74
 	.liconst	8
 	shl	r1
 						// (save result) // isreg
@@ -1182,6 +1106,44 @@ l33: #
 						//save_temp done
 
 						//../DeMiSTify/firmware/pcecd.c, line 176
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 4a type 3
+						// matchobj comparing flags 74 with 106
+						// reg r2 - only match against tmp
+	//mt
+	or	r1
+						// (save result) // isreg
+						// freereg r2
+
+						//../DeMiSTify/firmware/pcecd.c, line 176
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 74
+						// const
+						// matchobj comparing flags 1 with 74
+	.liconst	8
+	shl	r1
+						// (save result) // isreg
+						// allocreg r2
+
+						//../DeMiSTify/firmware/pcecd.c, line 177
+						//FIXME convert
+						//Converting to wider type...
+						//But unsigned, so no need to extend
+						// (prepobj r2)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 6a type 301
+						// matchobj comparing flags 106 with 1
+						// deref 
+	ldbinc	r3
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+
+						//../DeMiSTify/firmware/pcecd.c, line 177
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
@@ -1194,6 +1156,44 @@ l33: #
 						// freereg r2
 
 						//../DeMiSTify/firmware/pcecd.c, line 177
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 74
+						// const
+						// matchobj comparing flags 1 with 74
+	.liconst	8
+	shl	r1
+						// (save result) // isreg
+						// allocreg r2
+
+						//../DeMiSTify/firmware/pcecd.c, line 178
+						//FIXME convert
+						//Converting to wider type...
+						//But unsigned, so no need to extend
+						// (prepobj r2)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 6a type 301
+						// matchobj comparing flags 106 with 1
+						// deref 
+	ldbinc	r3
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+
+						//../DeMiSTify/firmware/pcecd.c, line 178
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 4a type 3
+						// matchobj comparing flags 74 with 106
+						// reg r2 - only match against tmp
+	//mt
+	or	r1
+						// (save result) // isreg
+						// freereg r2
+
+						//../DeMiSTify/firmware/pcecd.c, line 179
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 6, 6
 						// WARNING - q1 and target collision - check code for correctness.
@@ -1205,7 +1205,7 @@ l33: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 178
+						//../DeMiSTify/firmware/pcecd.c, line 180
 						// (bitwise/arithmetic) 	//ops: 5, 0, 5
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1216,7 +1216,7 @@ l33: #
 	sub	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 179
+						//../DeMiSTify/firmware/pcecd.c, line 181
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
@@ -1226,14 +1226,14 @@ l33: #
 	sgn
 	cmp	r4
 
-						//../DeMiSTify/firmware/pcecd.c, line 179
+						//../DeMiSTify/firmware/pcecd.c, line 181
 	cond	GE
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l32
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 180
+						//../DeMiSTify/firmware/pcecd.c, line 182
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -1246,7 +1246,7 @@ l33: #
 						//save_temp done
 l32: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 171
+						//../DeMiSTify/firmware/pcecd.c, line 173
 						// (test)
 						// (obj to tmp) flags 42 type 3
 						// reg r4 - only match against tmp
@@ -1254,7 +1254,7 @@ l32: #
 				// flags 42
 	and	r4
 
-						//../DeMiSTify/firmware/pcecd.c, line 171
+						//../DeMiSTify/firmware/pcecd.c, line 173
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -1262,7 +1262,7 @@ l32: #
 		add	r7
 l34: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 182
+						//../DeMiSTify/firmware/pcecd.c, line 184
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 42 type 3
@@ -1310,7 +1310,7 @@ l35:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 190
+						//../DeMiSTify/firmware/pcecd.c, line 192
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -1320,14 +1320,14 @@ l35:
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 190
+						//../DeMiSTify/firmware/pcecd.c, line 192
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l39
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 190
+						//../DeMiSTify/firmware/pcecd.c, line 192
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -1346,14 +1346,14 @@ l35:
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 190
+						//../DeMiSTify/firmware/pcecd.c, line 192
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l39
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 194
+						//../DeMiSTify/firmware/pcecd.c, line 196
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -1364,7 +1364,7 @@ l35:
 	ldt
 	cmp	r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 194
+						//../DeMiSTify/firmware/pcecd.c, line 196
 	cond	EQ
 						//conditional branch reversed
 						//pcreltotemp
@@ -1373,7 +1373,7 @@ l35:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 195
+						//../DeMiSTify/firmware/pcecd.c, line 197
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -1391,7 +1391,7 @@ l35:
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 195
+						//../DeMiSTify/firmware/pcecd.c, line 197
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -1403,7 +1403,7 @@ l35:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 195
+						//../DeMiSTify/firmware/pcecd.c, line 197
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1418,7 +1418,7 @@ l35:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 195
+						//../DeMiSTify/firmware/pcecd.c, line 197
 						//call
 						//pcreltotemp
 	.lipcrel	_FileSeek
@@ -1429,7 +1429,7 @@ l35:
 						// freereg r1
 l42: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 199
+						//../DeMiSTify/firmware/pcecd.c, line 201
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 240 type 3
@@ -1437,7 +1437,7 @@ l42: #
 	mt	r3
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 199
+						//../DeMiSTify/firmware/pcecd.c, line 201
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -1450,7 +1450,7 @@ l42: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 199
+						//../DeMiSTify/firmware/pcecd.c, line 201
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1467,7 +1467,7 @@ l42: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 199
+						//../DeMiSTify/firmware/pcecd.c, line 201
 						//call
 						//pcreltotemp
 	.lipcrel	_FileRead
@@ -1477,7 +1477,7 @@ l42: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 201
+						//../DeMiSTify/firmware/pcecd.c, line 203
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -1488,7 +1488,7 @@ l42: #
 	ldt
 	cmp	r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 201
+						//../DeMiSTify/firmware/pcecd.c, line 203
 	cond	EQ
 						//conditional branch reversed
 						//pcreltotemp
@@ -1496,7 +1496,7 @@ l42: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 202
+						//../DeMiSTify/firmware/pcecd.c, line 204
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -1512,12 +1512,12 @@ l42: #
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 202
+						//../DeMiSTify/firmware/pcecd.c, line 204
 						//FIXME convert
 						// (convert - reducing type 3 to 103
 						//No need to mask - same size
 
-						//../DeMiSTify/firmware/pcecd.c, line 202
+						//../DeMiSTify/firmware/pcecd.c, line 204
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 103
@@ -1530,7 +1530,7 @@ l42: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 202
+						//../DeMiSTify/firmware/pcecd.c, line 204
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -1542,7 +1542,7 @@ l42: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 202
+						//../DeMiSTify/firmware/pcecd.c, line 204
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1557,7 +1557,7 @@ l42: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 202
+						//../DeMiSTify/firmware/pcecd.c, line 204
 						//call
 						//pcreltotemp
 	.lipcrel	_FileSeek
@@ -1569,7 +1569,7 @@ l42: #
 l44: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 207
+						//../DeMiSTify/firmware/pcecd.c, line 209
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1583,7 +1583,7 @@ l44: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 207
+						//../DeMiSTify/firmware/pcecd.c, line 209
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -1594,7 +1594,7 @@ l44: #
 	stdec	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 207
+						//../DeMiSTify/firmware/pcecd.c, line 209
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 240 type 3
@@ -1604,7 +1604,7 @@ l44: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 207
+						//../DeMiSTify/firmware/pcecd.c, line 209
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1619,7 +1619,7 @@ l44: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 207
+						//../DeMiSTify/firmware/pcecd.c, line 209
 						//call
 						//pcreltotemp
 	.lipcrel	l22
@@ -1629,13 +1629,13 @@ l44: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 209
+						//../DeMiSTify/firmware/pcecd.c, line 211
 						//pcreltotemp
 	.lipcrel	l45
 	add	r7
 l39: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 210
+						//../DeMiSTify/firmware/pcecd.c, line 212
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -1643,7 +1643,7 @@ l39: #
 	.liconst	2352
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 210
+						//../DeMiSTify/firmware/pcecd.c, line 212
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -1656,7 +1656,7 @@ l39: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 210
+						//../DeMiSTify/firmware/pcecd.c, line 212
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1673,7 +1673,7 @@ l39: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 210
+						//../DeMiSTify/firmware/pcecd.c, line 212
 						//call
 						//pcreltotemp
 	.lipcrel	_FileRead
@@ -1682,7 +1682,7 @@ l39: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 211
+						//../DeMiSTify/firmware/pcecd.c, line 213
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1696,7 +1696,7 @@ l39: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 211
+						//../DeMiSTify/firmware/pcecd.c, line 213
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -1707,7 +1707,7 @@ l39: #
 	stdec	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 211
+						//../DeMiSTify/firmware/pcecd.c, line 213
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -1718,7 +1718,7 @@ l39: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 211
+						//../DeMiSTify/firmware/pcecd.c, line 213
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1733,7 +1733,7 @@ l39: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 211
+						//../DeMiSTify/firmware/pcecd.c, line 213
 						//call
 						//pcreltotemp
 	.lipcrel	l22
@@ -1766,7 +1766,7 @@ l46:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 217
+						//../DeMiSTify/firmware/pcecd.c, line 219
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// extern
@@ -1775,7 +1775,7 @@ l46:
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 217
+						//../DeMiSTify/firmware/pcecd.c, line 219
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -1783,7 +1783,7 @@ l46:
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 218
+						//../DeMiSTify/firmware/pcecd.c, line 220
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -1803,7 +1803,7 @@ l46:
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 219
+						//../DeMiSTify/firmware/pcecd.c, line 221
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -1815,7 +1815,7 @@ l46:
 	.liconst	0
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 219
+						//../DeMiSTify/firmware/pcecd.c, line 221
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -1824,7 +1824,7 @@ l46:
 			// required value found in tmp
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 219
+						//../DeMiSTify/firmware/pcecd.c, line 221
 						// (a/p push)
 						// a: pushed 8, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -1837,7 +1837,7 @@ l46:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 219
+						//../DeMiSTify/firmware/pcecd.c, line 221
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1852,7 +1852,7 @@ l46:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 219
+						//../DeMiSTify/firmware/pcecd.c, line 221
 						//call
 						//pcreltotemp
 	.lipcrel	l13
@@ -1864,7 +1864,7 @@ l46:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 220
+						//../DeMiSTify/firmware/pcecd.c, line 222
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1877,7 +1877,7 @@ l46:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 220
+						//../DeMiSTify/firmware/pcecd.c, line 222
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -1885,21 +1885,21 @@ l46:
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 221
+						//../DeMiSTify/firmware/pcecd.c, line 223
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 222
+						//../DeMiSTify/firmware/pcecd.c, line 224
 						//pcreltotemp
 	.lipcrel	l47
 	add	r7
 l50: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 223
+						//../DeMiSTify/firmware/pcecd.c, line 225
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
@@ -1940,7 +1940,7 @@ l52:
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 231
+						//../DeMiSTify/firmware/pcecd.c, line 233
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to r0) flags 2 type 103
 						// matchobj comparing flags 2 with 1
@@ -1958,7 +1958,7 @@ l52:
 	.liconst	0
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 231
+						//../DeMiSTify/firmware/pcecd.c, line 233
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
@@ -1967,7 +1967,7 @@ l52:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 232
+						//../DeMiSTify/firmware/pcecd.c, line 234
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1983,7 +1983,7 @@ l52:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 232
+						//../DeMiSTify/firmware/pcecd.c, line 234
 						//call
 						//pcreltotemp
 	.lipcrel	_CheckTimer
@@ -1992,7 +1992,7 @@ l52:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 232
+						//../DeMiSTify/firmware/pcecd.c, line 234
 						// (test)
 						// (obj to tmp) flags 4a type 103
 						// reg r0 - only match against tmp
@@ -2001,7 +2001,7 @@ l52:
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 232
+						//../DeMiSTify/firmware/pcecd.c, line 234
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -2009,7 +2009,7 @@ l52:
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 233
+						//../DeMiSTify/firmware/pcecd.c, line 235
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2022,7 +2022,7 @@ l52:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 233
+						//../DeMiSTify/firmware/pcecd.c, line 235
 						//call
 						//pcreltotemp
 	.lipcrel	_GetTimer
@@ -2030,7 +2030,7 @@ l52:
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 233
+						//../DeMiSTify/firmware/pcecd.c, line 235
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x103, flags 0x2
 						// (prepobj tmp)
@@ -2040,7 +2040,7 @@ l52:
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 234
+						//../DeMiSTify/firmware/pcecd.c, line 236
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 103
 						// matchobj comparing flags 2 with 130
@@ -2069,14 +2069,14 @@ l52:
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 236
+						//../DeMiSTify/firmware/pcecd.c, line 238
 						//pcreltotemp
 	.lipcrel	l97
 	add	r7
 l56: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 238
+						//../DeMiSTify/firmware/pcecd.c, line 240
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -2094,7 +2094,7 @@ l56: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 238
+						//../DeMiSTify/firmware/pcecd.c, line 240
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 2
@@ -2103,14 +2103,14 @@ l56: #
 	.liconst	2
 	cmp	r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 238
+						//../DeMiSTify/firmware/pcecd.c, line 240
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l60
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 240
+						//../DeMiSTify/firmware/pcecd.c, line 242
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -2131,14 +2131,14 @@ l56: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 240
+						//../DeMiSTify/firmware/pcecd.c, line 242
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l62
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 241
+						//../DeMiSTify/firmware/pcecd.c, line 243
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -2158,13 +2158,13 @@ l56: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 243
+						//../DeMiSTify/firmware/pcecd.c, line 245
 						//pcreltotemp
 	.lipcrel	l97
 	add	r7
 l62: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 246
+						//../DeMiSTify/firmware/pcecd.c, line 248
 						// (test)
 						// (obj to tmp) flags 2 type 101
 						//static not varadr
@@ -2175,14 +2175,14 @@ l62: #
 	byt
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 246
+						//../DeMiSTify/firmware/pcecd.c, line 248
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l97
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 250
+						//../DeMiSTify/firmware/pcecd.c, line 252
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -2192,7 +2192,7 @@ l62: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 250
+						//../DeMiSTify/firmware/pcecd.c, line 252
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -2200,7 +2200,7 @@ l62: #
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 251
+						//../DeMiSTify/firmware/pcecd.c, line 253
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -2220,7 +2220,7 @@ l62: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 252
+						//../DeMiSTify/firmware/pcecd.c, line 254
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -2232,7 +2232,7 @@ l62: #
 	.liconst	0
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 252
+						//../DeMiSTify/firmware/pcecd.c, line 254
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -2241,7 +2241,7 @@ l62: #
 			// required value found in tmp
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 252
+						//../DeMiSTify/firmware/pcecd.c, line 254
 						// (a/p push)
 						// a: pushed 8, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -2254,7 +2254,7 @@ l62: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 252
+						//../DeMiSTify/firmware/pcecd.c, line 254
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2269,7 +2269,7 @@ l62: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 252
+						//../DeMiSTify/firmware/pcecd.c, line 254
 						//call
 						//pcreltotemp
 	.lipcrel	l13
@@ -2281,7 +2281,7 @@ l62: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 253
+						//../DeMiSTify/firmware/pcecd.c, line 255
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2294,7 +2294,7 @@ l62: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 253
+						//../DeMiSTify/firmware/pcecd.c, line 255
 						//call
 						//pcreltotemp
 	.lipcrel	l19
@@ -2302,14 +2302,14 @@ l62: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 255
+						//../DeMiSTify/firmware/pcecd.c, line 257
 						//pcreltotemp
 	.lipcrel	l97
 	add	r7
 l66: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 262
+						//../DeMiSTify/firmware/pcecd.c, line 264
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -2328,7 +2328,7 @@ l66: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 264
+						//../DeMiSTify/firmware/pcecd.c, line 266
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -2339,7 +2339,7 @@ l66: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 264
+						//../DeMiSTify/firmware/pcecd.c, line 266
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -2347,7 +2347,7 @@ l66: #
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 266
+						//../DeMiSTify/firmware/pcecd.c, line 268
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -2360,7 +2360,7 @@ l66: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 266
+						//../DeMiSTify/firmware/pcecd.c, line 268
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2375,7 +2375,7 @@ l66: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 266
+						//../DeMiSTify/firmware/pcecd.c, line 268
 						//call
 						//pcreltotemp
 	.lipcrel	l35
@@ -2386,14 +2386,14 @@ l66: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 267
+						//../DeMiSTify/firmware/pcecd.c, line 269
 						//pcreltotemp
 	.lipcrel	l71
 	add	r7
 l68: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 268
+						//../DeMiSTify/firmware/pcecd.c, line 270
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						//static not varadr
@@ -2413,14 +2413,14 @@ l68: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 268
+						//../DeMiSTify/firmware/pcecd.c, line 270
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l71
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 269
+						//../DeMiSTify/firmware/pcecd.c, line 271
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -2441,7 +2441,7 @@ l68: #
 						//save_temp done
 l71: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 273
+						//../DeMiSTify/firmware/pcecd.c, line 275
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 3
 						//static not varadr
@@ -2468,7 +2468,7 @@ l71: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 275
+						//../DeMiSTify/firmware/pcecd.c, line 277
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 130
@@ -2481,7 +2481,7 @@ l71: #
 	//mr
 	and	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 275
+						//../DeMiSTify/firmware/pcecd.c, line 277
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -2490,7 +2490,7 @@ l71: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 276
+						//../DeMiSTify/firmware/pcecd.c, line 278
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2505,7 +2505,7 @@ l71: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 276
+						//../DeMiSTify/firmware/pcecd.c, line 278
 						//call
 						//pcreltotemp
 	.lipcrel	l19
@@ -2513,7 +2513,7 @@ l71: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 277
+						//../DeMiSTify/firmware/pcecd.c, line 279
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -2534,7 +2534,7 @@ l71: #
 l73: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 280
+						//../DeMiSTify/firmware/pcecd.c, line 282
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 3
 						//static not varadr
@@ -2561,7 +2561,7 @@ l73: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 281
+						//../DeMiSTify/firmware/pcecd.c, line 283
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 130
@@ -2578,7 +2578,7 @@ l73: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 281
+						//../DeMiSTify/firmware/pcecd.c, line 283
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
@@ -2586,7 +2586,7 @@ l73: #
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 282
+						//../DeMiSTify/firmware/pcecd.c, line 284
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -2615,7 +2615,7 @@ l73: #
  						// WARNING - check that 4 has been added.
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 283
+						//../DeMiSTify/firmware/pcecd.c, line 285
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2630,7 +2630,7 @@ l73: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 283
+						//../DeMiSTify/firmware/pcecd.c, line 285
 						//call
 						//pcreltotemp
 	.lipcrel	_cue_parse
@@ -2638,7 +2638,7 @@ l73: #
 						// Deferred popping of 0 bytes (0 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 284
+						//../DeMiSTify/firmware/pcecd.c, line 286
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -2657,7 +2657,7 @@ l73: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 285
+						//../DeMiSTify/firmware/pcecd.c, line 287
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 2 type 103
@@ -2671,7 +2671,7 @@ l73: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 285
+						//../DeMiSTify/firmware/pcecd.c, line 287
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2688,7 +2688,7 @@ l73: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 285
+						//../DeMiSTify/firmware/pcecd.c, line 287
 						//call
 						//pcreltotemp
 	.lipcrel	_FileSeek
@@ -2699,28 +2699,28 @@ l73: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 287
+						//../DeMiSTify/firmware/pcecd.c, line 289
 						//pcreltotemp
 	.lipcrel	l97
 	add	r7
 l60: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 287
+						//../DeMiSTify/firmware/pcecd.c, line 289
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// const
 	.liconst	3
 	cmp	r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 287
+						//../DeMiSTify/firmware/pcecd.c, line 289
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l97
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 289
+						//../DeMiSTify/firmware/pcecd.c, line 291
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 1
@@ -2730,7 +2730,7 @@ l60: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 289
+						//../DeMiSTify/firmware/pcecd.c, line 291
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -2738,7 +2738,7 @@ l60: #
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 290
+						//../DeMiSTify/firmware/pcecd.c, line 292
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -2758,7 +2758,7 @@ l60: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 291
+						//../DeMiSTify/firmware/pcecd.c, line 293
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -2770,7 +2770,7 @@ l60: #
 	.liconst	0
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 291
+						//../DeMiSTify/firmware/pcecd.c, line 293
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -2779,7 +2779,7 @@ l60: #
 			// required value found in tmp
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 291
+						//../DeMiSTify/firmware/pcecd.c, line 293
 						// (a/p push)
 						// a: pushed 8, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -2792,7 +2792,7 @@ l60: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 291
+						//../DeMiSTify/firmware/pcecd.c, line 293
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2807,7 +2807,7 @@ l60: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 291
+						//../DeMiSTify/firmware/pcecd.c, line 293
 						//call
 						//pcreltotemp
 	.lipcrel	l13
@@ -2819,7 +2819,7 @@ l60: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 292
+						//../DeMiSTify/firmware/pcecd.c, line 294
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2832,7 +2832,7 @@ l60: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 292
+						//../DeMiSTify/firmware/pcecd.c, line 294
 						//call
 						//pcreltotemp
 	.lipcrel	l19
@@ -2840,14 +2840,14 @@ l60: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 294
+						//../DeMiSTify/firmware/pcecd.c, line 296
 						//pcreltotemp
 	.lipcrel	l97
 	add	r7
 l80: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 296
+						//../DeMiSTify/firmware/pcecd.c, line 298
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2862,7 +2862,7 @@ l80: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 296
+						//../DeMiSTify/firmware/pcecd.c, line 298
 						//call
 						//pcreltotemp
 	.lipcrel	_cue_gettrackbylba
@@ -2870,7 +2870,7 @@ l80: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 296
+						//../DeMiSTify/firmware/pcecd.c, line 298
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
@@ -2880,7 +2880,7 @@ l80: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 299
+						//../DeMiSTify/firmware/pcecd.c, line 301
 						// (test)
 						// (obj to tmp) flags 2 type 101
 						// matchobj comparing flags 2 with 130
@@ -2893,7 +2893,7 @@ l80: #
 	byt
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 299
+						//../DeMiSTify/firmware/pcecd.c, line 301
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -2901,7 +2901,7 @@ l80: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 301
+						//../DeMiSTify/firmware/pcecd.c, line 303
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -2916,7 +2916,7 @@ l80: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 301
+						//../DeMiSTify/firmware/pcecd.c, line 303
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -2936,7 +2936,7 @@ l80: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 301
+						//../DeMiSTify/firmware/pcecd.c, line 303
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
@@ -2944,7 +2944,7 @@ l80: #
 		add	r7
 l98: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 302
+						//../DeMiSTify/firmware/pcecd.c, line 304
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// extern
@@ -2953,7 +2953,7 @@ l98: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 302
+						//../DeMiSTify/firmware/pcecd.c, line 304
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -2962,7 +2962,7 @@ l98: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 303
+						//../DeMiSTify/firmware/pcecd.c, line 305
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -2983,7 +2983,7 @@ l98: #
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 303
+						//../DeMiSTify/firmware/pcecd.c, line 305
 						// (bitwise/arithmetic) 	//ops: 2, 5, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 240 type 3
@@ -2993,7 +2993,7 @@ l98: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 303
+						//../DeMiSTify/firmware/pcecd.c, line 305
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 3
@@ -3005,7 +3005,7 @@ l98: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 303
+						//../DeMiSTify/firmware/pcecd.c, line 305
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -3017,7 +3017,7 @@ l98: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 303
+						//../DeMiSTify/firmware/pcecd.c, line 305
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3032,7 +3032,7 @@ l98: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 303
+						//../DeMiSTify/firmware/pcecd.c, line 305
 						//call
 						//pcreltotemp
 	.lipcrel	_FileSeek
@@ -3040,7 +3040,7 @@ l98: #
 						// Deferred popping of 4 bytes (4 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 305
+						//../DeMiSTify/firmware/pcecd.c, line 307
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -3049,7 +3049,7 @@ l98: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 305
+						//../DeMiSTify/firmware/pcecd.c, line 307
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3061,7 +3061,7 @@ l98: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 305
+						//../DeMiSTify/firmware/pcecd.c, line 307
 						//call
 						//pcreltotemp
 	.lipcrel	l35
@@ -3073,7 +3073,7 @@ l98: #
 l88: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 307
+						//../DeMiSTify/firmware/pcecd.c, line 309
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 3
 						//static not varadr
@@ -3100,7 +3100,7 @@ l88: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 301
+						//../DeMiSTify/firmware/pcecd.c, line 303
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -3113,7 +3113,7 @@ l88: #
 	add	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 301
+						//../DeMiSTify/firmware/pcecd.c, line 303
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -3127,7 +3127,7 @@ l88: #
 	sgn
 	cmp	r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 301
+						//../DeMiSTify/firmware/pcecd.c, line 303
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
@@ -3135,7 +3135,7 @@ l88: #
 		add	r7
 l99: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 311
+						//../DeMiSTify/firmware/pcecd.c, line 313
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -3153,7 +3153,7 @@ l99: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 313
+						//../DeMiSTify/firmware/pcecd.c, line 315
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -3176,14 +3176,14 @@ l99: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 313
+						//../DeMiSTify/firmware/pcecd.c, line 315
 	cond	GE
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l89
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 313
+						//../DeMiSTify/firmware/pcecd.c, line 315
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -3193,14 +3193,14 @@ l99: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 313
+						//../DeMiSTify/firmware/pcecd.c, line 315
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l89
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 313
+						//../DeMiSTify/firmware/pcecd.c, line 315
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -3221,7 +3221,7 @@ l99: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 313
+						//../DeMiSTify/firmware/pcecd.c, line 315
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
@@ -3231,7 +3231,7 @@ l99: #
 l89: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 315
+						//../DeMiSTify/firmware/pcecd.c, line 317
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -3249,7 +3249,7 @@ l89: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 315
+						//../DeMiSTify/firmware/pcecd.c, line 317
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -3260,7 +3260,7 @@ l89: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 315
+						//../DeMiSTify/firmware/pcecd.c, line 317
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -3268,7 +3268,7 @@ l89: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 316
+						//../DeMiSTify/firmware/pcecd.c, line 318
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -3289,7 +3289,7 @@ l89: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 317
+						//../DeMiSTify/firmware/pcecd.c, line 319
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -3309,13 +3309,13 @@ l89: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 319
+						//../DeMiSTify/firmware/pcecd.c, line 321
 						//pcreltotemp
 	.lipcrel	l95
 	add	r7
 l94: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 320
+						//../DeMiSTify/firmware/pcecd.c, line 322
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -3337,7 +3337,7 @@ l94: #
 l95: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 323
+						//../DeMiSTify/firmware/pcecd.c, line 325
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -3355,7 +3355,7 @@ l95: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 323
+						//../DeMiSTify/firmware/pcecd.c, line 325
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -3366,7 +3366,7 @@ l95: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 323
+						//../DeMiSTify/firmware/pcecd.c, line 325
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -3374,7 +3374,7 @@ l95: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 324
+						//../DeMiSTify/firmware/pcecd.c, line 326
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3387,7 +3387,7 @@ l95: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 324
+						//../DeMiSTify/firmware/pcecd.c, line 326
 						//call
 						//pcreltotemp
 	.lipcrel	l19
@@ -3432,7 +3432,7 @@ l100:
 						// allocreg r4
 						// allocreg r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 338
+						//../DeMiSTify/firmware/pcecd.c, line 340
 						// (address)
 						// (prepobj tmp)
  						// reg r6 - no need to prep
@@ -3442,7 +3442,7 @@ l100:
 						//save_temp done
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 338
+						//../DeMiSTify/firmware/pcecd.c, line 340
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -3454,7 +3454,7 @@ l100:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 338
+						//../DeMiSTify/firmware/pcecd.c, line 340
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3467,7 +3467,7 @@ l100:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 338
+						//../DeMiSTify/firmware/pcecd.c, line 340
 						//call
 						//pcreltotemp
 	.lipcrel	___memset
@@ -3477,7 +3477,7 @@ l100:
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 342
+						//../DeMiSTify/firmware/pcecd.c, line 344
 						// (a/p assign)
 						// (prepobj r0)
  						// deref
@@ -3495,7 +3495,7 @@ l100:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 343
+						//../DeMiSTify/firmware/pcecd.c, line 345
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -3517,7 +3517,7 @@ l100:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 345
+						//../DeMiSTify/firmware/pcecd.c, line 347
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -3548,7 +3548,7 @@ l100:
 						// allocreg r2
 l103: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 346
+						//../DeMiSTify/firmware/pcecd.c, line 348
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -3560,7 +3560,7 @@ l103: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 346
+						//../DeMiSTify/firmware/pcecd.c, line 348
 						// (address)
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 1
@@ -3572,7 +3572,7 @@ l103: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 346
+						//../DeMiSTify/firmware/pcecd.c, line 348
 						// (bitwise/arithmetic) 	//ops: 2, 6, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 42 type a
@@ -3582,7 +3582,7 @@ l103: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 346
+						//../DeMiSTify/firmware/pcecd.c, line 348
 						// Z disposable
 						//FIXME convert
 						// (convert - reducing type 503 to 101
@@ -3599,7 +3599,7 @@ l103: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 346
+						//../DeMiSTify/firmware/pcecd.c, line 348
 						// (bitwise/arithmetic) 	//ops: 6, 0, 6
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -3610,7 +3610,7 @@ l103: #
 	add	r5
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 346
+						//../DeMiSTify/firmware/pcecd.c, line 348
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
@@ -3620,7 +3620,7 @@ l103: #
 	sgn
 	cmp	r5
 
-						//../DeMiSTify/firmware/pcecd.c, line 346
+						//../DeMiSTify/firmware/pcecd.c, line 348
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
@@ -3628,7 +3628,7 @@ l103: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 347
+						//../DeMiSTify/firmware/pcecd.c, line 349
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -3648,7 +3648,7 @@ l103: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 352
+						//../DeMiSTify/firmware/pcecd.c, line 354
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -3811,7 +3811,7 @@ l103: #
 						// freereg r1
 l108: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 354
+						//../DeMiSTify/firmware/pcecd.c, line 356
 						//call
 						//pcreltotemp
 	.lipcrel	l46
@@ -3819,7 +3819,7 @@ l108: #
 						// Flow control - popping 0 + 0 bytes
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 354
+						//../DeMiSTify/firmware/pcecd.c, line 356
 						// (test)
 						// (obj to tmp) flags 4a type 101
 						// reg r0 - only match against tmp
@@ -3828,7 +3828,7 @@ l108: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 354
+						//../DeMiSTify/firmware/pcecd.c, line 356
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -3836,7 +3836,7 @@ l108: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 355
+						//../DeMiSTify/firmware/pcecd.c, line 357
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3849,7 +3849,7 @@ l108: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 355
+						//../DeMiSTify/firmware/pcecd.c, line 357
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -3857,13 +3857,13 @@ l108: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 358
+						//../DeMiSTify/firmware/pcecd.c, line 360
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l111: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 361
+						//../DeMiSTify/firmware/pcecd.c, line 363
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -3875,7 +3875,7 @@ l111: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 362
+						//../DeMiSTify/firmware/pcecd.c, line 364
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -3897,7 +3897,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 364
+						//../DeMiSTify/firmware/pcecd.c, line 366
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -3916,7 +3916,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 365
+						//../DeMiSTify/firmware/pcecd.c, line 367
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -3942,7 +3942,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 366
+						//../DeMiSTify/firmware/pcecd.c, line 368
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -3965,7 +3965,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 367
+						//../DeMiSTify/firmware/pcecd.c, line 369
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -3991,7 +3991,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 368
+						//../DeMiSTify/firmware/pcecd.c, line 370
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -4013,7 +4013,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 369
+						//../DeMiSTify/firmware/pcecd.c, line 371
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -4035,7 +4035,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 371
+						//../DeMiSTify/firmware/pcecd.c, line 373
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -4056,7 +4056,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 371
+						//../DeMiSTify/firmware/pcecd.c, line 373
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -4080,7 +4080,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 371
+						//../DeMiSTify/firmware/pcecd.c, line 373
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -4104,7 +4104,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 371
+						//../DeMiSTify/firmware/pcecd.c, line 373
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -4128,7 +4128,7 @@ l111: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 373
+						//../DeMiSTify/firmware/pcecd.c, line 375
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -4140,7 +4140,7 @@ l111: #
 	.liconst	1
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 373
+						//../DeMiSTify/firmware/pcecd.c, line 375
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -4153,7 +4153,7 @@ l111: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 373
+						//../DeMiSTify/firmware/pcecd.c, line 375
 						// (address)
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 1
@@ -4167,7 +4167,7 @@ l111: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 373
+						//../DeMiSTify/firmware/pcecd.c, line 375
 						//call
 						//pcreltotemp
 	.lipcrel	l22
@@ -4179,7 +4179,7 @@ l111: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 377
+						//../DeMiSTify/firmware/pcecd.c, line 379
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -4192,7 +4192,7 @@ l111: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 377
+						//../DeMiSTify/firmware/pcecd.c, line 379
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -4200,13 +4200,13 @@ l111: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 378
+						//../DeMiSTify/firmware/pcecd.c, line 380
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l112: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 381
+						//../DeMiSTify/firmware/pcecd.c, line 383
 						//call
 						//pcreltotemp
 	.lipcrel	l46
@@ -4214,7 +4214,7 @@ l112: #
 						// Flow control - popping 0 + 0 bytes
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 381
+						//../DeMiSTify/firmware/pcecd.c, line 383
 						// (test)
 						// (obj to tmp) flags 4a type 101
 						// reg r0 - only match against tmp
@@ -4223,7 +4223,7 @@ l112: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 381
+						//../DeMiSTify/firmware/pcecd.c, line 383
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -4231,7 +4231,7 @@ l112: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 384
+						//../DeMiSTify/firmware/pcecd.c, line 386
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4353,7 +4353,7 @@ l112: #
 						// freereg r1
 l116: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 387
+						//../DeMiSTify/firmware/pcecd.c, line 389
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -4365,7 +4365,7 @@ l116: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 388
+						//../DeMiSTify/firmware/pcecd.c, line 390
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -4387,7 +4387,7 @@ l116: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 389
+						//../DeMiSTify/firmware/pcecd.c, line 391
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -4407,7 +4407,7 @@ l116: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 390
+						//../DeMiSTify/firmware/pcecd.c, line 392
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -4423,7 +4423,7 @@ l116: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 390
+						//../DeMiSTify/firmware/pcecd.c, line 392
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -4431,7 +4431,7 @@ l116: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 390
+						//../DeMiSTify/firmware/pcecd.c, line 392
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -4441,7 +4441,7 @@ l116: #
 	exg	r0
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 
-						//../DeMiSTify/firmware/pcecd.c, line 391
+						//../DeMiSTify/firmware/pcecd.c, line 393
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -4460,7 +4460,7 @@ l116: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 392
+						//../DeMiSTify/firmware/pcecd.c, line 394
 						//pcreltotemp
 	.lipcrel	l115
 	add	r7
@@ -4468,7 +4468,7 @@ l116: #
 l118: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 395
+						//../DeMiSTify/firmware/pcecd.c, line 397
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// extern
@@ -4486,7 +4486,7 @@ l118: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 396
+						//../DeMiSTify/firmware/pcecd.c, line 398
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -4500,7 +4500,7 @@ l118: #
 	stdec	r6
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 396
+						//../DeMiSTify/firmware/pcecd.c, line 398
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -4512,7 +4512,7 @@ l118: #
 	//mr
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 396
+						//../DeMiSTify/firmware/pcecd.c, line 398
 						//call
 						//pcreltotemp
 	.lipcrel	_LBA2MSF
@@ -4522,7 +4522,7 @@ l118: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 398
+						//../DeMiSTify/firmware/pcecd.c, line 400
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -4535,7 +4535,7 @@ l118: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 399
+						//../DeMiSTify/firmware/pcecd.c, line 401
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -4558,7 +4558,7 @@ l118: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 400
+						//../DeMiSTify/firmware/pcecd.c, line 402
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4578,7 +4578,7 @@ l118: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 400
+						//../DeMiSTify/firmware/pcecd.c, line 402
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -4586,7 +4586,7 @@ l118: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 400
+						//../DeMiSTify/firmware/pcecd.c, line 402
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -4597,7 +4597,7 @@ l118: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 401
+						//../DeMiSTify/firmware/pcecd.c, line 403
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4613,7 +4613,7 @@ l118: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 401
+						//../DeMiSTify/firmware/pcecd.c, line 403
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -4621,7 +4621,7 @@ l118: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 401
+						//../DeMiSTify/firmware/pcecd.c, line 403
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -4632,7 +4632,7 @@ l118: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 402
+						//../DeMiSTify/firmware/pcecd.c, line 404
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4648,7 +4648,7 @@ l118: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 402
+						//../DeMiSTify/firmware/pcecd.c, line 404
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -4656,7 +4656,7 @@ l118: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 402
+						//../DeMiSTify/firmware/pcecd.c, line 404
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -4666,7 +4666,7 @@ l118: #
 	exg	r0
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 
-						//../DeMiSTify/firmware/pcecd.c, line 403
+						//../DeMiSTify/firmware/pcecd.c, line 405
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -4686,7 +4686,7 @@ l118: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 404
+						//../DeMiSTify/firmware/pcecd.c, line 406
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -4708,14 +4708,14 @@ l118: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 405
+						//../DeMiSTify/firmware/pcecd.c, line 407
 						//pcreltotemp
 	.lipcrel	l115
 	add	r7
 l119: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 408
+						//../DeMiSTify/firmware/pcecd.c, line 410
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4731,7 +4731,7 @@ l119: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 408
+						//../DeMiSTify/firmware/pcecd.c, line 410
 						//call
 						//pcreltotemp
 	.lipcrel	_gettrackbybcd
@@ -4740,7 +4740,7 @@ l119: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 409
+						//../DeMiSTify/firmware/pcecd.c, line 411
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// extern
@@ -4758,7 +4758,7 @@ l119: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 412
+						//../DeMiSTify/firmware/pcecd.c, line 414
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -4772,7 +4772,7 @@ l119: #
 	stdec	r6
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 412
+						//../DeMiSTify/firmware/pcecd.c, line 414
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -4784,7 +4784,7 @@ l119: #
 	//mr
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 412
+						//../DeMiSTify/firmware/pcecd.c, line 414
 						//call
 						//pcreltotemp
 	.lipcrel	_LBA2MSF
@@ -4794,7 +4794,7 @@ l119: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 414
+						//../DeMiSTify/firmware/pcecd.c, line 416
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -4807,7 +4807,7 @@ l119: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 415
+						//../DeMiSTify/firmware/pcecd.c, line 417
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -4830,7 +4830,7 @@ l119: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 416
+						//../DeMiSTify/firmware/pcecd.c, line 418
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4850,7 +4850,7 @@ l119: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 416
+						//../DeMiSTify/firmware/pcecd.c, line 418
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -4858,7 +4858,7 @@ l119: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 416
+						//../DeMiSTify/firmware/pcecd.c, line 418
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -4869,7 +4869,7 @@ l119: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 417
+						//../DeMiSTify/firmware/pcecd.c, line 419
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4885,7 +4885,7 @@ l119: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 417
+						//../DeMiSTify/firmware/pcecd.c, line 419
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -4893,7 +4893,7 @@ l119: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 417
+						//../DeMiSTify/firmware/pcecd.c, line 419
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -4904,7 +4904,7 @@ l119: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 418
+						//../DeMiSTify/firmware/pcecd.c, line 420
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -4920,7 +4920,7 @@ l119: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 418
+						//../DeMiSTify/firmware/pcecd.c, line 420
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -4928,7 +4928,7 @@ l119: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 418
+						//../DeMiSTify/firmware/pcecd.c, line 420
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -4939,7 +4939,7 @@ l119: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 419
+						//../DeMiSTify/firmware/pcecd.c, line 421
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// extern
@@ -4956,7 +4956,7 @@ l119: #
 	shl	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 419
+						//../DeMiSTify/firmware/pcecd.c, line 421
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -4970,7 +4970,7 @@ l119: #
 	stmpdec	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 420
+						//../DeMiSTify/firmware/pcecd.c, line 422
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 130
@@ -4994,7 +4994,7 @@ l119: #
 l115: # 
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 424
+						//../DeMiSTify/firmware/pcecd.c, line 426
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -5002,7 +5002,7 @@ l115: #
 	.liconst	1
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 424
+						//../DeMiSTify/firmware/pcecd.c, line 426
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 2 type 3
@@ -5015,7 +5015,7 @@ l115: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 424
+						//../DeMiSTify/firmware/pcecd.c, line 426
 						// (address)
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 2
@@ -5027,7 +5027,7 @@ l115: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 424
+						//../DeMiSTify/firmware/pcecd.c, line 426
 						//call
 						//pcreltotemp
 	.lipcrel	l22
@@ -5038,7 +5038,7 @@ l115: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 428
+						//../DeMiSTify/firmware/pcecd.c, line 430
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5051,7 +5051,7 @@ l115: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 428
+						//../DeMiSTify/firmware/pcecd.c, line 430
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -5059,13 +5059,13 @@ l115: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 430
+						//../DeMiSTify/firmware/pcecd.c, line 432
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l120: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 433
+						//../DeMiSTify/firmware/pcecd.c, line 435
 						//call
 						//pcreltotemp
 	.lipcrel	l46
@@ -5073,7 +5073,7 @@ l120: #
 						// Flow control - popping 0 + 0 bytes
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 433
+						//../DeMiSTify/firmware/pcecd.c, line 435
 						// (test)
 						// (obj to tmp) flags 4a type 101
 						// reg r0 - only match against tmp
@@ -5082,7 +5082,7 @@ l120: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 433
+						//../DeMiSTify/firmware/pcecd.c, line 435
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -5091,7 +5091,7 @@ l120: #
 						// freereg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5109,7 +5109,7 @@ l120: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -5121,7 +5121,7 @@ l120: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5139,7 +5139,7 @@ l120: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -5150,7 +5150,7 @@ l120: #
 	shl	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
@@ -5163,7 +5163,7 @@ l120: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5181,7 +5181,7 @@ l120: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
@@ -5193,7 +5193,7 @@ l120: #
 						// (save result) // isreg
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 435
+						//../DeMiSTify/firmware/pcecd.c, line 437
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
@@ -5220,7 +5220,7 @@ l120: #
  						// WARNING - check that 4 has been added.
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 436
+						//../DeMiSTify/firmware/pcecd.c, line 438
 						// (test)
 						// (obj to tmp) flags 2 type 101
 						// matchobj comparing flags 2 with 130
@@ -5233,7 +5233,7 @@ l120: #
 	byt
 	ldidx	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 436
+						//../DeMiSTify/firmware/pcecd.c, line 438
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -5242,7 +5242,7 @@ l120: #
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 436
+						//../DeMiSTify/firmware/pcecd.c, line 438
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5263,13 +5263,13 @@ l120: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 436
+						//../DeMiSTify/firmware/pcecd.c, line 438
 						//pcreltotemp
 	.lipcrel	l125
 	add	r7
 l124: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 436
+						//../DeMiSTify/firmware/pcecd.c, line 438
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -5291,7 +5291,7 @@ l124: #
 l125: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 438
+						//../DeMiSTify/firmware/pcecd.c, line 440
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5304,7 +5304,7 @@ l125: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 438
+						//../DeMiSTify/firmware/pcecd.c, line 440
 						//call
 						//pcreltotemp
 	.lipcrel	_cue_gettrackbylba
@@ -5312,7 +5312,7 @@ l125: #
 						// Deferred popping of 0 bytes (0 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 438
+						//../DeMiSTify/firmware/pcecd.c, line 440
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
@@ -5322,7 +5322,7 @@ l125: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 454
+						//../DeMiSTify/firmware/pcecd.c, line 456
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 130
@@ -5342,7 +5342,7 @@ l125: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 458
+						//../DeMiSTify/firmware/pcecd.c, line 460
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -5364,7 +5364,7 @@ l125: #
 	stinc	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 459
+						//../DeMiSTify/firmware/pcecd.c, line 461
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -5385,7 +5385,7 @@ l125: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 461
+						//../DeMiSTify/firmware/pcecd.c, line 463
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -5408,7 +5408,7 @@ l125: #
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 461
+						//../DeMiSTify/firmware/pcecd.c, line 463
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 3
@@ -5422,7 +5422,7 @@ l125: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 461
+						//../DeMiSTify/firmware/pcecd.c, line 463
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 3
@@ -5435,7 +5435,7 @@ l125: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 462
+						//../DeMiSTify/firmware/pcecd.c, line 464
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -5448,7 +5448,7 @@ l125: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 462
+						//../DeMiSTify/firmware/pcecd.c, line 464
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5465,7 +5465,7 @@ l125: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 462
+						//../DeMiSTify/firmware/pcecd.c, line 464
 						//call
 						//pcreltotemp
 	.lipcrel	_FileSeek
@@ -5476,7 +5476,7 @@ l125: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 466
+						//../DeMiSTify/firmware/pcecd.c, line 468
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -5495,7 +5495,7 @@ l125: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 468
+						//../DeMiSTify/firmware/pcecd.c, line 470
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -5516,7 +5516,7 @@ l125: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 469
+						//../DeMiSTify/firmware/pcecd.c, line 471
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -5537,14 +5537,14 @@ l125: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 473
+						//../DeMiSTify/firmware/pcecd.c, line 475
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l130: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 478
+						//../DeMiSTify/firmware/pcecd.c, line 480
 						// (test)
 						// (obj to tmp) flags 2 type 101
 						// var, auto|reg
@@ -5553,14 +5553,14 @@ l130: #
 	byt
 	ldidx	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 478
+						//../DeMiSTify/firmware/pcecd.c, line 480
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l132
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 479
+						//../DeMiSTify/firmware/pcecd.c, line 481
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -5580,7 +5580,7 @@ l130: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 481
+						//../DeMiSTify/firmware/pcecd.c, line 483
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
@@ -5588,7 +5588,7 @@ l130: #
 l132: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 482
+						//../DeMiSTify/firmware/pcecd.c, line 484
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5599,7 +5599,7 @@ l132: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 482
+						//../DeMiSTify/firmware/pcecd.c, line 484
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -5607,13 +5607,13 @@ l132: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 485
+						//../DeMiSTify/firmware/pcecd.c, line 487
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l134: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 488
+						//../DeMiSTify/firmware/pcecd.c, line 490
 						//call
 						//pcreltotemp
 	.lipcrel	l46
@@ -5621,7 +5621,7 @@ l134: #
 						// Flow control - popping 0 + 0 bytes
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 488
+						//../DeMiSTify/firmware/pcecd.c, line 490
 						// (test)
 						// (obj to tmp) flags 4a type 101
 						// reg r0 - only match against tmp
@@ -5630,7 +5630,7 @@ l134: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 488
+						//../DeMiSTify/firmware/pcecd.c, line 490
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -5638,7 +5638,7 @@ l134: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 491
+						//../DeMiSTify/firmware/pcecd.c, line 493
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5656,7 +5656,7 @@ l134: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 491
+						//../DeMiSTify/firmware/pcecd.c, line 493
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
@@ -5784,7 +5784,7 @@ l134: #
 l138: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 494
+						//../DeMiSTify/firmware/pcecd.c, line 496
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5800,7 +5800,7 @@ l138: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 494
+						//../DeMiSTify/firmware/pcecd.c, line 496
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -5812,7 +5812,7 @@ l138: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 494
+						//../DeMiSTify/firmware/pcecd.c, line 496
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5830,7 +5830,7 @@ l138: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 494
+						//../DeMiSTify/firmware/pcecd.c, line 496
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -5841,7 +5841,7 @@ l138: #
 	shl	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 494
+						//../DeMiSTify/firmware/pcecd.c, line 496
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
@@ -5854,7 +5854,7 @@ l138: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 494
+						//../DeMiSTify/firmware/pcecd.c, line 496
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5872,7 +5872,7 @@ l138: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 494
+						//../DeMiSTify/firmware/pcecd.c, line 496
 						// Q1 disposable
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 1
@@ -5899,14 +5899,14 @@ l138: #
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 495
+						//../DeMiSTify/firmware/pcecd.c, line 497
 						//pcreltotemp
 	.lipcrel	l137
 	add	r7
 l140: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5922,7 +5922,7 @@ l140: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -5931,12 +5931,12 @@ l140: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -5948,7 +5948,7 @@ l140: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -5966,7 +5966,7 @@ l140: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -5975,12 +5975,12 @@ l140: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
@@ -5992,7 +5992,7 @@ l140: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6010,7 +6010,7 @@ l140: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -6019,13 +6019,13 @@ l140: #
 						// freereg r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -6040,7 +6040,7 @@ l140: #
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						//call
 						//pcreltotemp
 	.lipcrel	_MSF2LBA
@@ -6050,7 +6050,7 @@ l140: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 498
+						//../DeMiSTify/firmware/pcecd.c, line 500
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
@@ -6061,7 +6061,7 @@ l140: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 499
+						//../DeMiSTify/firmware/pcecd.c, line 501
 						//pcreltotemp
 	.lipcrel	l137
 	add	r7
@@ -6069,7 +6069,7 @@ l141: #
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 503
+						//../DeMiSTify/firmware/pcecd.c, line 505
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6085,7 +6085,7 @@ l141: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 503
+						//../DeMiSTify/firmware/pcecd.c, line 505
 						//call
 						//pcreltotemp
 	.lipcrel	_gettrackbybcd
@@ -6093,7 +6093,7 @@ l141: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 504
+						//../DeMiSTify/firmware/pcecd.c, line 506
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -6114,7 +6114,7 @@ l141: #
 						//save_temp done
 l137: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 515
+						//../DeMiSTify/firmware/pcecd.c, line 517
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -6132,7 +6132,7 @@ l137: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 520
+						//../DeMiSTify/firmware/pcecd.c, line 522
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -6155,7 +6155,7 @@ l137: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 521
+						//../DeMiSTify/firmware/pcecd.c, line 523
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -6167,7 +6167,7 @@ l137: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 521
+						//../DeMiSTify/firmware/pcecd.c, line 523
 						//call
 						//pcreltotemp
 	.lipcrel	_cue_gettrackbylba
@@ -6175,7 +6175,7 @@ l137: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 521
+						//../DeMiSTify/firmware/pcecd.c, line 523
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
@@ -6185,7 +6185,7 @@ l137: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 526
+						//../DeMiSTify/firmware/pcecd.c, line 528
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 130
@@ -6207,7 +6207,7 @@ l137: #
 	stinc	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 527
+						//../DeMiSTify/firmware/pcecd.c, line 529
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -6226,7 +6226,7 @@ l137: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 528
+						//../DeMiSTify/firmware/pcecd.c, line 530
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -6250,7 +6250,7 @@ l137: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 529
+						//../DeMiSTify/firmware/pcecd.c, line 531
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -6271,7 +6271,7 @@ l137: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 531
+						//../DeMiSTify/firmware/pcecd.c, line 533
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6291,7 +6291,7 @@ l137: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 531
+						//../DeMiSTify/firmware/pcecd.c, line 533
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 3
@@ -6303,7 +6303,7 @@ l137: #
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 531
+						//../DeMiSTify/firmware/pcecd.c, line 533
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -6311,7 +6311,7 @@ l137: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 532
+						//../DeMiSTify/firmware/pcecd.c, line 534
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 74
@@ -6332,13 +6332,13 @@ l137: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 533
+						//../DeMiSTify/firmware/pcecd.c, line 535
 						//pcreltotemp
 	.lipcrel	l144
 	add	r7
 l143: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 534
+						//../DeMiSTify/firmware/pcecd.c, line 536
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -6360,7 +6360,7 @@ l143: #
 l144: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 537
+						//../DeMiSTify/firmware/pcecd.c, line 539
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -6371,7 +6371,7 @@ l144: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 537
+						//../DeMiSTify/firmware/pcecd.c, line 539
 						//call
 						//pcreltotemp
 	.lipcrel	l19
@@ -6379,13 +6379,13 @@ l144: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 540
+						//../DeMiSTify/firmware/pcecd.c, line 542
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l145: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 543
+						//../DeMiSTify/firmware/pcecd.c, line 545
 						//call
 						//pcreltotemp
 	.lipcrel	l46
@@ -6393,7 +6393,7 @@ l145: #
 						// Flow control - popping 0 + 0 bytes
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 543
+						//../DeMiSTify/firmware/pcecd.c, line 545
 						// (test)
 						// (obj to tmp) flags 4a type 101
 						// reg r0 - only match against tmp
@@ -6402,7 +6402,7 @@ l145: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 543
+						//../DeMiSTify/firmware/pcecd.c, line 545
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -6410,7 +6410,7 @@ l145: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 546
+						//../DeMiSTify/firmware/pcecd.c, line 548
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6428,7 +6428,7 @@ l145: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 546
+						//../DeMiSTify/firmware/pcecd.c, line 548
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
@@ -6556,7 +6556,7 @@ l145: #
 l149: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 549
+						//../DeMiSTify/firmware/pcecd.c, line 551
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6572,7 +6572,7 @@ l149: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 549
+						//../DeMiSTify/firmware/pcecd.c, line 551
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -6584,7 +6584,7 @@ l149: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 549
+						//../DeMiSTify/firmware/pcecd.c, line 551
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6602,7 +6602,7 @@ l149: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 549
+						//../DeMiSTify/firmware/pcecd.c, line 551
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -6613,7 +6613,7 @@ l149: #
 	shl	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 549
+						//../DeMiSTify/firmware/pcecd.c, line 551
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
@@ -6626,7 +6626,7 @@ l149: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 549
+						//../DeMiSTify/firmware/pcecd.c, line 551
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6644,7 +6644,7 @@ l149: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 549
+						//../DeMiSTify/firmware/pcecd.c, line 551
 						// Q1 disposable
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 1
@@ -6671,14 +6671,14 @@ l149: #
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 550
+						//../DeMiSTify/firmware/pcecd.c, line 552
 						//pcreltotemp
 	.lipcrel	l148
 	add	r7
 l151: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6694,7 +6694,7 @@ l151: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -6703,12 +6703,12 @@ l151: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -6720,7 +6720,7 @@ l151: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6738,7 +6738,7 @@ l151: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -6747,12 +6747,12 @@ l151: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
@@ -6764,7 +6764,7 @@ l151: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6782,7 +6782,7 @@ l151: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -6791,13 +6791,13 @@ l151: #
 						// freereg r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -6812,7 +6812,7 @@ l151: #
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						//call
 						//pcreltotemp
 	.lipcrel	_MSF2LBA
@@ -6822,7 +6822,7 @@ l151: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 553
+						//../DeMiSTify/firmware/pcecd.c, line 555
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
@@ -6833,7 +6833,7 @@ l151: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 554
+						//../DeMiSTify/firmware/pcecd.c, line 556
 						//pcreltotemp
 	.lipcrel	l148
 	add	r7
@@ -6841,7 +6841,7 @@ l152: #
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 558
+						//../DeMiSTify/firmware/pcecd.c, line 560
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6857,7 +6857,7 @@ l152: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 558
+						//../DeMiSTify/firmware/pcecd.c, line 560
 						//call
 						//pcreltotemp
 	.lipcrel	_bcd2bin
@@ -6866,12 +6866,12 @@ l152: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 558
+						//../DeMiSTify/firmware/pcecd.c, line 560
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 558
+						//../DeMiSTify/firmware/pcecd.c, line 560
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -6892,7 +6892,7 @@ l152: #
  						// WARNING - check that 4 has been added.
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 560
+						//../DeMiSTify/firmware/pcecd.c, line 562
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 130
@@ -6905,7 +6905,7 @@ l152: #
 	//mr
 	and	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 560
+						//../DeMiSTify/firmware/pcecd.c, line 562
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -6913,7 +6913,7 @@ l152: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 560
+						//../DeMiSTify/firmware/pcecd.c, line 562
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -6937,7 +6937,7 @@ l152: #
 						//save_temp done
 l154: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 561
+						//../DeMiSTify/firmware/pcecd.c, line 563
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// var, auto|reg
@@ -6955,14 +6955,14 @@ l154: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 561
+						//../DeMiSTify/firmware/pcecd.c, line 563
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l156
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 561
+						//../DeMiSTify/firmware/pcecd.c, line 563
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 138 with 2
@@ -6984,13 +6984,13 @@ l154: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 561
+						//../DeMiSTify/firmware/pcecd.c, line 563
 						//pcreltotemp
 	.lipcrel	l157
 	add	r7
 l156: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 561
+						//../DeMiSTify/firmware/pcecd.c, line 563
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -7011,7 +7011,7 @@ l156: #
 						//save_temp done
 l157: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 561
+						//../DeMiSTify/firmware/pcecd.c, line 563
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -7034,7 +7034,7 @@ l157: #
 						// freereg r1
 l148: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 566
+						//../DeMiSTify/firmware/pcecd.c, line 568
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -7056,7 +7056,7 @@ l148: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 567
+						//../DeMiSTify/firmware/pcecd.c, line 569
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -7079,7 +7079,7 @@ l148: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 569
+						//../DeMiSTify/firmware/pcecd.c, line 571
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7099,7 +7099,7 @@ l148: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 569
+						//../DeMiSTify/firmware/pcecd.c, line 571
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 3
@@ -7111,7 +7111,7 @@ l148: #
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 569
+						//../DeMiSTify/firmware/pcecd.c, line 571
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -7119,7 +7119,7 @@ l148: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 570
+						//../DeMiSTify/firmware/pcecd.c, line 572
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 74
@@ -7140,13 +7140,13 @@ l148: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 571
+						//../DeMiSTify/firmware/pcecd.c, line 573
 						//pcreltotemp
 	.lipcrel	l160
 	add	r7
 l159: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 572
+						//../DeMiSTify/firmware/pcecd.c, line 574
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -7168,7 +7168,7 @@ l159: #
 l160: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 577
+						//../DeMiSTify/firmware/pcecd.c, line 579
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7186,7 +7186,7 @@ l160: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 577
+						//../DeMiSTify/firmware/pcecd.c, line 579
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -7197,7 +7197,7 @@ l160: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 577
+						//../DeMiSTify/firmware/pcecd.c, line 579
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -7205,7 +7205,7 @@ l160: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 578
+						//../DeMiSTify/firmware/pcecd.c, line 580
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -7218,7 +7218,7 @@ l160: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 578
+						//../DeMiSTify/firmware/pcecd.c, line 580
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -7226,13 +7226,13 @@ l160: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 581
+						//../DeMiSTify/firmware/pcecd.c, line 583
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l163: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 584
+						//../DeMiSTify/firmware/pcecd.c, line 586
 						//call
 						//pcreltotemp
 	.lipcrel	l46
@@ -7240,7 +7240,7 @@ l163: #
 						// Flow control - popping 0 + 0 bytes
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 584
+						//../DeMiSTify/firmware/pcecd.c, line 586
 						// (test)
 						// (obj to tmp) flags 4a type 101
 						// reg r0 - only match against tmp
@@ -7249,14 +7249,14 @@ l163: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 584
+						//../DeMiSTify/firmware/pcecd.c, line 586
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l107
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 586
+						//../DeMiSTify/firmware/pcecd.c, line 588
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 74
@@ -7277,7 +7277,7 @@ l163: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 588
+						//../DeMiSTify/firmware/pcecd.c, line 590
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -7292,7 +7292,7 @@ l163: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 588
+						//../DeMiSTify/firmware/pcecd.c, line 590
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -7300,13 +7300,13 @@ l163: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 591
+						//../DeMiSTify/firmware/pcecd.c, line 593
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l166: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 594
+						//../DeMiSTify/firmware/pcecd.c, line 596
 						//call
 						//pcreltotemp
 	.lipcrel	l46
@@ -7314,7 +7314,7 @@ l166: #
 						// Flow control - popping 0 + 0 bytes
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 594
+						//../DeMiSTify/firmware/pcecd.c, line 596
 						// (test)
 						// (obj to tmp) flags 4a type 101
 						// reg r0 - only match against tmp
@@ -7323,7 +7323,7 @@ l166: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 594
+						//../DeMiSTify/firmware/pcecd.c, line 596
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -7331,7 +7331,7 @@ l166: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 596
+						//../DeMiSTify/firmware/pcecd.c, line 598
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 74
@@ -7361,7 +7361,7 @@ l166: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 598
+						//../DeMiSTify/firmware/pcecd.c, line 600
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -7377,7 +7377,7 @@ l166: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 599
+						//../DeMiSTify/firmware/pcecd.c, line 601
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -7401,7 +7401,7 @@ l166: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7427,7 +7427,7 @@ l166: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 130
@@ -7441,14 +7441,14 @@ l166: #
 	.liconst	4
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l170
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 138 with 1
@@ -7469,13 +7469,13 @@ l166: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						//pcreltotemp
 	.lipcrel	l171
 	add	r7
 l170: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// var, auto|reg
@@ -7490,14 +7490,14 @@ l170: #
 	.liconst	3
 	cmp	r0
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l173
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 138 with 1
@@ -7518,13 +7518,13 @@ l170: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						//pcreltotemp
 	.lipcrel	l174
 	add	r7
 l173: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -7544,7 +7544,7 @@ l173: #
 						//save_temp done
 l174: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
@@ -7568,7 +7568,7 @@ l174: #
 						// freereg r3
 l171: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 600
+						//../DeMiSTify/firmware/pcecd.c, line 602
 						//FIXME convert
 						// (convert - reducing type 3 to 101
 						// (prepobj r0)
@@ -7592,7 +7592,7 @@ l171: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 601
+						//../DeMiSTify/firmware/pcecd.c, line 603
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 10
@@ -7612,7 +7612,7 @@ l171: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 602
+						//../DeMiSTify/firmware/pcecd.c, line 604
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -7634,7 +7634,7 @@ l171: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 602
+						//../DeMiSTify/firmware/pcecd.c, line 604
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7642,7 +7642,7 @@ l171: #
 						// Deferred popping of 0 bytes (0 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 602
+						//../DeMiSTify/firmware/pcecd.c, line 604
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7653,7 +7653,7 @@ l171: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 603
+						//../DeMiSTify/firmware/pcecd.c, line 605
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -7668,7 +7668,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 603
+						//../DeMiSTify/firmware/pcecd.c, line 605
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7676,7 +7676,7 @@ l171: #
 						// Deferred popping of 0 bytes (0 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 603
+						//../DeMiSTify/firmware/pcecd.c, line 605
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7687,7 +7687,7 @@ l171: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 605
+						//../DeMiSTify/firmware/pcecd.c, line 607
 						// (address)
 						// (prepobj tmp)
  						// var, auto|reg
@@ -7697,7 +7697,7 @@ l171: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 605
+						//../DeMiSTify/firmware/pcecd.c, line 607
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 4a type a
@@ -7707,7 +7707,7 @@ l171: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 605
+						//../DeMiSTify/firmware/pcecd.c, line 607
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -7722,7 +7722,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 605
+						//../DeMiSTify/firmware/pcecd.c, line 607
 						//call
 						//pcreltotemp
 	.lipcrel	_LBA2MSF
@@ -7731,7 +7731,7 @@ l171: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 606
+						//../DeMiSTify/firmware/pcecd.c, line 608
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7747,7 +7747,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 606
+						//../DeMiSTify/firmware/pcecd.c, line 608
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7755,7 +7755,7 @@ l171: #
 						// Deferred popping of 0 bytes (4 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 606
+						//../DeMiSTify/firmware/pcecd.c, line 608
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7766,7 +7766,7 @@ l171: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 607
+						//../DeMiSTify/firmware/pcecd.c, line 609
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7782,7 +7782,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 607
+						//../DeMiSTify/firmware/pcecd.c, line 609
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7790,7 +7790,7 @@ l171: #
 						// Deferred popping of 0 bytes (4 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 607
+						//../DeMiSTify/firmware/pcecd.c, line 609
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7801,7 +7801,7 @@ l171: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 608
+						//../DeMiSTify/firmware/pcecd.c, line 610
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7817,7 +7817,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 608
+						//../DeMiSTify/firmware/pcecd.c, line 610
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7825,7 +7825,7 @@ l171: #
 						// Deferred popping of 0 bytes (4 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 608
+						//../DeMiSTify/firmware/pcecd.c, line 610
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7835,7 +7835,7 @@ l171: #
 	exg	r0
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 
-						//../DeMiSTify/firmware/pcecd.c, line 610
+						//../DeMiSTify/firmware/pcecd.c, line 612
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -7846,7 +7846,7 @@ l171: #
 						// freereg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 610
+						//../DeMiSTify/firmware/pcecd.c, line 612
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -7862,7 +7862,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 610
+						//../DeMiSTify/firmware/pcecd.c, line 612
 						//call
 						//pcreltotemp
 	.lipcrel	_LBA2MSF
@@ -7871,7 +7871,7 @@ l171: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 611
+						//../DeMiSTify/firmware/pcecd.c, line 613
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7887,7 +7887,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 611
+						//../DeMiSTify/firmware/pcecd.c, line 613
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7895,7 +7895,7 @@ l171: #
 						// Deferred popping of 0 bytes (8 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 611
+						//../DeMiSTify/firmware/pcecd.c, line 613
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7906,7 +7906,7 @@ l171: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 612
+						//../DeMiSTify/firmware/pcecd.c, line 614
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7922,7 +7922,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 612
+						//../DeMiSTify/firmware/pcecd.c, line 614
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7930,7 +7930,7 @@ l171: #
 						// Deferred popping of 0 bytes (8 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 612
+						//../DeMiSTify/firmware/pcecd.c, line 614
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7941,7 +7941,7 @@ l171: #
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 613
+						//../DeMiSTify/firmware/pcecd.c, line 615
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7957,7 +7957,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 613
+						//../DeMiSTify/firmware/pcecd.c, line 615
 						//call
 						//pcreltotemp
 	.lipcrel	_bin2bcd
@@ -7965,7 +7965,7 @@ l171: #
 						// Deferred popping of 0 bytes (8 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 613
+						//../DeMiSTify/firmware/pcecd.c, line 615
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x101, flags 0x2
 						// (prepobj tmp)
@@ -7975,7 +7975,7 @@ l171: #
 	exg	r0
 	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 
-						//../DeMiSTify/firmware/pcecd.c, line 615
+						//../DeMiSTify/firmware/pcecd.c, line 617
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -7983,7 +7983,7 @@ l171: #
 	.liconst	1
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 615
+						//../DeMiSTify/firmware/pcecd.c, line 617
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -7994,7 +7994,7 @@ l171: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 615
+						//../DeMiSTify/firmware/pcecd.c, line 617
 						// (address)
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 1
@@ -8006,7 +8006,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 615
+						//../DeMiSTify/firmware/pcecd.c, line 617
 						//call
 						//pcreltotemp
 	.lipcrel	l22
@@ -8017,7 +8017,7 @@ l171: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 619
+						//../DeMiSTify/firmware/pcecd.c, line 621
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8030,7 +8030,7 @@ l171: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 619
+						//../DeMiSTify/firmware/pcecd.c, line 621
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -8038,14 +8038,14 @@ l171: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 621
+						//../DeMiSTify/firmware/pcecd.c, line 623
 						//pcreltotemp
 	.lipcrel	l107
 	add	r7
 l175: # 
 						// allocreg r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 624
+						//../DeMiSTify/firmware/pcecd.c, line 626
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -8053,7 +8053,7 @@ l175: #
 	.liconst	0
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 624
+						//../DeMiSTify/firmware/pcecd.c, line 626
 						// (a/p push)
 						// a: pushed 4, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -8062,7 +8062,7 @@ l175: #
 			// required value found in tmp
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 624
+						//../DeMiSTify/firmware/pcecd.c, line 626
 						// (a/p push)
 						// a: pushed 8, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -8073,7 +8073,7 @@ l175: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 624
+						//../DeMiSTify/firmware/pcecd.c, line 626
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8086,7 +8086,7 @@ l175: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 624
+						//../DeMiSTify/firmware/pcecd.c, line 626
 						//call
 						//pcreltotemp
 	.lipcrel	l13
@@ -8096,7 +8096,7 @@ l175: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 628
+						//../DeMiSTify/firmware/pcecd.c, line 630
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8116,7 +8116,7 @@ l175: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 629
+						//../DeMiSTify/firmware/pcecd.c, line 631
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8131,7 +8131,7 @@ l175: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 629
+						//../DeMiSTify/firmware/pcecd.c, line 631
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -8190,7 +8190,7 @@ _pcecd_data:
 						//save_temp done
 						// allocreg r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 637
+						//../DeMiSTify/firmware/pcecd.c, line 639
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -8210,7 +8210,7 @@ _pcecd_data:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 638
+						//../DeMiSTify/firmware/pcecd.c, line 640
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -8225,7 +8225,7 @@ _pcecd_data:
 	st	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 640
+						//../DeMiSTify/firmware/pcecd.c, line 642
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -8241,7 +8241,7 @@ _pcecd_data:
 						//save_temp done
 l184: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 641
+						//../DeMiSTify/firmware/pcecd.c, line 643
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -8253,7 +8253,7 @@ l184: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 641
+						//../DeMiSTify/firmware/pcecd.c, line 643
 						// (address)
 						// (prepobj tmp)
  						// reg r6 - no need to prep
@@ -8262,7 +8262,7 @@ l184: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 641
+						//../DeMiSTify/firmware/pcecd.c, line 643
 						// (bitwise/arithmetic) 	//ops: 2, 3, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 42 type a
@@ -8271,7 +8271,7 @@ l184: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 641
+						//../DeMiSTify/firmware/pcecd.c, line 643
 						// Z disposable
 						//FIXME convert
 						// (convert - reducing type 503 to 101
@@ -8288,7 +8288,7 @@ l184: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 641
+						//../DeMiSTify/firmware/pcecd.c, line 643
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -8299,7 +8299,7 @@ l184: #
 	add	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 641
+						//../DeMiSTify/firmware/pcecd.c, line 643
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
@@ -8309,14 +8309,14 @@ l184: #
 	sgn
 	cmp	r2
 
-						//../DeMiSTify/firmware/pcecd.c, line 641
+						//../DeMiSTify/firmware/pcecd.c, line 643
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l184
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 642
+						//../DeMiSTify/firmware/pcecd.c, line 644
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -8361,7 +8361,7 @@ l184: #
 _pcecd_clear_busy:
 	stdec	r6
 
-						//../DeMiSTify/firmware/pcecd.c, line 650
+						//../DeMiSTify/firmware/pcecd.c, line 652
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -8397,7 +8397,7 @@ _pcecd_reset:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 655
+						//../DeMiSTify/firmware/pcecd.c, line 657
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -8415,7 +8415,7 @@ _pcecd_reset:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 656
+						//../DeMiSTify/firmware/pcecd.c, line 658
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8435,7 +8435,7 @@ _pcecd_reset:
 	stinc	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 657
+						//../DeMiSTify/firmware/pcecd.c, line 659
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8450,7 +8450,7 @@ _pcecd_reset:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 658
+						//../DeMiSTify/firmware/pcecd.c, line 660
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8470,7 +8470,7 @@ _pcecd_reset:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 659
+						//../DeMiSTify/firmware/pcecd.c, line 661
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8491,7 +8491,7 @@ _pcecd_reset:
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 660
+						//../DeMiSTify/firmware/pcecd.c, line 662
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 1
@@ -8502,14 +8502,14 @@ _pcecd_reset:
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 660
+						//../DeMiSTify/firmware/pcecd.c, line 662
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l191
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 660
+						//../DeMiSTify/firmware/pcecd.c, line 662
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8524,13 +8524,13 @@ _pcecd_reset:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 660
+						//../DeMiSTify/firmware/pcecd.c, line 662
 						//pcreltotemp
 	.lipcrel	l192
 	add	r7
 l191: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 660
+						//../DeMiSTify/firmware/pcecd.c, line 662
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8542,7 +8542,7 @@ l191: #
 						//save_temp done
 l192: # 
 
-						//../DeMiSTify/firmware/pcecd.c, line 660
+						//../DeMiSTify/firmware/pcecd.c, line 662
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -8554,47 +8554,12 @@ l192: #
 	byt
 	stmpdec	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 661
+						//../DeMiSTify/firmware/pcecd.c, line 663
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 130
 						// static
 	.liabs	l12,36
-						// static pe not varadr
-	mr	r0
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 130
-						// const
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 130
-	.liconst	0
-						// (save temp)store type 3
-	stinc	r0
-						//save_temp done
-
-						//../DeMiSTify/firmware/pcecd.c, line 662
-						// (a/p assign)
-						// (prepobj r0)
- 						// matchobj comparing flags 130 with 1
-						// matchobj comparing flags 130 with 130
-
-						// required value found in r0
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 1
-
-			// required value found in tmp
-						// (save temp)store type 3
-	st	r0
-						//save_temp done
-
-						//../DeMiSTify/firmware/pcecd.c, line 663
-						// (a/p assign)
-						// (prepobj r0)
- 						// matchobj comparing flags 130 with 1
-						// matchobj comparing flags 130 with 130
-						// static
-	.liabs	l12,12
 						// static pe not varadr
 	mr	r0
 						// (obj to tmp) flags 1 type 3
@@ -8615,16 +8580,35 @@ l192: #
 						// matchobj comparing flags 130 with 130
 
 						// required value found in r0
-						// (obj to tmp) flags 1 type 101
+						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
 
 			// required value found in tmp
-						// (save temp)store type 1
-	stbinc	r0
-						//Disposable, postinc doesn't matter.
+						// (save temp)store type 3
+	st	r0
 						//save_temp done
 
 						//../DeMiSTify/firmware/pcecd.c, line 665
+						// (a/p assign)
+						// (prepobj r0)
+ 						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 130
+						// static
+	.liabs	l12,12
+						// static pe not varadr
+	mr	r0
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
+						// const
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
+	.liconst	0
+						// (save temp)store type 3
+	stinc	r0
+						//save_temp done
+
+						//../DeMiSTify/firmware/pcecd.c, line 666
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8640,7 +8624,23 @@ l192: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 666
+						//../DeMiSTify/firmware/pcecd.c, line 667
+						// (a/p assign)
+						// (prepobj r0)
+ 						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 130
+
+						// required value found in r0
+						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 1
+
+			// required value found in tmp
+						// (save temp)store type 1
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
+						//save_temp done
+
+						//../DeMiSTify/firmware/pcecd.c, line 668
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8660,7 +8660,7 @@ l192: #
 	stinc	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 667
+						//../DeMiSTify/firmware/pcecd.c, line 669
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8675,7 +8675,7 @@ l192: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 668
+						//../DeMiSTify/firmware/pcecd.c, line 670
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8696,7 +8696,7 @@ l192: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 669
+						//../DeMiSTify/firmware/pcecd.c, line 671
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8717,7 +8717,7 @@ l192: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 670
+						//../DeMiSTify/firmware/pcecd.c, line 672
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -8758,7 +8758,7 @@ _pcecd_poll:
 	stdec	r6
 						// allocreg r3
 
-						//../DeMiSTify/firmware/pcecd.c, line 677
+						//../DeMiSTify/firmware/pcecd.c, line 679
 						// (a/p assign)
 						// (prepobj r0)
  						// deref
@@ -8776,7 +8776,7 @@ _pcecd_poll:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 678
+						//../DeMiSTify/firmware/pcecd.c, line 680
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -8799,7 +8799,7 @@ _pcecd_poll:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 678
+						//../DeMiSTify/firmware/pcecd.c, line 680
 						//FIXME convert
 						// (convert - reducing type 503 to 101
 						// (prepobj r0)
@@ -8821,7 +8821,7 @@ _pcecd_poll:
 	.liconst	255
 	and	r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 679
+						//../DeMiSTify/firmware/pcecd.c, line 681
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -8843,7 +8843,7 @@ _pcecd_poll:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 680
+						//../DeMiSTify/firmware/pcecd.c, line 682
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -8861,7 +8861,7 @@ _pcecd_poll:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 680
+						//../DeMiSTify/firmware/pcecd.c, line 682
 						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						// (obj to r1) flags 42 type 3
 						// matchobj comparing flags 66 with 74
@@ -8880,7 +8880,7 @@ _pcecd_poll:
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 680
+						//../DeMiSTify/firmware/pcecd.c, line 682
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -8888,7 +8888,7 @@ _pcecd_poll:
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 680
+						//../DeMiSTify/firmware/pcecd.c, line 682
 						//call
 						//pcreltotemp
 	.lipcrel	l100
@@ -8898,7 +8898,7 @@ _pcecd_poll:
 l197: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 681
+						//../DeMiSTify/firmware/pcecd.c, line 683
 						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						// (obj to r1) flags 42 type 3
 						// reg r3 - only match against tmp
@@ -8913,7 +8913,7 @@ l197: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 681
+						//../DeMiSTify/firmware/pcecd.c, line 683
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -8921,7 +8921,7 @@ l197: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 681
+						//../DeMiSTify/firmware/pcecd.c, line 683
 						//call
 						//pcreltotemp
 	.lipcrel	_pcecd_data
@@ -8931,7 +8931,7 @@ l197: #
 l199: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 682
+						//../DeMiSTify/firmware/pcecd.c, line 684
 						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						// (obj to r1) flags 42 type 3
 						// reg r3 - only match against tmp
@@ -8946,7 +8946,7 @@ l199: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 682
+						//../DeMiSTify/firmware/pcecd.c, line 684
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -8954,7 +8954,7 @@ l199: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 682
+						//../DeMiSTify/firmware/pcecd.c, line 684
 						//call
 						//pcreltotemp
 	.lipcrel	_pcecd_clear_busy
@@ -8964,7 +8964,7 @@ l199: #
 l201: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 683
+						//../DeMiSTify/firmware/pcecd.c, line 685
 						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						// (obj to r1) flags 42 type 3
 						// reg r3 - only match against tmp
@@ -8979,7 +8979,7 @@ l201: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 683
+						//../DeMiSTify/firmware/pcecd.c, line 685
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -8987,14 +8987,14 @@ l201: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 684
+						//../DeMiSTify/firmware/pcecd.c, line 686
 						//call
 						//pcreltotemp
 	.lipcrel	_pcecd_reset
 	add	r7
 						// Flow control - popping 0 + 0 bytes
 
-						//../DeMiSTify/firmware/pcecd.c, line 685
+						//../DeMiSTify/firmware/pcecd.c, line 687
 						// (a/p assign)
 						// (prepobj r0)
  						// deref
@@ -9012,7 +9012,7 @@ l201: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 686
+						//../DeMiSTify/firmware/pcecd.c, line 688
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -9034,7 +9034,7 @@ l201: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 687
+						//../DeMiSTify/firmware/pcecd.c, line 689
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -9054,7 +9054,7 @@ l201: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 688
+						//../DeMiSTify/firmware/pcecd.c, line 690
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -9079,7 +9079,7 @@ l201: #
 l203: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 690
+						//../DeMiSTify/firmware/pcecd.c, line 692
 						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						// (obj to r1) flags 42 type 3
 						// reg r3 - only match against tmp
@@ -9093,7 +9093,7 @@ l203: #
 	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/pcecd.c, line 690
+						//../DeMiSTify/firmware/pcecd.c, line 692
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -9106,14 +9106,14 @@ l203: #
 	stmpdec	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 692
+						//../DeMiSTify/firmware/pcecd.c, line 694
 						//call
 						//pcreltotemp
 	.lipcrel	l52
 	add	r7
 						// Flow control - popping 0 + 0 bytes
 
-						//../DeMiSTify/firmware/pcecd.c, line 697
+						//../DeMiSTify/firmware/pcecd.c, line 699
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						//static not varadr
@@ -9123,7 +9123,7 @@ l203: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 697
+						//../DeMiSTify/firmware/pcecd.c, line 699
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -9131,7 +9131,7 @@ l203: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 697
+						//../DeMiSTify/firmware/pcecd.c, line 699
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -9142,7 +9142,7 @@ l203: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 697
+						//../DeMiSTify/firmware/pcecd.c, line 699
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -9151,7 +9151,7 @@ l203: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 698
+						//../DeMiSTify/firmware/pcecd.c, line 700
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -9170,7 +9170,7 @@ l203: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 698
+						//../DeMiSTify/firmware/pcecd.c, line 700
 						//call
 						//pcreltotemp
 	.lipcrel	l16
@@ -9178,7 +9178,7 @@ l203: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 699
+						//../DeMiSTify/firmware/pcecd.c, line 701
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -9198,7 +9198,7 @@ l203: #
 l205: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/pcecd.c, line 701
+						//../DeMiSTify/firmware/pcecd.c, line 703
 						// (test)
 						// (obj to tmp) flags 2 type 101
 						//static not varadr
@@ -9209,14 +9209,14 @@ l205: #
 	byt
 	ldt
 
-						//../DeMiSTify/firmware/pcecd.c, line 701
+						//../DeMiSTify/firmware/pcecd.c, line 703
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l208
 		add	r7
 
-						//../DeMiSTify/firmware/pcecd.c, line 702
+						//../DeMiSTify/firmware/pcecd.c, line 704
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 2
@@ -9236,7 +9236,7 @@ l205: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 703
+						//../DeMiSTify/firmware/pcecd.c, line 705
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -9258,7 +9258,7 @@ l205: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 704
+						//../DeMiSTify/firmware/pcecd.c, line 706
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -9278,7 +9278,7 @@ l205: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 705
+						//../DeMiSTify/firmware/pcecd.c, line 707
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 1
@@ -9300,7 +9300,7 @@ l205: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/pcecd.c, line 706
+						//../DeMiSTify/firmware/pcecd.c, line 708
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
