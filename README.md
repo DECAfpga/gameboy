@@ -33,6 +33,8 @@ cd DeMiSTify
 cp site.template site.mk
 #Edit site.mk and add your own PATHs to Quartus (Q19)
 gedit site.mk
+#[OPTIONAL STEP only needed if main branch is outdated]
+git checkout somhic
 #Go back to root folder and do a make with board target (deca, neptuno, uareloaded). If not specified it will compile for all targets.
 cd ..
 make BOARD=deca
