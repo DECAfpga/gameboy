@@ -87,7 +87,6 @@ entity deca_top is
 END entity;
 
 architecture RTL of deca_top is
-   constant reset_cycles : integer := 131071;
 	
 -- System clocks
 	signal locked : std_logic;
@@ -338,7 +337,7 @@ port map (
 
 --  HDMI VIDEO   
 HDMI_TX_CLK <= hdmi_clk;	
-HDMI_TX_DE <= not hdmi_blank;
+HDMI_TX_DE <= not hdmi_blank;  
 HDMI_TX_HS <= vga_hsync;
 HDMI_TX_VS <= vga_vsync;
 HDMI_TX_D <= vga_red(7 downto 2)&vga_red(7 downto 6)&vga_green(7 downto 2)&vga_green(7 downto 6)&vga_blue(7 downto 2)&vga_blue(7 downto 6);
