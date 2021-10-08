@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 20:21:13  September 26, 2021
+# Date created = 22:26:15  October 08, 2021
 #
 # -------------------------------------------------------------------------- #
 #
@@ -249,7 +249,7 @@ set_location_assignment PIN_F22 -to LRCLK
 set_location_assignment PIN_A7 -to STM_RST
 set_global_assignment -name SDC_FILE ../DeMiSTify/Board/uareloaded/constraints.sdc
 set_global_assignment -name VHDL_FILE pll_vga.vhd
-set_global_assignment -name VHDL_FILE audio/i2s_audio.vhd
+set_global_assignment -name VHDL_FILE ../DeMiSTify/Board/uareloaded/audio_top.vhd
 set_global_assignment -name QIP_FILE top.qip
 set_global_assignment -name QIP_FILE ../mistcore.qip
 set_global_assignment -name VHDL_FILE ../demistify_config_pkg.vhd

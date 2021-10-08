@@ -166,7 +166,7 @@ component gb_mist
     AUDIO_L : out std_logic;
     AUDIO_R : out std_logic;
 	DAC_L           : OUT SIGNED(15 DOWNTO 0);
-    DAC_R           : OUT SIGNED(15 DOWNTO 0);
+        DAC_R           : OUT SIGNED(15 DOWNTO 0);
 	-- VGA
     VGA_HS : out std_logic;
     VGA_VS : out std_logic;
@@ -212,8 +212,8 @@ end component;
 signal dac_l: signed(15 downto 0);
 signal dac_r: signed(15 downto 0);
 
--- signal sound_i2s_l_s	: std_logic_vector(15 downto 0);
--- signal sound_i2s_r_s	: std_logic_vector(15 downto 0);
+signal dac_l_s	: signed(15 downto 0);
+signal dac_r_s	: signed(15 downto 0);
 
 -- HDMI
 signal i2s_Mck_o : std_logic;
@@ -271,16 +271,12 @@ SD_D0_DIR                       <= '0';  -- MISO FPGA input
 SD_D123_DIR                     <= '1';  -- CS FPGA output  
 
 
---process(clk_sys)
---begin
---	if rising_edge(clk_sys) then
 VGA_R<=vga_red(7 downto 5);
 VGA_G<=vga_green(7 downto 5);
 VGA_B<=vga_blue(7 downto 5);
 VGA_HS<=vga_hsync;
 VGA_VS<=vga_vsync;
---	end if;
---end process;
+
 
 -- DECA AUDIO CODEC
 RESET_DELAY_n <= reset_n;
@@ -308,21 +304,22 @@ i2s_transmitter_inst : i2s_transmitter
 	port map (
 		clock_i => MAX10_CLK1_50,
 		reset_i => '0',
-		pcm_l_i => std_logic_vector(dac_l),
-		pcm_r_i => std_logic_vector(dac_r),
+		pcm_l_i => std_logic_vector(dac_l_s),
+		pcm_r_i => std_logic_vector(dac_r_s),
 		i2s_mclk_o => i2s_Mck_o,
 		i2s_lrclk_o => i2s_Lr_o,
 		i2s_bclk_o => i2s_Sck_o,
 		i2s_d_o => i2s_D_o
 	);
 
+
+dac_l_s <= '0' & not dac_l(15) & dac_l(14 downto 1);
+dac_r_s <= '0' & not dac_r(15) & dac_r(14 downto 1);
+
 I2S_MCK <= i2s_Mck_o;
 I2S_SCK <= i2s_Sck_o;
 I2S_LR <= i2s_Lr_o;
 I2S_D <= i2s_D_o;
-
---sound_i2s_l_s <= '0' & std_logic_vector(dac_l(15 downto 1));
---sound_i2s_r_s <= '0' & std_logic_vector(dac_r(15 downto 1));
 
 
 -- HDMI CONFIG    

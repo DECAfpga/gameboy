@@ -121,8 +121,8 @@ architecture RTL of uareloaded_top is
    signal dac_l: signed(15 downto 0);
    signal dac_r: signed(15 downto 0);
 	
-   --signal dac_l_s: signed(15 downto 0);
-   --signal dac_r_s: signed(15 downto 0);
+   signal dac_l_s: signed(15 downto 0);
+   signal dac_r_s: signed(15 downto 0);
 	
 	
 
@@ -230,12 +230,12 @@ port map(
 	  dac_SCLK  => SCLK,
 	  dac_SDIN  => SDIN,
 	  dac_LRCK  => LRCLK,
-	  L_data    => std_logic_vector (dac_l),
-	  R_data    => std_logic_vector (dac_r)
+	  L_data    => std_logic_vector (dac_l_s),
+	  R_data    => std_logic_vector (dac_r_s)
 );
 
---dac_l_s <= (dac_l & dac_l(9 downto 4));
---dac_r_s <= (dac_r & dac_r(9 downto 4));
+dac_l_s <= '0' & not dac_l(15) & dac_l(14 downto 1);
+dac_r_s <= '0' & not dac_r(15) & dac_r(14 downto 1);
 
 
 guest: COMPONENT  gb_mist

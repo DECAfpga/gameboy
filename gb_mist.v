@@ -63,8 +63,13 @@ module gb_mist (
    output			VGA_CLK
 );
 
-assign DAC_L = {~audio_left[15], audio_left[14:1]} ;
-assign DAC_R = {~audio_right[15], audio_right[14:1]} ;
+//Send full 16 bits but needs signed/unsigned treatment on top module
+assign DAC_L = audio_left;
+assign DAC_R = audio_right;
+
+//AUDIO OK, but not sending the full 16 bits
+//assign DAC_L = {~audio_left[15], audio_left[14:1]} ;
+//assign DAC_R = {~audio_right[15], audio_right[14:1]} ;
 
 assign LED = ~dio_download;
 

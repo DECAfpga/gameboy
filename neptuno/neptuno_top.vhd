@@ -175,8 +175,8 @@ end component;
 signal dac_l: signed(15 downto 0);
 signal dac_r: signed(15 downto 0);
 
---signal audio_l_s			: std_logic_vector(15 downto 0);
---signal audio_r_s			: std_logic_vector(15 downto 0);
+signal dac_l_s	: signed(15 downto 0);
+signal dac_r_s	: signed(15 downto 0);
 
 
 component joydecoder is
@@ -268,12 +268,12 @@ port map(
 	dac_LRCK  => I2S_LRCLK,
 	dac_SCLK  => I2S_BCLK,
 	dac_SDIN  => I2S_DATA,
-	L_data    => std_logic_vector(dac_l),
-	R_data    => std_logic_vector(dac_r)
+	L_data    => std_logic_vector(dac_l_s),
+	R_data    => std_logic_vector(dac_r_s)
 );		
 
---audio_l_s <= '0' & DAC_L & "00000";
---audio_r_s <= '0' & DAC_R & "00000";
+dac_l_s <= '0' & not dac_l(15) & dac_l(14 downto 1);
+dac_r_s <= '0' & not dac_r(15) & dac_r(14 downto 1);
 
 	-- JOYSTICKS
 joy: joydecoder

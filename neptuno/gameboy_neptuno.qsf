@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 13:35:43  September 26, 2021
+# Date created = 21:51:48  October 08, 2021
 #
 # -------------------------------------------------------------------------- #
 #
@@ -233,8 +233,8 @@ set_location_assignment PIN_K22 -to SPI_DI
 set_location_assignment PIN_E4 -to LED
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to sd_miso_i
 set_global_assignment -name SDC_FILE ../DeMiSTify/Board/neptuno/constraints.sdc
-set_global_assignment -name VERILOG_FILE rtl/joydecoder.v
-set_global_assignment -name VHDL_FILE rtl/audio_i2s.vhd
+set_global_assignment -name VHDL_FILE ../DeMiSTify/Board/neptuno/audio_i2s.vhd
+set_global_assignment -name VERILOG_FILE ../DeMiSTify/Board/neptuno/joydecoder.v
 set_global_assignment -name QIP_FILE top.qip
 set_global_assignment -name QIP_FILE ../mistcore.qip
 set_global_assignment -name VHDL_FILE ../demistify_config_pkg.vhd
