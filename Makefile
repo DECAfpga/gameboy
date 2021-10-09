@@ -3,8 +3,7 @@ SUBMODULES=$(DEMISTIFYPATH)/EightThirtyTwo/Makefile
 PROJECT=gameboy
 PROJECTPATH=./
 PROJECTTOROOT=../
-#BOARD=neptuno
-BOARD=deca neptuno uareloaded
+BOARD=
 ROMSIZE1=8192
 ROMSIZE2=8192
 

@@ -192,31 +192,30 @@ end component;
 
 signal RESET_DELAY_n     : std_logic;   
 
-component i2s_transmitter
-  generic (
-    sample_rate : positive;
-	 preamble	 : integer := 0
-  );
-    port (
-    clock_i : in std_logic;
-    reset_i : in std_logic;
-    pcm_l_i : in std_logic_vector(15 downto 0);
-    pcm_r_i : in std_logic_vector(15 downto 0);
-    i2s_mclk_o : out std_logic;
-    i2s_lrclk_o : out std_logic;
-    i2s_bclk_o : out std_logic;
-    i2s_d_o : out std_logic
-  );
-end component;
+component audio_top is
+Port ( 	
+		clk_50MHz : in STD_LOGIC; -- system clock (50 MHz)
+		dac_MCLK : out STD_LOGIC; -- outputs to PMODI2L DAC
+		dac_LRCK : out STD_LOGIC;
+		dac_SCLK : out STD_LOGIC;
+		dac_SDIN : out STD_LOGIC;
+		L_data : 	in std_logic_vector(15 downto 0);  	-- LEFT data (16-bit signed)
+		R_data : 	in std_logic_vector(15 downto 0)  	-- RIGHT data (16-bit signed) 
+);
+end component;	
+
 
 -- DAC AUDIO     
 signal dac_l: std_logic_vector(15 downto 0);
 signal dac_r: std_logic_vector(15 downto 0);
 
-signal dac_l_s	: std_logic_vector(15 downto 0);
-signal dac_r_s	: std_logic_vector(15 downto 0);
 
 -- HDMI
+signal i2s_Mck_o : std_logic;
+signal i2s_Sck_o : std_logic;
+signal i2s_Lr_o : std_logic;
+signal i2s_D_o : std_logic;
+
 component I2C_HDMI_Config
     port (
     iCLK : in std_logic;
@@ -293,21 +292,22 @@ port map (
 );
 
 -- AUDIO CODEC
-i2s_transmitter_codec : i2s_transmitter
-	generic map (
-		sample_rate => 48000,
-		preamble    => 1
-	)
-	port map (
-		clock_i => MAX10_CLK1_50,
-		reset_i => '0',
-		pcm_l_i => std_logic_vector(dac_l),
-		pcm_r_i => std_logic_vector(dac_r),
-		i2s_mclk_o  => I2S_MCK,
-		i2s_lrclk_o => I2S_LR,
-		i2s_bclk_o  => I2S_SCK,
-		i2s_d_o     => I2S_D
-	);
+
+audio_i2s: entity work.audio_top
+port map(
+	clk_50MHz => MAX10_CLK1_50,
+	dac_MCLK  => i2s_Mck_o,
+	dac_LRCK  => i2s_Lr_o,
+	dac_SCLK  => i2s_Sck_o,
+	dac_SDIN  => i2s_D_o,
+	L_data    => std_logic_vector(dac_l),
+	R_data    => std_logic_vector(dac_r)
+);		
+
+I2S_MCK <= i2s_Mck_o;
+I2S_SCK <= i2s_Sck_o;
+I2S_LR <= i2s_Lr_o;
+I2S_D <= i2s_D_o;
 
 
 -- HDMI CONFIG    
@@ -328,25 +328,10 @@ HDMI_TX_VS <= vga_vsync;
 HDMI_TX_D <= vga_red(7 downto 2)&vga_red(7 downto 6)&vga_green(7 downto 2)&vga_green(7 downto 6)&vga_blue(7 downto 2)&vga_blue(7 downto 6);
 
 --  HDMI AUDIO   
-
-dac_l_s <= '0' & not dac_l(15) & dac_l(14 downto 1);
-dac_r_s <= '0' & not dac_r(15) & dac_r(14 downto 1);
-
-i2s_transmitter_hdmi : i2s_transmitter
-	generic map (
-		sample_rate => 48000,
-		preamble    => 0
-	)
-	port map (
-		clock_i => MAX10_CLK1_50,
-		reset_i => '0',
-		pcm_l_i => std_logic_vector(dac_l_s),
-		pcm_r_i => std_logic_vector(dac_r_s),
-		i2s_mclk_o  => HDMI_MCLK,
-		i2s_lrclk_o => HDMI_LRCLK,
-		i2s_bclk_o  => HDMI_SCLK,      -- lr*2*16
-		i2s_d_o     => HDMI_I2S(0)
-	);
+HDMI_MCLK <= i2s_Mck_o;
+HDMI_SCLK <= i2s_Sck_o;    -- lr*2*16
+HDMI_LRCLK <= i2s_Lr_o;   
+HDMI_I2S(0) <= i2s_D_o;
 
 
 guest: COMPONENT  gb_mist
