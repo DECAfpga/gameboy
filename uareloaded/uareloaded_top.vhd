@@ -58,14 +58,11 @@ entity uareloaded_top is
 END entity;
 
 architecture RTL of uareloaded_top is
-   constant reset_cycles : integer := 131071;
 	
 -- System clocks
 
 	signal locked : std_logic;
 	signal reset_n : std_logic;
-
-
 
 -- SPI signals
 
@@ -95,7 +92,6 @@ architecture RTL of uareloaded_top is
 	signal ps2_mouse_dat_in: std_logic;
 	signal ps2_mouse_clk_out: std_logic;
 	signal ps2_mouse_dat_out: std_logic;
-
 	
 -- Video
 	signal vga_red: std_logic_vector(7 downto 0);
@@ -107,22 +103,12 @@ architecture RTL of uareloaded_top is
 -- RS232 serial
 	signal rs232_rxd : std_logic;
 	signal rs232_txd : std_logic;
-
-
 	
 -- IO
-
 	signal joya : std_logic_vector(7 downto 0);
 	signal joyb : std_logic_vector(7 downto 0);
 	signal joyc : std_logic_vector(7 downto 0);
 	signal joyd : std_logic_vector(7 downto 0);
-	
--- DAC
-   signal dac_l: signed(15 downto 0);
-   signal dac_r: signed(15 downto 0);
-	
-   signal dac_l_s: signed(15 downto 0);
-   signal dac_r_s: signed(15 downto 0);
 	
 	
 
@@ -153,8 +139,8 @@ component gb_mist
 	-- AUDIO
     AUDIO_L : out std_logic;
     AUDIO_R : out std_logic;
-	DAC_L           : OUT SIGNED(15 DOWNTO 0);
-    DAC_R           : OUT SIGNED(15 DOWNTO 0);
+	 DAC_L           : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+    DAC_R           : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
 	-- VGA
     VGA_HS : out std_logic;
     VGA_VS : out std_logic;
@@ -166,6 +152,12 @@ component gb_mist
   );
 end component;
 
+-- DAC
+signal dac_l: std_logic_vector(15 downto 0);
+signal dac_r: std_logic_vector(15 downto 0);
+
+
+-- VGA
 signal vga_clk_o :  std_logic;
 signal vga_blank_o  :  std_logic;
 
@@ -230,12 +222,10 @@ port map(
 	  dac_SCLK  => SCLK,
 	  dac_SDIN  => SDIN,
 	  dac_LRCK  => LRCLK,
-	  L_data    => std_logic_vector (dac_l_s),
-	  R_data    => std_logic_vector (dac_r_s)
+	  L_data    => std_logic_vector (dac_l),
+	  R_data    => std_logic_vector (dac_r)
 );
 
-dac_l_s <= '0' & not dac_l(15) & dac_l(14 downto 1);
-dac_r_s <= '0' & not dac_r(15) & dac_r(14 downto 1);
 
 
 guest: COMPONENT  gb_mist

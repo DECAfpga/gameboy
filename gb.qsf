@@ -289,7 +289,8 @@ set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
 set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
 set_global_assignment -name VERILOG_FILE gb_mist.v
 set_global_assignment -name SYSTEMVERILOG_FILE sdram.sv
-set_global_assignment -name VERILOG_FILE sigma_delta_dac.v
+#set_global_assignment -name VERILOG_FILE sigma_delta_dac.v
+set_global_assignment -name VHDL_FILE dac.vhd
 set_global_assignment -name VERILOG_FILE data_io.v
 set_global_assignment -name VERILOG_FILE user_io.v
 set_global_assignment -name VERILOG_FILE osd.v

@@ -50,8 +50,8 @@ module gb_mist (
    output 			AUDIO_L,
    output 			AUDIO_R,
 
-  output  [15:0]   DAC_L,
-  output  [15:0]   DAC_R,
+   output [15:0]   DAC_L,
+   output [15:0]   DAC_R,
   
 	// video
    output 			VGA_HS,
@@ -63,13 +63,8 @@ module gb_mist (
    output			VGA_CLK
 );
 
-//Send full 16 bits but needs signed/unsigned treatment on top module
-assign DAC_L = audio_left;
-assign DAC_R = audio_right;
-
-//AUDIO OK, but not sending the full 16 bits
-//assign DAC_L = {~audio_left[15], audio_left[14:1]} ;
-//assign DAC_R = {~audio_right[15], audio_right[14:1]} ;
+assign DAC_L = {audio_left,4'b0};
+assign DAC_R = {audio_right,4'b0};
 
 assign LED = ~dio_download;
 
@@ -379,8 +374,8 @@ wire [14:0] lcd_data;
 wire [1:0] lcd_mode;
 wire lcd_on;
 
-wire [15:0] audio_left;
-wire [15:0] audio_right;
+wire [11:0] audio_left;
+wire [11:0] audio_right;
 
 wire [11:0] bios_addr;
 wire  [7:0] bios_do;
@@ -433,14 +428,32 @@ gb gb (
 	.lcd_on       ( lcd_on     )
 );
 
-sigma_delta_dac dac (
-	.clk		( clk64 			),
-	.ldatasum	( {~audio_left[15], audio_left[14:1]} ),
-	.rdatasum	( {~audio_right[15], audio_right[14:1]}	),
-	.left		( AUDIO_L			),
-	.right		( AUDIO_R			)
-);
+//sigma_delta_dac dac (
+//	.clk		( clk64 			),
+//	.ldatasum	( {audio_left,4'b0} ),
+//	.rdatasum	( {audio_right,4'b0}),
+//	.left		( AUDIO_L			),
+//	.right   ( AUDIO_R			)
+//);
 
+dac #(
+   .c_bits	(12))
+audiodac_l(
+   .clk_i	(clk64	  ),
+   .res_n_i	(1	        ),
+   .dac_i	(audio_left),
+   .dac_o	(AUDIO_L   )
+  );
+
+dac #(
+   .c_bits	(12))
+audiodac_r(
+   .clk_i	(clk64	   ),
+   .res_n_i	(1	         ),
+   .dac_i	(audio_right),
+   .dac_o	(AUDIO_R    )
+  );
+  
 // the lcd to vga converter
 wire [5:0] video_r, video_g, video_b;
 wire video_hs, video_vs;
