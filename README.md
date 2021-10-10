@@ -4,9 +4,26 @@
 
 Special thanks to Alastair M. Robinson creator of [DeMiSTify](https://github.com/robinsonb5/DeMiSTify) for helping me. 
 
+Original module sound errors and signed/unsigned troubles have been arranged thanks to @rampa069.
+
 I've also added some of his solutions from https://github.com/robinsonb5/gameboy like phase shift at SDRAM_CLK, and content from firmware/config.h and overrides.c.
 
 [DeMiSTify guide used](https://github.com/DECAfpga/DECA_board/tree/main/Tutorials/DeMiSTify).
+
+**Features:**
+
+* HDMI video output
+* VGA video output is available through GPIO (see pinout below). Tested with PS2 & R2R VGA adapter (333)  https://www.waveshare.com/vga-ps2-board.htm
+* Line out (3.5 jack green connector) and HDMI audio output
+* PWM audio is available through GPIO (see pinout below)
+* Joystick available through GPIO  (see pinout below).  **Joystick power pin must be 2.5 V**
+  * **DANGER: Connecting power pin above 2.6 V may damage the FPGA**
+  * This core is prepared for Megadrive 6 button gamepads as it outputs a permanent high level on pin 7 of DB9
+
+**Additional hardware required**:
+
+- SDRAM module. Tested with 32 MB SDRAM board for MiSTer (extra slim) XS_2.2 ([see connections](https://github.com/SoCFPGA-learning/DECA/tree/main/Projects/sdram_mister_deca))
+- PS/2 Keyboard connected to GPIO  (see pinout below)
 
 ##### Versions:
 
@@ -21,6 +38,8 @@ v0.4 Added Demistified versions of Neptuno and Unamiga reloaded
 v0.5 Updated Demistify. Added Joystick pinout
 
 ### Instructions to compile the project for a specific board:
+
+(Note that sof/svf files are already included in /deca/output_files/)
 
 ```sh
 git clone https://github.com/DECAfpga/gameboy
@@ -40,11 +59,31 @@ cd ..
 make BOARD=deca
 ```
 
+After that you can:
+
+* Flash bitstream directly from [command line](https://github.com/DECAfpga/DECA_binaries#flash-bitstream-to-fgpa-with-quartus)
+* Load project in Quartus from /deca/gameboy_deca.qpf
+
 ### Pinout connections:
 
 ![pinout_deca](pinout_deca.png)
 
+Mouse is not required to use this core
 
+**Others:**
+
+* Button KEY0 is a reset button
+
+### STATUS
+
+* Working fine
+
+* HDMI video outputs special resolution so will not work on all monitors. 
+
+### OSD Controls
+
+* F12 show/hide OSD 
+* The reset button KEY0 resets the controller (so re-initialises the SD card if it's been changed, reloads any autoboot ROM.) The OSD Reset menu item resets the core itself.
 
 ### Follows original readme.md content:
 
