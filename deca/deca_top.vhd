@@ -27,9 +27,9 @@ entity deca_top is
                -- VGA
 		VGA_HS			: OUT STD_LOGIC;
 		VGA_VS			: OUT STD_LOGIC;
-		VGA_R			: OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-		VGA_G			: OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-		VGA_B			: OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+		VGA_R			: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		VGA_G			: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		VGA_B			: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 		-- AUDIO
 		SIGMA_R                : OUT STD_LOGIC;
 		SIGMA_L                : OUT STD_LOGIC;
@@ -253,7 +253,7 @@ ps2_keyboard_clk <= '0' when ps2_keyboard_clk_out='0' else 'Z';
 
 JOYX_SEL_O <= '1';
 
-joya<="11" & JOY1_B2_P9 & JOY1_B1_P6 & JOY1_RIGHT & JOY1_LEFT & JOY1_DOWN & JOY1_UP;
+joya<="11" & JOY1_B1_P6 & JOY1_B2_P9 & JOY1_RIGHT & JOY1_LEFT & JOY1_DOWN & JOY1_UP;
 
 joyb<=(others=>'1');
 joyc<=(others=>'1');
@@ -266,9 +266,9 @@ SD_D0_DIR                       <= '0';  -- MISO FPGA input
 SD_D123_DIR                     <= '1';  -- CS FPGA output  
 
 
-VGA_R<=vga_red(7 downto 5);
-VGA_G<=vga_green(7 downto 5);
-VGA_B<=vga_blue(7 downto 5);
+VGA_R<=vga_red(7 downto 4);
+VGA_G<=vga_green(7 downto 4);
+VGA_B<=vga_blue(7 downto 4);
 VGA_HS<=vga_hsync;
 VGA_VS<=vga_vsync;
 
@@ -292,7 +292,6 @@ port map (
 );
 
 -- AUDIO CODEC
-
 audio_i2s: entity work.audio_top
 port map(
 	clk_50MHz => MAX10_CLK1_50,
@@ -322,7 +321,7 @@ port map (
 
 --  HDMI VIDEO   
 HDMI_TX_CLK <= hdmi_clk;	
-HDMI_TX_DE <= not hdmi_blank;  
+HDMI_TX_DE <= not hdmi_blank;
 HDMI_TX_HS <= vga_hsync;
 HDMI_TX_VS <= vga_vsync;
 HDMI_TX_D <= vga_red(7 downto 2)&vga_red(7 downto 6)&vga_green(7 downto 2)&vga_green(7 downto 6)&vga_blue(7 downto 2)&vga_blue(7 downto 6);

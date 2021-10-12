@@ -68,6 +68,8 @@ After that you can:
 
 Mouse is not required to use this core
 
+For 444 video DAC use all VGA pins. For 333 video DAC connect MSB from addon to MSB of location assignment (e.g. connect pin VGAR2 from Waveshare addon to VGA_R[3] Deca pin).
+
 **Others:**
 
 * Button KEY0 is a reset button

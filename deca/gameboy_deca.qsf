@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 23:18:21  October 09, 2021
+# Date created = 21:01:30  October 12, 2021
 #
 # -------------------------------------------------------------------------- #
 #
@@ -95,17 +95,20 @@ set_location_assignment PIN_B4 -to LED[6]
 set_instance_assignment -name IO_STANDARD "1.2 V" -to LED[6]
 set_location_assignment PIN_C5 -to LED[7]
 set_instance_assignment -name IO_STANDARD "1.2 V" -to LED[7]
-set_location_assignment PIN_V10 -to VGA_B[0]
-set_location_assignment PIN_AA6 -to VGA_B[1]
-set_location_assignment PIN_AB6 -to VGA_B[2]
-set_location_assignment PIN_AB7 -to VGA_G[0]
-set_location_assignment PIN_R11 -to VGA_G[1]
-set_location_assignment PIN_V7 -to VGA_G[2]
-set_location_assignment PIN_U7 -to VGA_R[0]
-set_location_assignment PIN_Y7 -to VGA_R[1]
-set_location_assignment PIN_AA7 -to VGA_R[2]
+set_location_assignment PIN_AA7 -to VGA_R[3]
+set_location_assignment PIN_Y7 -to VGA_R[2]
+set_location_assignment PIN_U7 -to VGA_R[1]
+set_location_assignment PIN_V7 -to VGA_G[3]
+set_location_assignment PIN_R11 -to VGA_G[2]
+set_location_assignment PIN_AB7 -to VGA_G[1]
+set_location_assignment PIN_AB6 -to VGA_B[3]
+set_location_assignment PIN_AA6 -to VGA_B[2]
+set_location_assignment PIN_V10 -to VGA_B[1]
 set_location_assignment PIN_W7 -to VGA_HS
 set_location_assignment PIN_W6 -to VGA_VS
+set_location_assignment PIN_V8 -to VGA_R[0]
+set_location_assignment PIN_AB8 -to VGA_G[0]
+set_location_assignment PIN_W8 -to VGA_B[0]
 set_location_assignment PIN_Y5 -to PS2_KEYBOARD_CLK
 set_location_assignment PIN_Y6 -to PS2_KEYBOARD_DAT
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_KEYBOARD_CLK
