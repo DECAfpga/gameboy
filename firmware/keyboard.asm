@@ -47,7 +47,7 @@ _HandlePS2RawCodes:
 						// allocreg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -62,7 +62,7 @@ _HandlePS2RawCodes:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						//call
 						//pcreltotemp
 	.lipcrel	_ps2_ringbuffer_read
@@ -70,12 +70,12 @@ _HandlePS2RawCodes:
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r3
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 66
@@ -85,7 +85,7 @@ _HandlePS2RawCodes:
 	sgn
 	cmp	r3
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
@@ -94,21 +94,21 @@ _HandlePS2RawCodes:
 l26: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 45
+						//../DeMiSTify/firmware/keyboard.c, line 44
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// const
 	.liconst	240
 	cmp	r3
 
-						//../DeMiSTify/firmware/keyboard.c, line 45
+						//../DeMiSTify/firmware/keyboard.c, line 44
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l9
 		add	r7
 
-						//../DeMiSTify/firmware/keyboard.c, line 46
+						//../DeMiSTify/firmware/keyboard.c, line 45
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -127,27 +127,27 @@ l26: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 47
+						//../DeMiSTify/firmware/keyboard.c, line 46
 						//pcreltotemp
 	.lipcrel	l13
 	add	r7
 l9: # 
 
-						//../DeMiSTify/firmware/keyboard.c, line 47
+						//../DeMiSTify/firmware/keyboard.c, line 46
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// const
 	.liconst	224
 	cmp	r3
 
-						//../DeMiSTify/firmware/keyboard.c, line 47
+						//../DeMiSTify/firmware/keyboard.c, line 46
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l12
 		add	r7
 
-						//../DeMiSTify/firmware/keyboard.c, line 48
+						//../DeMiSTify/firmware/keyboard.c, line 47
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -166,13 +166,13 @@ l9: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 50
+						//../DeMiSTify/firmware/keyboard.c, line 49
 						//pcreltotemp
 	.lipcrel	l13
 	add	r7
 l12: # 
 
-						//../DeMiSTify/firmware/keyboard.c, line 51
+						//../DeMiSTify/firmware/keyboard.c, line 50
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						//static not varadr
@@ -182,14 +182,14 @@ l12: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/keyboard.c, line 51
+						//../DeMiSTify/firmware/keyboard.c, line 50
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l15
 		add	r7
 
-						//../DeMiSTify/firmware/keyboard.c, line 51
+						//../DeMiSTify/firmware/keyboard.c, line 50
 						// (bitwise/arithmetic) 	//ops: 4, 0, 5
 						//Special case - addt
 						// (prepobj r0)
@@ -204,13 +204,13 @@ l12: #
 	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 51
+						//../DeMiSTify/firmware/keyboard.c, line 50
 						//pcreltotemp
 	.lipcrel	l16
 	add	r7
 l15: # 
 
-						//../DeMiSTify/firmware/keyboard.c, line 51
+						//../DeMiSTify/firmware/keyboard.c, line 50
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -222,7 +222,7 @@ l15: #
 						//save_temp done
 l16: # 
 
-						//../DeMiSTify/firmware/keyboard.c, line 52
+						//../DeMiSTify/firmware/keyboard.c, line 51
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						//static not varadr
@@ -232,7 +232,7 @@ l16: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/keyboard.c, line 52
+						//../DeMiSTify/firmware/keyboard.c, line 51
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -241,7 +241,7 @@ l16: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						// (obj to r1) flags 42 type 3
 						// matchobj comparing flags 66 with 2
@@ -257,7 +257,7 @@ l16: #
 	shr	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -267,7 +267,7 @@ l16: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -279,7 +279,7 @@ l16: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						// (bitwise/arithmetic) 	//ops: 5, 0, 3
 						// (obj to r2) flags 42 type 3
 						// matchobj comparing flags 66 with 130
@@ -294,7 +294,7 @@ l16: #
 	and	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -305,7 +305,7 @@ l16: #
 	mul	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						// (bitwise/arithmetic) 	//ops: 0, 3, 3
 						// WARNING - evading q2 and target collision - check code for correctness.
 						// (obj to r0) flags 1 type 3
@@ -322,7 +322,7 @@ l16: #
 	mt	r0
 	mr	r2
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						//comp
 						// (obj to r2) flags 4a type 3
 						// matchobj comparing flags 74 with 74
@@ -332,7 +332,7 @@ l16: #
 	xor	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 53
+						//../DeMiSTify/firmware/keyboard.c, line 52
 						// Q1 disposable
 						// Z disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 1
@@ -354,14 +354,14 @@ l16: #
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						//pcreltotemp
 	.lipcrel	l19
 	add	r7
 l18: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						// (obj to r1) flags 42 type 3
 						// reg r4 - only match against tmp
@@ -376,7 +376,7 @@ l18: #
 	shr	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -386,7 +386,7 @@ l18: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -398,7 +398,7 @@ l18: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						// (bitwise/arithmetic) 	//ops: 5, 0, 3
 						// (obj to r2) flags 42 type 3
 						// matchobj comparing flags 66 with 130
@@ -413,7 +413,7 @@ l18: #
 	and	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -424,7 +424,7 @@ l18: #
 	mul	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						// (bitwise/arithmetic) 	//ops: 0, 3, 3
 						// WARNING - evading q2 and target collision - check code for correctness.
 						// (obj to r0) flags 1 type 3
@@ -441,7 +441,7 @@ l18: #
 	mt	r0
 	mr	r2
 
-						//../DeMiSTify/firmware/keyboard.c, line 55
+						//../DeMiSTify/firmware/keyboard.c, line 54
 						// Q1 disposable
 						// Z disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 1
@@ -464,20 +464,20 @@ l18: #
 l19: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 57
+						//../DeMiSTify/firmware/keyboard.c, line 56
 						// (test)
 						// (obj to tmp) flags 62 type 3
 						// deref 
 	ld	r6
 
-						//../DeMiSTify/firmware/keyboard.c, line 57
+						//../DeMiSTify/firmware/keyboard.c, line 56
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l21
 		add	r7
 
-						//../DeMiSTify/firmware/keyboard.c, line 59
+						//../DeMiSTify/firmware/keyboard.c, line 58
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 98
@@ -497,7 +497,7 @@ l19: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 60
+						//../DeMiSTify/firmware/keyboard.c, line 59
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -512,7 +512,7 @@ l19: #
 	st	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 61
+						//../DeMiSTify/firmware/keyboard.c, line 60
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 1
@@ -524,14 +524,14 @@ l19: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/keyboard.c, line 61
+						//../DeMiSTify/firmware/keyboard.c, line 60
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l23
 		add	r7
 
-						//../DeMiSTify/firmware/keyboard.c, line 62
+						//../DeMiSTify/firmware/keyboard.c, line 61
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -547,7 +547,7 @@ l19: #
 						//save_temp done
 l23: # 
 
-						//../DeMiSTify/firmware/keyboard.c, line 63
+						//../DeMiSTify/firmware/keyboard.c, line 62
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						//static not varadr
@@ -557,14 +557,14 @@ l23: #
 						//sizemod based on type 0x3
 	ldt
 
-						//../DeMiSTify/firmware/keyboard.c, line 63
+						//../DeMiSTify/firmware/keyboard.c, line 62
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l25
 		add	r7
 
-						//../DeMiSTify/firmware/keyboard.c, line 64
+						//../DeMiSTify/firmware/keyboard.c, line 63
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -578,7 +578,7 @@ l23: #
 						//save_temp done
 l25: # 
 
-						//../DeMiSTify/firmware/keyboard.c, line 65
+						//../DeMiSTify/firmware/keyboard.c, line 64
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -589,7 +589,7 @@ l25: #
 	st	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 66
+						//../DeMiSTify/firmware/keyboard.c, line 65
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 161 with 66
@@ -604,33 +604,13 @@ l25: #
 						// const
 						// matchobj comparing flags 1 with 1
 						// matchobj comparing flags 1 with 1
-	.liconst	545
-						// (save temp)store type 3
-	st	r0
-						//save_temp done
-
-						//../DeMiSTify/firmware/keyboard.c, line 67
-						// (a/p assign)
-						// (prepobj r0)
- 						// matchobj comparing flags 161 with 1
-						// matchobj comparing flags 161 with 1
-						// deref
-						// const to r0
-						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 1
-						// (obj to tmp) flags 1 type 503
-						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 1
-						// const
-						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 1
 	.liconst	32
 						// (save temp)store type 3
 	st	r0
 						//save_temp done
 l21: # 
 
-						//../DeMiSTify/firmware/keyboard.c, line 70
+						//../DeMiSTify/firmware/keyboard.c, line 68
 						// (a/p assign)
 						// (prepobj r0)
  						// static
@@ -648,7 +628,7 @@ l21: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 71
+						//../DeMiSTify/firmware/keyboard.c, line 69
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -671,7 +651,7 @@ l21: #
 l13: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -684,7 +664,7 @@ l13: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						//call
 						//pcreltotemp
 	.lipcrel	_ps2_ringbuffer_read
@@ -692,12 +672,12 @@ l13: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r3
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 66
@@ -707,7 +687,7 @@ l13: #
 	sgn
 	cmp	r3
 
-						//../DeMiSTify/firmware/keyboard.c, line 43
+						//../DeMiSTify/firmware/keyboard.c, line 42
 	cond	GE
 						//conditional branch regular
 						//pcreltotemp
@@ -716,7 +696,7 @@ l13: #
 l27: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 74
+						//../DeMiSTify/firmware/keyboard.c, line 72
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// const
@@ -764,7 +744,7 @@ _ClearKeyboard:
 	stdec	r6
 						// allocreg r2
 
-						//../DeMiSTify/firmware/keyboard.c, line 81
+						//../DeMiSTify/firmware/keyboard.c, line 79
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -777,7 +757,7 @@ _ClearKeyboard:
 l34: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 82
+						//../DeMiSTify/firmware/keyboard.c, line 80
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						// (obj to r1) flags 42 type 3
 						// reg r2 - only match against tmp
@@ -791,7 +771,7 @@ l34: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 82
+						//../DeMiSTify/firmware/keyboard.c, line 80
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -802,7 +782,7 @@ l34: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 82
+						//../DeMiSTify/firmware/keyboard.c, line 80
 						// Z disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -817,7 +797,7 @@ l34: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 82
+						//../DeMiSTify/firmware/keyboard.c, line 80
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -828,7 +808,7 @@ l34: #
 	add	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 82
+						//../DeMiSTify/firmware/keyboard.c, line 80
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
@@ -838,7 +818,7 @@ l34: #
 	sgn
 	cmp	r2
 
-						//../DeMiSTify/firmware/keyboard.c, line 82
+						//../DeMiSTify/firmware/keyboard.c, line 80
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
@@ -880,7 +860,7 @@ _TestKey:
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 88
+						//../DeMiSTify/firmware/keyboard.c, line 86
 						//call
 						//pcreltotemp
 	.lipcrel	_DisableInterrupts
@@ -888,7 +868,7 @@ _TestKey:
 						// Deferred popping of 0 bytes (0 in total)
 						// allocreg r2
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						// (bitwise/arithmetic) 	//ops: 6, 0, 3
 						// (obj to r2) flags 42 type 3
 						// reg r5 - only match against tmp
@@ -903,7 +883,7 @@ _TestKey:
 	shr	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -913,7 +893,7 @@ _TestKey:
 	mul	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						// (bitwise/arithmetic) 	//ops: 0, 3, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -925,7 +905,7 @@ _TestKey:
 						// (save result) // isreg
 						// allocreg r4
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						// (bitwise/arithmetic) 	//ops: 6, 0, 5
 						// (obj to r4) flags 42 type 3
 						// matchobj comparing flags 66 with 130
@@ -940,7 +920,7 @@ _TestKey:
 	and	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						// (bitwise/arithmetic) 	//ops: 5, 0, 5
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -962,7 +942,7 @@ _TestKey:
 						//save_temp done
 						// allocreg r3
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						// (bitwise/arithmetic) 	//ops: 2, 5, 4
 						// (obj to r3) flags 4a type 103
 						// matchobj comparing flags 74 with 106
@@ -976,7 +956,7 @@ _TestKey:
 	shr	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 103
@@ -987,12 +967,12 @@ _TestKey:
 	and	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 89
+						//../DeMiSTify/firmware/keyboard.c, line 87
 						//FIXME convert
 						// (convert - reducing type 103 to 3
 						//No need to mask - same size
 
-						//../DeMiSTify/firmware/keyboard.c, line 90
+						//../DeMiSTify/firmware/keyboard.c, line 88
 						// (bitwise/arithmetic) 	//ops: 0, 5, 5
 						// WARNING - evading q2 and target collision - check code for correctness.
 						// (obj to r0) flags 1 type 3
@@ -1011,7 +991,7 @@ _TestKey:
 	mt	r0
 	mr	r4
 
-						//../DeMiSTify/firmware/keyboard.c, line 90
+						//../DeMiSTify/firmware/keyboard.c, line 88
 						//comp
 						// (obj to r4) flags 4a type 3
 						// matchobj comparing flags 74 with 74
@@ -1021,7 +1001,7 @@ _TestKey:
 	xor	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/keyboard.c, line 90
+						//../DeMiSTify/firmware/keyboard.c, line 88
 						// Q1 disposable
 						// Q2 disposable
 						// Z disposable
@@ -1045,14 +1025,14 @@ _TestKey:
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/keyboard.c, line 91
+						//../DeMiSTify/firmware/keyboard.c, line 89
 						//call
 						//pcreltotemp
 	.lipcrel	_EnableInterrupts
 	add	r7
 						// Deferred popping of 0 bytes (0 in total)
 
-						//../DeMiSTify/firmware/keyboard.c, line 92
+						//../DeMiSTify/firmware/keyboard.c, line 90
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 4a type 3
