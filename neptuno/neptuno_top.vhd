@@ -234,8 +234,8 @@ ps2_keyboard_clk <= '0' when ps2_keyboard_clk_out='0' else 'Z';
 	
 
 
-joya<="11" & joy1fire2 & joy1fire1 & joy1right & joy1left & joy1down & joy1up;
-joyb<="11" & joy2fire2 & joy2fire1 & joy2right & joy2left & joy2down & joy2up;
+joya<="11" & joy1fire1 & joy1fire2 & joy1right & joy1left & joy1down & joy1up;
+joyb<="11" & joy2fire1 & joy2fire2 & joy2right & joy2left & joy2down & joy2up;
 
 stm_rst_o <= '0';
 

@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 21:01:30  October 12, 2021
+# Date created = 22:23:35  November 25, 2021
 #
 # -------------------------------------------------------------------------- #
 #
@@ -415,9 +415,11 @@ set_global_assignment -name VERILOG_FILE ../DeMiSTify/Board/deca/audio/SPI_RAM.v
 set_global_assignment -name VHDL_FILE ../DeMiSTify/Board/deca/audio/audio_i2s.vhd
 set_global_assignment -name VERILOG_FILE ../DeMiSTify/Board/deca/hdmi/I2C_Controller.v
 set_global_assignment -name VERILOG_FILE ../DeMiSTify/Board/deca/hdmi/I2C_HDMI_Config.v
+set_global_assignment -name VERILOG_MACRO "DEMISTIFY_PARALLEL_AUDIO=1"
+set_global_assignment -name VERILOG_MACRO "DEMISTIFY_DECA=1"
 set_global_assignment -name QIP_FILE top.qip
 set_global_assignment -name QIP_FILE ../mistcore.qip
-set_global_assignment -name VHDL_FILE ../demistify_config_pkg.vhd
 set_global_assignment -name QIP_FILE ../DeMiSTify/controller/controller.qip
+set_global_assignment -name VHDL_FILE ../demistify_config_pkg.vhd
 set_global_assignment -name VHDL_FILE ../firmware/controller_rom1_byte.vhd
 set_global_assignment -name VHDL_FILE ../firmware/controller_rom2_byte.vhd

@@ -50,9 +50,11 @@ module gb_mist (
    output 			AUDIO_L,
    output 			AUDIO_R,
 
-   output [15:0]   DAC_L,
-   output [15:0]   DAC_R,
-  
+`ifdef DEMISTIFY_PARALLEL_AUDIO
+  output [15:0]    DAC_L,
+  output [15:0]    DAC_R,
+`endif
+
 	// video
    output 			VGA_HS,
    output 			VGA_VS,
@@ -63,8 +65,10 @@ module gb_mist (
    output			VGA_CLK
 );
 
+`ifdef DEMISTIFY_PARALLEL_AUDIO
 assign DAC_L = {audio_left,4'b0};
 assign DAC_R = {audio_right,4'b0};
+`endif
 
 assign LED = ~dio_download;
 
@@ -117,6 +121,30 @@ always @(posedge clk64) begin
 			reset_cnt <= reset_cnt - 10'd1;
 end
 
+// TODO: ds for cart ram write
+wire [1:0] sdram_ds = dio_download?2'b11:{!cart_addr[0], cart_addr[0]};
+wire [15:0] sdram_do;
+wire [15:0] sdram_di = dio_download?dio_data:{cart_di, cart_di};
+wire [23:0] sdram_addr = dio_download?dio_addr:{1'b0, mbc_bank, cart_addr[12:1]};
+wire sdram_oe = !dio_download && cart_rd;
+`ifdef EMBED_BIOS
+wire sdram_we = (dio_download && dio_write) || (!dio_download && cart_ram_wr);
+`else
+wire sdram_we = (dio_download && dio_write && dio_index[0]==1'b1) || (!dio_download && cart_ram_wr);
+
+wire [15:0] sdram_bios_do;
+//wire [7:0] sdram_bios_do_b = sdram_bios_addr[0] ? sdram_bios_do[7:0] : sdram_bios_do[15:8];
+wire [15:0] sdram_bios_di = dio_index[0]==1'b0 ? dio_data : 16'haa55; /* synthesis noprune */
+wire [10:0] sdram_bios_addr = dio_download?dio_addr[10:0]:bios_addr[11:1];
+
+wire [11:0] bios_addr /* synthesis noprune */;
+
+wire  [7:0] bios_do_embedded;
+
+wire [7:0] bios_do = bios_do_embedded;
+wire sdram_bios_we = 1'b0;
+`endif
+
 assign SDRAM_CKE = 1'b1;
 
 sdram sdram (
@@ -141,16 +169,17 @@ sdram sdram (
    .ds             ( sdram_ds                  ),
    .we             ( sdram_we                  ),
    .oe             ( sdram_oe                  ),
-   .dout           ( sdram_do                  )
+   .dout           ( sdram_do                  )  
+ `ifdef EMBED_BIOS 
+ `else
+  												,
+   // bios interface
+   .bios_din       ( sdram_bios_di             ),
+   .bios_addr      ( sdram_bios_addr           ),
+   .bios_we        ( sdram_bios_we             ),
+   .bios_dout      ( sdram_bios_do             )
+`endif
 );
-
-// TODO: ds for cart ram write
-wire [1:0] sdram_ds = dio_download?2'b11:{!cart_addr[0], cart_addr[0]};
-wire [15:0] sdram_do;
-wire [15:0] sdram_di = dio_download?dio_data:{cart_di, cart_di};
-wire [23:0] sdram_addr = dio_download?dio_addr:{1'b0, mbc_bank, cart_addr[12:1]};
-wire sdram_oe = !dio_download && cart_rd;
-wire sdram_we = (dio_download && dio_write) || (!dio_download && cart_ram_wr);
 
 wire dio_download;
 wire [23:0] dio_addr;
@@ -377,14 +406,18 @@ wire lcd_on;
 wire [11:0] audio_left;
 wire [11:0] audio_right;
 
+`ifdef EMBED_BIOS
 wire [11:0] bios_addr;
 wire  [7:0] bios_do;
 
 gbc_bios gbc_bios (
 	.clock		( clk64        ),
-	.address	( bios_addr	   ),
-	.q			( bios_do      )
+	.address	( bios_addr    ),
+	.q		( bios_do      )
 );
+`else
+`endif
+
 
 wire [1:0] joy_p54;
 wire [3:0] joy_p4 = ~{ joystick[2], joystick[3], joystick[1], joystick[0] } | {4{joy_p54[0]}};

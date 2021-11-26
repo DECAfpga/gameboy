@@ -25,6 +25,7 @@ unsigned char joy_keymap[]=
 	KEY_RIGHTARROW,
 };
 
+/*  Debugging
 void fillram(int index,int size,int pattern)
 {
 	int i;
@@ -54,23 +55,21 @@ void fillram(int index,int size,int pattern)
 	SPI(0x00); // End Upload 
 	SPI_DISABLE(HW_SPI_FPGA);
 }
-
+*/
 
 /* Initial ROM */
-const char *bootrom_name="AUTOBOOTGB";
+const char *bootrom_name="GBC_BIOSBIN";
 
-//const char *bootrom_name="GBC_BIOSBIN not found";
-/*
-const char *bootrom2_name="AUTOBOOTGB ";
+const char *bootrom2_name="AUTOBOOTGB";
 extern unsigned char romtype;
 char *autoboot()
 {
 	char *result=0;
 	romtype=0;
 	if(!LoadROM(bootrom_name))
-		result=bootrom_name;
+		result="GBC_BIOS.BIN not found on SD card" ;
 	romtype=1;
 	LoadROM(bootrom2_name);
 	return(result);
 }
-*/
+

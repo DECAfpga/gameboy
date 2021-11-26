@@ -36,6 +36,8 @@ v0.4 Added Demistified versions of Neptuno and Unamiga reloaded
 
 v0.5 Updated Demistify. Added Joystick pinout
 
+v0.6 Changes in Mist core to adapt demistify to both Deca and new board Atlas_cyc
+
 ### Instructions to compile the project for a specific board:
 
 (Note that sof/svf files are already included in /deca/output_files/)

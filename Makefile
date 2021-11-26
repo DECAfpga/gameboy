@@ -5,7 +5,7 @@ PROJECTPATH=./
 PROJECTTOROOT=../
 BOARD=
 ROMSIZE1=8192
-ROMSIZE2=8192
+ROMSIZE2=4096
 
 all: $(DEMISTIFYPATH)/site.mk firmware init compile tns mist
 
@@ -27,6 +27,10 @@ $(SUBMODULES):
 firmware: $(SUBMODULES)
 	make -C firmware -f ../$(DEMISTIFYPATH)/firmware/Makefile DEMISTIFYPATH=../$(DEMISTIFYPATH) ROMSIZE1=$(ROMSIZE1) ROMSIZE2=$(ROMSIZE2)
 
+.PHONY: firmware_clean
+firmware_clean: $(SUBMODULES)
+	make -C firmware -f ../$(DEMISTIFYPATH)/firmware/Makefile DEMISTIFYPATH=../$(DEMISTIFYPATH) ROMSIZE1=$(ROMSIZE1) ROMSIZE2=$(ROMSIZE2) clean
+
 .PHONY: init
 init:
 	make -f $(DEMISTIFYPATH)/Makefile DEMISTIFYPATH=$(DEMISTIFYPATH) PROJECTTOROOT=$(PROJECTTOROOT) PROJECTPATH=$(PROJECTPATH) PROJECTS=$(PROJECT) BOARD=$(BOARD) init 
@@ -44,6 +48,7 @@ tns:
 	@for BOARD in ${BOARDS}; do \
 		echo $$BOARD; \
 		grep -r Design-wide\ TNS $$BOARD/output_files/*.rpt; \
+		echo -ne '\007'; \
 	done
 
 # MiST is now covered by the framework, with a thin wrapper
