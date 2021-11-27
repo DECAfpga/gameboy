@@ -1,6 +1,6 @@
-# xxxxxxxxxxx DeMiSTified
+# Gameboy DeMiSTified - Atlas CYC1000 port
 
-22/09/21 DECA port DeMiSTified by somhic from original MiST xxxxx core https://github.com/mist-devel/xxxxxxx.   
+27/11/21 Atlas CYC1000 port DeMiSTified by somhic from original MiST gameboy https://github.com/mist-devel/gameboy and Alastair's M. Robinson port https://github.com/robinsonb5/gameboy 
 
 Special thanks to Alastair M. Robinson creator of [DeMiSTify](https://github.com/robinsonb5/DeMiSTify) for helping me. 
 
@@ -8,38 +8,38 @@ Special thanks to Alastair M. Robinson creator of [DeMiSTify](https://github.com
 
 Original module sound errors and signed/unsigned troubles have been arranged thanks to @rampa069.
 
-**Features for Deca board:**
+**Features:**
 
-* HDMI video output (special resolution will not work on all LCD monitors)
-* VGA 444 video output is available through GPIO (see pinout below). 
-* Audio Line out (3.5 jack green connector) and HDMI audio output
-* PWM audio is available through GPIO (see pinout below)
-* Joystick available through GPIO  (see pinout below).  **Joystick power pin must be 2.5 V**
-  * **DANGER: Connecting power pin above 2.6 V may damage the FPGA**
-  * This core was tested with a Megadrive 6 button gamepad. A permanent high level is applied on pin 7 of DB9, so only works buttons B and C.
+* HDMI video output
+* VGA 222 video output is available through HDMI to VGA adapter
+* HDMI audio output
+* Sigma-Delta audio
+* Joystick (tested with a Megadrive gamepad)
 
 **Additional hardware required**:
 
-- SDRAM module. Tested with 32 MB SDRAM board for MiSTer (extra slim) XS_2.2 ([see connections](https://github.com/SoCFPGA-learning/DECA/tree/main/Projects/sdram_mister_deca))
-- PS/2 Keyboard connected to GPIO  (see pinout below)
+- PS/2 Keyboard 
 
 ##### Versions:
 
-v0.1 VGA version only. 
+v0.6 Changes in Mist core to adapt DeMiSTify to both Deca and new board Atlas_cyc
 
 ### STATUS
 
-* Working fine
-
+* SDRAM controller still needs to be fully adapted from 32 to 8 MB.
+* GBC games require 32 MB SDRAM due to how SDRAM is configured (BIOS is copied to second 16 MB block)
+* BIOS file gbc_bios.bin (not supplied) has to be placed at the root folder of SD card
 * HDMI video outputs special resolution so will not work on all monitors. 
+
+
 
 ### Instructions to compile the project for a specific board:
 
-(Note that sof/svf files are already included in /deca/output_files/)
+(Note that sof/rbf files are already included in /atlas_cyc/output_files/)
 
 ```sh
-git clone https://github.com/DECAfpga/xxxx
-cd xxxx
+git clone https://github.com/DECAfpga/gameboy
+cd gameboy
 #Do a first make (will finish in error). It will download missing submodules 
 make
 #when asked just accept default settings with Enter key
@@ -52,32 +52,34 @@ gedit site.mk
 git checkout somhic
 #Go back to root folder and do a make with board target (deca, neptuno, uareloaded, atlas_cyc). If not specified it will compile for all targets.
 cd ..
-make BOARD=deca
+make BOARD=atlas_cyc
 ```
 
 After that you can:
 
 * Flash bitstream directly from [command line](https://github.com/DECAfpga/DECA_binaries#flash-bitstream-to-fgpa-with-quartus)
-* Load project in Quartus from /deca/gameboy_deca.qpf
-
-### Pinout connections:
-
-![pinout_deca](pinout_deca.png)
-
-Mouse is not required to use this core
-
-For 444 video DAC use all VGA pins. For 333 video DAC connect MSB from addon to MSB of location assignment (e.g. connect pin VGAR2 from Waveshare addon to VGA_R[3] Deca pin).
+* Load project in Quartus from /atlas_cyc/gameboy_atlas_cyc.qpf
 
 **Others:**
 
-* Button KEY0 is a reset button
+* User Button is a reset button
 
 ### OSD Controls
 
 * F12 show/hide OSD 
 * The reset button KEY0 resets the controller (so re-initialises the SD card if it's been changed, reloads any autoboot ROM.) The OSD Reset menu item resets the core itself.
 
+### Follows original readme.md content:
 
+Source code for Gameboy for MIST
+================================
 
-### Follows original core README.md:
+This is source code of a gameboy implementation for the MIST. 
 
+It's based on the [t80](http://opencores.org/project,t80) CPU core. A minor
+fix was needed for the "LD ($FF00+C)" instruction.
+
+The audio implementation has been taken from the PACE framework. The
+original file is available in the [pacedev svn](https://svn.pacedev.net/repos/pace/sw/src/component/sound/gb/gbc_snd.vhd).
+
+Binaries are available at https://github.com/mist-devel/mist-binaries/tree/master/cores/gameboy.
