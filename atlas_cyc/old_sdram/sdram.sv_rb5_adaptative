@@ -136,8 +136,10 @@ reg old_oe;
 reg [15:0] din_r;
 reg  [2:0] stage;
 
+wire [24:0] addr_ext = {1'b0,addr}; // Extend the address for 13 row, 10 col chips
+
 reg bios_oe;
-wire [23:0] bios_addr_ext = {13'b0,bios_addr};
+wire [24:0] bios_addr_ext = {14'b11111111111111,bios_addr};
 reg [10:0] bios_addr_d;
 
 always @(posedge clk) begin
@@ -149,7 +151,7 @@ always @(posedge clk) begin
 
 	old_sync <= sync;
 	if(~old_sync & sync) stage <= 1;
-
+	
 	if(bios_addr!=bios_addr_d)
 		bios_oe<=1'b1;
 	else
@@ -192,11 +194,14 @@ always @(posedge clk) begin
 
 				// RAS phase
 				sd_cmd  <= CMD_ACTIVE;
-				sd_addr <= { addr[21:9] };
-				sd_ba   <= {1'b0,addr[22]};
+				sd_addr <= addr_ext[`SDRAM_COLBITS +: `SDRAM_ROWBITS];
+				sd_ba   <= addr_ext[(`SDRAM_ROWBITS+`SDRAM_COLBITS) +: 2];
+//				sd_addr <= { addr[21:9] };
+//				sd_ba   <= {1'b0,addr[22]};
 				ds_r    <= ds;
 				din_r   <= din;
-				addr_r  <= { 4'b0010, addr[8:0] };  // auto precharge
+				addr_r  <= { 4'b001,{10-`SDRAM_COLBITS{1'b0}}, addr_ext[`SDRAM_COLBITS-1:0] };  // auto precharge
+//				addr_r  <= { 4'b0010, addr[8:0] };  // auto precharge
 			end else if(bios_we || bios_oe) begin
 //			end else if(bios_we) begin
 				port<=1'b1;
@@ -205,12 +210,12 @@ always @(posedge clk) begin
 
 				// RAS phase
 				sd_cmd  <= CMD_ACTIVE;
-				sd_addr <= bios_addr_ext[21:9];
-				sd_ba   <= {1'b1,bios_addr_ext[22]};
+				sd_addr <= bios_addr_ext[`SDRAM_COLBITS +: `SDRAM_ROWBITS];
+				sd_ba   <= bios_addr_ext[(`SDRAM_ROWBITS+`SDRAM_COLBITS) +: 2];
 
 				ds_r    <= 2'b11;
 				din_r   <= bios_din;
-				addr_r  <= { 4'b0010, bios_addr_ext[8:0] };  // auto precharge
+				addr_r  <= { 4'b001,{10-`SDRAM_COLBITS{1'b0}}, bios_addr_ext[`SDRAM_COLBITS-1:0] };  // auto precharge
 			end else begin
 				drive_dq<=1'b0;
 				active<=1'b0;
