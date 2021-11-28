@@ -45,19 +45,20 @@ v0.6 Changes in Mist core to adapt demistify to both Deca and new board Atlas_cy
 ```sh
 git clone https://github.com/DECAfpga/gameboy
 cd gameboy
-#Do a first make (will finish in error). It will download missing submodules 
+#Do a first make (will finish in error) but it will download missing submodules 
 make
-#when asked just accept default settings with Enter key
-#Create file site.mk in DeMiSTify folder 
+#Checkout to the DeMiSTify branch with the latest updates
 cd DeMiSTify
+git checkout somhic
+#Create file site.mk in DeMiSTify folder 
 cp site.template site.mk
 #Edit site.mk and add your own PATHs to Quartus (Q19)
 gedit site.mk
-#[OPTIONAL STEP only needed if main branch is outdated]
-git checkout somhic
-#Go back to root folder and do a make with board target (deca, neptuno, uareloaded). If not specified it will compile for all targets.
+#Go back to root folder and do a make with board target (deca, neptuno, uareloaded, atlas_cyc). If not specified it will compile for all targets.
 cd ..
 make BOARD=deca
+#when asked just accept default settings with Enter key
+
 ```
 
 After that you can:
