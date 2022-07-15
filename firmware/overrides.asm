@@ -158,14 +158,23 @@ l6: #
 	mt	r3
 	mr	r0
 						// freereg r3
+	.lipcrel	.functiontail, 4
+	add	r7
+
+.functiontail:
+	ldinc	r6
+	mr	r5
+
+	ldinc	r6
+	mr	r4
+
 	ldinc	r6
 	mr	r3
 
 	ldinc	r6
 	mr	r7
 
-	.section	.rodata
-	.align	4
+	.section	.rodata.1
 l7:
 	.byte	71
 	.byte	66
@@ -201,8 +210,7 @@ l7:
 	.byte	114
 	.byte	100
 	.byte	0
-	.section	.data
-	.align	4
+	.section	.data.2
 	.global	_joy_keymap
 _joy_keymap:
 	.byte	88
@@ -221,20 +229,19 @@ _joy_keymap:
 	.byte	242
 	.byte	235
 	.byte	244
-	.align	4
+	.section	.data.3
 	.global	_bootrom_name
 _bootrom_name:
 						// Declaring from tree
 						// static
 	.ref	l1
-	.align	4
+	.section	.data.4
 	.global	_bootrom2_name
 _bootrom2_name:
 						// Declaring from tree
 						// static
 	.ref	l2
-	.section	.rodata
-	.align	4
+	.section	.rodata.5
 l1:
 	.byte	71
 	.byte	66
@@ -248,7 +255,7 @@ l1:
 	.byte	73
 	.byte	78
 	.byte	0
-	.align	4
+	.section	.rodata.6
 l2:
 	.byte	65
 	.byte	85

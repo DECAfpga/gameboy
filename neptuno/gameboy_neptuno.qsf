@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 20:09:30  November 26, 2021
+# Date created = 19:25:55  July 15, 2022
 #
 # -------------------------------------------------------------------------- #
 #
@@ -45,7 +45,6 @@ set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
 set_global_assignment -name AUTO_MERGE_PLLS OFF
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
-set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name IGNORE_CLOCK_SETTINGS ON
 set_global_assignment -name TPD_REQUIREMENT "5 ns"
 set_global_assignment -name TSU_REQUIREMENT "5 ns"
@@ -101,7 +100,61 @@ set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT NORMAL
 set_global_assignment -name SEED 1
 set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS "NORMAL COMPILATION"
 set_global_assignment -name PRE_MAPPING_RESYNTHESIS ON
-set_location_assignment PIN_T2 -to clock_50_i
+set_location_assignment PIN_T2 -to CLOCK_50_I
+set_location_assignment PIN_E4 -to LED
+set_location_assignment PIN_F1 -to VGA_R[5]
+set_location_assignment PIN_D2 -to VGA_R[4]
+set_location_assignment PIN_E1 -to VGA_R[3]
+set_location_assignment PIN_C2 -to VGA_R[2]
+set_location_assignment PIN_C1 -to VGA_R[1]
+set_location_assignment PIN_B1 -to VGA_R[0]
+set_location_assignment PIN_P2 -to VGA_G[5]
+set_location_assignment PIN_N2 -to VGA_G[4]
+set_location_assignment PIN_M2 -to VGA_G[3]
+set_location_assignment PIN_J2 -to VGA_G[2]
+set_location_assignment PIN_H2 -to VGA_G[1]
+set_location_assignment PIN_F2 -to VGA_G[0]
+set_location_assignment PIN_R1 -to VGA_B[5]
+set_location_assignment PIN_P1 -to VGA_B[4]
+set_location_assignment PIN_N1 -to VGA_B[3]
+set_location_assignment PIN_M1 -to VGA_B[2]
+set_location_assignment PIN_J1 -to VGA_B[1]
+set_location_assignment PIN_H1 -to VGA_B[0]
+set_location_assignment PIN_B3 -to VGA_HS
+set_location_assignment PIN_B2 -to VGA_VS
+set_location_assignment PIN_N19 -to PS2_KEYBOARD_CLK
+set_location_assignment PIN_N20 -to PS2_KEYBOARD_DAT
+set_location_assignment PIN_C21 -to PS2_MOUSE_CLK
+set_location_assignment PIN_B21 -to PS2_MOUSE_DAT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_KEYBOARD_CLK
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_KEYBOARD_DAT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_MOUSE_CLK
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_MOUSE_DAT
+set_location_assignment PIN_AA18 -to JOYP7_O
+set_location_assignment PIN_A20 -to JOY_CLK
+set_location_assignment PIN_B19 -to JOY_DATA
+set_location_assignment PIN_B20 -to JOY_LOAD
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to JOY_DATA
+set_location_assignment PIN_A3 -to SIGMA_L
+set_location_assignment PIN_B4 -to SIGMA_R
+set_location_assignment PIN_AA13 -to AUDIO_INPUT
+set_location_assignment PIN_M20 -to I2S_BCLK
+set_location_assignment PIN_AA15 -to I2S_DATA
+set_location_assignment PIN_AB14 -to I2S_LRCLK
+set_location_assignment PIN_R22 -to I2C_SCL
+set_location_assignment PIN_V21 -to I2C_SDA
+set_location_assignment PIN_D22 -to SD_CS_N_O
+set_location_assignment PIN_E21 -to SD_MISO_I
+set_location_assignment PIN_D21 -to SD_MOSI_O
+set_location_assignment PIN_E22 -to SD_SCLK_O
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SD_MISO_I
+set_location_assignment PIN_Y21 -to STM_RST_O
+set_location_assignment PIN_J21 -to STM_TX_I
+set_location_assignment PIN_K21 -to STM_RX_O
+set_location_assignment PIN_N22 -to SPI_SS2
+set_location_assignment PIN_N21 -to SPI_SCK
+set_location_assignment PIN_M21 -to SPI_DO
+set_location_assignment PIN_K22 -to SPI_DI
 set_location_assignment PIN_V2 -to DRAM_ADDR[0]
 set_location_assignment PIN_V1 -to DRAM_ADDR[1]
 set_location_assignment PIN_U2 -to DRAM_ADDR[2]
@@ -117,10 +170,6 @@ set_location_assignment PIN_Y4 -to DRAM_ADDR[11]
 set_location_assignment PIN_V6 -to DRAM_ADDR[12]
 set_location_assignment PIN_W2 -to DRAM_BA[1]
 set_location_assignment PIN_Y1 -to DRAM_BA[0]
-set_location_assignment PIN_AA4 -to DRAM_CAS_N
-set_location_assignment PIN_W6 -to DRAM_CKE
-set_location_assignment PIN_Y6 -to DRAM_CLK
-set_location_assignment PIN_AA3 -to DRAM_CS_N
 set_location_assignment PIN_V11 -to DRAM_DQ[15]
 set_location_assignment PIN_W10 -to DRAM_DQ[14]
 set_location_assignment PIN_Y10 -to DRAM_DQ[13]
@@ -138,9 +187,14 @@ set_location_assignment PIN_AA9 -to DRAM_DQ[2]
 set_location_assignment PIN_AB9 -to DRAM_DQ[1]
 set_location_assignment PIN_AA10 -to DRAM_DQ[0]
 set_location_assignment PIN_AA5 -to DRAM_LDQM
-set_location_assignment PIN_AB3 -to DRAM_RAS_N
 set_location_assignment PIN_W7 -to DRAM_UDQM
 set_location_assignment PIN_AB4 -to DRAM_WE_N
+set_location_assignment PIN_AB3 -to DRAM_RAS_N
+set_location_assignment PIN_AA4 -to DRAM_CAS_N
+set_location_assignment PIN_W6 -to DRAM_CKE
+set_location_assignment PIN_Y6 -to DRAM_CLK
+set_location_assignment PIN_AA3 -to DRAM_CS_N
+set_location_assignment PIN_AB15 -to SRAM_A[20]
 set_location_assignment PIN_U21 -to SRAM_A[19]
 set_location_assignment PIN_A17 -to SRAM_A[18]
 set_location_assignment PIN_B18 -to SRAM_A[17]
@@ -181,65 +235,20 @@ set_location_assignment PIN_A10 -to SRAM_WE
 set_location_assignment PIN_AA20 -to SRAM_OE
 set_location_assignment PIN_R2 -to SRAM_UB
 set_location_assignment PIN_AA16 -to SRAM_LB
-set_location_assignment PIN_F1 -to VGA_R[5]
-set_location_assignment PIN_D2 -to VGA_R[4]
-set_location_assignment PIN_E1 -to VGA_R[3]
-set_location_assignment PIN_C2 -to VGA_R[2]
-set_location_assignment PIN_C1 -to VGA_R[1]
-set_location_assignment PIN_B1 -to VGA_R[0]
-set_location_assignment PIN_P2 -to VGA_G[5]
-set_location_assignment PIN_N2 -to VGA_G[4]
-set_location_assignment PIN_M2 -to VGA_G[3]
-set_location_assignment PIN_J2 -to VGA_G[2]
-set_location_assignment PIN_H2 -to VGA_G[1]
-set_location_assignment PIN_F2 -to VGA_G[0]
-set_location_assignment PIN_R1 -to VGA_B[5]
-set_location_assignment PIN_P1 -to VGA_B[4]
-set_location_assignment PIN_N1 -to VGA_B[3]
-set_location_assignment PIN_M1 -to VGA_B[2]
-set_location_assignment PIN_J1 -to VGA_B[1]
-set_location_assignment PIN_H1 -to VGA_B[0]
-set_location_assignment PIN_B3 -to VGA_HS
-set_location_assignment PIN_B2 -to VGA_VS
-set_location_assignment PIN_N19 -to PS2_KEYBOARD_CLK
-set_location_assignment PIN_N20 -to PS2_KEYBOARD_DAT
-set_location_assignment PIN_C21 -to PS2_MOUSE_CLK
-set_location_assignment PIN_B21 -to PS2_MOUSE_DAT
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_KEYBOARD_CLK
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_KEYBOARD_DAT
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_MOUSE_CLK
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to PS2_MOUSE_DAT
-set_location_assignment PIN_AA18 -to joyP7_o
-set_location_assignment PIN_A20 -to JOY_CLK
-set_location_assignment PIN_B19 -to JOY_DATA
-set_location_assignment PIN_B20 -to JOY_LOAD
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to JOY_DATA
-set_location_assignment PIN_A3 -to SIGMA_L
-set_location_assignment PIN_B4 -to SIGMA_R
-set_location_assignment PIN_AA13 -to AUDIO_INPUT
-set_location_assignment PIN_M20 -to I2S_BCLK
-set_location_assignment PIN_AA15 -to I2S_DATA
-set_location_assignment PIN_AB14 -to I2S_LRCLK
-set_location_assignment PIN_R22 -to I2C_SCL
-set_location_assignment PIN_V21 -to I2C_SDA
-set_location_assignment PIN_D22 -to sd_cs_n_o
-set_location_assignment PIN_E21 -to sd_miso_i
-set_location_assignment PIN_D21 -to sd_mosi_o
-set_location_assignment PIN_E22 -to sd_sclk_o
-set_location_assignment PIN_Y21 -to stm_rst_o
-set_location_assignment PIN_J21 -to stm_tx_i
-set_location_assignment PIN_K21 -to stm_rx_o
-set_location_assignment PIN_N22 -to SPI_SS2
-set_location_assignment PIN_N21 -to SPI_SCK
-set_location_assignment PIN_M21 -to SPI_DO
-set_location_assignment PIN_K22 -to SPI_DI
-set_location_assignment PIN_E4 -to LED
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to sd_miso_i
 set_global_assignment -name SDC_FILE ../DeMiSTify/Board/neptuno/constraints.sdc
 set_global_assignment -name VHDL_FILE ../DeMiSTify/Board/neptuno/audio_i2s.vhd
 set_global_assignment -name VERILOG_FILE ../DeMiSTify/Board/neptuno/joydecoder.v
+set_global_assignment -name VERILOG_MACRO "SDRAM_WINBOND=1"
+set_global_assignment -name VERILOG_MACRO "SDRAM_ROWBITS=13"
+set_global_assignment -name VERILOG_MACRO "SDRAM_COLBITS=9"
+set_global_assignment -name VERILOG_MACRO "SDRAM_CL=2"
+set_global_assignment -name VERILOG_MACRO "SDRAM_tCKminCL2=7500"
+set_global_assignment -name VERILOG_MACRO "SDRAM_tRC=60000"
+set_global_assignment -name VERILOG_MACRO "SDRAM_tWR=2"
+set_global_assignment -name VERILOG_MACRO "SDRAM_tRP=15000"
 set_global_assignment -name VERILOG_MACRO "DEMISTIFY_PARALLEL_AUDIO=1"
 set_global_assignment -name VERILOG_MACRO "DEMISTIFY_NEPTUNO=1"
+set_global_assignment -name VERILOG_MACRO "DEMISTIFY=1"
 set_global_assignment -name QIP_FILE top.qip
 set_global_assignment -name QIP_FILE ../mistcore.qip
 set_global_assignment -name QIP_FILE ../DeMiSTify/controller/controller.qip

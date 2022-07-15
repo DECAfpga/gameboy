@@ -1,5 +1,4 @@
-	.section	.data
-	.align	4
+	.section	.data.0
 	.global	_font
 _font:
 	.byte	0

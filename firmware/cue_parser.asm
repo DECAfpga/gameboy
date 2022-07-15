@@ -28,7 +28,7 @@ _LBA2MSF:
 						// freereg r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 69
+						//../DeMiSTify/firmware/cue_parser.c, line 70
 						//Call division routine
 						// (obj to tmp) flags 42 type 3
 						// matchobj comparing flags 66 with 64
@@ -48,7 +48,7 @@ _LBA2MSF:
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 69
+						//../DeMiSTify/firmware/cue_parser.c, line 70
 						//Call division routine
 	//mt
 	stdec	r6
@@ -70,7 +70,7 @@ _LBA2MSF:
 	mr	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 69
+						//../DeMiSTify/firmware/cue_parser.c, line 70
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -84,12 +84,13 @@ _LBA2MSF:
 						// (obj to tmp) flags 4a type 3
 						// reg r1 - only match against tmp
 	mt	r1
-						// (save temp)store type 3
-	st	r0
+						// (save temp)store type 1
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 70
+						//../DeMiSTify/firmware/cue_parser.c, line 71
 						//Call division routine
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 74
@@ -109,7 +110,7 @@ _LBA2MSF:
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 70
+						//../DeMiSTify/firmware/cue_parser.c, line 71
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type a
 						// var, auto|reg
@@ -124,7 +125,7 @@ _LBA2MSF:
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 70
+						//../DeMiSTify/firmware/cue_parser.c, line 71
 						// Q1 disposable
 						// Z disposable
 						//FIXME convert
@@ -143,7 +144,7 @@ _LBA2MSF:
 						// freereg r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 71
+						//../DeMiSTify/firmware/cue_parser.c, line 72
 						// Q1 disposable
 						//Call division routine
 						// (obj to tmp) flags 42 type 3
@@ -164,7 +165,7 @@ _LBA2MSF:
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 71
+						//../DeMiSTify/firmware/cue_parser.c, line 72
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type a
 						// var, auto|reg
@@ -179,7 +180,7 @@ _LBA2MSF:
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 71
+						//../DeMiSTify/firmware/cue_parser.c, line 72
 						// Q1 disposable
 						// Z disposable
 						//FIXME convert
@@ -197,6 +198,16 @@ _LBA2MSF:
 						// freereg r2
 						// freereg r1
 						// freereg r3
+	.lipcrel	.functiontail, 4
+	add	r7
+
+.functiontail:
+	ldinc	r6
+	mr	r5
+
+	ldinc	r6
+	mr	r4
+
 	ldinc	r6
 	mr	r3
 
@@ -233,7 +244,7 @@ _MSF2LBA:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -249,7 +260,7 @@ _MSF2LBA:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -261,7 +272,7 @@ _MSF2LBA:
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -275,7 +286,7 @@ _MSF2LBA:
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -292,7 +303,7 @@ _MSF2LBA:
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -307,7 +318,7 @@ _MSF2LBA:
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -318,7 +329,7 @@ _MSF2LBA:
 	mul	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -333,7 +344,7 @@ _MSF2LBA:
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -344,7 +355,7 @@ _MSF2LBA:
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 75
+						//../DeMiSTify/firmware/cue_parser.c, line 76
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 4a type 3
@@ -354,11 +365,8 @@ _MSF2LBA:
 	mr	r0
 						// freereg r1
 						// freereg r3
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 4
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -377,8 +385,7 @@ l6:
 	stmpdec	r4
 	stmpdec	r5
 	exg	r6
-	.liconst	-4
-	add	r6
+	stdec	r6	// shortest way to decrement sp by 4
 						// allocreg r3
 						// allocreg r1
 						// Q1 disposable
@@ -386,7 +393,6 @@ l6:
 						// (prepobj r0)
  						// reg r3 - no need to prep
 						// (obj to tmp) flags 40 type a
-						// matchobj comparing flags 64 with 1
 						// reg r1 - only match against tmp
 	mt	r1
 						// (save temp)isreg
@@ -397,7 +403,7 @@ l6:
 						// allocreg r4
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// matchobj comparing flags 98 with 64
@@ -405,14 +411,14 @@ l6:
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l10
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -426,7 +432,7 @@ l6:
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 98
@@ -441,14 +447,14 @@ l6:
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l10
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -463,14 +469,14 @@ l6:
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l10
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -482,7 +488,7 @@ l6:
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						// (bitwise/arithmetic) 	//ops: 7, 0, 2
 						// (obj to r1) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -497,7 +503,7 @@ l6:
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -508,7 +514,7 @@ l6:
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -522,45 +528,46 @@ l6:
 						// (obj to tmp) flags 4a type 3
 						// reg r1 - only match against tmp
 	mt	r1
-						// (save temp)store type 3
-	st	r0
+						// (save temp)store type 1
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						//pcreltotemp
 	.lipcrel	l13
 	add	r7
 l10: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 81
+						//../DeMiSTify/firmware/cue_parser.c, line 82
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l13: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l15
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -574,7 +581,7 @@ l13: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 98
@@ -589,14 +596,14 @@ l13: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l15
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -611,7 +618,7 @@ l13: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
@@ -619,7 +626,7 @@ l13: #
 		add	r7
 						// freereg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -631,7 +638,7 @@ l13: #
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						// (bitwise/arithmetic) 	//ops: 7, 0, 2
 						// (obj to r1) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -647,7 +654,7 @@ l13: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -671,7 +678,7 @@ l13: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -687,7 +694,7 @@ l13: #
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -703,39 +710,40 @@ l13: #
 						// (obj to tmp) flags 4a type 3
 						// reg r1 - only match against tmp
 	mt	r1
-						// (save temp)store type 3
-	st	r0
+						// (save temp)store type 1
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						//pcreltotemp
 	.lipcrel	l18
 	add	r7
 l15: # 
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 82
+						//../DeMiSTify/firmware/cue_parser.c, line 83
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l18: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -743,7 +751,7 @@ l18: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -757,7 +765,7 @@ l18: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -768,14 +776,14 @@ l18: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l20
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -786,40 +794,40 @@ l18: #
 	add	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 						//pcreltotemp
 	.lipcrel	l22
 	add	r7
 l20: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 83
+						//../DeMiSTify/firmware/cue_parser.c, line 84
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l22: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l24
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -833,7 +841,7 @@ l22: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 98
@@ -848,14 +856,14 @@ l22: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l24
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -870,14 +878,14 @@ l22: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l24
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -889,7 +897,7 @@ l22: #
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// (bitwise/arithmetic) 	//ops: 7, 0, 2
 						// (obj to r1) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -904,7 +912,7 @@ l22: #
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -915,7 +923,7 @@ l22: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// (bitwise/arithmetic) 	//ops: 0, 0, 5
 						// (obj to r4) flags 2 type a
 						// var, auto|reg
@@ -930,7 +938,7 @@ l22: #
 	add	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -946,40 +954,40 @@ l22: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						//pcreltotemp
 	.lipcrel	l27
 	add	r7
 l24: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 84
+						//../DeMiSTify/firmware/cue_parser.c, line 85
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l27: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l29
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -993,7 +1001,7 @@ l27: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 98
@@ -1008,14 +1016,14 @@ l27: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l29
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -1030,7 +1038,7 @@ l27: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
@@ -1038,7 +1046,7 @@ l27: #
 		add	r7
 						// freereg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -1050,7 +1058,7 @@ l27: #
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						// (bitwise/arithmetic) 	//ops: 7, 0, 2
 						// (obj to r1) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -1066,7 +1074,7 @@ l27: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1081,7 +1089,7 @@ l27: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -1097,7 +1105,7 @@ l27: #
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -1112,34 +1120,34 @@ l27: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						//pcreltotemp
 	.lipcrel	l32
 	add	r7
 l29: # 
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 85
+						//../DeMiSTify/firmware/cue_parser.c, line 86
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l32: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
@@ -1147,7 +1155,7 @@ l32: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1161,7 +1169,7 @@ l32: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -1172,14 +1180,14 @@ l32: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l34
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -1190,40 +1198,40 @@ l32: #
 	add	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 						//pcreltotemp
 	.lipcrel	l36
 	add	r7
 l34: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 86
+						//../DeMiSTify/firmware/cue_parser.c, line 87
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l36: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l38
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1237,7 +1245,7 @@ l36: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 98
@@ -1247,14 +1255,14 @@ l36: #
 	sgn
 	cmp	r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l38
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
@@ -1264,14 +1272,14 @@ l36: #
 	sgn
 	cmp	r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l38
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -1283,7 +1291,7 @@ l36: #
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						// (obj to r1) flags 42 type 3
 						// matchobj comparing flags 66 with 1
@@ -1298,7 +1306,7 @@ l36: #
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1309,7 +1317,7 @@ l36: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// (bitwise/arithmetic) 	//ops: 0, 0, 6
 						// (obj to r5) flags 2 type a
 						// var, auto|reg
@@ -1324,7 +1332,7 @@ l36: #
 	add	r5
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -1340,40 +1348,40 @@ l36: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						//pcreltotemp
 	.lipcrel	l41
 	add	r7
 l38: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 87
+						//../DeMiSTify/firmware/cue_parser.c, line 88
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l41: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l43
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1387,7 +1395,7 @@ l41: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 98
@@ -1402,14 +1410,14 @@ l41: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l43
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -1424,7 +1432,7 @@ l41: #
 	sgn
 	cmp	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
@@ -1432,7 +1440,7 @@ l41: #
 		add	r7
 						// freereg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -1444,7 +1452,7 @@ l41: #
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						// (bitwise/arithmetic) 	//ops: 7, 0, 2
 						// (obj to r1) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -1460,7 +1468,7 @@ l41: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1475,7 +1483,7 @@ l41: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -1491,7 +1499,7 @@ l41: #
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						// Q1 disposable
 						//FIXME convert
 						// (convert - reducing type 3 to 101
@@ -1506,41 +1514,41 @@ l41: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						//pcreltotemp
 	.lipcrel	l46
 	add	r7
 l43: # 
 						// allocreg r2
 
-						//../DeMiSTify/firmware/cue_parser.c, line 88
+						//../DeMiSTify/firmware/cue_parser.c, line 89
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 89
+						//../DeMiSTify/firmware/cue_parser.c, line 90
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l46: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 89
+						//../DeMiSTify/firmware/cue_parser.c, line 90
 						// (test)
 						// (obj to tmp) flags 62 type 301
 						// deref 
 	byt
 	ld	r3
 
-						//../DeMiSTify/firmware/cue_parser.c, line 89
+						//../DeMiSTify/firmware/cue_parser.c, line 90
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l48
 		add	r7
 
-						//../DeMiSTify/firmware/cue_parser.c, line 89
+						//../DeMiSTify/firmware/cue_parser.c, line 90
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// matchobj comparing flags 1 with 98
@@ -1549,13 +1557,13 @@ l46: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/cue_parser.c, line 90
+						//../DeMiSTify/firmware/cue_parser.c, line 91
 						//pcreltotemp
 	.lipcrel	l7
 	add	r7
 l48: # 
 
-						//../DeMiSTify/firmware/cue_parser.c, line 90
+						//../DeMiSTify/firmware/cue_parser.c, line 91
 						//setreturn
 						// (obj to r0) flags 1 type 101
 						// const
@@ -1566,19 +1574,9 @@ l7: #
 						// freereg r3
 						// freereg r4
 						// freereg r5
-	.liconst	-4
-	sub	r6
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	ldinc	r6	// shortest way to add 4 to sp
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -1599,26 +1597,26 @@ l49:
 	exg	r6
 	.liconst	-8
 	add	r6
+						// allocreg r5
 						// allocreg r1
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// reg r5 - no need to prep
 						// (obj to tmp) flags 40 type a
 						// matchobj comparing flags 64 with 1
 						// reg r1 - only match against tmp
 	mt	r1
-						// (save temp)store type a
-	st	r6
+						// (save temp)isreg
+	mr	r5
 						//save_temp done
 						// freereg r1
-						// allocreg r5
 						// allocreg r4
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 97
+						//../DeMiSTify/firmware/cue_parser.c, line 98
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -1631,7 +1629,7 @@ l49:
 	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 98
+						//../DeMiSTify/firmware/cue_parser.c, line 99
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -1646,7 +1644,7 @@ l49:
 l94: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 101
+						//../DeMiSTify/firmware/cue_parser.c, line 102
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -1659,7 +1657,7 @@ l94: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/cue_parser.c, line 101
+						//../DeMiSTify/firmware/cue_parser.c, line 102
 						//call
 						//pcreltotemp
 	.lipcrel	_FileGetCh
@@ -1667,39 +1665,10 @@ l94: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 101
+						//../DeMiSTify/firmware/cue_parser.c, line 102
 						// (getreturn)						// (save result) // isreg
 	mt	r0
-	mr	r5
-
-						//../DeMiSTify/firmware/cue_parser.c, line 103
-						// (test)
-						// (obj to tmp) flags 42 type 101
-						// matchobj comparing flags 66 with 66
-						// reg r5 - only match against tmp
-				// flags 42
-	and	r5
-
-						//../DeMiSTify/firmware/cue_parser.c, line 103
-	cond	EQ
-						//conditional branch regular
-						//pcreltotemp
-	.lipcrel	l95
-		add	r7
-						// allocreg r1
-
-						//../DeMiSTify/firmware/cue_parser.c, line 103
-						//FIXME convert
-						//Converting to wider type...
-						//But unsigned, so no need to extend
-						// (prepobj r2)
- 						// reg r2 - no need to prep
-						// (obj to tmp) flags 42 type 101
-						// matchobj comparing flags 66 with 66
-						// reg r5 - only match against tmp
-						// (save temp)isreg
 	mr	r2
-						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 103
 						// (compare) (q1 signed) (q2 signed)
@@ -1707,6 +1676,24 @@ l94: #
 						// matchobj comparing flags 1 with 66
 						// const
 						// matchobj comparing flags 1 with 66
+	.liconst	0
+	sgn
+	cmp	r2
+
+						//../DeMiSTify/firmware/cue_parser.c, line 103
+	cond	SLT
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l95
+		add	r7
+						// allocreg r1
+
+						//../DeMiSTify/firmware/cue_parser.c, line 103
+						// (compare) (q1 signed) (q2 signed)
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 1
+						// const
+						// matchobj comparing flags 1 with 1
 	.liconst	10
 	cmp	r2
 
@@ -2142,18 +2129,18 @@ l69: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 105
-						// (bitwise/arithmetic) 	//ops: 7, 4, 2
-						// (obj to r1) flags 62 type a
-						// matchobj comparing flags 98 with 1
-						// deref 
-	ld	r6
+						// (bitwise/arithmetic) 	//ops: 6, 4, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 42 type a
+						// matchobj comparing flags 66 with 1
+						// reg r5 - only match against tmp
+	mt	r5
+	addt	r3
+						// (save temp)isreg
 	mr	r1
-						// (obj to tmp) flags 4a type a
-						// matchobj comparing flags 74 with 98
-						// reg r3 - only match against tmp
-	mt	r3
-	add	r1
-						// (save result) // isreg
+						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 105
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
@@ -2168,20 +2155,21 @@ l69: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 105
 						// Z disposable
-						// (a/p assign)
+						//FIXME convert
+						// (convert - reducing type 3 to 101
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 42 type 101
+						// (obj to tmp) flags 42 type 3
 						// matchobj comparing flags 66 with 1
-						// reg r5 - only match against tmp
-	mt	r5
+						// reg r2 - only match against tmp
+	mt	r2
 						// (save temp)store type 1
 	stbinc	r1
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/cue_parser.c, line 100
+						//../DeMiSTify/firmware/cue_parser.c, line 101
 						//pcreltotemp
 	.lipcrel	l94
 	add	r7
@@ -2189,17 +2177,17 @@ l95: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 107
-						// (bitwise/arithmetic) 	//ops: 7, 4, 2
-						// (obj to r1) flags 62 type a
-						// deref 
-	ld	r6
-	mr	r1
+						// (bitwise/arithmetic) 	//ops: 6, 4, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 42 type a
-						// matchobj comparing flags 66 with 98
-						// reg r3 - only match against tmp
-	mt	r3
-	add	r1
-						// (save result) // isreg
+						// reg r5 - only match against tmp
+	mt	r5
+	addt	r3
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 107
 						// Z disposable
@@ -2207,44 +2195,27 @@ l95: #
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type 101
-						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 74
 						// const
-						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 74
 	.liconst	0
 						// (save temp)store type 1
 	stbinc	r1
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// freereg r1
-						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 108
-						//FIXME convert
-						//Converting to wider type...
-						//But unsigned, so no need to extend
-						// (prepobj r1)
- 						// reg r1 - no need to prep
-						// (obj to tmp) flags 42 type 101
-						// matchobj comparing flags 66 with 1
-						// reg r5 - only match against tmp
-	mt	r5
-						// (save temp)isreg
-	mr	r1
-						//save_temp done
+						// (compare) (q1 signed) (q2 signed)
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 1
+
+			// required value found in tmp
+	sgn
+	cmp	r2
 
 						//../DeMiSTify/firmware/cue_parser.c, line 108
-						// Q1 disposable
-						// (test)
-						// (obj to tmp) flags 4a type 3
-						// matchobj comparing flags 74 with 66
-						// reg r1 - only match against tmp
-	//mt
-				// flags 4a
-	and	r1
-						// freereg r1
-
-						//../DeMiSTify/firmware/cue_parser.c, line 108
-	cond	NEQ
+	cond	GE
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l86
@@ -2256,9 +2227,9 @@ l95: #
 						// (prepobj r0)
  						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 1
 						// const
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 1
 	.liconst	4
 						// (save temp)store type 3
 	st	r6
@@ -2405,17 +2376,8 @@ l87: #
 						// matchobj comparing flags 1 with 106
 	.liconst	-8
 	sub	r6
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -2722,17 +2684,8 @@ l105: #
 						// freereg r3
 						// freereg r4
 						// freereg r5
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -2752,21 +2705,23 @@ _cue_parse:
 	stmpdec	r4
 	stmpdec	r5
 	exg	r6
-	.liconst	-52
+	.liconst	-44
 	add	r6
+						// allocreg r4
 						// allocreg r1
 						// Q1 disposable
 						// (a/p assign)
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	44
-	addt	r6
-						//sizemod based on type 0x3
-	stmpdec	r1
+						// (prepobj r0)
+ 						// reg r4 - no need to prep
+						// (obj to tmp) flags 40 type 3
+						// matchobj comparing flags 64 with 1
+						// reg r1 - only match against tmp
+	mt	r1
+						// (save temp)isreg
+	mr	r4
+						//save_temp done
 						// freereg r1
 						// allocreg r5
-						// allocreg r4
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
@@ -2774,34 +2729,12 @@ _cue_parse:
 						//../DeMiSTify/firmware/cue_parser.c, line 145
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
-						// (obj to tmp) flags 1 type 101
-						// const
-	.liconst	0
-						// (save temp)isreg
-	mr	r5
-						//save_temp done
-
-						//../DeMiSTify/firmware/cue_parser.c, line 145
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r4 - no need to prep
-						// (obj to tmp) flags 1 type 101
-						// matchobj comparing flags 1 with 1
-
-			// required value found in tmp
-						// (save temp)isreg
-	mr	r4
-						//save_temp done
-
-						//../DeMiSTify/firmware/cue_parser.c, line 145
-						// (a/p assign)
-						// (prepobj r0)
  						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
-						// matchobj comparing flags 1 with 1
-
-			// required value found in tmp
+						// matchobj comparing flags 1 with 64
+						// const
+						// matchobj comparing flags 1 with 64
+	.liconst	0
 						// (save temp)store type 1
 	byt
 	st	r6
@@ -2813,7 +2746,7 @@ _cue_parse:
  						// matchobj comparing flags 130 with 1
 						// var, auto|reg
 						// matchobj comparing flags 1 with 1
-	.liconst	1
+	.liconst	4
 	addt	r6
 	mr	r0
 
@@ -2834,7 +2767,47 @@ _cue_parse:
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
 						// matchobj comparing flags 130 with 130
-						//auto: flags: 82, comparing 2, 0 with 1, 1
+						//auto: flags: 82, comparing 5, 0 with 4, 1
+						//Fuzzy match found, offset: 0 (varadr: 1)
+	.liconst	0
+	add	r0
+
+						// required value found in r0
+						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 1
+
+			// required value found in tmp
+						// (save temp)store type 1
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
+						//save_temp done
+
+						//../DeMiSTify/firmware/cue_parser.c, line 145
+						// (a/p assign)
+						// (prepobj r0)
+ 						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 130
+						//auto: flags: 82, comparing 6, 0 with 5, 1
+						//Fuzzy match found, offset: 0 (varadr: 1)
+	.liconst	0
+	add	r0
+
+						// required value found in r0
+						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 1
+
+			// required value found in tmp
+						// (save temp)store type 1
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
+						//save_temp done
+
+						//../DeMiSTify/firmware/cue_parser.c, line 145
+						// (a/p assign)
+						// (prepobj r0)
+ 						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 130
+						//auto: flags: 82, comparing 7, 0 with 6, 1
 						//Fuzzy match found, offset: 0 (varadr: 1)
 	.liconst	0
 	add	r0
@@ -2852,23 +2825,13 @@ _cue_parse:
 						//../DeMiSTify/firmware/cue_parser.c, line 146
 						// (a/p assign)
 						// (prepobj r0)
- 						// matchobj comparing flags 130 with 1
-						// matchobj comparing flags 130 with 130
-						//auto: flags: 82, comparing 4, 0 with 2, 1
-						//Fuzzy match found, offset: 1 (varadr: 1)
-	.liconst	1
-	add	r0
-
-						// required value found in r0
+ 						// reg r5 - no need to prep
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 130
-						// const
-						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 130
-	.liconst	0
-						// (save temp)store type 3
-	st	r0
+
+			// required value found in tmp
+						// (save temp)isreg
+	mr	r5
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 146
@@ -2876,19 +2839,16 @@ _cue_parse:
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
 						// matchobj comparing flags 130 with 130
-						//auto: flags: 82, comparing 8, 0 with 4, 0
-						//Fuzzy match found, offset: 4 (varadr: 1)
-	.liconst	4
+						//auto: flags: 82, comparing 8, 0 with 7, 1
+						//Fuzzy match found, offset: 0 (varadr: 1)
+	.liconst	0
 	add	r0
 
 						// required value found in r0
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 130
-						// const
-						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 130
-	.liconst	0
+
+			// required value found in tmp
 						// (save temp)store type 3
 	st	r0
 						//save_temp done
@@ -3159,16 +3119,17 @@ l218: #
 						//But unsigned, so no need to extend
 						// (prepobj r3)
  						// reg r3 - no need to prep
-						// (obj to tmp) flags 42 type 101
-						// matchobj comparing flags 66 with 1
-						// reg r5 - only match against tmp
-	mt	r5
+						// (obj to tmp) flags 62 type 101
+						// matchobj comparing flags 98 with 1
+						// deref 
+	byt
+	ld	r6
 						// (save temp)isreg
 	mr	r3
 						//save_temp done
 						// (test)
 						// (obj to tmp) flags 4a type 3
-						// matchobj comparing flags 74 with 66
+						// matchobj comparing flags 74 with 98
 						// reg r3 - only match against tmp
 	//mt
 				// flags 4a
@@ -3241,12 +3202,21 @@ l116: #
 						//../DeMiSTify/firmware/cue_parser.c, line 176
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r4 - no need to prep
+ 						// var, auto|reg
+	.liconst	4
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	0
-						// (save temp)isreg
-	mr	r4
+						// (save temp)store type 1
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// allocreg r2
 
@@ -3256,8 +3226,10 @@ l116: #
  						// reg r2 - no need to prep
 						// (obj to tmp) flags 82 type a
 						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 130
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 130
 						// extern (offset 0)
 	.liabs	_cueword
 						// extern pe is varadr
@@ -3272,8 +3244,10 @@ l116: #
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 82 type a
 						// matchobj comparing flags 130 with 130
+						// matchobj comparing flags 130 with 130
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 130
+						// matchobj comparing flags 130 with 130
 						// static
 	.liabs	l119,0
 						// static pe is varadr
@@ -3312,14 +3286,15 @@ l116: #
 						//../DeMiSTify/firmware/cue_parser.c, line 177
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// matchobj comparing flags 1 with 74
 						// const
 						// matchobj comparing flags 1 with 74
 	.liconst	1
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 178
@@ -3391,14 +3366,15 @@ l118: #
 						//../DeMiSTify/firmware/cue_parser.c, line 178
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// matchobj comparing flags 1 with 74
 						// const
 						// matchobj comparing flags 1 with 74
 	.liconst	2
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 179
@@ -3470,14 +3446,15 @@ l122: #
 						//../DeMiSTify/firmware/cue_parser.c, line 179
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// matchobj comparing flags 1 with 74
 						// const
 						// matchobj comparing flags 1 with 74
 	.liconst	3
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 180
@@ -3549,14 +3526,15 @@ l126: #
 						//../DeMiSTify/firmware/cue_parser.c, line 180
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// matchobj comparing flags 1 with 74
 						// const
 						// matchobj comparing flags 1 with 74
 	.liconst	4
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 181
@@ -3569,16 +3547,19 @@ l132: #
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
-						// (obj to r0) flags 42 type 101
-						// reg r4 - only match against tmp
-	mt	r4
+						// (obj to r0) flags 2 type 101
+						// var, auto|reg
+	.liconst	4
+						//sizemod based on type 0x101
+	byt
+	ldidx	r6
 	mr	r0
 						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
  						// var, auto|reg
-						// matchobj comparing flags 1 with 66
-						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	32
 	addt	r6
 	stmpdec	r0
@@ -3635,7 +3616,7 @@ l132: #
 						// var, auto|reg
 						// matchobj comparing flags 1 with 1
 						// matchobj comparing flags 1 with 130
-	.liconst	2
+	.liconst	7
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -3670,9 +3651,9 @@ l132: #
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
 						// matchobj comparing flags 130 with 130
-						//auto: flags: 82, comparing 2, 0 with 8, 0
-						//Fuzzy match found, offset: -6 (varadr: 1)
-	.liconst	-6
+						//auto: flags: 82, comparing 7, 0 with 8, 0
+						//Fuzzy match found, offset: -1 (varadr: 1)
+	.liconst	-1
 	add	r0
 
 						// required value found in r0
@@ -3758,7 +3739,7 @@ l139: #
  						// matchobj comparing flags 130 with 74
 						// var, auto|reg
 						// matchobj comparing flags 1 with 74
-	.liconst	2
+	.liconst	7
 	addt	r6
 	mr	r0
 
@@ -3783,13 +3764,21 @@ l142: #
 						//../DeMiSTify/firmware/cue_parser.c, line 203
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// var, auto|reg
+	.liconst	5
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	4
 						// (save temp)store type 1
-	byt
-	st	r6
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// freereg r1
 l143: # 
@@ -3864,25 +3853,45 @@ l134: #
 						//../DeMiSTify/firmware/cue_parser.c, line 211
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// matchobj comparing flags 1 with 1
 						// const
 						// matchobj comparing flags 1 with 1
 	.liconst	0
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 l146: # 
 
 						//../DeMiSTify/firmware/cue_parser.c, line 213
-						// (bitwise/arithmetic) 	//ops: 5, 0, 5
-						// WARNING - q1 and target collision - check code for correctness.
+						// (bitwise/arithmetic) 	//ops: 0, 0, 1
+						// (obj to r0) flags 2 type 101
+						// var, auto|reg
+	.liconst	4
+						//sizemod based on type 0x101
+	byt
+	ldidx	r6
+	mr	r0
 						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 						// const
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	1
-	add	r4
-						// (save result) // isreg
+	add	r0
+						// (save result) // not reg
+						// Store_reg to type 0x101, flags 0x2
+						// (prepobj tmp)
+ 						// matchobj comparing flags 130 with 1
+						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	4
+	addt	r6
+	exg	r0
+	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 
 						//../DeMiSTify/firmware/cue_parser.c, line 214
 						//pcreltotemp
@@ -3915,18 +3924,23 @@ l147: #
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
-						// (obj to r0) flags 42 type 101
-						// matchobj comparing flags 66 with 2
-						// matchobj comparing flags 66 with 130
-						// reg r4 - only match against tmp
-	mt	r4
+						// (obj to r0) flags 2 type 101
+						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 130
+						// var, auto|reg
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+	.liconst	4
+						//sizemod based on type 0x101
+	byt
+	ldidx	r6
 	mr	r0
 						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
  						// var, auto|reg
-						// matchobj comparing flags 1 with 66
-						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	32
 	addt	r6
 	stmpdec	r0
@@ -4005,18 +4019,25 @@ l147: #
 	.liconst	8
 	add	r6
 						// freereg r1
+						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 218
-						// (getreturn)						// (save result) // not reg
-						// Store_reg to type 0x4, flags 0x2
+						// (getreturn)						// (save result) // isreg
+	mt	r0
+	mr	r1
+
+						//../DeMiSTify/firmware/cue_parser.c, line 218
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 4 to 3
 						// (prepobj tmp)
  						// var, auto|reg
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 74
 	.liconst	32
 	addt	r6
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
-	// Volatile, or not int - not caching
+						//sizemod based on type 0x3
+	stmpdec	r1
+						// freereg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 220
 						// (test)
@@ -4062,30 +4083,27 @@ l147: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 220
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 3
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r1
+						// (bitwise/arithmetic) 	//ops: 6, 0, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 1
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 1
 	.liconst	1
-	add	r1
-						// (save result) // isreg
+	addt	r5
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 220
 						// Q2 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 1
+						// matchobj comparing flags 2 with 74
 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 74
 	.liconst	28
 						//sizemod based on type 0x3
 	ldidx	r6
@@ -4104,13 +4122,21 @@ l150: #
 						//../DeMiSTify/firmware/cue_parser.c, line 220
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// var, auto|reg
+	.liconst	5
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	2
 						// (save temp)store type 1
-	byt
-	st	r6
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 220
@@ -4122,22 +4148,14 @@ l151: #
 						//../DeMiSTify/firmware/cue_parser.c, line 220
 						// (a/p assign)
 						// (prepobj r0)
- 						// var, auto|reg
-	.liconst	4
-	addt	r6
-	mr	r0
-
+ 						// reg r5 - no need to prep
 						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 130
 						// var, auto|reg
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 130
 	.liconst	28
 						//sizemod based on type 0x3
 	ldidx	r6
-						// (save temp)store type 3
-	st	r0
+						// (save temp)isreg
+	mr	r5
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 221
@@ -4500,32 +4518,30 @@ l167: #
 						//../DeMiSTify/firmware/cue_parser.c, line 245
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// var, auto|reg
+	.liconst	5
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	2
 						// (save temp)store type 1
-	byt
-	st	r6
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 l169: # 
 
 						//../DeMiSTify/firmware/cue_parser.c, line 247
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to r0) flags 2 type 3
-						// var, auto|reg
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	cmp	r0
+						// (obj to tmp) flags 42 type 3
+						// reg r5 - only match against tmp
+	mt	r5
+	cmp	r4
 
 						//../DeMiSTify/firmware/cue_parser.c, line 247
 	cond	NEQ
@@ -4537,7 +4553,7 @@ l169: #
 						//../DeMiSTify/firmware/cue_parser.c, line 249
 						// (a/p assign)
 						// (prepobj r0)
- 						// matchobj comparing flags 130 with 2
+ 						// matchobj comparing flags 130 with 66
 						// extern (offset 28)
 	.liabs	_toc, 28
 						// extern pe not varadr
@@ -4583,23 +4599,43 @@ l171: #
 						//../DeMiSTify/firmware/cue_parser.c, line 253
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// const
 	.liconst	0
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 l157: # 
 
 						//../DeMiSTify/firmware/cue_parser.c, line 255
-						// (bitwise/arithmetic) 	//ops: 5, 0, 5
-						// WARNING - q1 and target collision - check code for correctness.
+						// (bitwise/arithmetic) 	//ops: 0, 0, 1
+						// (obj to r0) flags 2 type 101
+						// var, auto|reg
+	.liconst	4
+						//sizemod based on type 0x101
+	byt
+	ldidx	r6
+	mr	r0
 						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 						// const
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	1
-	add	r4
-						// (save result) // isreg
+	add	r0
+						// (save result) // not reg
+						// Store_reg to type 0x101, flags 0x2
+						// (prepobj tmp)
+ 						// matchobj comparing flags 130 with 1
+						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	4
+	addt	r6
+	exg	r0
+	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 
 						//../DeMiSTify/firmware/cue_parser.c, line 256
 						//pcreltotemp
@@ -4615,7 +4651,7 @@ l172: #
 						// (obj to tmp) flags 82 type a
 						// (prepobj tmp)
  						// var, auto|reg
-	.liconst	44
+	.liconst	40
 	addt	r6
 	stdec	r6
 						// freereg r1
@@ -4668,15 +4704,23 @@ l172: #
 						//../DeMiSTify/firmware/cue_parser.c, line 260
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// matchobj comparing flags 130 with 74
+						// var, auto|reg
+						// matchobj comparing flags 1 with 74
+	.liconst	5
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	2
 						// (save temp)store type 1
-	byt
-	st	r6
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 261
@@ -4695,7 +4739,7 @@ l174: #
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 2 type 101
 						// var, auto|reg
-	.liconst	46
+	.liconst	42
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -4725,7 +4769,7 @@ l174: #
 						// matchobj comparing flags 2 with 74
 						// var, auto|reg
 						// matchobj comparing flags 1 with 74
-	.liconst	49
+	.liconst	45
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -4755,7 +4799,7 @@ l174: #
 						// matchobj comparing flags 2 with 74
 						// var, auto|reg
 						// matchobj comparing flags 1 with 74
-	.liconst	52
+	.liconst	48
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -4824,12 +4868,13 @@ l175: #
 						//../DeMiSTify/firmware/cue_parser.c, line 264
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// const
 	.liconst	0
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 265
@@ -4842,16 +4887,19 @@ l176: #
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
-						// (obj to r0) flags 42 type 101
-						// reg r4 - only match against tmp
-	mt	r4
+						// (obj to r0) flags 2 type 101
+						// var, auto|reg
+	.liconst	4
+						//sizemod based on type 0x101
+	byt
+	ldidx	r6
 	mr	r0
 						// (save result) // not reg
 						// Store_reg to type 0x3, flags 0x2
 						// (prepobj tmp)
  						// var, auto|reg
-						// matchobj comparing flags 1 with 66
-						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	32
 	addt	r6
 	stmpdec	r0
@@ -4944,7 +4992,7 @@ l176: #
 						// (prepobj tmp)
  						// var, auto|reg
 						// matchobj comparing flags 1 with 74
-	.liconst	5
+	.liconst	10
 	addt	r6
 						//sizemod based on type 0x101
 	byt
@@ -4991,7 +5039,7 @@ l178: #
  						// matchobj comparing flags 130 with 1
 						// var, auto|reg
 						// matchobj comparing flags 1 with 1
-	.liconst	44
+	.liconst	40
 	addt	r6
 	stdec	r6
 						// freereg r1
@@ -5044,15 +5092,23 @@ l178: #
 						//../DeMiSTify/firmware/cue_parser.c, line 272
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// matchobj comparing flags 130 with 74
+						// var, auto|reg
+						// matchobj comparing flags 1 with 74
+	.liconst	5
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	2
 						// (save temp)store type 1
-	byt
-	st	r6
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 273
@@ -5071,7 +5127,7 @@ l183: #
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 2 type 101
 						// var, auto|reg
-	.liconst	46
+	.liconst	42
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -5101,7 +5157,7 @@ l183: #
 						// matchobj comparing flags 2 with 74
 						// var, auto|reg
 						// matchobj comparing flags 1 with 74
-	.liconst	49
+	.liconst	45
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -5131,7 +5187,7 @@ l183: #
 						// matchobj comparing flags 2 with 74
 						// var, auto|reg
 						// matchobj comparing flags 1 with 74
-	.liconst	52
+	.liconst	48
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -5151,26 +5207,21 @@ l183: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 274
 						// (getreturn)						// (save result) // not reg
-						// Store_reg to type 0x3, flags 0x2
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	32
-	addt	r6
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
+						// Store_reg to type 0x3, flags 0x62
+	mt	r0
+	st	r6
 
 						//../DeMiSTify/firmware/cue_parser.c, line 275
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
 						// (obj to r0) flags 2 type 101
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 98
+						// matchobj comparing flags 2 with 98
 						// var, auto|reg
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 2
-	.liconst	1
+						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 98
+	.liconst	6
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -5181,7 +5232,7 @@ l183: #
  						// var, auto|reg
 						// matchobj comparing flags 1 with 2
 						// matchobj comparing flags 1 with 2
-	.liconst	52
+	.liconst	32
 	addt	r6
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
@@ -5208,17 +5259,10 @@ l183: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 277
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r1
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 2
 						// matchobj comparing flags 1 with 2
@@ -5226,27 +5270,25 @@ l183: #
 						// matchobj comparing flags 1 with 2
 						// matchobj comparing flags 1 with 2
 	.liconst	1
-	add	r1
-						// (save result) // isreg
+	addt	r4
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						// matchobj comparing flags 74 with 74
+						// Obsoleting t1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 277
 						// Q2 disposable
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 1
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 2
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	cmp	r1
+						// (obj to tmp) flags 4a type 3
+						// matchobj comparing flags 74 with 74
+						// reg r1 - only match against tmp
+	cmp	r5
 						// freereg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 277
 	cond	NEQ
-						//conditional branch reversed
+						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l192
 		add	r7
@@ -5255,8 +5297,7 @@ l183: #
 						//../DeMiSTify/firmware/cue_parser.c, line 277
 						// (test)
 						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 74
 						// extern
 	.liabs	_toc, 20
 						//extern deref
@@ -5273,23 +5314,16 @@ l183: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 279
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
-	.liconst	28
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (bitwise/arithmetic) 	//ops: 7, 0, 2
+						// (obj to r1) flags 62 type 3
+						// matchobj comparing flags 98 with 2
+						// deref 
+	ld	r6
 	mr	r1
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 						// const
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 	.liconst	150
 	add	r1
 						// (save result) // isreg
@@ -5299,7 +5333,6 @@ l183: #
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
 						// matchobj comparing flags 74 with 1
-						// matchobj comparing flags 74 with 2
 						// reg r1 - only match against tmp
 	mt	r1
 	mr	r0
@@ -5334,7 +5367,7 @@ l186: #
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// var, auto|reg
-	.liconst	48
+	.liconst	28
 						//sizemod based on type 0x3
 	ldidx	r6
 	mr	r0
@@ -5354,22 +5387,11 @@ l186: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 287
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to r0) flags 2 type 3
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
-	cmp	r0
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 1
+						// reg r4 - only match against tmp
+	mt	r4
+	cmp	r5
 
 						//../DeMiSTify/firmware/cue_parser.c, line 287
 	cond	NEQ
@@ -5381,19 +5403,16 @@ l186: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 288
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	28
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (bitwise/arithmetic) 	//ops: 7, 0, 2
+						// (obj to r1) flags 62 type 3
+						// matchobj comparing flags 98 with 66
+						// deref 
+	ld	r6
 	mr	r1
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 	.liconst	150
 	add	r1
 						// (save result) // isreg
@@ -5430,19 +5449,11 @@ l194: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 292
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to r0) flags 2 type 3
-						// var, auto|reg
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r0
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 2
 	.liconst	1
 	sgn
-	cmp	r0
+	cmp	r5
 
 						//../DeMiSTify/firmware/cue_parser.c, line 292
 	cond	LE
@@ -5452,21 +5463,18 @@ l194: #
 		add	r7
 
 						//../DeMiSTify/firmware/cue_parser.c, line 293
-						// (bitwise/arithmetic) 	//ops: 0, 0, 1
-						// (obj to r0) flags 2 type 3
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	28
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (bitwise/arithmetic) 	//ops: 7, 0, 1
+						// (obj to r0) flags 62 type 3
+						// matchobj comparing flags 98 with 1
+						// deref 
+	ld	r6
 	mr	r0
 						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 98
+						// matchobj comparing flags 2 with 98
 						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 98
 	.liconst	12
 						//sizemod based on type 0x3
 	ldidx	r6
@@ -5476,31 +5484,19 @@ l194: #
 						// (prepobj tmp)
  						// var, auto|reg
 						// matchobj comparing flags 1 with 2
-	.liconst	52
+	.liconst	32
 	addt	r6
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
 						//../DeMiSTify/firmware/cue_parser.c, line 296
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to r0) flags 2 type 3
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 2
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
-	cmp	r0
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 130
+						// matchobj comparing flags 66 with 2
+						// reg r4 - only match against tmp
+	mt	r4
+	cmp	r5
 
 						//../DeMiSTify/firmware/cue_parser.c, line 296
 	cond	NEQ
@@ -5514,16 +5510,18 @@ l194: #
 						//../DeMiSTify/firmware/cue_parser.c, line 299
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
+						// matchobj comparing flags 2 with 66
+						// matchobj comparing flags 2 with 2
+
+			// required value found in r0
+	mt	r0
+	mr	r1
+				//return 0
+						// (obj to tmp) flags 2 type 3
+						// matchobj comparing flags 2 with 2
 						// matchobj comparing flags 2 with 2
 						// var, auto|reg
 						// matchobj comparing flags 1 with 2
-	.liconst	48
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r1
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
 						// matchobj comparing flags 1 with 2
 	.liconst	20
 						//sizemod based on type 0x3
@@ -5535,6 +5533,7 @@ l194: #
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
+						// matchobj comparing flags 74 with 2
 						// reg r1 - only match against tmp
 	mt	r1
 	mr	r0
@@ -5561,37 +5560,30 @@ l198: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 301
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 3
-						// var, auto|reg
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r1
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 2
 	.liconst	1
-	add	r1
-						// (save result) // isreg
+	addt	r4
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 301
 						// Q2 disposable
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	cmp	r1
+						// (obj to tmp) flags 4a type 3
+						// matchobj comparing flags 74 with 74
+						// reg r1 - only match against tmp
+	cmp	r5
 						// freereg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 301
 	cond	NEQ
-						//conditional branch reversed
+						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l200
 		add	r7
@@ -5600,7 +5592,7 @@ l198: #
 						//../DeMiSTify/firmware/cue_parser.c, line 301
 						// (test)
 						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 74
 						// extern
 	.liabs	_toc, 20
 						//extern deref
@@ -5617,19 +5609,16 @@ l198: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 302
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	28
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (bitwise/arithmetic) 	//ops: 7, 0, 2
+						// (obj to r1) flags 62 type 3
+						// matchobj comparing flags 98 with 2
+						// deref 
+	ld	r6
 	mr	r1
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 	.liconst	150
 	add	r1
 						// (save result) // isreg
@@ -5679,7 +5668,7 @@ l200: #
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 3
 						// var, auto|reg
-	.liconst	48
+	.liconst	28
 						//sizemod based on type 0x3
 	ldidx	r6
 	mr	r1
@@ -5729,17 +5718,15 @@ l196: #
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 309
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 3
-						// var, auto|reg
-	.liconst	28
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (bitwise/arithmetic) 	//ops: 7, 0, 2
+						// (obj to r1) flags 62 type 3
+						// deref 
+	ld	r6
 	mr	r1
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
 	.liconst	150
 	add	r1
 						// (save result) // isreg
@@ -5787,22 +5774,14 @@ l196: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 313
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to r0) flags 2 type 3
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
+						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 130
 						// matchobj comparing flags 1 with 2
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
 						// const
+						// matchobj comparing flags 1 with 130
 						// matchobj comparing flags 1 with 2
 	.liconst	1
-	cmp	r0
+	cmp	r4
 
 						//../DeMiSTify/firmware/cue_parser.c, line 313
 	cond	NEQ
@@ -5816,6 +5795,7 @@ l196: #
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 2
 						// extern (offset 12)
 	.liabs	_toc, 12
 						// extern pe not varadr
@@ -5842,15 +5822,11 @@ l204: #
 	addt	r6
 	mr	r0
 
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 130
-						// var, auto|reg
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 130
-	.liconst	28
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (obj to tmp) flags 62 type 3
+						// matchobj comparing flags 98 with 130
+						// matchobj comparing flags 98 with 130
+						// deref 
+	ld	r6
 						// (save temp)store type 3
 	st	r0
 						//save_temp done
@@ -5859,23 +5835,43 @@ l192: #
 						//../DeMiSTify/firmware/cue_parser.c, line 320
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 101
 						// const
 	.liconst	0
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 1
+	byt
+	st	r6
 						//save_temp done
 l181: # 
 
 						//../DeMiSTify/firmware/cue_parser.c, line 322
-						// (bitwise/arithmetic) 	//ops: 5, 0, 5
-						// WARNING - q1 and target collision - check code for correctness.
+						// (bitwise/arithmetic) 	//ops: 0, 0, 1
+						// (obj to r0) flags 2 type 101
+						// var, auto|reg
+	.liconst	4
+						//sizemod based on type 0x101
+	byt
+	ldidx	r6
+	mr	r0
 						// (obj to tmp) flags 1 type 101
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 						// const
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	1
-	add	r4
-						// (save result) // isreg
+	add	r0
+						// (save result) // not reg
+						// Store_reg to type 0x101, flags 0x2
+						// (prepobj tmp)
+ 						// matchobj comparing flags 130 with 1
+						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	4
+	addt	r6
+	exg	r0
+	stbinc	r0	//WARNING - pointer / reg not restored, might cause trouble!
 l115: # 
 
 						//../DeMiSTify/firmware/cue_parser.c, line 327
@@ -5902,11 +5898,14 @@ l115: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 327
 						// (test)
-						// (obj to tmp) flags 62 type 101
-						// matchobj comparing flags 98 with 1
-						// deref 
+						// (obj to tmp) flags 2 type 101
+						// matchobj comparing flags 2 with 1
+						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	5
+						//sizemod based on type 0x101
 	byt
-	ld	r6
+	ldidx	r6
 
 						//../DeMiSTify/firmware/cue_parser.c, line 327
 	cond	EQ
@@ -5922,7 +5921,7 @@ l219: #
 						// (test)
 						// (obj to tmp) flags 2 type 101
 						// var, auto|reg
-	.liconst	2
+	.liconst	7
 						//sizemod based on type 0x101
 	byt
 	ldidx	r6
@@ -5937,15 +5936,23 @@ l219: #
 						//../DeMiSTify/firmware/cue_parser.c, line 337
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// matchobj comparing flags 130 with 2
+						// var, auto|reg
+						// matchobj comparing flags 1 with 2
+	.liconst	5
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	4
 						// (save temp)store type 1
-	byt
-	st	r6
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 
 						//../DeMiSTify/firmware/cue_parser.c, line 340
@@ -5956,20 +5963,10 @@ l209: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 341
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to r0) flags 2 type 3
-						// var, auto|reg
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
-	cmp	r0
+						// (obj to tmp) flags 42 type 3
+						// reg r4 - only match against tmp
+	mt	r4
+	cmp	r5
 
 						//../DeMiSTify/firmware/cue_parser.c, line 341
 	cond	NEQ
@@ -5978,38 +5975,76 @@ l209: #
 	.lipcrel	l212
 		add	r7
 						// freereg r1
-						// allocreg r1
+						// freereg r2
+						// allocreg r2
 
 						//../DeMiSTify/firmware/cue_parser.c, line 342
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 103
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 2 type 3
+						// matchobj comparing flags 2 with 66
+						// extern
+	.liabs	_toc, 12
+						//extern deref
+						//sizemod based on type 0x3
+	ldt
+						//Saving to reg r2
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/cue_parser.c, line 342
+						// (bitwise/arithmetic) 	//ops: 0, 3, 3
+						// WARNING - evading q2 and target collision - check code for correctness.
+						// (obj to r0) flags 2 type 103
 						// matchobj comparing flags 2 with 2
 						// extern
 	.liabs	_toc, 44
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
-	mr	r1
-						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 2
-						// extern
-	.liabs	_toc, 12
-						//extern deref
-						//sizemod based on type 0x103
-	ldt
-	sub	r1
+	mr	r0
+						// (obj to tmp) flags 4a type 103
+						// matchobj comparing flags 74 with 2
+						// matchobj comparing flags 74 with 2
+						// reg r2 - only match against tmp
+	mt	r2
+	sub	r0
 						// (save result) // isreg
+	mt	r0
+	mr	r2
+						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 342
-						//Call division routine
-	mt	r2
-	stdec	r6
-						// (obj to tmp) flags 2 type 103
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 2 type 3
+						// matchobj comparing flags 2 with 74
 						// extern
 	.liabs	_toc, 28
 						//extern deref
-						//sizemod based on type 0x103
+						//sizemod based on type 0x3
 	ldt
+						//Saving to reg r1
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/cue_parser.c, line 342
+						// Q1 disposable
+						//Call division routine
+	mt	r2
+	stdec	r6
+						// (obj to tmp) flags 4a type 103
+						// reg r2 - only match against tmp
+	mt	r2
+	exg	r1
 	mr	r2
 	.lipcrel	_div_u32byu32
 	add	r7
@@ -6018,6 +6053,12 @@ l209: #
 	ldinc	r6
 	mr	r2
 						// (save result) // isreg
+						// freereg r2
+
+						//../DeMiSTify/firmware/cue_parser.c, line 342
+						//FIXME convert
+						// (convert - reducing type 103 to 3
+						//No need to mask - same size
 
 						//../DeMiSTify/firmware/cue_parser.c, line 343
 						// Q2 disposable
@@ -6045,25 +6086,16 @@ l209: #
  						// WARNING - check that 4 has been added.
 						// freereg r1
 l212: # 
+						// allocreg r2
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 348
 						// (compare) (q1 signed) (q2 signed)
-						// (obj to r0) flags 2 type 3
-						// var, auto|reg
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	40
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (obj to tmp) flags 42 type 3
+						// reg r4 - only match against tmp
+	mt	r4
 	sgn
-	cmp	r0
+	cmp	r5
 
 						//../DeMiSTify/firmware/cue_parser.c, line 348
 	cond	GE
@@ -6075,24 +6107,34 @@ l212: #
 						//../DeMiSTify/firmware/cue_parser.c, line 349
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r6 - no need to prep
+ 						// matchobj comparing flags 130 with 66
+						// var, auto|reg
+						// matchobj comparing flags 1 with 66
+	.liconst	5
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 101
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
 	.liconst	4
 						// (save temp)store type 1
-	byt
-	st	r6
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 l214: # 
 
 						//../DeMiSTify/firmware/cue_parser.c, line 351
 						// (test)
-						// (obj to tmp) flags 62 type 101
-						// deref 
+						// (obj to tmp) flags 2 type 101
+						// var, auto|reg
+	.liconst	5
+						//sizemod based on type 0x101
 	byt
-	ld	r6
+	ldidx	r6
 
 						//../DeMiSTify/firmware/cue_parser.c, line 351
 	cond	EQ
@@ -6104,7 +6146,7 @@ l214: #
 						//../DeMiSTify/firmware/cue_parser.c, line 352
 						// (a/p assign)
 						// (prepobj r0)
- 						// matchobj comparing flags 130 with 98
+ 						// matchobj comparing flags 130 with 2
 						// extern (offset 4)
 	.liabs	_toc, 4
 						// extern pe not varadr
@@ -6128,23 +6170,12 @@ l216: #
 
 						//../DeMiSTify/firmware/cue_parser.c, line 354
 						// (a/p assign)
-						// (prepobj r0)
+						// (prepobj tmp)
  						// extern (offset 4)
-	.liabs	_toc, 4
+	.liabs	_toc, 8
 						// extern pe not varadr
-	mr	r0
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 130
-						// var, auto|reg
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 130
-	.liconst	4
 						//sizemod based on type 0x3
-	ldidx	r6
-						// (save temp)store type 3
-	st	r0
-						//save_temp done
+	stmpdec	r5
 						// freereg r1
 l217: # 
 						// allocreg r1
@@ -6155,7 +6186,7 @@ l217: #
 						// (obj to tmp) flags 82 type a
 						// (prepobj tmp)
  						// var, auto|reg
-	.liconst	44
+	.liconst	40
 	addt	r6
 	stdec	r6
 						// freereg r1
@@ -6187,25 +6218,14 @@ l217: #
 						// freereg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 365
+						// Q1 disposable
 						// (a/p assign)
-						// (prepobj r0)
- 						// matchobj comparing flags 130 with 1
-						// extern (offset 32)
-	.liabs	_toc, 32
+						// (prepobj tmp)
+ 						// extern (offset 32)
+	.liabs	_toc, 36
 						// extern pe not varadr
-	mr	r0
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 130
-						// var, auto|reg
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 130
-	.liconst	40
 						//sizemod based on type 0x3
-	ldidx	r6
-						// (save temp)store type 3
-	st	r0
-						//save_temp done
+	stmpdec	r4
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 367
@@ -6214,12 +6234,12 @@ l217: #
 						//But unsigned, so no need to extend
 						// (prepobj r1)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 62 type 101
-						// matchobj comparing flags 98 with 2
-						// matchobj comparing flags 98 with 130
-						// deref 
+						// (obj to tmp) flags 2 type 101
+						// var, auto|reg
+	.liconst	5
+						//sizemod based on type 0x101
 	byt
-	ld	r6
+	ldidx	r6
 						// (save temp)isreg
 	mr	r0
 						//save_temp done
@@ -6231,22 +6251,12 @@ l106: #
 						// freereg r3
 						// freereg r4
 						// freereg r5
-	.liconst	-52
+	.liconst	-44
 	sub	r6
-	ldinc	r6
-	mr	r5
+	.lipcrel	.functiontail, 0
+	add	r7
 
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
-
-	.section	.rodata
-	.align	4
+	.section	.rodata.6
 l160:
 	.byte	65
 	.byte	85
@@ -6254,7 +6264,7 @@ l160:
 	.byte	73
 	.byte	79
 	.byte	0
-	.align	4
+	.section	.rodata.7
 l164:
 	.byte	77
 	.byte	79
@@ -6267,7 +6277,7 @@ l164:
 	.byte	53
 	.byte	50
 	.byte	0
-	.align	4
+	.section	.rodata.8
 l168:
 	.byte	77
 	.byte	79
@@ -6280,14 +6290,14 @@ l168:
 	.byte	52
 	.byte	56
 	.byte	0
-	.align	4
+	.section	.rodata.9
 l119:
 	.byte	70
 	.byte	73
 	.byte	76
 	.byte	69
 	.byte	0
-	.align	4
+	.section	.rodata.a
 l123:
 	.byte	84
 	.byte	82
@@ -6295,7 +6305,7 @@ l123:
 	.byte	67
 	.byte	75
 	.byte	0
-	.align	4
+	.section	.rodata.b
 l127:
 	.byte	80
 	.byte	82
@@ -6304,7 +6314,7 @@ l127:
 	.byte	65
 	.byte	80
 	.byte	0
-	.align	4
+	.section	.rodata.c
 l131:
 	.byte	73
 	.byte	78
@@ -6321,7 +6331,7 @@ l131:
 		//r6: yes
 		//r7: yes
 		//tmp: yes
-	.section	.text.6
+	.section	.text.d
 	.global	_cue_gettrackbylba
 _cue_gettrackbylba:
 	exg	r6
@@ -6329,33 +6339,33 @@ _cue_gettrackbylba:
 	stmpdec	r3
 	stmpdec	r4
 	exg	r6
-						// allocreg r4
+						// allocreg r3
 						// allocreg r1
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r4 - no need to prep
+ 						// reg r3 - no need to prep
 						// (obj to tmp) flags 40 type 3
 						// reg r1 - only match against tmp
 	mt	r1
 						// (save temp)isreg
-	mr	r4
+	mr	r3
 						//save_temp done
 						// freereg r1
-						// allocreg r3
+						// allocreg r4
 						// allocreg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 374
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r3 - no need to prep
+ 						// reg r4 - no need to prep
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 64
 						// const
 						// matchobj comparing flags 1 with 64
 	.liconst	1
 						// (save temp)isreg
-	mr	r3
+	mr	r4
 						//save_temp done
 l228: # 
 
@@ -6368,7 +6378,7 @@ l228: #
 						//sizemod based on type 0x3
 	ldt
 	sgn
-	cmp	r4
+	cmp	r3
 
 						//../DeMiSTify/firmware/cue_parser.c, line 377
 	cond	SLT
@@ -6387,7 +6397,7 @@ l228: #
 						//sizemod based on type 0x3
 	ldt
 	sgn
-	cmp	r4
+	cmp	r3
 
 						//../DeMiSTify/firmware/cue_parser.c, line 377
 	cond	SGT
@@ -6420,8 +6430,8 @@ l226: #
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 42 type 3
-						// reg r3 - only match against tmp
-	mt	r3
+						// reg r4 - only match against tmp
+	mt	r4
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
@@ -6435,12 +6445,12 @@ l226: #
 						// freereg r1
 
 						//../DeMiSTify/firmware/cue_parser.c, line 380
-						// (bitwise/arithmetic) 	//ops: 4, 0, 4
+						// (bitwise/arithmetic) 	//ops: 5, 0, 5
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
 						// const
 	.liconst	1
-	add	r3
+	add	r4
 						// (save result) // isreg
 
 						//../DeMiSTify/firmware/cue_parser.c, line 380
@@ -6453,7 +6463,7 @@ l226: #
 						//sizemod based on type 0x3
 	ldt
 	sgn
-	cmp	r3
+	cmp	r4
 
 						//../DeMiSTify/firmware/cue_parser.c, line 380
 	cond	LE
@@ -6475,29 +6485,20 @@ l220: #
 						// freereg r1
 						// freereg r3
 						// freereg r4
-	ldinc	r6
-	mr	r4
+	.lipcrel	.functiontail, 2
+	add	r7
 
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
-
-	.section	.data
-	.align	4
+	.section	.data.e
 	.global	_cueword
 _cueword:
 	.byte	0
 	.space	63
-	.section	.bss
-	.align	4
+	.section	.bss.f
 	.global	_toc
 	.comm	_toc,56
-	.align	4
+	.section	.bss.10
 	.global	_cue_file
 	.comm	_cue_file,20
-	.section	.data
-	.align	4
+	.section	.data.11
 l1:
 	.int	0

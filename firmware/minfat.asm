@@ -23,7 +23,7 @@ _FindDrive:
 						// allocreg r3
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 110
+						//../DeMiSTify/firmware/minfat.c, line 112
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
@@ -42,7 +42,7 @@ _FindDrive:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 114
+						//../DeMiSTify/firmware/minfat.c, line 116
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -59,7 +59,7 @@ _FindDrive:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 114
+						//../DeMiSTify/firmware/minfat.c, line 116
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -74,7 +74,7 @@ _FindDrive:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 114
+						//../DeMiSTify/firmware/minfat.c, line 116
 						//call
 						//pcreltotemp
 	.lipcrel	_sd_read_sector
@@ -86,7 +86,7 @@ _FindDrive:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 114
+						//../DeMiSTify/firmware/minfat.c, line 116
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 1
@@ -96,15 +96,15 @@ _FindDrive:
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 114
+						//../DeMiSTify/firmware/minfat.c, line 116
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l4
+	.lipcrel	l6
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 117
+						//../DeMiSTify/firmware/minfat.c, line 119
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 74
@@ -113,16 +113,16 @@ _FindDrive:
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 118
+						//../DeMiSTify/firmware/minfat.c, line 120
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
 						// freereg r1
 						// freereg r2
 						// freereg r3
-l4: # 
+l6: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 122
+						//../DeMiSTify/firmware/minfat.c, line 124
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -133,7 +133,7 @@ l4: #
 	mr	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 123
+						//../DeMiSTify/firmware/minfat.c, line 125
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -145,128 +145,49 @@ l4: #
 						// (save temp)store type 3
 	st	r6
 						//save_temp done
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 128
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 2 type a
+						// matchobj comparing flags 2 with 1
+						// extern
+	.liabs	_FAT16_ID
+						//extern deref
+						//sizemod based on type 0xa
+	ldt
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 126
+						//../DeMiSTify/firmware/minfat.c, line 128
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
 						// (obj to tmp) flags 82 type a
-						// matchobj comparing flags 130 with 1
+						// matchobj comparing flags 130 with 2
 						// (prepobj tmp)
- 						// matchobj comparing flags 130 with 1
+ 						// matchobj comparing flags 130 with 2
 						// extern (offset 54)
 	.liabs	_sector_buffer, 54
 						// extern pe is varadr
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
-						// allocreg r1
-
-						//../DeMiSTify/firmware/minfat.c, line 126
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r1 - no need to prep
-						// (obj to tmp) flags 82 type a
-						// matchobj comparing flags 130 with 130
-						// (prepobj tmp)
- 						// matchobj comparing flags 130 with 130
-						// static
-	.liabs	l7,0
-						// static pe is varadr
-						// (save temp)isreg
-	mr	r1
-						//save_temp done
-						// allocreg r3
-
-						//../DeMiSTify/firmware/minfat.c, line 126
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r3 - no need to prep
-						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 130
-						// const
-						// matchobj comparing flags 1 with 130
-	.liconst	8
-						// (save temp)isreg
-	mr	r3
-						//save_temp done
-
-						//../DeMiSTify/firmware/minfat.c, line 126
-						//call
-						//pcreltotemp
-	.lipcrel	___strncmp
-	add	r7
-						// Flow control - popping 0 + 0 bytes
-						// freereg r2
-						// freereg r1
-						// freereg r3
-						// allocreg r1
-
-						//../DeMiSTify/firmware/minfat.c, line 126
-						// (test)
-						// (obj to tmp) flags 4a type 3
-						// reg r0 - only match against tmp
-	mt	r0
-				// flags 4a
-	and	r0
-						// freereg r1
-
-						//../DeMiSTify/firmware/minfat.c, line 126
-	cond	NEQ
-						//conditional branch regular
-						//pcreltotemp
-	.lipcrel	l6
-		add	r7
-						// allocreg r3
-						// allocreg r2
-						// allocreg r1
-
-						//../DeMiSTify/firmware/minfat.c, line 127
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r6 - no need to prep
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 74
-						// const
-						// matchobj comparing flags 1 with 74
-	.liconst	0
-						// (save temp)store type 3
-	st	r6
-						//save_temp done
-						// freereg r1
-						// freereg r2
-						// freereg r3
-l6: # 
-						// allocreg r2
-
-						//../DeMiSTify/firmware/minfat.c, line 128
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r2 - no need to prep
-						// (obj to tmp) flags 82 type a
-						// (prepobj tmp)
- 						// extern (offset 82)
-	.liabs	_sector_buffer, 82
-						// extern pe is varadr
-						// (save temp)isreg
-	mr	r2
-						//save_temp done
-						// allocreg r1
 
 						//../DeMiSTify/firmware/minfat.c, line 128
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 82 type a
-						// matchobj comparing flags 130 with 130
-						// (prepobj tmp)
- 						// matchobj comparing flags 130 with 130
-						// static
-	.liabs	l10,0
-						// static pe is varadr
+						// (obj to tmp) flags 4a type a
+						// matchobj comparing flags 74 with 130
+						// reg r1 - only match against tmp
+	mt	r1
 						// (save temp)isreg
-	mr	r1
+	//mr
 						//save_temp done
 						// allocreg r3
 
@@ -275,9 +196,9 @@ l6: #
 						// (prepobj r0)
  						// reg r3 - no need to prep
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 						// const
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 	.liconst	8
 						// (save temp)isreg
 	mr	r3
@@ -307,7 +228,7 @@ l6: #
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l9
+	.lipcrel	l8
 		add	r7
 						// allocreg r3
 						// allocreg r2
@@ -325,22 +246,126 @@ l6: #
 						// (save temp)store type 3
 	st	r6
 						//save_temp done
-l9: # 
+						// freereg r1
+						// freereg r2
+						// freereg r3
+l8: # 
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 133
+						//../DeMiSTify/firmware/minfat.c, line 130
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 2 type a
+						// extern
+	.liabs	_FAT32_ID
+						//extern deref
+						//sizemod based on type 0xa
+	ldt
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						// allocreg r2
+
+						//../DeMiSTify/firmware/minfat.c, line 130
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 82 type a
+						// matchobj comparing flags 130 with 2
+						// (prepobj tmp)
+ 						// matchobj comparing flags 130 with 2
+						// extern (offset 82)
+	.liabs	_sector_buffer, 82
+						// extern pe is varadr
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 130
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 4a type a
+						// matchobj comparing flags 74 with 130
+						// reg r1 - only match against tmp
+	mt	r1
+						// (save temp)isreg
+	//mr
+						//save_temp done
+						// allocreg r3
+
+						//../DeMiSTify/firmware/minfat.c, line 130
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r3 - no need to prep
+						// (obj to tmp) flags 1 type 103
+						// matchobj comparing flags 1 with 74
+						// const
+						// matchobj comparing flags 1 with 74
+	.liconst	8
+						// (save temp)isreg
+	mr	r3
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 130
+						//call
+						//pcreltotemp
+	.lipcrel	___strncmp
+	add	r7
+						// Flow control - popping 0 + 0 bytes
+						// freereg r2
+						// freereg r1
+						// freereg r3
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 130
+						// (test)
+						// (obj to tmp) flags 4a type 3
+						// reg r0 - only match against tmp
+	mt	r0
+				// flags 4a
+	and	r0
+						// freereg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 130
+	cond	NEQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l10
+		add	r7
+						// allocreg r3
+						// allocreg r2
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 131
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r6 - no need to prep
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 74
+						// const
+						// matchobj comparing flags 1 with 74
+	.liconst	0
+						// (save temp)store type 3
+	st	r6
+						//save_temp done
+l10: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 135
 						// (test)
 						// (obj to tmp) flags 62 type 3
 						// deref 
 	ld	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 133
+						//../DeMiSTify/firmware/minfat.c, line 135
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l19
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 139
+						//../DeMiSTify/firmware/minfat.c, line 141
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -355,7 +380,7 @@ l9: #
 	mr	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 140
+						//../DeMiSTify/firmware/minfat.c, line 142
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -373,7 +398,7 @@ l9: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 140
+						//../DeMiSTify/firmware/minfat.c, line 142
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 2
@@ -387,14 +412,14 @@ l9: #
 	.liconst	21930
 	cmp	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 140
+						//../DeMiSTify/firmware/minfat.c, line 142
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l14
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 141
+						//../DeMiSTify/firmware/minfat.c, line 143
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -409,13 +434,13 @@ l9: #
 	mr	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 142
+						//../DeMiSTify/firmware/minfat.c, line 144
 						//pcreltotemp
 	.lipcrel	l17
 	add	r7
 l14: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 142
+						//../DeMiSTify/firmware/minfat.c, line 144
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// deref 
@@ -428,14 +453,14 @@ l14: #
 	.liconst	43605
 	cmp	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 142
+						//../DeMiSTify/firmware/minfat.c, line 144
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
 	.lipcrel	l17
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 145
+						//../DeMiSTify/firmware/minfat.c, line 147
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 1
@@ -444,14 +469,14 @@ l14: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 146
+						//../DeMiSTify/firmware/minfat.c, line 148
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
 						// freereg r1
 l17: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 148
+						//../DeMiSTify/firmware/minfat.c, line 150
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -462,19 +487,22 @@ l17: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 148
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 150
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 42 type 104
+						// (obj to tmp) flags 42 type 103
 						// matchobj comparing flags 66 with 130
 						// reg r5 - only match against tmp
 	mt	r5
+						//Saving to reg r1
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
+						//No need to mask - same size
 
-						//../DeMiSTify/firmware/minfat.c, line 148
+						//../DeMiSTify/firmware/minfat.c, line 150
 						//call
 						//pcreltotemp
 	.lipcrel	_sd_read_sector
@@ -485,7 +513,7 @@ l17: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 148
+						//../DeMiSTify/firmware/minfat.c, line 150
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 1
@@ -495,7 +523,7 @@ l17: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 148
+						//../DeMiSTify/firmware/minfat.c, line 150
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -503,7 +531,7 @@ l17: #
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 149
+						//../DeMiSTify/firmware/minfat.c, line 151
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 74
@@ -512,60 +540,73 @@ l17: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 151
+						//../DeMiSTify/firmware/minfat.c, line 153
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
 						// freereg r1
 						// freereg r2
 						// freereg r3
 l19: # 
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 158
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 2 type a
+						// extern
+	.liabs	_FAT32_ID
+						//extern deref
+						//sizemod based on type 0xa
+	ldt
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 156
+						//../DeMiSTify/firmware/minfat.c, line 158
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
 						// (obj to tmp) flags 82 type a
+						// matchobj comparing flags 130 with 2
 						// (prepobj tmp)
- 						// extern (offset 82)
+ 						// matchobj comparing flags 130 with 2
+						// extern (offset 82)
 	.liabs	_sector_buffer, 82
 						// extern pe is varadr
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
-						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 156
+						//../DeMiSTify/firmware/minfat.c, line 158
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 82 type a
-						// matchobj comparing flags 130 with 130
-						// (prepobj tmp)
- 						// matchobj comparing flags 130 with 130
-						// static
-	.liabs	l22,0
-						// static pe is varadr
+						// (obj to tmp) flags 4a type a
+						// matchobj comparing flags 74 with 130
+						// reg r1 - only match against tmp
+	mt	r1
 						// (save temp)isreg
-	mr	r1
+	//mr
 						//save_temp done
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 156
+						//../DeMiSTify/firmware/minfat.c, line 158
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 						// const
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 	.liconst	8
 						// (save temp)isreg
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 156
+						//../DeMiSTify/firmware/minfat.c, line 158
 						//call
 						//pcreltotemp
 	.lipcrel	___strncmp
@@ -576,7 +617,7 @@ l19: #
 						// freereg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 156
+						//../DeMiSTify/firmware/minfat.c, line 158
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -585,7 +626,7 @@ l19: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 156
+						//../DeMiSTify/firmware/minfat.c, line 158
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
@@ -595,7 +636,7 @@ l19: #
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 157
+						//../DeMiSTify/firmware/minfat.c, line 159
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 74
@@ -614,60 +655,73 @@ l19: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 158
+						//../DeMiSTify/firmware/minfat.c, line 160
 						//pcreltotemp
-	.lipcrel	l25
+	.lipcrel	l24
 	add	r7
 						// freereg r1
 						// freereg r2
 						// freereg r3
 l21: # 
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 160
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 2 type a
+						// extern
+	.liabs	_FAT16_ID
+						//extern deref
+						//sizemod based on type 0xa
+	ldt
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 158
+						//../DeMiSTify/firmware/minfat.c, line 160
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
 						// (obj to tmp) flags 82 type a
+						// matchobj comparing flags 130 with 2
 						// (prepobj tmp)
- 						// extern (offset 54)
+ 						// matchobj comparing flags 130 with 2
+						// extern (offset 54)
 	.liabs	_sector_buffer, 54
 						// extern pe is varadr
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
-						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 158
+						//../DeMiSTify/firmware/minfat.c, line 160
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 82 type a
-						// matchobj comparing flags 130 with 130
-						// (prepobj tmp)
- 						// matchobj comparing flags 130 with 130
-						// static
-	.liabs	l26,0
-						// static pe is varadr
+						// (obj to tmp) flags 4a type a
+						// matchobj comparing flags 74 with 130
+						// reg r1 - only match against tmp
+	mt	r1
 						// (save temp)isreg
-	mr	r1
+	//mr
 						//save_temp done
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 158
+						//../DeMiSTify/firmware/minfat.c, line 160
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 						// const
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 	.liconst	8
 						// (save temp)isreg
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 158
+						//../DeMiSTify/firmware/minfat.c, line 160
 						//call
 						//pcreltotemp
 	.lipcrel	___strncmp
@@ -678,7 +732,7 @@ l21: #
 						// freereg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 158
+						//../DeMiSTify/firmware/minfat.c, line 160
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -687,17 +741,17 @@ l21: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 158
+						//../DeMiSTify/firmware/minfat.c, line 160
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l25
+	.lipcrel	l24
 		add	r7
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 161
+						//../DeMiSTify/firmware/minfat.c, line 163
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 74
@@ -706,15 +760,15 @@ l21: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 162
+						//../DeMiSTify/firmware/minfat.c, line 164
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
 						// freereg r1
-l25: # 
+l24: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 164
+						//../DeMiSTify/firmware/minfat.c, line 166
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -731,7 +785,7 @@ l25: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 164
+						//../DeMiSTify/firmware/minfat.c, line 166
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -742,15 +796,15 @@ l25: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 164
+						//../DeMiSTify/firmware/minfat.c, line 166
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l27
+	.lipcrel	l25
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 164
+						//../DeMiSTify/firmware/minfat.c, line 166
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -768,7 +822,7 @@ l25: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 164
+						//../DeMiSTify/firmware/minfat.c, line 166
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -779,29 +833,29 @@ l25: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 164
+						//../DeMiSTify/firmware/minfat.c, line 166
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l28
+	.lipcrel	l26
 		add	r7
-l27: # 
+l25: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 165
+						//../DeMiSTify/firmware/minfat.c, line 167
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 168
+						//../DeMiSTify/firmware/minfat.c, line 170
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
-l28: # 
+l26: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 168
+						//../DeMiSTify/firmware/minfat.c, line 170
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -818,7 +872,7 @@ l28: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 168
+						//../DeMiSTify/firmware/minfat.c, line 170
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 2
@@ -832,14 +886,14 @@ l28: #
 	.liconst	233
 	cmp	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 168
+						//../DeMiSTify/firmware/minfat.c, line 170
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l31
+	.lipcrel	l29
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 168
+						//../DeMiSTify/firmware/minfat.c, line 170
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 62 type 3
 						// matchobj comparing flags 98 with 1
@@ -853,14 +907,14 @@ l28: #
 	.liconst	235
 	cmp	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 168
+						//../DeMiSTify/firmware/minfat.c, line 170
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l31
+	.lipcrel	l29
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 169
+						//../DeMiSTify/firmware/minfat.c, line 171
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 1
@@ -869,15 +923,15 @@ l28: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 172
+						//../DeMiSTify/firmware/minfat.c, line 174
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
 						// freereg r1
-l31: # 
+l29: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 172
+						//../DeMiSTify/firmware/minfat.c, line 174
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -894,7 +948,7 @@ l31: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 172
+						//../DeMiSTify/firmware/minfat.c, line 174
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 3
@@ -905,15 +959,15 @@ l31: #
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 172
+						//../DeMiSTify/firmware/minfat.c, line 174
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l33
+	.lipcrel	l31
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 172
+						//../DeMiSTify/firmware/minfat.c, line 174
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -931,7 +985,7 @@ l31: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 172
+						//../DeMiSTify/firmware/minfat.c, line 174
 						// Q1 disposable
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
@@ -942,31 +996,31 @@ l31: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 172
+						//../DeMiSTify/firmware/minfat.c, line 174
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l34
+	.lipcrel	l32
 		add	r7
-l33: # 
+l31: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 173
+						//../DeMiSTify/firmware/minfat.c, line 175
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 176
+						//../DeMiSTify/firmware/minfat.c, line 178
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
 						// freereg r1
 						// freereg r2
-l34: # 
+l32: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 176
+						//../DeMiSTify/firmware/minfat.c, line 178
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1000,7 +1054,7 @@ l34: #
 	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 179
+						//../DeMiSTify/firmware/minfat.c, line 181
 						// (bitwise/arithmetic) 	//ops: 5, 0, 1
 						// (obj to r0) flags 42 type 103
 						// matchobj comparing flags 66 with 2
@@ -1026,7 +1080,7 @@ l34: #
  						// WARNING - check that 4 has been added.
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 184
+						//../DeMiSTify/firmware/minfat.c, line 186
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1045,7 +1099,7 @@ l34: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 184
+						//../DeMiSTify/firmware/minfat.c, line 186
 						// (bitwise/arithmetic) 	//ops: 2, 6, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 42 type 103
@@ -1057,7 +1111,7 @@ l34: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 184
+						//../DeMiSTify/firmware/minfat.c, line 186
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1076,7 +1130,7 @@ l34: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 184
+						//../DeMiSTify/firmware/minfat.c, line 186
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1089,7 +1143,12 @@ l34: #
 	shl	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 184
+						//../DeMiSTify/firmware/minfat.c, line 186
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 186
 						// Q1 disposable
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 1
@@ -1125,7 +1184,7 @@ l34: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 185
+						//../DeMiSTify/firmware/minfat.c, line 187
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1150,7 +1209,7 @@ l34: #
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/minfat.c, line 187
+						//../DeMiSTify/firmware/minfat.c, line 189
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 130
@@ -1161,16 +1220,33 @@ l34: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 187
+						//../DeMiSTify/firmware/minfat.c, line 189
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l37
+	.lipcrel	l35
 		add	r7
 						// freereg r3
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 191
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 2 type a
+						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 2
+						// extern
+	.liabs	_FAT32_ID
+						//extern deref
+						//sizemod based on type 0xa
+	ldt
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 189
+						//../DeMiSTify/firmware/minfat.c, line 191
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -1186,42 +1262,37 @@ l34: #
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
-						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 189
+						//../DeMiSTify/firmware/minfat.c, line 191
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 82 type a
-						// matchobj comparing flags 130 with 130
-						// matchobj comparing flags 130 with 2
-						// (prepobj tmp)
- 						// matchobj comparing flags 130 with 130
-						// matchobj comparing flags 130 with 2
-						// static
-	.liabs	l40,0
-						// static pe is varadr
+						// (obj to tmp) flags 4a type a
+						// matchobj comparing flags 74 with 130
+						// matchobj comparing flags 74 with 2
+						// reg r1 - only match against tmp
+	mt	r1
 						// (save temp)isreg
-	mr	r1
+	//mr
 						//save_temp done
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 189
+						//../DeMiSTify/firmware/minfat.c, line 191
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 74
 						// matchobj comparing flags 1 with 2
 	.liconst	8
 						// (save temp)isreg
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 189
+						//../DeMiSTify/firmware/minfat.c, line 191
 						//call
 						//pcreltotemp
 	.lipcrel	___strncmp
@@ -1232,7 +1303,7 @@ l34: #
 						// freereg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 189
+						//../DeMiSTify/firmware/minfat.c, line 191
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -1241,17 +1312,17 @@ l34: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 189
+						//../DeMiSTify/firmware/minfat.c, line 191
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l39
+	.lipcrel	l37
 		add	r7
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 190
+						//../DeMiSTify/firmware/minfat.c, line 192
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 74
@@ -1260,14 +1331,14 @@ l34: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 192
+						//../DeMiSTify/firmware/minfat.c, line 194
 						//pcreltotemp
-	.lipcrel	l1
+	.lipcrel	l3
 	add	r7
 						// freereg r1
 						// freereg r2
 						// freereg r3
-l39: # 
+l37: # 
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -1281,7 +1352,7 @@ l39: #
 	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 193
+						//../DeMiSTify/firmware/minfat.c, line 195
 						// (a/p assign)
 						// (prepobj tmp)
  						// extern (offset 0)
@@ -1291,7 +1362,7 @@ l39: #
 	stmpdec	r4
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1308,7 +1379,7 @@ l39: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1320,7 +1391,7 @@ l39: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1338,7 +1409,7 @@ l39: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -1355,7 +1426,7 @@ l39: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1373,7 +1444,7 @@ l39: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1384,7 +1455,7 @@ l39: #
 	shl	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -1401,7 +1472,7 @@ l39: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1419,7 +1490,7 @@ l39: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1430,7 +1501,7 @@ l39: #
 	shl	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 194
+						//../DeMiSTify/firmware/minfat.c, line 196
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -1446,7 +1517,12 @@ l39: #
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 195
+						//../DeMiSTify/firmware/minfat.c, line 196
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 197
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 103
@@ -1459,7 +1535,7 @@ l39: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 195
+						//../DeMiSTify/firmware/minfat.c, line 197
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 103
@@ -1479,7 +1555,7 @@ l39: #
 	stmpdec	r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1496,7 +1572,7 @@ l39: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1508,7 +1584,7 @@ l39: #
 						// (save result) // isreg
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1526,7 +1602,7 @@ l39: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 4, 3, 3
 						//Special case - addt
@@ -1543,7 +1619,7 @@ l39: #
 						// freereg r3
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1561,7 +1637,7 @@ l39: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1572,7 +1648,7 @@ l39: #
 	shl	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 4, 3, 3
 						//Special case - addt
@@ -1589,7 +1665,7 @@ l39: #
 						// freereg r3
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1607,7 +1683,7 @@ l39: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1618,7 +1694,7 @@ l39: #
 	and	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1629,7 +1705,7 @@ l39: #
 	shl	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 196
+						//../DeMiSTify/firmware/minfat.c, line 198
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 4, 3, 3
 						//Special case - addt
@@ -1644,24 +1720,39 @@ l39: #
 	mr	r2
 						//save_temp done
 						// freereg r3
-						// (a/p assign)
+
+						//../DeMiSTify/firmware/minfat.c, line 198
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 3 to 103
 						// (prepobj tmp)
  						// extern (offset 0)
 	.liabs	_root_directory_cluster, 4
 						// extern pe not varadr
-						//sizemod based on type 0x3
+						//sizemod based on type 0x103
 	stmpdec	r2
+						// freereg r2
+						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 197
-						// (bitwise/arithmetic) 	//ops: 3, 0, 3
-						// WARNING - q1 and target collision - check code for correctness.
+						//../DeMiSTify/firmware/minfat.c, line 199
+						// (bitwise/arithmetic) 	//ops: 0, 0, 3
+						// (obj to r2) flags 2 type 103
+						// matchobj comparing flags 2 with 130
+						// extern
+	.liabs	_root_directory_cluster
+						//extern deref
+						//sizemod based on type 0x103
+	ldt
+	mr	r2
 						// (obj to tmp) flags 1 type 103
+						// matchobj comparing flags 1 with 2
 						// const
+						// matchobj comparing flags 1 with 2
 	.liconst	2
 	sub	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 197
+						//../DeMiSTify/firmware/minfat.c, line 199
 						// (bitwise/arithmetic) 	//ops: 3, 5, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 42 type 103
@@ -1671,7 +1762,7 @@ l39: #
 	mul	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 197
+						//../DeMiSTify/firmware/minfat.c, line 199
 						// Q1 disposable
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 1
@@ -1695,14 +1786,14 @@ l39: #
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 200
+						//../DeMiSTify/firmware/minfat.c, line 202
 						//pcreltotemp
-	.lipcrel	l41
+	.lipcrel	l38
 	add	r7
-l37: # 
+l35: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 202
+						//../DeMiSTify/firmware/minfat.c, line 204
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1719,7 +1810,7 @@ l37: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 202
+						//../DeMiSTify/firmware/minfat.c, line 204
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1731,7 +1822,7 @@ l37: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 202
+						//../DeMiSTify/firmware/minfat.c, line 204
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1749,7 +1840,7 @@ l37: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 202
+						//../DeMiSTify/firmware/minfat.c, line 204
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						//Special case - addt
@@ -1765,18 +1856,38 @@ l37: #
 						//save_temp done
 						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 203
-						// (bitwise/arithmetic) 	//ops: 2, 0, 2
-						// WARNING - q1 and target collision - check code for correctness.
+						//../DeMiSTify/firmware/minfat.c, line 204
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj tmp)
+ 						// extern (offset 0)
+	.liabs	_dir_entries, 4
+						// extern pe not varadr
+						//sizemod based on type 0x103
+	stmpdec	r1
+						// freereg r1
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 205
+						// (bitwise/arithmetic) 	//ops: 0, 0, 2
+						// (obj to r1) flags 2 type 103
+						// matchobj comparing flags 2 with 130
+						// extern
+	.liabs	_dir_entries
+						//extern deref
+						//sizemod based on type 0x103
+	ldt
+	mr	r1
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 2
 	.liconst	5
 	shl	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 203
+						//../DeMiSTify/firmware/minfat.c, line 205
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 103
@@ -1787,7 +1898,7 @@ l37: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 203
+						//../DeMiSTify/firmware/minfat.c, line 205
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 103
@@ -1806,7 +1917,7 @@ l37: #
 	stmpdec	r1
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 206
+						//../DeMiSTify/firmware/minfat.c, line 208
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1823,7 +1934,7 @@ l37: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 206
+						//../DeMiSTify/firmware/minfat.c, line 208
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -1835,7 +1946,7 @@ l37: #
 						// (save result) // isreg
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 206
+						//../DeMiSTify/firmware/minfat.c, line 208
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -1853,7 +1964,7 @@ l37: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 206
+						//../DeMiSTify/firmware/minfat.c, line 208
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 4, 3, 3
 						//Special case - addt
@@ -1869,7 +1980,12 @@ l37: #
 						//save_temp done
 						// freereg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 209
+						//../DeMiSTify/firmware/minfat.c, line 208
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 211
 						// (bitwise/arithmetic) 	//ops: 3, 0, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 103
@@ -1882,7 +1998,7 @@ l37: #
 	mul	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 209
+						//../DeMiSTify/firmware/minfat.c, line 211
 						// (bitwise/arithmetic) 	//ops: 3, 7, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 62 type 103
@@ -1898,7 +2014,7 @@ l37: #
 						//sizemod based on type 0x103
 	stmpdec	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 210
+						//../DeMiSTify/firmware/minfat.c, line 212
 						// (a/p assign)
 						// (prepobj r0)
  						// extern (offset 0)
@@ -1916,7 +2032,7 @@ l37: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 213
+						//../DeMiSTify/firmware/minfat.c, line 215
 						// Q1 disposable
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 1
@@ -1942,12 +2058,12 @@ l37: #
 						// Obsoleting t1
 						// freereg r2
 						// freereg r1
-l41: # 
+l38: # 
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 217
+						//../DeMiSTify/firmware/minfat.c, line 219
 						// (a/p assign)
 						// (prepobj r0)
  						// extern (offset 0)
@@ -1966,7 +2082,7 @@ l41: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 218
+						//../DeMiSTify/firmware/minfat.c, line 220
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -1988,7 +2104,7 @@ l41: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 219
+						//../DeMiSTify/firmware/minfat.c, line 221
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -1999,14 +2115,14 @@ l41: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 219
+						//../DeMiSTify/firmware/minfat.c, line 221
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l43
+	.lipcrel	l40
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 219
+						//../DeMiSTify/firmware/minfat.c, line 221
 						// (bitwise/arithmetic) 	//ops: 5, 0, 1
 						// (obj to r0) flags 42 type 103
 						// matchobj comparing flags 66 with 2
@@ -2027,13 +2143,13 @@ l41: #
 	mt	r0
 	st	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 219
+						//../DeMiSTify/firmware/minfat.c, line 221
 						//pcreltotemp
-	.lipcrel	l44
+	.lipcrel	l41
 	add	r7
-l43: # 
+l40: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 219
+						//../DeMiSTify/firmware/minfat.c, line 221
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 103
 						// extern
@@ -2054,9 +2170,9 @@ l43: #
 						// Store_reg to type 0x103, flags 0x6a
 	mt	r0
 	st	r6
-l44: # 
+l41: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 219
+						//../DeMiSTify/firmware/minfat.c, line 221
 						// (a/p assign)
 						// (prepobj r0)
  						// extern (offset 0)
@@ -2072,7 +2188,7 @@ l44: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 221
+						//../DeMiSTify/firmware/minfat.c, line 223
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 106
@@ -2082,7 +2198,7 @@ l44: #
 						// matchobj comparing flags 1 with 130
 	.liconst	1
 	mr	r0
-l1: # 
+l3: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
@@ -2090,6 +2206,7 @@ l1: #
 						// freereg r5
 	.liconst	-8
 	sub	r6
+.functiontail:
 	ldinc	r6
 	mr	r5
 
@@ -2102,62 +2219,6 @@ l1: #
 	ldinc	r6
 	mr	r7
 
-	.section	.rodata
-	.align	4
-l40:
-	.byte	70
-	.byte	65
-	.byte	84
-	.byte	51
-	.byte	50
-	.byte	32
-	.byte	32
-	.byte	32
-	.byte	0
-	.align	4
-l7:
-	.byte	70
-	.byte	65
-	.byte	84
-	.byte	49
-	.byte	54
-	.byte	32
-	.byte	32
-	.byte	32
-	.byte	0
-	.align	4
-l10:
-	.byte	70
-	.byte	65
-	.byte	84
-	.byte	51
-	.byte	50
-	.byte	32
-	.byte	32
-	.byte	32
-	.byte	0
-	.align	4
-l22:
-	.byte	70
-	.byte	65
-	.byte	84
-	.byte	51
-	.byte	50
-	.byte	32
-	.byte	32
-	.byte	32
-	.byte	0
-	.align	4
-l26:
-	.byte	70
-	.byte	65
-	.byte	84
-	.byte	49
-	.byte	54
-	.byte	32
-	.byte	32
-	.byte	32
-	.byte	0
 	//registers used:
 		//r1: yes
 		//r2: yes
@@ -2194,7 +2255,7 @@ _GetCluster:
 						// allocreg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 229
+						//../DeMiSTify/firmware/minfat.c, line 231
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 64
@@ -2204,14 +2265,14 @@ _GetCluster:
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 229
+						//../DeMiSTify/firmware/minfat.c, line 231
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l48
+	.lipcrel	l45
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 231
+						//../DeMiSTify/firmware/minfat.c, line 233
 						// (bitwise/arithmetic) 	//ops: 3, 0, 4
 						// (obj to r3) flags 42 type 103
 						// matchobj comparing flags 66 with 2
@@ -2226,28 +2287,28 @@ _GetCluster:
 	shr	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 232
-						// (bitwise/arithmetic) 	//ops: 3, 0, 6
-						// (obj to r5) flags 42 type 103
+						//../DeMiSTify/firmware/minfat.c, line 234
+						// (bitwise/arithmetic) 	//ops: 3, 0, 5
+						// (obj to r4) flags 42 type 103
 						// matchobj comparing flags 66 with 1
 						// reg r2 - only match against tmp
 	mt	r2
-	mr	r5
+	mr	r4
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 66
 						// const
 						// matchobj comparing flags 1 with 66
 	.liconst	127
-	and	r5
+	and	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 235
+						//../DeMiSTify/firmware/minfat.c, line 237
 						//pcreltotemp
-	.lipcrel	l49
+	.lipcrel	l46
 	add	r7
-l48: # 
+l45: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 236
+						//../DeMiSTify/firmware/minfat.c, line 238
 						// (bitwise/arithmetic) 	//ops: 3, 0, 4
 						// (obj to r3) flags 42 type 103
 						// reg r2 - only match against tmp
@@ -2261,23 +2322,23 @@ l48: #
 	shr	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 237
-						// (bitwise/arithmetic) 	//ops: 3, 0, 6
-						// (obj to r5) flags 42 type 103
+						//../DeMiSTify/firmware/minfat.c, line 239
+						// (bitwise/arithmetic) 	//ops: 3, 0, 5
+						// (obj to r4) flags 42 type 103
 						// matchobj comparing flags 66 with 1
 						// reg r2 - only match against tmp
 	mt	r2
-	mr	r5
+	mr	r4
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 66
 						// const
 						// matchobj comparing flags 1 with 66
 	.liconst	255
-	and	r5
+	and	r4
 						// (save result) // isreg
-l49: # 
+l46: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 240
+						//../DeMiSTify/firmware/minfat.c, line 242
 						// (bitwise/arithmetic) 	//ops: 0, 4, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 103
@@ -2289,7 +2350,7 @@ l49: #
 	add	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 241
+						//../DeMiSTify/firmware/minfat.c, line 243
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -2300,15 +2361,15 @@ l49: #
 	ldt
 	cmp	r3
 
-						//../DeMiSTify/firmware/minfat.c, line 241
+						//../DeMiSTify/firmware/minfat.c, line 243
 	cond	EQ
 						//conditional branch reversed
 						//pcreltotemp
-	.lipcrel	l53
+	.lipcrel	l50
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 243
+						//../DeMiSTify/firmware/minfat.c, line 245
 						// (a/p assign)
 						// (prepobj tmp)
  						// extern (offset 0)
@@ -2317,7 +2378,7 @@ l49: #
 						//sizemod based on type 0x103
 	stmpdec	r3
 
-						//../DeMiSTify/firmware/minfat.c, line 244
+						//../DeMiSTify/firmware/minfat.c, line 246
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -2328,19 +2389,22 @@ l49: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 244
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 246
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 42 type 104
+						// (obj to tmp) flags 42 type 103
 						// matchobj comparing flags 66 with 130
 						// reg r3 - only match against tmp
 	mt	r3
+						//Saving to reg r1
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
+						//No need to mask - same size
 
-						//../DeMiSTify/firmware/minfat.c, line 244
+						//../DeMiSTify/firmware/minfat.c, line 246
 						//call
 						//pcreltotemp
 	.lipcrel	_sd_read_sector
@@ -2351,7 +2415,7 @@ l49: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 244
+						//../DeMiSTify/firmware/minfat.c, line 246
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 1
@@ -2361,15 +2425,15 @@ l49: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 244
+						//../DeMiSTify/firmware/minfat.c, line 246
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l53
+	.lipcrel	l50
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 245
+						//../DeMiSTify/firmware/minfat.c, line 247
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 74
@@ -2378,13 +2442,13 @@ l49: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 246
-						//pcreltotemp
-	.lipcrel	l45
-	add	r7
-l53: # 
-
 						//../DeMiSTify/firmware/minfat.c, line 248
+						//pcreltotemp
+	.lipcrel	l42
+	add	r7
+l50: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 250
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// extern
@@ -2393,21 +2457,21 @@ l53: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 248
+						//../DeMiSTify/firmware/minfat.c, line 250
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l55
+	.lipcrel	l52
 		add	r7
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 248
-						// (bitwise/arithmetic) 	//ops: 6, 0, 2
+						//../DeMiSTify/firmware/minfat.c, line 250
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						// (obj to r1) flags 42 type 103
 						// matchobj comparing flags 66 with 2
-						// reg r5 - only match against tmp
-	mt	r5
+						// reg r4 - only match against tmp
+	mt	r4
 	mr	r1
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 66
@@ -2417,7 +2481,7 @@ l53: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 248
+						//../DeMiSTify/firmware/minfat.c, line 250
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -2428,36 +2492,36 @@ l53: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 248
+						//../DeMiSTify/firmware/minfat.c, line 250
 						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 2, 0, 5
-						// (obj to r4) flags 6a type 103
+						// (bitwise/arithmetic) 	//ops: 2, 0, 6
+						// (obj to r5) flags 6a type 103
 						// matchobj comparing flags 106 with 130
 						// deref 
 	ld	r1
-	mr	r4
+	mr	r5
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 106
 						// const
 						// matchobj comparing flags 1 with 106
 	.liconst	268435455
-	and	r4
+	and	r5
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 248
+						//../DeMiSTify/firmware/minfat.c, line 250
 						//pcreltotemp
-	.lipcrel	l56
+	.lipcrel	l53
 	add	r7
-l55: # 
+l52: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 248
+						//../DeMiSTify/firmware/minfat.c, line 250
 						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 6, 0, 2
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						// (obj to r1) flags 42 type 103
-						// reg r5 - only match against tmp
-	mt	r5
+						// reg r4 - only match against tmp
+	mt	r4
 	mr	r1
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 66
@@ -2467,7 +2531,7 @@ l55: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 248
+						//../DeMiSTify/firmware/minfat.c, line 250
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -2478,49 +2542,40 @@ l55: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 248
+						//../DeMiSTify/firmware/minfat.c, line 250
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
-						// (prepobj r4)
- 						// reg r4 - no need to prep
+						// (prepobj r5)
+ 						// reg r5 - no need to prep
 						// (obj to tmp) flags 6a type 102
 						// matchobj comparing flags 106 with 130
 						// deref 
 	hlf
 	ld	r1
 						// (save temp)isreg
-	mr	r4
+	mr	r5
 						//save_temp done
 						// freereg r1
-l56: # 
+l53: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 249
+						//../DeMiSTify/firmware/minfat.c, line 251
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 42 type 103
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r5 - only match against tmp
+	mt	r5
 	mr	r0
-l45: # 
+l42: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
 						// freereg r4
 						// freereg r5
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -2540,101 +2595,72 @@ _FileOpen:
 	stmpdec	r4
 	stmpdec	r5
 	exg	r6
-	.liconst	-12
+	.liconst	-8
 	add	r6
+						// allocreg r4
 						// allocreg r1
 						// Q1 disposable
 						// (a/p assign)
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	12
-	addt	r6
-						//sizemod based on type 0xa
-	stmpdec	r1
+						// (prepobj r0)
+ 						// reg r4 - no need to prep
+						// (obj to tmp) flags 40 type a
+						// matchobj comparing flags 64 with 1
+						// reg r1 - only match against tmp
+	mt	r1
+						// (save temp)isreg
+	mr	r4
+						//save_temp done
 						// freereg r1
 						// allocreg r5
-						// allocreg r4
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 259
+						//../DeMiSTify/firmware/minfat.c, line 260
 						// (test)
-						// (obj to tmp) flags 2 type a
-						// var, auto|reg
-	.liconst	28
-	ldidx	r6
+						// (obj to tmp) flags 42 type a
+						// matchobj comparing flags 66 with 64
+						// reg r4 - only match against tmp
+	//mt
+				// flags 42
+	and	r4
 
-						//../DeMiSTify/firmware/minfat.c, line 259
-	cond	EQ
-						//conditional branch regular
-						//pcreltotemp
-	.lipcrel	l59
-		add	r7
-
-						//../DeMiSTify/firmware/minfat.c, line 259
-						// (test)
-						// (obj to tmp) flags 22 type 301
-						// matchobj comparing flags 34 with 2
-						// deref 
-						// (prepobj tmp)
- 						// matchobj comparing flags 162 with 2
-						// deref
-						// var FIXME - deref?
-						// reg - auto
-						// matchobj comparing flags 1 with 2
-	.liconst	28
-	ldidx	r6
-						//sizemod based on type 0x301
-	byt
-	ldt
-
-						//../DeMiSTify/firmware/minfat.c, line 259
+						//../DeMiSTify/firmware/minfat.c, line 260
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l60
+	.lipcrel	l57
 		add	r7
-l59: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 260
+						//../DeMiSTify/firmware/minfat.c, line 261
 						//setreturn
 						// (obj to r0) flags 1 type 103
+						// matchobj comparing flags 1 with 66
 						// const
+						// matchobj comparing flags 1 with 66
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 262
+						//../DeMiSTify/firmware/minfat.c, line 263
 						//pcreltotemp
-	.lipcrel	l57
+	.lipcrel	l54
 	add	r7
-						// freereg r1
-l60: # 
+l57: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 262
-						// (bitwise/arithmetic) 	//ops: 0, 0, 1
-						// (obj to r0) flags 2 type a
-						// var, auto|reg
-	.liconst	8
-						//sizemod based on type 0xa
-	ldidx	r6
-	mr	r0
+						//../DeMiSTify/firmware/minfat.c, line 263
+						// (bitwise/arithmetic) 	//ops: 5, 0, 1
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
 	.liconst	8
-	add	r0
-						// (save result) // not reg
-						// Store_reg to type 0xa, flags 0x62
-	mt	r0
+	addt	r4
+						// (save temp)store type a
 	st	r6
-	// Volatile, or not int - not caching
+						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 262
+						//../DeMiSTify/firmware/minfat.c, line 263
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 162 with 98
@@ -2650,17 +2676,71 @@ l60: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 266
+						// (test)
+						// (obj to tmp) flags 2 type a
+						// matchobj comparing flags 2 with 1
+						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	24
+	ldidx	r6
+
+						//../DeMiSTify/firmware/minfat.c, line 266
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l58
+		add	r7
+
+						//../DeMiSTify/firmware/minfat.c, line 266
+						// (test)
+						// (obj to tmp) flags 22 type 301
+						// matchobj comparing flags 34 with 2
+						// deref 
+						// (prepobj tmp)
+ 						// matchobj comparing flags 162 with 2
+						// deref
+						// var FIXME - deref?
+						// reg - auto
+						// matchobj comparing flags 1 with 2
+	.liconst	24
+	ldidx	r6
+						//sizemod based on type 0x301
+	byt
+	ldt
+
+						//../DeMiSTify/firmware/minfat.c, line 266
+	cond	NEQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l59
+		add	r7
+l58: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 267
+						//setreturn
+						// (obj to r0) flags 1 type 103
+						// const
+	.liconst	0
+	mr	r0
+
+						//../DeMiSTify/firmware/minfat.c, line 269
+						//pcreltotemp
+	.lipcrel	l54
+	add	r7
+						// freereg r1
+l59: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 1
-
-			// required value found in tmp
+						// const
+	.liconst	0
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2673,7 +2753,7 @@ l60: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2685,7 +2765,7 @@ l60: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						//call
 						//pcreltotemp
 	.lipcrel	_NextDirEntry
@@ -2695,30 +2775,30 @@ l60: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (getreturn)						// (save result) // isreg
 	mt	r0
-	mr	r4
+	mr	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (test)
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 66
-						// reg r4 - only match against tmp
+						// reg r5 - only match against tmp
 				// flags 42
-	and	r4
+	and	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l81
+	.lipcrel	l80
 		add	r7
 						// freereg r2
-l80: # 
+l79: # 
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 266
+						//../DeMiSTify/firmware/minfat.c, line 272
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -2732,7 +2812,7 @@ l80: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 266
+						//../DeMiSTify/firmware/minfat.c, line 272
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2740,13 +2820,13 @@ l80: #
 						// matchobj comparing flags 2 with 130
 						// var, auto|reg
 						// matchobj comparing flags 1 with 130
-	.liconst	28
+	.liconst	24
 	ldidx	r6
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 266
+						//../DeMiSTify/firmware/minfat.c, line 272
 						//call
 						//pcreltotemp
 	.lipcrel	___strcasecmp
@@ -2756,7 +2836,7 @@ l80: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 266
+						//../DeMiSTify/firmware/minfat.c, line 272
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -2765,29 +2845,29 @@ l80: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 266
+						//../DeMiSTify/firmware/minfat.c, line 272
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l81
+	.lipcrel	l80
 		add	r7
 						// freereg r3
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 269
+						//../DeMiSTify/firmware/minfat.c, line 275
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 74
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r5 - only match against tmp
+	mt	r5
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 269
+						//../DeMiSTify/firmware/minfat.c, line 275
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2795,14 +2875,14 @@ l80: #
 						// matchobj comparing flags 2 with 66
 						// var, auto|reg
 						// matchobj comparing flags 1 with 66
-	.liconst	28
+	.liconst	24
 	ldidx	r6
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 269
+						//../DeMiSTify/firmware/minfat.c, line 275
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -2815,7 +2895,7 @@ l80: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 269
+						//../DeMiSTify/firmware/minfat.c, line 275
 						//call
 						//pcreltotemp
 	.lipcrel	___strncasecmp
@@ -2826,7 +2906,7 @@ l80: #
 						// freereg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 269
+						//../DeMiSTify/firmware/minfat.c, line 275
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -2835,17 +2915,17 @@ l80: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 269
+						//../DeMiSTify/firmware/minfat.c, line 275
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l81
+	.lipcrel	l80
 		add	r7
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type a
@@ -2855,67 +2935,85 @@ l80: #
 	.liconst	0
 	stdec	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (test)
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 1
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r5 - only match against tmp
+	mt	r5
 				// flags 42
-	and	r4
+	and	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l72
+	.lipcrel	l71
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// matchobj comparing flags 138 with 66
+						// var, auto|reg
+						// matchobj comparing flags 1 with 66
+	.liconst	8
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 138
+						// matchobj comparing flags 1 with 138
 						// const
-						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 138
+						// matchobj comparing flags 1 with 138
 	.liconst	0
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 3
+	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						//pcreltotemp
-	.lipcrel	l73
+	.lipcrel	l72
 	add	r7
-l72: # 
+l71: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// var, auto|reg
+	.liconst	8
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 138
+						// matchobj comparing flags 1 with 138
 						// const
+						// matchobj comparing flags 1 with 138
+						// matchobj comparing flags 1 with 138
 	.liconst	1
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 3
+	st	r0
 						//save_temp done
 						// freereg r1
-l73: # 
+l72: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 42 type 3
-						// reg r5 - only match against tmp
-	mt	r5
+						// (obj to tmp) flags 2 type 3
+						// var, auto|reg
+	.liconst	8
+						//sizemod based on type 0x3
+	ldidx	r6
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						//call
 						//pcreltotemp
 	.lipcrel	_NextDirEntry
@@ -2925,49 +3023,49 @@ l73: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (getreturn)						// (save result) // isreg
 	mt	r0
-	mr	r4
+	mr	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 						// (test)
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 66
-						// reg r4 - only match against tmp
+						// reg r5 - only match against tmp
 				// flags 42
-	and	r4
+	and	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 263
+						//../DeMiSTify/firmware/minfat.c, line 269
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l80
+	.lipcrel	l79
 		add	r7
 						// freereg r2
-l81: # 
+l80: # 
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 273
+						//../DeMiSTify/firmware/minfat.c, line 279
 						// (test)
 						// (obj to tmp) flags 42 type a
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r5 - only match against tmp
+	mt	r5
 				// flags 42
-	and	r4
+	and	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 273
+						//../DeMiSTify/firmware/minfat.c, line 279
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l76
+	.lipcrel	l75
 		add	r7
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 275
-						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//../DeMiSTify/firmware/minfat.c, line 281
+						// (bitwise/arithmetic) 	//ops: 6, 0, 2
 						//Special case - addt
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -2976,12 +3074,12 @@ l81: #
 						// const
 						// matchobj comparing flags 1 with 66
 	.liconst	28
-	addt	r4
+	addt	r5
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 275
+						//../DeMiSTify/firmware/minfat.c, line 281
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -3000,8 +3098,8 @@ l81: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 276
-						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//../DeMiSTify/firmware/minfat.c, line 282
+						// (bitwise/arithmetic) 	//ops: 6, 0, 2
 						//Special case - addt
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3010,46 +3108,43 @@ l81: #
 						// const
 						// matchobj comparing flags 1 with 106
 	.liconst	26
-	addt	r4
+	addt	r5
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 276
-						// (bitwise/arithmetic) 	//ops: 0, 0, 1
-						// (obj to r0) flags 2 type a
-						// matchobj comparing flags 2 with 74
+						//../DeMiSTify/firmware/minfat.c, line 282
+						// (bitwise/arithmetic) 	//ops: 5, 0, 1
+						//Special case - addt
+						// (prepobj r0)
+ 						// matchobj comparing flags 130 with 74
 						// var, auto|reg
 						// matchobj comparing flags 1 with 74
-	.liconst	8
-						//sizemod based on type 0xa
-	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
-						// const
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
 	.liconst	4
-	add	r0
-						// (save result) // not reg
-						// Store_reg to type 0xa, flags 0x2
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	8
 	addt	r6
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
-	// Volatile, or not int - not caching
+	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 276
+						// (obj to tmp) flags 1 type a
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
+						// const
+						// matchobj comparing flags 1 with 130
+						// matchobj comparing flags 1 with 130
+	.liconst	4
+	addt	r4
+						// (save temp)store type a
+	st	r0
+						//save_temp done
+						// matchobj comparing flags 2 with 2
+						// Obsoleting t1
+
+						//../DeMiSTify/firmware/minfat.c, line 282
+						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
 						// (obj to r0) flags 6a type 102
-						// matchobj comparing flags 106 with 130
+						// matchobj comparing flags 106 with 2
 						// deref 
 	hlf
 	ld	r1
@@ -3071,7 +3166,7 @@ l81: #
 						// WARNING - Object is disposable, not bothering to undo exg - check correctness
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 277
+						//../DeMiSTify/firmware/minfat.c, line 283
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// extern
@@ -3080,16 +3175,16 @@ l81: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 277
+						//../DeMiSTify/firmware/minfat.c, line 283
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l78
+	.lipcrel	l77
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 277
-						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//../DeMiSTify/firmware/minfat.c, line 283
+						// (bitwise/arithmetic) 	//ops: 6, 0, 2
 						//Special case - addt
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3098,12 +3193,12 @@ l81: #
 						// const
 						// matchobj comparing flags 1 with 2
 	.liconst	20
-	addt	r4
+	addt	r5
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 277
+						//../DeMiSTify/firmware/minfat.c, line 283
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -3118,7 +3213,7 @@ l81: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 277
+						//../DeMiSTify/firmware/minfat.c, line 283
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -3129,7 +3224,7 @@ l81: #
 	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 277
+						//../DeMiSTify/firmware/minfat.c, line 283
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 3
@@ -3151,14 +3246,14 @@ l81: #
 	st	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 277
+						//../DeMiSTify/firmware/minfat.c, line 283
 						//pcreltotemp
-	.lipcrel	l79
+	.lipcrel	l78
 	add	r7
-l78: # 
+l77: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 277
+						//../DeMiSTify/firmware/minfat.c, line 283
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -3169,26 +3264,43 @@ l78: #
 	st	r6
 						//save_temp done
 						// freereg r1
-l79: # 
+l78: # 
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 277
-						// (bitwise/arithmetic) 	//ops: 7, 0, 1
-						// (obj to r0) flags 62 type 103
+						//../DeMiSTify/firmware/minfat.c, line 283
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 6a type 3
 						// deref 
 	ld	r6
+						//Saving to reg r1
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 283
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 2, 0, 1
+						// (obj to r0) flags 4a type 103
+						// matchobj comparing flags 74 with 106
+						// reg r1 - only match against tmp
+	//mt
 	mr	r0
 						// (obj to tmp) flags 22 type 103
-						// matchobj comparing flags 34 with 98
-						// matchobj comparing flags 34 with 98
+						// matchobj comparing flags 34 with 74
+						// matchobj comparing flags 34 with 74
 						// deref 
 						// (prepobj tmp)
- 						// matchobj comparing flags 162 with 98
-						// matchobj comparing flags 162 with 98
+ 						// matchobj comparing flags 162 with 74
+						// matchobj comparing flags 162 with 74
 						// deref
 						// var FIXME - deref?
 						// reg - auto
-						// matchobj comparing flags 1 with 98
-						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 74
 	.liconst	4
 	ldidx	r6
 						//sizemod based on type 0x103
@@ -3207,56 +3319,49 @@ l79: #
 	exg	r0
 	st	r0
 						// WARNING - Object is disposable, not bothering to undo exg - check correctness
+						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 278
+						//../DeMiSTify/firmware/minfat.c, line 284
 						// (a/p assign)
 						// (prepobj r0)
- 						// deref
-						// var FIXME - deref?
-						// reg - auto
-	.liconst	8
-	ldidx	r6
-	mr	r0
+ 						// reg r4 - no need to prep
 						// (obj to tmp) flags 1 type 103
 						// const
 	.liconst	0
 						// (save temp)store type 3
-	st	r0
+	st	r4
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 279
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type a
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	8
-						//sizemod based on type 0xa
-	ldidx	r6
-	mr	r1
+						//../DeMiSTify/firmware/minfat.c, line 285
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 1
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 1
 	.liconst	12
-	add	r1
-						// (save result) // isreg
+	addt	r4
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 279
+						//../DeMiSTify/firmware/minfat.c, line 285
 						// Z disposable
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 22 type 103
-						// matchobj comparing flags 34 with 1
+						// matchobj comparing flags 34 with 74
 						// deref 
 						// (prepobj tmp)
- 						// matchobj comparing flags 162 with 1
+ 						// matchobj comparing flags 162 with 74
 						// deref
 						// var FIXME - deref?
 						// reg - auto
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 74
 	.liconst	4
 	ldidx	r6
 						//sizemod based on type 0x103
@@ -3267,40 +3372,37 @@ l79: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 280
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type a
-						// matchobj comparing flags 2 with 34
-						// var, auto|reg
-						// matchobj comparing flags 1 with 34
-	.liconst	8
-						//sizemod based on type 0xa
-	ldidx	r6
-	mr	r1
+						//../DeMiSTify/firmware/minfat.c, line 286
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 34
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 34
 	.liconst	16
-	add	r1
-						// (save result) // isreg
+	addt	r4
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 280
+						//../DeMiSTify/firmware/minfat.c, line 286
 						// Z disposable
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 74
 						// const
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 74
 	.liconst	0
 						// (save temp)store type 3
 	st	r1
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 291
+						//../DeMiSTify/firmware/minfat.c, line 297
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 1
@@ -3309,38 +3411,29 @@ l79: #
 	.liconst	1
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 292
+						//../DeMiSTify/firmware/minfat.c, line 298
 						//pcreltotemp
-	.lipcrel	l57
+	.lipcrel	l54
 	add	r7
-l76: # 
+l75: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 294
+						//../DeMiSTify/firmware/minfat.c, line 300
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// const
 	.liconst	0
 	mr	r0
-l57: # 
+l54: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
 						// freereg r4
 						// freereg r5
-	.liconst	-12
+	.liconst	-8
 	sub	r6
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -3374,29 +3467,69 @@ _FileNextSector:
 						//save_temp done
 						// freereg r1
 						// allocreg r5
-						// (a/p assign)
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 308
+						// (test)
+						// (obj to tmp) flags 42 type a
+						// matchobj comparing flags 66 with 64
+						// reg r4 - only match against tmp
+	//mt
+				// flags 42
+	and	r4
+
+						//../DeMiSTify/firmware/minfat.c, line 308
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l81
+		add	r7
+						// freereg r1
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 308
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
+						//Special case - addt
 						// (prepobj r0)
- 						// reg r5 - no need to prep
-						// (obj to tmp) flags 102 type 3
-						// matchobj comparing flags 258 with 64
-						// var, auto|reg
-						// matchobj comparing flags 1 with 64
-	.liconst	16
-	ldidx	r6
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 1 type a
+						// matchobj comparing flags 1 with 66
+						// const
+						// matchobj comparing flags 1 with 66
+	.liconst	8
+	addt	r4
 						// (save temp)isreg
-	mr	r5
+	mr	r1
 						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 308
+						// Q1 disposable
+						// (test)
+						// (obj to tmp) flags 6a type 103
+						// matchobj comparing flags 106 with 74
+						// deref 
+	ld	r1
+						// freereg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 308
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l81
+		add	r7
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 302
+						//../DeMiSTify/firmware/minfat.c, line 310
 						//FIXME convert
 						// (convert - reducing type 3 to 103
 						// (prepobj r0)
  						// reg r2 - no need to prep
-						// (obj to tmp) flags 42 type 3
-						// matchobj comparing flags 66 with 258
-						// reg r5 - only match against tmp
-	//mt
+						// (obj to tmp) flags 2 type 3
+						// matchobj comparing flags 2 with 106
+						// var, auto|reg
+						// matchobj comparing flags 1 with 106
+	.liconst	16
+	ldidx	r6
 						//Saving to reg r2
 						// (save temp)isreg
 	mr	r2
@@ -3407,40 +3540,64 @@ _FileNextSector:
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 62 type 103
-						// matchobj comparing flags 98 with 66
+						// matchobj comparing flags 98 with 2
 						// deref 
 	ld	r4
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 302
-						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 3, 2, 6
-						//Special case - addt
-						// (prepobj r0)
- 						// reg r5 - no need to prep
+						//../DeMiSTify/firmware/minfat.c, line 310
+						// (bitwise/arithmetic) 	//ops: 3, 2, 3
+						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 4a type 103
 						// matchobj comparing flags 74 with 98
-						// reg r2 - only match against tmp
-	mt	r2
-	addt	r1
+						// reg r1 - only match against tmp
+	//mt
+	add	r2
+						// (save result) // isreg
+
+						//../DeMiSTify/firmware/minfat.c, line 310
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 103 to 3
+						// (prepobj tmp)
+ 						// var, auto|reg
+						// matchobj comparing flags 1 with 74
+	.liconst	20
+	addt	r6
+	stmpdec	r2
+						// freereg r2
+
+						//../DeMiSTify/firmware/minfat.c, line 311
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r5 - no need to prep
+						// (obj to tmp) flags 2 type 3
+						// matchobj comparing flags 2 with 130
+						// var, auto|reg
+						// matchobj comparing flags 1 with 130
+	.liconst	16
+	ldidx	r6
+						//Saving to reg r5
 						// (save temp)isreg
 	mr	r5
 						//save_temp done
-						// freereg r2
+						//No need to mask - same size
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						// (bitwise/arithmetic) 	//ops: 6, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 42 type 103
-						// matchobj comparing flags 66 with 66
+						// matchobj comparing flags 66 with 2
 						// reg r5 - only match against tmp
+	//mt
 	xor	r1
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						//comp
 						// (obj to r2) flags 2 type 103
 						// matchobj comparing flags 2 with 66
@@ -3455,7 +3612,7 @@ _FileNextSector:
 	xor	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
@@ -3467,7 +3624,7 @@ _FileNextSector:
 						// (save result) // isreg
 						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 103
@@ -3478,16 +3635,16 @@ _FileNextSector:
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l88
+	.lipcrel	l90
 		add	r7
-l87: # 
+l89: # 
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 305
+						//../DeMiSTify/firmware/minfat.c, line 313
 						// (bitwise/arithmetic) 	//ops: 5, 0, 4
 						//Special case - addt
 						// (prepobj r0)
@@ -3501,7 +3658,7 @@ l87: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 305
+						//../DeMiSTify/firmware/minfat.c, line 313
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -3513,7 +3670,7 @@ l87: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 305
+						//../DeMiSTify/firmware/minfat.c, line 313
 						//call
 						//pcreltotemp
 	.lipcrel	_GetCluster
@@ -3521,7 +3678,7 @@ l87: #
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 305
+						//../DeMiSTify/firmware/minfat.c, line 313
 						// Z disposable
 						// (getreturn)						// (save result) // not reg
 						// Store_reg to type 0x103, flags 0x6a
@@ -3530,7 +3687,7 @@ l87: #
 						// freereg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 306
+						//../DeMiSTify/firmware/minfat.c, line 314
 						// (bitwise/arithmetic) 	//ops: 0, 5, 2
 						// (obj to r1) flags 2 type 103
 						// matchobj comparing flags 2 with 106
@@ -3560,7 +3717,7 @@ l87: #
 	st	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						// (bitwise/arithmetic) 	//ops: 6, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 42 type 103
@@ -3572,7 +3729,7 @@ l87: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						//comp
 						// (obj to r2) flags 2 type 103
 						// matchobj comparing flags 2 with 66
@@ -3589,7 +3746,7 @@ l87: #
 	xor	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
@@ -3602,7 +3759,7 @@ l87: #
 						// (save result) // isreg
 						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 103
@@ -3614,16 +3771,16 @@ l87: #
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 303
+						//../DeMiSTify/firmware/minfat.c, line 311
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l87
+	.lipcrel	l89
 		add	r7
-l88: # 
+l90: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 308
+						//../DeMiSTify/firmware/minfat.c, line 316
 						// Q1 disposable
 						// Z disposable
 						// (a/p assign)
@@ -3635,20 +3792,12 @@ l88: #
 						// (save temp)store type 3
 	st	r4
 						//save_temp done
+l81: # 
 						// freereg r1
 						// freereg r4
 						// freereg r5
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -3680,27 +3829,92 @@ _FileReadSector:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 316
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 324
+						// (test)
+						// (obj to tmp) flags 42 type a
+						// matchobj comparing flags 66 with 64
+						// reg r3 - only match against tmp
+	//mt
+				// flags 42
+	and	r3
+
+						//../DeMiSTify/firmware/minfat.c, line 324
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l93
+		add	r7
+						// freereg r1
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 324
+						// (bitwise/arithmetic) 	//ops: 4, 0, 2
+						//Special case - addt
 						// (prepobj r0)
  						// reg r1 - no need to prep
+						// (obj to tmp) flags 1 type a
+						// matchobj comparing flags 1 with 66
+						// const
+						// matchobj comparing flags 1 with 66
+	.liconst	8
+	addt	r3
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 324
+						// Q1 disposable
+						// (test)
+						// (obj to tmp) flags 6a type 103
+						// matchobj comparing flags 106 with 74
+						// deref 
+	ld	r1
+						// freereg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 324
+	cond	NEQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l94
+		add	r7
+l93: # 
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 325
+						//setreturn
+						// (obj to r0) flags 1 type 103
+						// const
+	.liconst	0
+	mr	r0
+
+						//../DeMiSTify/firmware/minfat.c, line 327
+						//pcreltotemp
+	.lipcrel	l98
+	add	r7
+						// freereg r1
+l94: # 
+						// allocreg r2
+
+						//../DeMiSTify/firmware/minfat.c, line 327
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
 						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 64
 						// extern
 	.liabs	_data_start
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
 						// (save temp)isreg
-	mr	r1
+	mr	r2
 						//save_temp done
-						// allocreg r2
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 317
-						// (bitwise/arithmetic) 	//ops: 4, 0, 3
+						//../DeMiSTify/firmware/minfat.c, line 328
+						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r2 - no need to prep
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type a
 						// matchobj comparing flags 1 with 2
 						// const
@@ -3708,27 +3922,27 @@ _FileReadSector:
 	.liconst	4
 	addt	r3
 						// (save temp)isreg
-	mr	r2
+	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 317
-						// (bitwise/arithmetic) 	//ops: 3, 0, 3
+						//../DeMiSTify/firmware/minfat.c, line 328
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to r2) flags 6a type 103
+						// (obj to r1) flags 6a type 103
 						// matchobj comparing flags 106 with 74
 						// deref 
-	ld	r2
-	mr	r2
+	ld	r1
+	mr	r1
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 106
 						// const
 						// matchobj comparing flags 1 with 106
 	.liconst	2
-	sub	r2
+	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 317
-						// (bitwise/arithmetic) 	//ops: 0, 3, 3
+						//../DeMiSTify/firmware/minfat.c, line 328
+						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 1
@@ -3737,68 +3951,68 @@ _FileReadSector:
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
-	mul	r2
+	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 317
+						//../DeMiSTify/firmware/minfat.c, line 328
 						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// (bitwise/arithmetic) 	//ops: 2, 3, 3
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r1 - no need to prep
+ 						// reg r2 - no need to prep
 						// (obj to tmp) flags 4a type 103
-						// reg r2 - only match against tmp
-	mt	r2
-	addt	r1
+						// reg r1 - only match against tmp
+	mt	r1
+	addt	r2
 						// (save temp)isreg
-	mr	r1
+	mr	r2
 						//save_temp done
-						// freereg r2
-						// allocreg r2
+						// freereg r1
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 318
-						// (bitwise/arithmetic) 	//ops: 0, 4, 3
-						// (obj to r2) flags 2 type 103
+						//../DeMiSTify/firmware/minfat.c, line 329
+						// (bitwise/arithmetic) 	//ops: 0, 4, 2
+						// (obj to r1) flags 2 type 103
 						// matchobj comparing flags 2 with 74
 						// extern
 	.liabs	_cluster_mask
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
-	mr	r2
+	mr	r1
 						// (obj to tmp) flags 62 type 103
 						// matchobj comparing flags 98 with 2
 						// deref 
 	ld	r3
-	and	r2
+	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 318
+						//../DeMiSTify/firmware/minfat.c, line 329
 						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// (bitwise/arithmetic) 	//ops: 2, 3, 3
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r1 - no need to prep
+ 						// reg r2 - no need to prep
 						// (obj to tmp) flags 4a type 103
 						// matchobj comparing flags 74 with 98
-						// reg r2 - only match against tmp
-	mt	r2
-	addt	r1
+						// reg r1 - only match against tmp
+	mt	r1
+	addt	r2
 						// (save temp)isreg
-	mr	r1
+	mr	r2
 						//save_temp done
-						// freereg r2
+						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 319
+						//../DeMiSTify/firmware/minfat.c, line 330
 						// (a/p assign)
 						// (prepobj tmp)
  						// extern (offset 0)
 	.liabs	_cachedsector, 4
 						// extern pe not varadr
 						//sizemod based on type 0x103
-	stmpdec	r1
+	stmpdec	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 320
+						//../DeMiSTify/firmware/minfat.c, line 331
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 2 type a
@@ -3806,20 +4020,26 @@ _FileReadSector:
 	.liconst	8
 	ldidx	r6
 	stdec	r6
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 320
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 331
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 4a type 104
+						// (obj to tmp) flags 4a type 103
 						// matchobj comparing flags 74 with 2
-						// reg r1 - only match against tmp
-	mt	r1
+						// reg r2 - only match against tmp
+	mt	r2
+						//Saving to reg r1
 						// (save temp)isreg
-	//mr
+	mr	r1
 						//save_temp done
+						//No need to mask - same size
+						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 320
+						//../DeMiSTify/firmware/minfat.c, line 331
 						//call
 						//pcreltotemp
 	.lipcrel	_sd_read_sector
@@ -3830,7 +4050,7 @@ _FileReadSector:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 320
+						//../DeMiSTify/firmware/minfat.c, line 331
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 1
@@ -3840,15 +4060,15 @@ _FileReadSector:
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 320
+						//../DeMiSTify/firmware/minfat.c, line 331
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l92
+	.lipcrel	l97
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 321
+						//../DeMiSTify/firmware/minfat.c, line 332
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 74
@@ -3857,26 +4077,23 @@ _FileReadSector:
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 322
+						//../DeMiSTify/firmware/minfat.c, line 333
 						//pcreltotemp
-	.lipcrel	l93
+	.lipcrel	l98
 	add	r7
-l92: # 
+l97: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 323
+						//../DeMiSTify/firmware/minfat.c, line 334
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// const
 	.liconst	1
 	mr	r0
-l93: # 
+l98: # 
 						// freereg r1
 						// freereg r3
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 4
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -3908,27 +4125,92 @@ _FileWriteSector:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 331
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 342
+						// (test)
+						// (obj to tmp) flags 42 type a
+						// matchobj comparing flags 66 with 64
+						// reg r3 - only match against tmp
+	//mt
+				// flags 42
+	and	r3
+
+						//../DeMiSTify/firmware/minfat.c, line 342
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l101
+		add	r7
+						// freereg r1
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 342
+						// (bitwise/arithmetic) 	//ops: 4, 0, 2
+						//Special case - addt
 						// (prepobj r0)
  						// reg r1 - no need to prep
+						// (obj to tmp) flags 1 type a
+						// matchobj comparing flags 1 with 66
+						// const
+						// matchobj comparing flags 1 with 66
+	.liconst	8
+	addt	r3
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 342
+						// Q1 disposable
+						// (test)
+						// (obj to tmp) flags 6a type 103
+						// matchobj comparing flags 106 with 74
+						// deref 
+	ld	r1
+						// freereg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 342
+	cond	NEQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l102
+		add	r7
+l101: # 
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 343
+						//setreturn
+						// (obj to r0) flags 1 type 103
+						// const
+	.liconst	0
+	mr	r0
+
+						//../DeMiSTify/firmware/minfat.c, line 345
+						//pcreltotemp
+	.lipcrel	l106
+	add	r7
+						// freereg r1
+l102: # 
+						// allocreg r2
+
+						//../DeMiSTify/firmware/minfat.c, line 345
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
 						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 64
 						// extern
 	.liabs	_data_start
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
 						// (save temp)isreg
-	mr	r1
+	mr	r2
 						//save_temp done
-						// allocreg r2
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 332
-						// (bitwise/arithmetic) 	//ops: 4, 0, 3
+						//../DeMiSTify/firmware/minfat.c, line 346
+						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r2 - no need to prep
+ 						// reg r1 - no need to prep
 						// (obj to tmp) flags 1 type a
 						// matchobj comparing flags 1 with 2
 						// const
@@ -3936,27 +4218,27 @@ _FileWriteSector:
 	.liconst	4
 	addt	r3
 						// (save temp)isreg
-	mr	r2
+	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 332
-						// (bitwise/arithmetic) 	//ops: 3, 0, 3
+						//../DeMiSTify/firmware/minfat.c, line 346
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to r2) flags 6a type 103
+						// (obj to r1) flags 6a type 103
 						// matchobj comparing flags 106 with 74
 						// deref 
-	ld	r2
-	mr	r2
+	ld	r1
+	mr	r1
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 106
 						// const
 						// matchobj comparing flags 1 with 106
 	.liconst	2
-	sub	r2
+	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 332
-						// (bitwise/arithmetic) 	//ops: 0, 3, 3
+						//../DeMiSTify/firmware/minfat.c, line 346
+						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 1
@@ -3965,68 +4247,68 @@ _FileWriteSector:
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
-	mul	r2
+	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 332
+						//../DeMiSTify/firmware/minfat.c, line 346
 						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// (bitwise/arithmetic) 	//ops: 2, 3, 3
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r1 - no need to prep
+ 						// reg r2 - no need to prep
 						// (obj to tmp) flags 4a type 103
-						// reg r2 - only match against tmp
-	mt	r2
-	addt	r1
+						// reg r1 - only match against tmp
+	mt	r1
+	addt	r2
 						// (save temp)isreg
-	mr	r1
+	mr	r2
 						//save_temp done
-						// freereg r2
-						// allocreg r2
+						// freereg r1
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 333
-						// (bitwise/arithmetic) 	//ops: 0, 4, 3
-						// (obj to r2) flags 2 type 103
+						//../DeMiSTify/firmware/minfat.c, line 347
+						// (bitwise/arithmetic) 	//ops: 0, 4, 2
+						// (obj to r1) flags 2 type 103
 						// matchobj comparing flags 2 with 74
 						// extern
 	.liabs	_cluster_mask
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
-	mr	r2
+	mr	r1
 						// (obj to tmp) flags 62 type 103
 						// matchobj comparing flags 98 with 2
 						// deref 
 	ld	r3
-	and	r2
+	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 333
+						//../DeMiSTify/firmware/minfat.c, line 347
 						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// (bitwise/arithmetic) 	//ops: 2, 3, 3
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r1 - no need to prep
+ 						// reg r2 - no need to prep
 						// (obj to tmp) flags 4a type 103
 						// matchobj comparing flags 74 with 98
-						// reg r2 - only match against tmp
-	mt	r2
-	addt	r1
+						// reg r1 - only match against tmp
+	mt	r1
+	addt	r2
 						// (save temp)isreg
-	mr	r1
+	mr	r2
 						//save_temp done
-						// freereg r2
+						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 334
+						//../DeMiSTify/firmware/minfat.c, line 348
 						// (a/p assign)
 						// (prepobj tmp)
  						// extern (offset 0)
 	.liabs	_cachedsector, 4
 						// extern pe not varadr
 						//sizemod based on type 0x103
-	stmpdec	r1
+	stmpdec	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 335
+						//../DeMiSTify/firmware/minfat.c, line 349
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 2 type a
@@ -4034,20 +4316,26 @@ _FileWriteSector:
 	.liconst	8
 	ldidx	r6
 	stdec	r6
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 335
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 349
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 4a type 104
+						// (obj to tmp) flags 4a type 103
 						// matchobj comparing flags 74 with 2
-						// reg r1 - only match against tmp
-	mt	r1
+						// reg r2 - only match against tmp
+	mt	r2
+						//Saving to reg r1
 						// (save temp)isreg
-	//mr
+	mr	r1
 						//save_temp done
+						//No need to mask - same size
+						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 335
+						//../DeMiSTify/firmware/minfat.c, line 349
 						//call
 						//pcreltotemp
 	.lipcrel	_sd_write_sector
@@ -4058,7 +4346,7 @@ _FileWriteSector:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 335
+						//../DeMiSTify/firmware/minfat.c, line 349
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 1
@@ -4068,15 +4356,15 @@ _FileWriteSector:
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 335
+						//../DeMiSTify/firmware/minfat.c, line 349
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l97
+	.lipcrel	l105
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 336
+						//../DeMiSTify/firmware/minfat.c, line 350
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 74
@@ -4085,26 +4373,23 @@ _FileWriteSector:
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 337
+						//../DeMiSTify/firmware/minfat.c, line 351
 						//pcreltotemp
-	.lipcrel	l98
+	.lipcrel	l106
 	add	r7
-l97: # 
+l105: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 338
+						//../DeMiSTify/firmware/minfat.c, line 352
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// const
 	.liconst	1
 	mr	r0
-l98: # 
+l106: # 
 						// freereg r1
 						// freereg r3
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 4
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -4124,8 +4409,7 @@ _FileSeek:
 	stmpdec	r4
 	stmpdec	r5
 	exg	r6
-	.liconst	-4
-	add	r6
+	stdec	r6	// shortest way to decrement sp by 4
 						// allocreg r3
 						// allocreg r1
 						// Q1 disposable
@@ -4133,7 +4417,6 @@ _FileSeek:
 						// (prepobj r0)
  						// reg r3 - no need to prep
 						// (obj to tmp) flags 40 type a
-						// matchobj comparing flags 64 with 1
 						// reg r1 - only match against tmp
 	mt	r1
 						// (save temp)isreg
@@ -4143,8 +4426,9 @@ _FileSeek:
 						// allocreg r5
 						// allocreg r4
 						// allocreg r2
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 446
+						//../DeMiSTify/firmware/minfat.c, line 468
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -4158,15 +4442,64 @@ _FileSeek:
 	mr	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 448
+						//../DeMiSTify/firmware/minfat.c, line 469
+						// (test)
+						// (obj to tmp) flags 42 type a
+						// matchobj comparing flags 66 with 2
+						// reg r3 - only match against tmp
+	mt	r3
+				// flags 42
+	and	r3
+
+						//../DeMiSTify/firmware/minfat.c, line 469
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l107
+		add	r7
+						// freereg r1
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 469
+						// (bitwise/arithmetic) 	//ops: 4, 0, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 1 type a
+						// matchobj comparing flags 1 with 66
+						// const
+						// matchobj comparing flags 1 with 66
+	.liconst	8
+	addt	r3
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 469
+						// Q1 disposable
+						// (test)
+						// (obj to tmp) flags 6a type 103
+						// matchobj comparing flags 106 with 74
+						// deref 
+	ld	r1
+						// freereg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 469
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l107
+		add	r7
+
+						//../DeMiSTify/firmware/minfat.c, line 472
 						// (bitwise/arithmetic) 	//ops: 4, 0, 5
 						//Special case - addt
 						// (prepobj r0)
  						// reg r4 - no need to prep
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 106
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 106
 	.liconst	16
 	addt	r3
 						// (save temp)isreg
@@ -4174,7 +4507,7 @@ _FileSeek:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 448
+						//../DeMiSTify/firmware/minfat.c, line 472
 						//comp
 						// (obj to r1) flags 2 type 103
 						// matchobj comparing flags 2 with 66
@@ -4199,7 +4532,7 @@ _FileSeek:
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 448
+						//../DeMiSTify/firmware/minfat.c, line 472
 						// (bitwise/arithmetic) 	//ops: 2, 3, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 42 type 103
@@ -4218,7 +4551,7 @@ _FileSeek:
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 448
+						//../DeMiSTify/firmware/minfat.c, line 472
 						// Q2 disposable
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 2 type 103
@@ -4230,15 +4563,15 @@ _FileSeek:
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 448
+						//../DeMiSTify/firmware/minfat.c, line 472
 	cond	LE
 						//conditional branch reversed
 						//pcreltotemp
-	.lipcrel	l102
+	.lipcrel	l113
 		add	r7
 						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 450
+						//../DeMiSTify/firmware/minfat.c, line 474
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -4251,7 +4584,7 @@ _FileSeek:
 	st	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 451
+						//../DeMiSTify/firmware/minfat.c, line 475
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -4264,7 +4597,7 @@ _FileSeek:
 						//save_temp done
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 452
+						//../DeMiSTify/firmware/minfat.c, line 476
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -4280,7 +4613,7 @@ _FileSeek:
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 452
+						//../DeMiSTify/firmware/minfat.c, line 476
 						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -4295,7 +4628,7 @@ _FileSeek:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 452
+						//../DeMiSTify/firmware/minfat.c, line 476
 						// Q1 disposable
 						// Z disposable
 						// (a/p assign)
@@ -4311,15 +4644,15 @@ _FileSeek:
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 455
+						//../DeMiSTify/firmware/minfat.c, line 479
 						//pcreltotemp
-	.lipcrel	l103
+	.lipcrel	l114
 	add	r7
-l102: # 
+l113: # 
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 455
+						//../DeMiSTify/firmware/minfat.c, line 479
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						// (obj to r1) flags 42 type 103
 						// reg r2 - only match against tmp
@@ -4333,7 +4666,7 @@ l102: #
 	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 455
+						//../DeMiSTify/firmware/minfat.c, line 479
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 0, 2, 6
 						// (obj to r5) flags 2 type 103
@@ -4350,10 +4683,10 @@ l102: #
 	sub	r5
 						// (save result) // isreg
 						// freereg r1
-l103: # 
+l114: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 456
+						//../DeMiSTify/firmware/minfat.c, line 480
 						// (bitwise/arithmetic) 	//ops: 6, 0, 2
 						// (obj to r1) flags 42 type 103
 						// reg r5 - only match against tmp
@@ -4367,7 +4700,12 @@ l103: #
 	shr	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 456
+						//../DeMiSTify/firmware/minfat.c, line 480
+						//FIXME convert
+						// (convert - reducing type 103 to 3
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 480
 						// Q1 disposable
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
@@ -4379,7 +4717,7 @@ l103: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 456
+						//../DeMiSTify/firmware/minfat.c, line 480
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -4391,7 +4729,7 @@ l103: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 456
+						//../DeMiSTify/firmware/minfat.c, line 480
 						//call
 						//pcreltotemp
 	.lipcrel	_FileNextSector
@@ -4399,7 +4737,7 @@ l103: #
 						// Deferred popping of 4 bytes (4 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 457
+						//../DeMiSTify/firmware/minfat.c, line 481
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -4410,7 +4748,7 @@ l103: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 457
+						//../DeMiSTify/firmware/minfat.c, line 481
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -4422,44 +4760,40 @@ l103: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 457
+						//../DeMiSTify/firmware/minfat.c, line 481
 						//call
 						//pcreltotemp
 	.lipcrel	_FileReadSector
 	add	r7
-						// Deferred popping of 4 bytes (8 in total)
+						// Flow control - popping 4 + 4 bytes
+	.liconst	8
+	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 458
+						//../DeMiSTify/firmware/minfat.c, line 482
 						// Z disposable
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
 						// (obj to tmp) flags 2 type 103
+						// matchobj comparing flags 2 with 1
 						// var, auto|reg
-	.liconst	28
+						// matchobj comparing flags 1 with 1
+	.liconst	20
 	ldidx	r6
 						// (save temp)store type 3
 	st	r4
 						//save_temp done
+l107: # 
+						// allocreg r1
+						// freereg r1
 						// freereg r2
 						// freereg r3
 						// freereg r4
 						// freereg r5
-						// matchobj comparing flags 1 with 2
-	.liconst	-12
-	sub	r6
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	ldinc	r6	// shortest way to add 4 to sp
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -4487,160 +4821,256 @@ _FileRead:
 						// (prepobj tmp)
  						// var, auto|reg
 						// matchobj comparing flags 1 with 1
-	.liconst	12
+	.liconst	16
 	addt	r6
 						//sizemod based on type 0xa
 	stmpdec	r1
 						// freereg r1
 						// allocreg r5
 						// allocreg r4
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r4 - no need to prep
-						// (obj to tmp) flags 102 type a
-						// var, auto|reg
-	.liconst	32
-	ldidx	r6
-						// (save temp)isreg
-	mr	r4
-						//save_temp done
 						// allocreg r3
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
 						// (obj to tmp) flags 102 type 3
-						// matchobj comparing flags 258 with 258
 						// var, auto|reg
-						// matchobj comparing flags 1 with 258
 	.liconst	36
 	ldidx	r6
 						// (save temp)isreg
 	mr	r3
 						//save_temp done
+						// allocreg r2
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 467
-						// (bitwise/arithmetic) 	//ops: 0, 0, 6
-						// (obj to r5) flags 2 type a
+						//../DeMiSTify/firmware/minfat.c, line 491
+						// (test)
+						// (obj to tmp) flags 2 type a
 						// matchobj comparing flags 2 with 258
 						// var, auto|reg
 						// matchobj comparing flags 1 with 258
-	.liconst	8
+	.liconst	12
 						//sizemod based on type 0xa
 	ldidx	r6
-	mr	r5
+
+						//../DeMiSTify/firmware/minfat.c, line 491
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l117
+		add	r7
+
+						//../DeMiSTify/firmware/minfat.c, line 491
+						// (bitwise/arithmetic) 	//ops: 0, 0, 1
+						// (obj to r0) flags 2 type a
+						// matchobj comparing flags 2 with 2
+
+			// required value found in tmp
+	mr	r0
+				//return 0
+						// (obj to tmp) flags 1 type a
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
+						// const
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
+	.liconst	8
+	add	r0
+						// (save result) // not reg
+						// Store_reg to type 0xa, flags 0x62
+	mt	r0
+	st	r6
+	// Volatile, or not int - not caching
+
+						//../DeMiSTify/firmware/minfat.c, line 491
+						// (test)
+						// (obj to tmp) flags 22 type 103
+						// matchobj comparing flags 34 with 98
+						// deref 
+						// (prepobj tmp)
+ 						// matchobj comparing flags 162 with 98
+						// deref
+						// var FIXME - deref?
+						// reg - auto
+	ld	r6
+						//sizemod based on type 0x103
+	ldt
+
+						//../DeMiSTify/firmware/minfat.c, line 491
+	cond	NEQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l118
+		add	r7
+l117: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 492
+						//setreturn
+						// (obj to r0) flags 1 type 103
+						// const
+	.liconst	0
+	mr	r0
+
+						//../DeMiSTify/firmware/minfat.c, line 493
+						//pcreltotemp
+	.lipcrel	l115
+	add	r7
+						// freereg r1
+l118: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 493
+						// (bitwise/arithmetic) 	//ops: 0, 0, 5
+						// (obj to r4) flags 2 type a
+						// var, auto|reg
+	.liconst	12
+						//sizemod based on type 0xa
+	ldidx	r6
+	mr	r4
 						// (obj to tmp) flags 1 type a
 						// matchobj comparing flags 1 with 2
 						// const
 						// matchobj comparing flags 1 with 2
 	.liconst	16
-	add	r5
+	add	r4
 						// (save result) // isreg
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r6 - no need to prep
-						// (obj to tmp) flags 62 type 103
-						// matchobj comparing flags 98 with 1
-						// deref 
-	ld	r5
-						// (save temp)store type 3
-	st	r6
-						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 467
-						// (bitwise/arithmetic) 	//ops: 4, 7, 2
-						// (obj to r1) flags 42 type 103
-						// matchobj comparing flags 66 with 98
+						//../DeMiSTify/firmware/minfat.c, line 493
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 1
 						// reg r3 - only match against tmp
 	mt	r3
+						//Saving to reg r1
+						// (save temp)isreg
 	mr	r1
-						// (obj to tmp) flags 62 type 103
-						// matchobj comparing flags 98 with 66
-						// deref 
-	ld	r6
-	add	r1
-						// (save result) // isreg
-						// allocreg r2
-
-						//../DeMiSTify/firmware/minfat.c, line 467
-						// (bitwise/arithmetic) 	//ops: 0, 0, 3
-						// (obj to r2) flags 2 type a
-						// matchobj comparing flags 2 with 98
-						// var, auto|reg
-						// matchobj comparing flags 1 with 98
-	.liconst	8
-						//sizemod based on type 0xa
-	ldidx	r6
-	mr	r2
-						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 2
-						// const
-						// matchobj comparing flags 1 with 2
-	.liconst	8
-	add	r2
-						// (save result) // isreg
-						// Q1 disposable
+						//save_temp done
+						//No need to mask - same size
 						// (a/p assign)
 						// (prepobj r0)
- 						// matchobj comparing flags 130 with 1
+ 						// matchobj comparing flags 130 with 66
 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 66
 	.liconst	4
 	addt	r6
 	mr	r0
 
-						// (obj to tmp) flags 6a type 103
-						// matchobj comparing flags 106 with 130
-						// matchobj comparing flags 106 with 130
+						// (obj to tmp) flags 62 type 103
+						// matchobj comparing flags 98 with 130
+						// matchobj comparing flags 98 with 130
 						// deref 
-	ld	r2
+	ld	r4
 						// (save temp)store type 3
 	st	r0
 						//save_temp done
-						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 467
+						//../DeMiSTify/firmware/minfat.c, line 493
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 2 type 103
+						// matchobj comparing flags 2 with 98
+						// matchobj comparing flags 2 with 130
+						// var, auto|reg
+						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 130
+	.liconst	4
+						//sizemod based on type 0x103
+	ldidx	r6
+	add	r1
+						// (save result) // isreg
+						// (a/p assign)
+						// (prepobj r0)
+ 						// matchobj comparing flags 130 with 2
+						// matchobj comparing flags 130 with 130
+						//auto: flags: 82, comparing 8, 0 with 4, 0
+						//Fuzzy match found, offset: 4 (varadr: 1)
+	.liconst	4
+	add	r0
+
+						// required value found in r0
+						// (obj to tmp) flags 22 type 103
+						// matchobj comparing flags 34 with 1
+						// matchobj comparing flags 34 with 130
+						// deref 
+						// (prepobj tmp)
+ 						// matchobj comparing flags 162 with 1
+						// matchobj comparing flags 162 with 130
+						// deref
+						// var FIXME - deref?
+						// reg - auto
+	ld	r6
+						//sizemod based on type 0x103
+	ldt
+						// (save temp)store type 3
+	st	r0
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 493
 						// Q1 disposable
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 106
+						// matchobj comparing flags 2 with 34
 						// matchobj comparing flags 2 with 130
 						// var, auto|reg
-						// matchobj comparing flags 1 with 106
+						// matchobj comparing flags 1 with 34
 						// matchobj comparing flags 1 with 130
-	.liconst	4
+	.liconst	8
 						//sizemod based on type 0x103
 	ldidx	r6
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 467
+						//../DeMiSTify/firmware/minfat.c, line 493
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l107
+	.lipcrel	l121
 		add	r7
-						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 468
-						// (bitwise/arithmetic) 	//ops: 0, 7, 4
-						// (obj to r3) flags 2 type 103
+						//../DeMiSTify/firmware/minfat.c, line 494
+						// (bitwise/arithmetic) 	//ops: 0, 0, 2
+						// (obj to r1) flags 2 type 103
 						// matchobj comparing flags 2 with 2
 
 			// required value found in tmp
-	mr	r3
+	mr	r1
 				//return 0
-						// (obj to tmp) flags 62 type 103
-						// matchobj comparing flags 98 with 2
-						// matchobj comparing flags 98 with 130
-						// deref 
-	ld	r6
-	sub	r3
+						// (obj to tmp) flags 2 type 103
+						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 130
+						// var, auto|reg
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+	.liconst	4
+						//sizemod based on type 0x103
+	ldidx	r6
+	sub	r1
 						// (save result) // isreg
-l107: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 469
+						//../DeMiSTify/firmware/minfat.c, line 494
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 103 to 3
+						// (prepobj r0)
+ 						// reg r3 - no need to prep
+						// (obj to tmp) flags 4a type 103
+						// matchobj comparing flags 74 with 2
+						// matchobj comparing flags 74 with 130
+						// reg r1 - only match against tmp
+	mt	r1
+						//Saving to reg r3
+						// (save temp)isreg
+	mr	r3
+						//save_temp done
+						//No need to mask - same size
+						// freereg r1
+l121: # 
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 495
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// const
@@ -4648,14 +5078,14 @@ l107: #
 	sgn
 	cmp	r3
 
-						//../DeMiSTify/firmware/minfat.c, line 469
+						//../DeMiSTify/firmware/minfat.c, line 495
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l109
+	.lipcrel	l123
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 470
+						//../DeMiSTify/firmware/minfat.c, line 496
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// matchobj comparing flags 1 with 1
@@ -4664,339 +5094,327 @@ l107: #
 	mr	r0
 				//return 0
 
-						//../DeMiSTify/firmware/minfat.c, line 471
+						//../DeMiSTify/firmware/minfat.c, line 497
 						//pcreltotemp
-	.lipcrel	l104
+	.lipcrel	l115
 	add	r7
-l109: # 
+l123: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 471
-						// (bitwise/arithmetic) 	//ops: 7, 0, 1
-						// (obj to r0) flags 62 type 103
-						// deref 
-	ld	r6
+						//../DeMiSTify/firmware/minfat.c, line 497
+						// (bitwise/arithmetic) 	//ops: 0, 0, 1
+						// (obj to r0) flags 2 type 103
+						// var, auto|reg
+	.liconst	4
+						//sizemod based on type 0x103
+	ldidx	r6
 	mr	r0
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 98
-						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 98
-						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	511
 	and	r0
 						// (save result) // not reg
-						// Store_reg to type 0x103, flags 0x2
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	8
-	addt	r6
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
-
-						//../DeMiSTify/firmware/minfat.c, line 472
-						// (test)
-						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 2
-
-			// required value found in r0
+						// Store_reg to type 0x103, flags 0x62
 	mt	r0
-				//return 0
-				// flags 2
-	//mr
+	st	r6
+
+						//../DeMiSTify/firmware/minfat.c, line 498
+						// (test)
+						// (obj to tmp) flags 62 type 103
+						// matchobj comparing flags 98 with 98
+
+			// required value found in tmp
+				// flags 62
+	mr	r0
 	and	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 472
+						//../DeMiSTify/firmware/minfat.c, line 498
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l129
+	.lipcrel	l125
 		add	r7
+						// freereg r1
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 474
-						// (bitwise/arithmetic) 	//ops: 0, 0, 1
-						// (obj to r0) flags 1 type 103
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						//../DeMiSTify/firmware/minfat.c, line 500
+						// (bitwise/arithmetic) 	//ops: 0, 7, 2
+						// (obj to r1) flags 1 type 103
+						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 98
 						// const
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 98
+						// matchobj comparing flags 1 with 98
 	.liconst	512
-	mr	r0
-						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 1
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-						// matchobj comparing flags 1 with 1
-	.liconst	4
-						//sizemod based on type 0x103
-	ldidx	r6
-	sub	r0
-						// (save result) // not reg
-						// Store_reg to type 0x103, flags 0x2
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-	.liconst	16
-	addt	r6
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
-
-						//../DeMiSTify/firmware/minfat.c, line 475
-						// (bitwise/arithmetic) 	//ops: 0, 0, 3
-						// (obj to r2) flags 82 type a
-						// matchobj comparing flags 130 with 130
-						// matchobj comparing flags 130 with 2
-						// (prepobj r2)
- 						// matchobj comparing flags 130 with 130
-						// matchobj comparing flags 130 with 2
-						// extern (offset 0)
-	.liabs	_sector_buffer
-						// extern pe is varadr
-	mr	r2
-						// (obj to tmp) flags 2 type a
-						// matchobj comparing flags 2 with 130
-						// matchobj comparing flags 2 with 2
-						// var, auto|reg
-						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 2
-	.liconst	4
-						//sizemod based on type 0xa
-	ldidx	r6
-	add	r2
-						// (save result) // isreg
-
-						//../DeMiSTify/firmware/minfat.c, line 476
-						// (compare) (q1 signed) (q2 signed)
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-						// matchobj comparing flags 2 with 2
+	mr	r1
+						// (obj to tmp) flags 62 type 103
+						// matchobj comparing flags 98 with 1
+						// matchobj comparing flags 98 with 98
 
 			// required value found in r0
 	mt	r0
 				//return 0
-	sgn
-	cmp	r3
+	sub	r1
+						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 476
-	cond	GE
-						//conditional branch reversed
-						//pcreltotemp
-	.lipcrel	l113
-		add	r7
-
-						//../DeMiSTify/firmware/minfat.c, line 477
-						// (a/p assign)
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
-	.liconst	16
-	addt	r6
-						//sizemod based on type 0x3
-	stmpdec	r3
+						//../DeMiSTify/firmware/minfat.c, line 500
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 103 to 3
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 4a type 103
+						// matchobj comparing flags 74 with 98
+						// matchobj comparing flags 74 with 98
+						// reg r1 - only match against tmp
+	mt	r1
+						//Saving to reg r2
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+						//No need to mask - same size
 						// freereg r1
-l113: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 478
-						// (bitwise/arithmetic) 	//ops: 0, 7, 1
-						// (obj to r0) flags 2 type 103
+						//../DeMiSTify/firmware/minfat.c, line 501
+						// (bitwise/arithmetic) 	//ops: 0, 7, 6
+						// (obj to r5) flags 82 type a
+						// matchobj comparing flags 130 with 74
+						// matchobj comparing flags 130 with 98
+						// (prepobj r5)
+ 						// matchobj comparing flags 130 with 74
+						// matchobj comparing flags 130 with 98
+						// extern (offset 0)
+	.liabs	_sector_buffer
+						// extern pe is varadr
+	mr	r5
+						// (obj to tmp) flags 62 type a
+						// matchobj comparing flags 98 with 130
+						// matchobj comparing flags 98 with 98
+
+			// required value found in r0
+	mt	r0
+				//return 0
+	add	r5
+						// (save result) // isreg
+
+						//../DeMiSTify/firmware/minfat.c, line 502
+						// (compare) (q1 signed) (q2 signed)
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 98
+						// matchobj comparing flags 66 with 98
+						// reg r3 - only match against tmp
+	mt	r3
+	sgn
+	cmp	r2
+
+						//../DeMiSTify/firmware/minfat.c, line 502
+	cond	LE
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l127
+		add	r7
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 503
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 66
+						// reg r3 - only match against tmp
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+						// freereg r1
+l127: # 
+						// allocreg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 504
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 42 type 3
+						// reg r2 - only match against tmp
+	mt	r2
+						//Saving to reg r1
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 504
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 2, 0, 1
+						// (obj to r0) flags 4a type 103
+						// matchobj comparing flags 74 with 66
+						// reg r1 - only match against tmp
+	//mt
+	mr	r0
+						// (obj to tmp) flags 2 type 103
+						// matchobj comparing flags 2 with 74
+						// matchobj comparing flags 2 with 74
 						// var, auto|reg
-	.liconst	12
+						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 74
+	.liconst	4
 						//sizemod based on type 0x103
 	ldidx	r6
-	mr	r0
-						// (obj to tmp) flags 62 type 103
-						// matchobj comparing flags 98 with 2
-						// matchobj comparing flags 98 with 2
-						// deref 
-	ld	r6
 	add	r0
 						// (save result) // not reg
 						// Store_reg to type 0x103, flags 0x62
 	mt	r0
-	st	r5
+	st	r4
+						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 479
-						// (bitwise/arithmetic) 	//ops: 4, 0, 4
+						//../DeMiSTify/firmware/minfat.c, line 505
+						// (bitwise/arithmetic) 	//ops: 4, 3, 4
 						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 98
-						// matchobj comparing flags 2 with 98
-						// var, auto|reg
-						// matchobj comparing flags 1 with 98
-						// matchobj comparing flags 1 with 98
-	.liconst	12
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 98
+						// matchobj comparing flags 66 with 98
+						// reg r2 - only match against tmp
+	mt	r2
 	sub	r3
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 480
+						//../DeMiSTify/firmware/minfat.c, line 506
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-
-			// required value found in tmp
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 66
+						// reg r2 - only match against tmp
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 480
-						// (bitwise/arithmetic) 	//ops: 0, 0, 1
-						// (obj to r0) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-
-			// required value found in tmp
-	mr	r0
-				//return 0
+						//../DeMiSTify/firmware/minfat.c, line 506
+						// (bitwise/arithmetic) 	//ops: 3, 0, 3
+						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 98
 						// const
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 66
+						// matchobj comparing flags 1 with 98
 	.liconst	1
-	sub	r0
-						// (save result) // not reg
-						// Store_reg to type 0x3, flags 0x2
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	16
-	addt	r6
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
+	sub	r2
+						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 480
+						//../DeMiSTify/firmware/minfat.c, line 506
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 3
-						// matchobj comparing flags 74 with 130
-						// matchobj comparing flags 74 with 2
+						// matchobj comparing flags 74 with 1
+						// matchobj comparing flags 74 with 98
 						// reg r1 - only match against tmp
 	mt	r1
 				// flags 4a
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 480
+						//../DeMiSTify/firmware/minfat.c, line 506
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l129
+	.lipcrel	l143
 		add	r7
-l126: # 
+l140: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 481
+						//../DeMiSTify/firmware/minfat.c, line 507
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r4 - no need to prep
+ 						// deref
+						// var FIXME - deref?
+						// reg - auto
+	.liconst	32
+	ldidx	r6
+	mr	r0
 						// (obj to tmp) flags 6a type 101
 						// deref 
-	ldbinc	r2
+	ldbinc	r5
 						// (save temp)store type 1
-	byt
-	st	r4
+	stbinc	r0
+						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 481
-						// (bitwise/arithmetic) 	//ops: 5, 0, 5
-						// WARNING - q1 and target collision - check code for correctness.
+						//../DeMiSTify/firmware/minfat.c, line 507
+						// (bitwise/arithmetic) 	//ops: 0, 0, 1
+						// (obj to r0) flags 2 type a
+						// matchobj comparing flags 2 with 106
+						// var, auto|reg
+						// matchobj comparing flags 1 with 106
+	.liconst	32
+	ldidx	r6
+	mr	r0
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 106
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 106
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	1
-	add	r4
-						// (save result) // isreg
+	add	r0
+						// (save result) // not reg
+						// Store_reg to type 0xa, flags 0x2
+						// (prepobj tmp)
+ 						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	36
+	addt	r6
+	stmpdec	r0
+ 						// WARNING - check that 4 has been added.
+	// Volatile, or not int - not caching
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 480
+						//../DeMiSTify/firmware/minfat.c, line 506
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	12
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 130
+						// reg r2 - only match against tmp
+	mt	r2
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 480
-						// (bitwise/arithmetic) 	//ops: 0, 0, 1
-						// (obj to r0) flags 2 type 3
-						// matchobj comparing flags 2 with 2
-
-			// required value found in tmp
-	mr	r0
-				//return 0
+						//../DeMiSTify/firmware/minfat.c, line 506
+						// (bitwise/arithmetic) 	//ops: 3, 0, 3
+						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 66
 						// const
-						// matchobj comparing flags 1 with 2
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 66
 	.liconst	1
-	sub	r0
-						// (save result) // not reg
-						// Store_reg to type 0x3, flags 0x2
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	16
-	addt	r6
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
+	sub	r2
+						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 480
+						//../DeMiSTify/firmware/minfat.c, line 506
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 3
-						// matchobj comparing flags 74 with 130
-						// matchobj comparing flags 74 with 2
+						// matchobj comparing flags 74 with 1
 						// reg r1 - only match against tmp
 	mt	r1
 				// flags 4a
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 480
+						//../DeMiSTify/firmware/minfat.c, line 506
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l126
+	.lipcrel	l140
 		add	r7
-l129: # 
-						// allocreg r1
+l143: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 483
-						// (compare) (q1 signed) (q2 signed)
-						// (obj to tmp) flags 1 type 3
-						// const
-	.liconst	0
-	sgn
-	cmp	r3
-
-						//../DeMiSTify/firmware/minfat.c, line 483
-	cond	LE
-						//conditional branch regular
-						//pcreltotemp
-	.lipcrel	l130
-		add	r7
-						// freereg r1
-l127: # 
-
-						//../DeMiSTify/firmware/minfat.c, line 485
+						//../DeMiSTify/firmware/minfat.c, line 508
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -5005,7 +5423,7 @@ l127: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 485
+						//../DeMiSTify/firmware/minfat.c, line 508
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5013,14 +5431,14 @@ l127: #
 						// matchobj comparing flags 2 with 1
 						// var, auto|reg
 						// matchobj comparing flags 1 with 1
-	.liconst	12
+	.liconst	16
 						//sizemod based on type 0xa
 	ldidx	r6
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 485
+						//../DeMiSTify/firmware/minfat.c, line 508
 						//call
 						//pcreltotemp
 	.lipcrel	_FileNextSector
@@ -5029,35 +5447,64 @@ l127: #
 	.liconst	4
 	add	r6
 						// freereg r1
+l125: # 
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 486
+						//../DeMiSTify/firmware/minfat.c, line 510
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 1
 						// const
+	.liconst	0
+	sgn
+	cmp	r3
+
+						//../DeMiSTify/firmware/minfat.c, line 510
+	cond	LE
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l144
+		add	r7
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r5 - no need to prep
+						// (obj to tmp) flags 102 type a
+						// matchobj comparing flags 258 with 1
+						// var, auto|reg
 						// matchobj comparing flags 1 with 1
+	.liconst	32
+	ldidx	r6
+						// (save temp)isreg
+	mr	r5
+						//save_temp done
+l131: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 512
+						// (compare) (q1 signed) (q2 signed)
+						// (obj to tmp) flags 1 type 3
+						// const
 	.liconst	511
 	sgn
 	cmp	r3
 
-						//../DeMiSTify/firmware/minfat.c, line 486
+						//../DeMiSTify/firmware/minfat.c, line 512
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l121
+	.lipcrel	l135
 		add	r7
+						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 488
+						//../DeMiSTify/firmware/minfat.c, line 514
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 1
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r5 - only match against tmp
+	mt	r5
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 488
+						//../DeMiSTify/firmware/minfat.c, line 514
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5065,40 +5512,36 @@ l127: #
 						// matchobj comparing flags 2 with 66
 						// var, auto|reg
 						// matchobj comparing flags 1 with 66
-	.liconst	12
+	.liconst	16
 						//sizemod based on type 0xa
 	ldidx	r6
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 488
+						//../DeMiSTify/firmware/minfat.c, line 514
 						//call
 						//pcreltotemp
 	.lipcrel	_FileReadSector
 	add	r7
-						// Flow control - popping 4 + 0 bytes
-	.liconst	4
-	add	r6
+						// Deferred popping of 4 bytes (4 in total)
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 489
-						// (bitwise/arithmetic) 	//ops: 5, 0, 5
+						//../DeMiSTify/firmware/minfat.c, line 515
+						// (bitwise/arithmetic) 	//ops: 6, 0, 6
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 1
 						// const
-						// matchobj comparing flags 1 with 1
 	.liconst	512
-	add	r4
+	add	r5
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 490
-						// (bitwise/arithmetic) 	//ops: 6, 0, 1
+						//../DeMiSTify/firmware/minfat.c, line 516
+						// (bitwise/arithmetic) 	//ops: 5, 0, 1
 						// (obj to r0) flags 62 type 103
 						// matchobj comparing flags 98 with 1
 						// deref 
-	ld	r5
+	ld	r4
 	mr	r0
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 98
@@ -5111,9 +5554,9 @@ l127: #
 						// (save result) // not reg
 						// Store_reg to type 0x103, flags 0x62
 	mt	r0
-	st	r5
+	st	r4
 
-						//../DeMiSTify/firmware/minfat.c, line 491
+						//../DeMiSTify/firmware/minfat.c, line 517
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -5126,13 +5569,54 @@ l127: #
 	sub	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 494
-						//pcreltotemp
-	.lipcrel	l131
-	add	r7
-l121: # 
+						//../DeMiSTify/firmware/minfat.c, line 518
+						// (a/p push)
+						// a: pushed 0, regnames[sp] r6
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 98
+						// const
+						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 98
+	.liconst	1
+	stdec	r6
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 495
+						//../DeMiSTify/firmware/minfat.c, line 518
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 2 type a
+						// matchobj comparing flags 2 with 1
+						// matchobj comparing flags 2 with 98
+						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 98
+	.liconst	20
+						//sizemod based on type 0xa
+	ldidx	r6
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 518
+						//call
+						//pcreltotemp
+	.lipcrel	_FileNextSector
+	add	r7
+						// Flow control - popping 4 + 4 bytes
+						// matchobj comparing flags 1 with 98
+	.liconst	8
+	add	r6
+						// freereg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 521
+						//pcreltotemp
+	.lipcrel	l145
+	add	r7
+l135: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 522
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -5143,7 +5627,7 @@ l121: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 495
+						//../DeMiSTify/firmware/minfat.c, line 522
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5151,14 +5635,14 @@ l121: #
 						// matchobj comparing flags 2 with 130
 						// var, auto|reg
 						// matchobj comparing flags 1 with 130
-	.liconst	12
+	.liconst	16
 						//sizemod based on type 0xa
 	ldidx	r6
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 495
+						//../DeMiSTify/firmware/minfat.c, line 522
 						//call
 						//pcreltotemp
 	.lipcrel	_FileReadSector
@@ -5168,7 +5652,7 @@ l121: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 496
+						//../DeMiSTify/firmware/minfat.c, line 523
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -5182,27 +5666,45 @@ l121: #
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 497
-						// (bitwise/arithmetic) 	//ops: 4, 6, 1
-						// (obj to r0) flags 42 type 103
+						//../DeMiSTify/firmware/minfat.c, line 524
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 42 type 3
 						// matchobj comparing flags 66 with 130
 						// reg r3 - only match against tmp
 	mt	r3
+						//Saving to reg r1
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 524
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 2, 5, 1
+						// (obj to r0) flags 4a type 103
+						// matchobj comparing flags 74 with 66
+						// reg r1 - only match against tmp
+	//mt
 	mr	r0
 						// (obj to tmp) flags 62 type 103
-						// matchobj comparing flags 98 with 66
-						// matchobj comparing flags 98 with 66
+						// matchobj comparing flags 98 with 74
+						// matchobj comparing flags 98 with 74
 						// deref 
-	ld	r5
+	ld	r4
 	add	r0
 						// (save result) // not reg
 						// Store_reg to type 0x103, flags 0x62
 	mt	r0
-	st	r5
+	st	r4
+						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5215,7 +5717,7 @@ l121: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -5228,7 +5730,7 @@ l121: #
 	sub	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 3
@@ -5240,39 +5742,39 @@ l121: #
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l131
+	.lipcrel	l145
 		add	r7
-l128: # 
+l142: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 499
+						//../DeMiSTify/firmware/minfat.c, line 526
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r4 - no need to prep
+ 						// reg r5 - no need to prep
 						// (obj to tmp) flags 6a type 101
 						// deref 
 	ldbinc	r2
 						// (save temp)store type 1
 	byt
-	st	r4
+	st	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 499
-						// (bitwise/arithmetic) 	//ops: 5, 0, 5
+						//../DeMiSTify/firmware/minfat.c, line 526
+						// (bitwise/arithmetic) 	//ops: 6, 0, 6
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
 						// matchobj comparing flags 1 with 106
 						// const
 						// matchobj comparing flags 1 with 106
 	.liconst	1
-	add	r4
+	add	r5
 						// (save result) // isreg
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -5284,7 +5786,7 @@ l128: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 						// (bitwise/arithmetic) 	//ops: 4, 0, 4
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -5295,7 +5797,7 @@ l128: #
 	sub	r3
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 						// Q1 disposable
 						// (test)
 						// (obj to tmp) flags 4a type 3
@@ -5306,16 +5808,16 @@ l128: #
 	and	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 498
+						//../DeMiSTify/firmware/minfat.c, line 525
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l128
+	.lipcrel	l142
 		add	r7
-l131: # 
+l145: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 483
+						//../DeMiSTify/firmware/minfat.c, line 510
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// const
@@ -5323,23 +5825,21 @@ l131: #
 	sgn
 	cmp	r3
 
-						//../DeMiSTify/firmware/minfat.c, line 483
+						//../DeMiSTify/firmware/minfat.c, line 510
 	cond	SGT
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l127
+	.lipcrel	l131
 		add	r7
-						// freereg r1
-l130: # 
-						// allocreg r1
+l144: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 502
+						//../DeMiSTify/firmware/minfat.c, line 529
 						//setreturn
 						// (obj to r0) flags 1 type 103
 						// const
 	.liconst	1
 	mr	r0
-l104: # 
+l115: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
@@ -5347,24 +5847,15 @@ l104: #
 						// freereg r5
 	.liconst	-16
 	sub	r6
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
 		//r2: yes
 		//r3: yes
 		//r4: yes
-		//r5: no
+		//r5: yes
 		//r6: yes
 		//r7: yes
 		//tmp: yes
@@ -5375,45 +5866,106 @@ _FileGetCh:
 	stmpdec	r6
 	stmpdec	r3
 	stmpdec	r4
+	stmpdec	r5
 	exg	r6
-						// allocreg r4
+						// allocreg r3
 						// allocreg r1
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r4 - no need to prep
+ 						// reg r3 - no need to prep
 						// (obj to tmp) flags 40 type a
 						// reg r1 - only match against tmp
 	mt	r1
 						// (save temp)isreg
-	mr	r4
+	mr	r3
 						//save_temp done
 						// freereg r1
-						// allocreg r3
+						// allocreg r5
+						// allocreg r4
 						// allocreg r2
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 508
-						// (bitwise/arithmetic) 	//ops: 5, 0, 4
+						//../DeMiSTify/firmware/minfat.c, line 535
+						// (test)
+						// (obj to tmp) flags 42 type a
+						// matchobj comparing flags 66 with 64
+						// reg r3 - only match against tmp
+	//mt
+				// flags 42
+	and	r3
+
+						//../DeMiSTify/firmware/minfat.c, line 535
+	cond	EQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l148
+		add	r7
+
+						//../DeMiSTify/firmware/minfat.c, line 535
+						// (bitwise/arithmetic) 	//ops: 4, 0, 6
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r3 - no need to prep
+ 						// reg r5 - no need to prep
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 64
+						// matchobj comparing flags 1 with 66
 						// const
-						// matchobj comparing flags 1 with 64
-	.liconst	16
-	addt	r4
+						// matchobj comparing flags 1 with 66
+	.liconst	8
+	addt	r3
 						// (save temp)isreg
-	mr	r3
+	mr	r5
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 535
+						// (test)
+						// (obj to tmp) flags 62 type 103
+						// matchobj comparing flags 98 with 66
+						// deref 
+	ld	r5
+
+						//../DeMiSTify/firmware/minfat.c, line 535
+	cond	NEQ
+						//conditional branch regular
+						//pcreltotemp
+	.lipcrel	l149
+		add	r7
+l148: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 536
+						//setreturn
+						// (obj to r0) flags 1 type 3
+						// const
+	.liconst	-1
+	mr	r0
+
+						//../DeMiSTify/firmware/minfat.c, line 537
+						//pcreltotemp
+	.lipcrel	l157
+	add	r7
+						// freereg r1
+l149: # 
+
+						//../DeMiSTify/firmware/minfat.c, line 537
+						// (bitwise/arithmetic) 	//ops: 4, 0, 5
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r4 - no need to prep
+						// (obj to tmp) flags 1 type a
+						// const
+	.liconst	16
+	addt	r3
+						// (save temp)isreg
+	mr	r4
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 508
-						// (bitwise/arithmetic) 	//ops: 4, 0, 2
+						//../DeMiSTify/firmware/minfat.c, line 537
+						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						// (obj to r1) flags 62 type 103
 						// matchobj comparing flags 98 with 66
 						// deref 
-	ld	r3
+	ld	r4
 	mr	r1
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 98
@@ -5424,30 +5976,30 @@ _FileGetCh:
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 508
+						//../DeMiSTify/firmware/minfat.c, line 537
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l135
+	.lipcrel	l152
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 510
+						//../DeMiSTify/firmware/minfat.c, line 539
 						// (test)
 						// (obj to tmp) flags 62 type 103
 						// matchobj comparing flags 98 with 1
 						// deref 
-	ld	r3
+	ld	r4
 
-						//../DeMiSTify/firmware/minfat.c, line 510
+						//../DeMiSTify/firmware/minfat.c, line 539
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l137
+	.lipcrel	l154
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 511
+						//../DeMiSTify/firmware/minfat.c, line 540
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -5458,19 +6010,19 @@ _FileGetCh:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 511
+						//../DeMiSTify/firmware/minfat.c, line 540
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 1
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r3 - only match against tmp
+	mt	r3
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 511
+						//../DeMiSTify/firmware/minfat.c, line 540
 						//call
 						//pcreltotemp
 	.lipcrel	_FileNextSector
@@ -5479,9 +6031,9 @@ _FileGetCh:
 	.liconst	4
 	add	r6
 						// freereg r1
-l137: # 
+l154: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 512
+						//../DeMiSTify/firmware/minfat.c, line 541
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -5492,19 +6044,19 @@ l137: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 512
+						//../DeMiSTify/firmware/minfat.c, line 541
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 130
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r3 - only match against tmp
+	mt	r3
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 512
+						//../DeMiSTify/firmware/minfat.c, line 541
 						//call
 						//pcreltotemp
 	.lipcrel	_FileReadSector
@@ -5513,82 +6065,65 @@ l137: #
 	.liconst	4
 	add	r6
 						// freereg r1
-l135: # 
+l152: # 
 						// allocreg r1
-
-						//../DeMiSTify/firmware/minfat.c, line 514
-						// (bitwise/arithmetic) 	//ops: 5, 0, 2
-						//Special case - addt
-						// (prepobj r0)
- 						// reg r1 - no need to prep
-						// (obj to tmp) flags 1 type a
-						// const
-	.liconst	8
-	addt	r4
-						// (save temp)isreg
-	mr	r1
-						//save_temp done
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
 						// (obj to tmp) flags 62 type 103
-						// matchobj comparing flags 98 with 74
 						// deref 
-	ld	r3
+	ld	r4
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 514
-						// Q2 disposable
+						//../DeMiSTify/firmware/minfat.c, line 543
 						// (compare) (q1 unsigned) (q2 unsigned)
-						// (obj to tmp) flags 6a type 103
-						// matchobj comparing flags 106 with 98
+						// (obj to tmp) flags 62 type 103
+						// matchobj comparing flags 98 with 98
 						// deref 
-	ld	r1
+	ld	r5
 	cmp	r2
-						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 514
+						//../DeMiSTify/firmware/minfat.c, line 543
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l139
+	.lipcrel	l156
 		add	r7
-						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 515
+						//../DeMiSTify/firmware/minfat.c, line 544
 						//setreturn
-						// (obj to r0) flags 1 type 101
-						// matchobj comparing flags 1 with 106
+						// (obj to r0) flags 1 type 3
+						// matchobj comparing flags 1 with 98
 						// const
-						// matchobj comparing flags 1 with 106
-	.liconst	0
+						// matchobj comparing flags 1 with 98
+	.liconst	-1
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 516
+						//../DeMiSTify/firmware/minfat.c, line 545
 						//pcreltotemp
-	.lipcrel	l140
+	.lipcrel	l157
 	add	r7
 						// freereg r1
-l139: # 
+l156: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 517
+						//../DeMiSTify/firmware/minfat.c, line 546
 						// Z disposable
 						// (bitwise/arithmetic) 	//ops: 3, 0, 1
 						//Special case - addt
 						// (prepobj r0)
- 						// reg r3 - no need to prep
+ 						// reg r4 - no need to prep
 						// (obj to tmp) flags 1 type 103
 						// const
 	.liconst	1
 	addt	r2
 						// (save temp)store type 3
-	st	r3
+	st	r4
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 517
+						//../DeMiSTify/firmware/minfat.c, line 546
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						// (obj to r1) flags 42 type 103
@@ -5604,7 +6139,7 @@ l139: #
 	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 517
+						//../DeMiSTify/firmware/minfat.c, line 546
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -5617,37 +6152,37 @@ l139: #
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 517
-						// Q1 disposable
-						//setreturn
-						// (obj to r0) flags 6a type 101
+						//../DeMiSTify/firmware/minfat.c, line 546
+						//FIXME convert
+						//Converting to wider type...
+						//But unsigned, so no need to extend
+						// (prepobj r1)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 6a type 101
 						// matchobj comparing flags 106 with 130
 						// deref 
-	ldbinc	r1
-//Disposable, postinc doesn't matter.
+	byt
+	ld	r1
+						// (save temp)isreg
 	mr	r0
+						//save_temp done
 						// freereg r1
-l140: # 
+l157: # 
 						// allocreg r1
 						// freereg r1
 						// freereg r2
 						// freereg r3
 						// freereg r4
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+						// freereg r5
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
 		//r2: yes
 		//r3: yes
 		//r4: yes
-		//r5: yes
+		//r5: no
 		//r6: yes
 		//r7: yes
 		//tmp: yes
@@ -5658,7 +6193,6 @@ _LoadFile:
 	stmpdec	r6
 	stmpdec	r3
 	stmpdec	r4
-	stmpdec	r5
 	exg	r6
 	.liconst	-20
 	add	r6
@@ -5676,32 +6210,19 @@ _LoadFile:
 	mr	r2
 						//save_temp done
 						// freereg r1
-						// allocreg r5
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r5 - no need to prep
-						// (obj to tmp) flags 102 type a
-						// matchobj comparing flags 258 with 64
-						// var, auto|reg
-						// matchobj comparing flags 1 with 64
-	.liconst	36
-	ldidx	r6
-						// (save temp)isreg
-	mr	r5
-						//save_temp done
 						// allocreg r4
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 524
+						//../DeMiSTify/firmware/minfat.c, line 553
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 42 type a
-						// matchobj comparing flags 66 with 258
+						// matchobj comparing flags 66 with 64
 						// reg r2 - only match against tmp
-	mt	r2
+	//mt
 	stdec	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 524
+						//../DeMiSTify/firmware/minfat.c, line 553
 						// (address)
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 66
@@ -5710,23 +6231,23 @@ _LoadFile:
 	.liconst	4
 	addt	r6
 						// (save temp)isreg
-	mr	r4
+	mr	r3
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 524
+						//../DeMiSTify/firmware/minfat.c, line 553
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 130
-						// reg r4 - only match against tmp
+						// reg r3 - only match against tmp
 	//mt
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 524
+						//../DeMiSTify/firmware/minfat.c, line 553
 						//call
 						//pcreltotemp
 	.lipcrel	_FileOpen
@@ -5737,7 +6258,7 @@ _LoadFile:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 524
+						//../DeMiSTify/firmware/minfat.c, line 553
 						// (test)
 						// (obj to tmp) flags 4a type 103
 						// matchobj comparing flags 74 with 1
@@ -5747,28 +6268,28 @@ _LoadFile:
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 524
+						//../DeMiSTify/firmware/minfat.c, line 553
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l144
+	.lipcrel	l161
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 526
+						//../DeMiSTify/firmware/minfat.c, line 555
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r3 - no need to prep
+ 						// reg r4 - no need to prep
 						// (obj to tmp) flags 1 type 103
 						// matchobj comparing flags 1 with 74
 						// const
 						// matchobj comparing flags 1 with 74
 	.liconst	0
 						// (save temp)isreg
-	mr	r3
+	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 529
+						//../DeMiSTify/firmware/minfat.c, line 558
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to r0) flags 2 type 103
 						// matchobj comparing flags 2 with 1
@@ -5785,37 +6306,38 @@ _LoadFile:
 	.liconst	0
 	cmp	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 529
+						//../DeMiSTify/firmware/minfat.c, line 558
 	cond	LE
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l150
+	.lipcrel	l167
 		add	r7
 						// freereg r1
-l151: # 
+l168: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 531
+						//../DeMiSTify/firmware/minfat.c, line 560
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
-						// (obj to tmp) flags 42 type a
-						// reg r5 - only match against tmp
-	mt	r5
+						// (obj to tmp) flags 2 type a
+						// var, auto|reg
+	.liconst	32
+	ldidx	r6
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 531
+						//../DeMiSTify/firmware/minfat.c, line 560
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 42 type a
-						// matchobj comparing flags 66 with 66
-						// reg r4 - only match against tmp
-	mt	r4
+						// matchobj comparing flags 66 with 2
+						// reg r3 - only match against tmp
+	mt	r3
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 531
+						//../DeMiSTify/firmware/minfat.c, line 560
 						//call
 						//pcreltotemp
 	.lipcrel	_FileReadSector
@@ -5826,7 +6348,7 @@ l151: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 531
+						//../DeMiSTify/firmware/minfat.c, line 560
 						// (test)
 						// (obj to tmp) flags 4a type 103
 						// matchobj comparing flags 74 with 1
@@ -5836,15 +6358,15 @@ l151: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 531
+						//../DeMiSTify/firmware/minfat.c, line 560
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l149
+	.lipcrel	l166
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 532
+						//../DeMiSTify/firmware/minfat.c, line 561
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// matchobj comparing flags 1 with 74
@@ -5853,14 +6375,14 @@ l151: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 533
+						//../DeMiSTify/firmware/minfat.c, line 562
 						//pcreltotemp
-	.lipcrel	l141
+	.lipcrel	l158
 	add	r7
 						// freereg r1
-l149: # 
+l166: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 533
+						//../DeMiSTify/firmware/minfat.c, line 562
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type 3
@@ -5869,19 +6391,19 @@ l149: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 533
+						//../DeMiSTify/firmware/minfat.c, line 562
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 1
-						// reg r4 - only match against tmp
-	mt	r4
+						// reg r3 - only match against tmp
+	mt	r3
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 533
+						//../DeMiSTify/firmware/minfat.c, line 562
 						//call
 						//pcreltotemp
 	.lipcrel	_FileNextSector
@@ -5891,28 +6413,46 @@ l149: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 535
-						// (bitwise/arithmetic) 	//ops: 6, 0, 6
-						// WARNING - q1 and target collision - check code for correctness.
+						//../DeMiSTify/firmware/minfat.c, line 564
+						// (bitwise/arithmetic) 	//ops: 0, 0, 1
+						// (obj to r0) flags 2 type a
+						// matchobj comparing flags 2 with 1
+						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	32
+	ldidx	r6
+	mr	r0
 						// (obj to tmp) flags 1 type a
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 						// const
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 2
 	.liconst	512
-	add	r5
-						// (save result) // isreg
+	add	r0
+						// (save result) // not reg
+						// Store_reg to type 0xa, flags 0x2
+						// (prepobj tmp)
+ 						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	36
+	addt	r6
+	stmpdec	r0
+ 						// WARNING - check that 4 has been added.
+	// Volatile, or not int - not caching
 
-						//../DeMiSTify/firmware/minfat.c, line 536
-						// (bitwise/arithmetic) 	//ops: 4, 0, 4
+						//../DeMiSTify/firmware/minfat.c, line 565
+						// (bitwise/arithmetic) 	//ops: 5, 0, 5
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 103
-						// matchobj comparing flags 1 with 1
-
-			// required value found in tmp
-	add	r3
+						// matchobj comparing flags 1 with 130
+						// const
+						// matchobj comparing flags 1 with 130
+	.liconst	512
+	add	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 529
+						//../DeMiSTify/firmware/minfat.c, line 558
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 1
@@ -5921,60 +6461,50 @@ l149: #
 	.liconst	8
 						//sizemod based on type 0x103
 	ldidx	r6
-	cmp	r3
+	cmp	r4
 
-						//../DeMiSTify/firmware/minfat.c, line 529
+						//../DeMiSTify/firmware/minfat.c, line 558
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l151
+	.lipcrel	l168
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 540
+						//../DeMiSTify/firmware/minfat.c, line 569
 						//pcreltotemp
-	.lipcrel	l150
+	.lipcrel	l167
 	add	r7
-l144: # 
+l161: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 542
+						//../DeMiSTify/firmware/minfat.c, line 571
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// const
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 543
+						//../DeMiSTify/firmware/minfat.c, line 572
 						//pcreltotemp
-	.lipcrel	l141
+	.lipcrel	l158
 	add	r7
-l150: # 
+l167: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 544
+						//../DeMiSTify/firmware/minfat.c, line 573
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// const
 	.liconst	1
 	mr	r0
-l141: # 
+l158: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
 						// freereg r4
-						// freereg r5
 	.liconst	-20
 	sub	r6
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 2
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -6006,7 +6536,7 @@ _ChangeDirectoryByCluster:
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 550
+						//../DeMiSTify/firmware/minfat.c, line 579
 						// (test)
 						// (obj to tmp) flags 42 type 103
 						// matchobj comparing flags 66 with 64
@@ -6015,15 +6545,15 @@ _ChangeDirectoryByCluster:
 				// flags 42
 	and	r3
 
-						//../DeMiSTify/firmware/minfat.c, line 550
+						//../DeMiSTify/firmware/minfat.c, line 579
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l156
+	.lipcrel	l173
 		add	r7
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 552
+						//../DeMiSTify/firmware/minfat.c, line 581
 						// (a/p assign)
 						// (prepobj tmp)
  						// extern (offset 0)
@@ -6033,7 +6563,7 @@ _ChangeDirectoryByCluster:
 	stmpdec	r3
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 553
+						//../DeMiSTify/firmware/minfat.c, line 582
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						// (obj to r2) flags 42 type 103
 						// reg r3 - only match against tmp
@@ -6061,7 +6591,7 @@ _ChangeDirectoryByCluster:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 553
+						//../DeMiSTify/firmware/minfat.c, line 582
 						// (bitwise/arithmetic) 	//ops: 2, 3, 3
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 4a type 103
@@ -6071,7 +6601,7 @@ _ChangeDirectoryByCluster:
 	mul	r2
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 553
+						//../DeMiSTify/firmware/minfat.c, line 582
 						// Q2 disposable
 						// (bitwise/arithmetic) 	//ops: 0, 3, 1
 						// (obj to r0) flags 2 type 103
@@ -6097,7 +6627,7 @@ _ChangeDirectoryByCluster:
  						// WARNING - check that 4 has been added.
 						// freereg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 554
+						//../DeMiSTify/firmware/minfat.c, line 583
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						// (obj to r0) flags 4a type 103
@@ -6124,14 +6654,14 @@ _ChangeDirectoryByCluster:
  						// WARNING - check that 4 has been added.
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 557
+						//../DeMiSTify/firmware/minfat.c, line 586
 						//pcreltotemp
-	.lipcrel	l157
+	.lipcrel	l174
 	add	r7
-l156: # 
+l173: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 558
+						//../DeMiSTify/firmware/minfat.c, line 587
 						// (a/p assign)
 						// (prepobj r0)
  						// extern (offset 0)
@@ -6150,7 +6680,7 @@ l156: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 559
+						//../DeMiSTify/firmware/minfat.c, line 588
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
@@ -6172,7 +6702,7 @@ l156: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 560
+						//../DeMiSTify/firmware/minfat.c, line 589
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -6183,14 +6713,14 @@ l156: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 560
+						//../DeMiSTify/firmware/minfat.c, line 589
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l159
+	.lipcrel	l176
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 560
+						//../DeMiSTify/firmware/minfat.c, line 589
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -6211,13 +6741,13 @@ l156: #
 	shl	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 560
+						//../DeMiSTify/firmware/minfat.c, line 589
 						//pcreltotemp
-	.lipcrel	l160
+	.lipcrel	l177
 	add	r7
-l159: # 
+l176: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 560
+						//../DeMiSTify/firmware/minfat.c, line 589
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 103
 						// extern
@@ -6233,9 +6763,9 @@ l159: #
 	.liconst	4
 	shl	r1
 						// (save result) // isreg
-l160: # 
+l177: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 560
+						//../DeMiSTify/firmware/minfat.c, line 589
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj tmp)
@@ -6244,14 +6774,11 @@ l160: #
 						// extern pe not varadr
 						//sizemod based on type 0x103
 	stmpdec	r1
-l157: # 
+l174: # 
 						// freereg r1
 						// freereg r3
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 4
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -6281,7 +6808,7 @@ _CurrentDirectory:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 567
+						//../DeMiSTify/firmware/minfat.c, line 596
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -6292,14 +6819,14 @@ _CurrentDirectory:
 	ldt
 	cmp	r1
 
-						//../DeMiSTify/firmware/minfat.c, line 567
+						//../DeMiSTify/firmware/minfat.c, line 596
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l164
+	.lipcrel	l181
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 567
+						//../DeMiSTify/firmware/minfat.c, line 596
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -6312,13 +6839,13 @@ _CurrentDirectory:
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 567
+						//../DeMiSTify/firmware/minfat.c, line 596
 						//pcreltotemp
-	.lipcrel	l165
+	.lipcrel	l182
 	add	r7
-l164: # 
+l181: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 567
+						//../DeMiSTify/firmware/minfat.c, line 596
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -6329,9 +6856,9 @@ l164: #
 						// (save temp)isreg
 	mr	r2
 						//save_temp done
-l165: # 
+l182: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 567
+						//../DeMiSTify/firmware/minfat.c, line 596
 						// Q1 disposable
 						//setreturn
 						// (obj to r0) flags 4a type 103
@@ -6377,7 +6904,7 @@ _ChangeDirectory:
 						// allocreg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 573
+						//../DeMiSTify/firmware/minfat.c, line 602
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -6390,7 +6917,7 @@ _ChangeDirectory:
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 574
+						//../DeMiSTify/firmware/minfat.c, line 603
 						// (test)
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 1
@@ -6399,16 +6926,16 @@ _ChangeDirectory:
 				// flags 42
 	and	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 574
+						//../DeMiSTify/firmware/minfat.c, line 603
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l169
+	.lipcrel	l186
 		add	r7
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 576
+						//../DeMiSTify/firmware/minfat.c, line 605
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -6423,7 +6950,7 @@ _ChangeDirectory:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 576
+						//../DeMiSTify/firmware/minfat.c, line 605
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -6440,7 +6967,7 @@ _ChangeDirectory:
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 106
@@ -6450,15 +6977,15 @@ _ChangeDirectory:
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l171
+	.lipcrel	l188
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -6473,7 +7000,7 @@ _ChangeDirectory:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -6488,7 +7015,7 @@ _ChangeDirectory:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 5
 						// (obj to r4) flags 4a type 3
@@ -6504,7 +7031,7 @@ _ChangeDirectory:
 	and	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 						// (bitwise/arithmetic) 	//ops: 5, 0, 5
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -6516,14 +7043,14 @@ _ChangeDirectory:
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 						//pcreltotemp
-	.lipcrel	l172
+	.lipcrel	l189
 	add	r7
-l171: # 
+l188: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 577
+						//../DeMiSTify/firmware/minfat.c, line 606
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -6533,21 +7060,39 @@ l171: #
 						// (save temp)isreg
 	mr	r4
 						//save_temp done
-l172: # 
+						// freereg r1
+l189: # 
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 577
-						// (bitwise/arithmetic) 	//ops: 5, 4, 4
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 42 type 103
+						//../DeMiSTify/firmware/minfat.c, line 606
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 4a type 3
 						// reg r4 - only match against tmp
 	mt	r4
+						//Saving to reg r1
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 606
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 2, 4, 4
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 4a type 103
+						// matchobj comparing flags 74 with 74
+						// reg r1 - only match against tmp
+	//mt
 	or	r3
 						// (save result) // isreg
 						// freereg r1
-l169: # 
+l186: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 579
+						//../DeMiSTify/firmware/minfat.c, line 608
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -6558,7 +7103,7 @@ l169: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 579
+						//../DeMiSTify/firmware/minfat.c, line 608
 						//call
 						//pcreltotemp
 	.lipcrel	_ChangeDirectoryByCluster
@@ -6568,14 +7113,8 @@ l169: #
 						// freereg r2
 						// freereg r3
 						// freereg r4
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 2
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -6595,70 +7134,62 @@ _NextDirEntry:
 	stmpdec	r4
 	stmpdec	r5
 	exg	r6
-	.liconst	-16
+	.liconst	-12
 	add	r6
+						// allocreg r2
 						// allocreg r1
 						// Q1 disposable
 						// (a/p assign)
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	8
-	addt	r6
-						//sizemod based on type 0x3
-	stmpdec	r1
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 40 type 3
+						// matchobj comparing flags 64 with 1
+						// reg r1 - only match against tmp
+	mt	r1
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
 						// freereg r1
 						// allocreg r5
 						// allocreg r4
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r4 - no need to prep
-						// (obj to tmp) flags 1 type 104
-						// const
-	.liconst	268435448
-						// (save temp)isreg
-	mr	r4
-						//save_temp done
 						// allocreg r3
-						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 589
+						//../DeMiSTify/firmware/minfat.c, line 618
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 64
 						// const
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 64
 	.liconst	0
 						// (save temp)store type 3
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 591
+						//../DeMiSTify/firmware/minfat.c, line 620
 						// (test)
-						// (obj to tmp) flags 2 type 3
-						// matchobj comparing flags 2 with 1
-						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	4
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (obj to tmp) flags 42 type 3
+						// matchobj comparing flags 66 with 1
+						// reg r2 - only match against tmp
+	mt	r2
+				// flags 42
+	and	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 591
+						//../DeMiSTify/firmware/minfat.c, line 620
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l180
+	.lipcrel	l197
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 593
+						//../DeMiSTify/firmware/minfat.c, line 622
 						// (a/p assign)
 						// (prepobj r0)
- 						// matchobj comparing flags 130 with 2
+ 						// matchobj comparing flags 130 with 66
 						// static
-	.liabs	l178,0
+	.liabs	l195,0
 						// static pe not varadr
 	mr	r0
 						// (obj to tmp) flags 1 type 104
@@ -6672,50 +7203,54 @@ _NextDirEntry:
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 594
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 623
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
 						// matchobj comparing flags 130 with 130
 						// static
-	.liabs	l176,0
+	.liabs	l193,0
 						// static pe not varadr
 	mr	r0
-						// (obj to tmp) flags 2 type 104
+						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 130
 						// matchobj comparing flags 2 with 130
 						// extern
 	.liabs	_current_directory_start
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
+						//Saving to reg r0
 						// (save temp)store type 4
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 595
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 624
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
 						// matchobj comparing flags 130 with 130
 						// static
-	.liabs	l177,0
+	.liabs	l194,0
 						// static pe not varadr
 	mr	r0
-						// (obj to tmp) flags 2 type 104
+						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 130
 						// matchobj comparing flags 2 with 130
 						// extern
 	.liabs	_current_directory_cluster
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
+						//Saving to reg r0
 						// (save temp)store type 4
 	st	r0
 						//save_temp done
-l180: # 
+l197: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 598
+						//../DeMiSTify/firmware/minfat.c, line 627
 						// (a/p assign)
 						// (prepobj r0)
  						// extern (offset 13)
@@ -6734,22 +7269,25 @@ l180: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 						// freereg r1
-l219: # 
+l236: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 603
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 632
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 2 type 104
+						// (obj to tmp) flags 2 type 103
 						// extern
 	.liabs	_dir_entries
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
+						//Saving to reg r1
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
+						//No need to mask - same size
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -6757,7 +7295,7 @@ l219: #
 						// matchobj comparing flags 2 with 2
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l178,0
+	.liabs	l195,0
 						//static deref
 						//sizemod based on type 0x104
 	ldt
@@ -6765,7 +7303,7 @@ l219: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 603
+						//../DeMiSTify/firmware/minfat.c, line 632
 						// Q2 disposable
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 4a type 104
@@ -6775,16 +7313,16 @@ l219: #
 	cmp	r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 603
+						//../DeMiSTify/firmware/minfat.c, line 632
 	cond	GE
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l222
+	.lipcrel	l239
 		add	r7
-l220: # 
+l237: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 605
+						//../DeMiSTify/firmware/minfat.c, line 634
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						// (obj to r1) flags 42 type 104
 						// reg r2 - only match against tmp
@@ -6799,35 +7337,37 @@ l220: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 605
+						//../DeMiSTify/firmware/minfat.c, line 634
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l188
+	.lipcrel	l205
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 607
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 636
+						//FIXME convert
+						// (convert - reducing type 104 to 103
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
 						// extern (offset 0)
 	.liabs	_cachedsector
 						// extern pe not varadr
 	mr	r0
-						// (obj to tmp) flags 2 type 103
+						// (obj to tmp) flags 2 type 104
 						// matchobj comparing flags 2 with 130
 						// matchobj comparing flags 2 with 130
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l176,0
+	.liabs	l193,0
 						//static deref
-						//sizemod based on type 0x103
+						//sizemod based on type 0x104
 	ldt
+						//Saving to reg r0
 						// (save temp)store type 3
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 608
+						//../DeMiSTify/firmware/minfat.c, line 637
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
@@ -6844,7 +7384,7 @@ l220: #
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 608
+						//../DeMiSTify/firmware/minfat.c, line 637
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -6853,7 +7393,7 @@ l220: #
 						// matchobj comparing flags 2 with 130
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l176,0
+	.liabs	l193,0
 						//static deref
 						//sizemod based on type 0x104
 	ldt
@@ -6861,14 +7401,14 @@ l220: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 608
+						//../DeMiSTify/firmware/minfat.c, line 637
 						// (bitwise/arithmetic) 	//ops: 2, 0, 1
 						//Special case - addt
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 2
 						// matchobj comparing flags 130 with 130
 						// static
-	.liabs	l176,0
+	.liabs	l193,0
 						// static pe not varadr
 	mr	r0
 						// (obj to tmp) flags 1 type 104
@@ -6885,7 +7425,7 @@ l220: #
 						// matchobj comparing flags 2 with 2
 						// Obsoleting t1
 
-						//../DeMiSTify/firmware/minfat.c, line 608
+						//../DeMiSTify/firmware/minfat.c, line 637
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -6897,7 +7437,7 @@ l220: #
 	//mr
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 608
+						//../DeMiSTify/firmware/minfat.c, line 637
 						//call
 						//pcreltotemp
 	.lipcrel	_sd_read_sector
@@ -6907,12 +7447,12 @@ l220: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 609
+						//../DeMiSTify/firmware/minfat.c, line 638
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 1
 						// static
-	.liabs	l175,0
+	.liabs	l192,0
 						// static pe not varadr
 	mr	r0
 						// (obj to tmp) flags 82 type a
@@ -6928,19 +7468,19 @@ l220: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 612
+						//../DeMiSTify/firmware/minfat.c, line 641
 						//pcreltotemp
-	.lipcrel	l189
+	.lipcrel	l206
 	add	r7
-l188: # 
+l205: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 612
+						//../DeMiSTify/firmware/minfat.c, line 641
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type a
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l175,0
+	.liabs	l192,0
 						//static deref
 						//sizemod based on type 0xa
 	ldt
@@ -6957,19 +7497,19 @@ l188: #
 						// Store_reg to type 0xa, flags 0x2
 						// (prepobj tmp)
  						// static
-	.liabs	l175,4
+	.liabs	l192,4
 						// static pe not varadr
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 	// Volatile, or not int - not caching
-l189: # 
+l206: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 613
+						//../DeMiSTify/firmware/minfat.c, line 642
 						// (bitwise/arithmetic) 	//ops: 0, 0, 1
 						// (obj to r0) flags 2 type 104
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l178,0
+	.liabs	l195,0
 						//static deref
 						//sizemod based on type 0x104
 	ldt
@@ -6986,13 +7526,13 @@ l189: #
 						// Store_reg to type 0x104, flags 0x2
 						// (prepobj tmp)
  						// static
-	.liabs	l178,4
+	.liabs	l195,4
 						// static pe not varadr
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 	// Volatile, or not int - not caching
 
-						//../DeMiSTify/firmware/minfat.c, line 615
+						//../DeMiSTify/firmware/minfat.c, line 644
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -7007,7 +7547,7 @@ l189: #
 						// var FIXME - deref?
 						// static
 	ldinc	r7
-	.ref	l175,0
+	.ref	l192,0
 	ldt
 						//sizemod based on type 0x101
 	byt
@@ -7016,7 +7556,7 @@ l189: #
 	mr	r5
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 615
+						//../DeMiSTify/firmware/minfat.c, line 644
 						// (test)
 						// (obj to tmp) flags 42 type 3
 						// matchobj comparing flags 66 with 34
@@ -7025,14 +7565,14 @@ l189: #
 				// flags 42
 	and	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 615
+						//../DeMiSTify/firmware/minfat.c, line 644
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l203
+	.lipcrel	l220
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 615
+						//../DeMiSTify/firmware/minfat.c, line 644
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 66
@@ -7041,11 +7581,11 @@ l189: #
 	.liconst	229
 	cmp	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 615
+						//../DeMiSTify/firmware/minfat.c, line 644
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l203
+	.lipcrel	l220
 		add	r7
 						// freereg r1
 						// (a/p assign)
@@ -7055,7 +7595,7 @@ l189: #
 						// matchobj comparing flags 2 with 1
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l175,0
+	.liabs	l192,0
 						//static deref
 						//sizemod based on type 0xa
 	ldt
@@ -7064,7 +7604,7 @@ l189: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 618
+						//../DeMiSTify/firmware/minfat.c, line 647
 						// (bitwise/arithmetic) 	//ops: 4, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -7079,7 +7619,7 @@ l189: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 618
+						//../DeMiSTify/firmware/minfat.c, line 647
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -7096,7 +7636,7 @@ l189: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 618
+						//../DeMiSTify/firmware/minfat.c, line 647
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to tmp) flags 1 type 3
 						// matchobj comparing flags 1 with 106
@@ -7105,16 +7645,16 @@ l189: #
 	.liconst	15
 	cmp	r4
 
-						//../DeMiSTify/firmware/minfat.c, line 618
+						//../DeMiSTify/firmware/minfat.c, line 647
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l194
+	.lipcrel	l211
 		add	r7
 						// freereg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 622
+						//../DeMiSTify/firmware/minfat.c, line 651
 						// (bitwise/arithmetic) 	//ops: 6, 0, 2
 						// (obj to r1) flags 42 type 3
 						// matchobj comparing flags 66 with 1
@@ -7129,7 +7669,7 @@ l189: #
 	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 622
+						//../DeMiSTify/firmware/minfat.c, line 651
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -7140,7 +7680,7 @@ l189: #
 	sub	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 622
+						//../DeMiSTify/firmware/minfat.c, line 651
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -7151,7 +7691,7 @@ l189: #
 	mul	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 623
+						//../DeMiSTify/firmware/minfat.c, line 652
 						// (bitwise/arithmetic) 	//ops: 0, 2, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 82 type a
@@ -7163,7 +7703,7 @@ l189: #
 						// (save result) // isreg
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 624
+						//../DeMiSTify/firmware/minfat.c, line 653
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7178,7 +7718,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 624
+						//../DeMiSTify/firmware/minfat.c, line 653
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7194,7 +7734,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 625
+						//../DeMiSTify/firmware/minfat.c, line 654
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7209,7 +7749,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 625
+						//../DeMiSTify/firmware/minfat.c, line 654
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7225,7 +7765,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 626
+						//../DeMiSTify/firmware/minfat.c, line 655
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7240,7 +7780,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 626
+						//../DeMiSTify/firmware/minfat.c, line 655
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7256,7 +7796,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 627
+						//../DeMiSTify/firmware/minfat.c, line 656
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7271,7 +7811,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 627
+						//../DeMiSTify/firmware/minfat.c, line 656
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7287,7 +7827,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 628
+						//../DeMiSTify/firmware/minfat.c, line 657
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7302,7 +7842,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 628
+						//../DeMiSTify/firmware/minfat.c, line 657
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7318,7 +7858,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 630
+						//../DeMiSTify/firmware/minfat.c, line 659
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7333,7 +7873,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 630
+						//../DeMiSTify/firmware/minfat.c, line 659
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7349,7 +7889,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 631
+						//../DeMiSTify/firmware/minfat.c, line 660
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7364,7 +7904,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 631
+						//../DeMiSTify/firmware/minfat.c, line 660
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7380,7 +7920,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 632
+						//../DeMiSTify/firmware/minfat.c, line 661
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7395,7 +7935,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 632
+						//../DeMiSTify/firmware/minfat.c, line 661
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7411,7 +7951,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 633
+						//../DeMiSTify/firmware/minfat.c, line 662
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7426,7 +7966,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 633
+						//../DeMiSTify/firmware/minfat.c, line 662
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7442,7 +7982,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 634
+						//../DeMiSTify/firmware/minfat.c, line 663
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7457,7 +7997,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 634
+						//../DeMiSTify/firmware/minfat.c, line 663
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7473,7 +8013,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 635
+						//../DeMiSTify/firmware/minfat.c, line 664
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7488,7 +8028,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 635
+						//../DeMiSTify/firmware/minfat.c, line 664
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7504,7 +8044,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 637
+						//../DeMiSTify/firmware/minfat.c, line 666
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7519,7 +8059,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 637
+						//../DeMiSTify/firmware/minfat.c, line 666
 						// Q1 disposable
 						// (a/p assign)
 						// (prepobj r0)
@@ -7535,7 +8075,7 @@ l189: #
 						// freereg r2
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 638
+						//../DeMiSTify/firmware/minfat.c, line 667
 						// (bitwise/arithmetic) 	//ops: 4, 0, 3
 						//Special case - addt
 						// (prepobj r0)
@@ -7550,7 +8090,7 @@ l189: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 638
+						//../DeMiSTify/firmware/minfat.c, line 667
 						// Q1 disposable
 						// Z disposable
 						// (a/p assign)
@@ -7568,7 +8108,7 @@ l189: #
 						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 639
+						//../DeMiSTify/firmware/minfat.c, line 668
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -7581,15 +8121,15 @@ l189: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 647
+						//../DeMiSTify/firmware/minfat.c, line 676
 						//pcreltotemp
-	.lipcrel	l203
+	.lipcrel	l220
 	add	r7
-l194: # 
+l211: # 
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						// (obj to r1) flags 42 type 3
 						// reg r4 - only match against tmp
@@ -7604,15 +8144,15 @@ l194: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l197
+	.lipcrel	l214
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						// (obj to r1) flags 42 type 3
 						// matchobj comparing flags 66 with 1
@@ -7628,33 +8168,33 @@ l194: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l196
+	.lipcrel	l213
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 						// (test)
 						// (obj to tmp) flags 2 type a
 						// matchobj comparing flags 2 with 1
 						// var, auto|reg
 						// matchobj comparing flags 1 with 1
-	.liconst	32
+	.liconst	28
 	ldidx	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l196
+	.lipcrel	l213
 		add	r7
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -7666,7 +8206,7 @@ l194: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 						//call
 						// (obj to tmp) flags 22 type f
 						// matchobj comparing flags 34 with 66
@@ -7677,14 +8217,14 @@ l194: #
 						// var FIXME - deref?
 						// reg - auto
 						// matchobj comparing flags 1 with 66
-	.liconst	32
+	.liconst	28
 	ldidx	r6
 	exg	r7
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -7693,29 +8233,29 @@ l194: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 648
+						//../DeMiSTify/firmware/minfat.c, line 677
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l197
+	.lipcrel	l214
 		add	r7
-l196: # 
+l213: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 651
+						//../DeMiSTify/firmware/minfat.c, line 680
 						// (test)
 						// (obj to tmp) flags 62 type 3
 						// deref 
 	ld	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 651
+						//../DeMiSTify/firmware/minfat.c, line 680
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l202
+	.lipcrel	l219
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 652
+						//../DeMiSTify/firmware/minfat.c, line 681
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 98
@@ -7734,26 +8274,26 @@ l196: #
 	stbinc	r0
 						//Disposable, postinc doesn't matter.
 						//save_temp done
-l202: # 
+l219: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 656
+						//../DeMiSTify/firmware/minfat.c, line 685
 						//setreturn
 						// (obj to r0) flags 2 type a
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l175,0
+	.liabs	l192,0
 						//static deref
 						//sizemod based on type 0xa
 	ldt
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 657
+						//../DeMiSTify/firmware/minfat.c, line 686
 						//pcreltotemp
-	.lipcrel	l173
+	.lipcrel	l190
 	add	r7
-l197: # 
+l214: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 661
+						//../DeMiSTify/firmware/minfat.c, line 690
 						// (a/p assign)
 						// (prepobj r0)
  						// extern (offset 13)
@@ -7772,7 +8312,7 @@ l197: #
 						//Disposable, postinc doesn't matter.
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 663
+						//../DeMiSTify/firmware/minfat.c, line 692
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -7784,22 +8324,25 @@ l197: #
 	st	r6
 						//save_temp done
 						// freereg r1
-l203: # 
+l220: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 603
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 632
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 2 type 104
+						// (obj to tmp) flags 2 type 103
 						// extern
 	.liabs	_dir_entries
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
+						//Saving to reg r1
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
+						//No need to mask - same size
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -7807,7 +8350,7 @@ l203: #
 						// matchobj comparing flags 2 with 2
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l178,0
+	.liabs	l195,0
 						//static deref
 						//sizemod based on type 0x104
 	ldt
@@ -7815,7 +8358,7 @@ l203: #
 	mr	r2
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 603
+						//../DeMiSTify/firmware/minfat.c, line 632
 						// Q2 disposable
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 4a type 104
@@ -7825,42 +8368,32 @@ l203: #
 	cmp	r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 603
+						//../DeMiSTify/firmware/minfat.c, line 632
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l220
+	.lipcrel	l237
 		add	r7
-l222: # 
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r4 - no need to prep
-						// (obj to tmp) flags 1 type 104
-						// const
-	.liconst	268435448
-						// (save temp)isreg
-	mr	r4
-						//save_temp done
+l239: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 669
+						//../DeMiSTify/firmware/minfat.c, line 698
 						// (test)
 						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 1
 						// extern
 	.liabs	_current_directory_start
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 669
+						//../DeMiSTify/firmware/minfat.c, line 698
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l204
+	.lipcrel	l221
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 669
+						//../DeMiSTify/firmware/minfat.c, line 698
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -7870,55 +8403,64 @@ l222: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 669
+						//../DeMiSTify/firmware/minfat.c, line 698
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l221
+	.lipcrel	l238
 		add	r7
 						// freereg r1
-l204: # 
+l221: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 671
-						// (a/p assign)
+						//../DeMiSTify/firmware/minfat.c, line 700
+						//FIXME convert
+						// (convert - reducing type 104 to 103
 						// (prepobj r0)
  						// reg r1 - no need to prep
-						// (obj to tmp) flags 2 type 103
+						// (obj to tmp) flags 2 type 104
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l177,0
+	.liabs	l194,0
 						//static deref
-						//sizemod based on type 0x103
+						//sizemod based on type 0x104
 	ldt
+						//Saving to reg r1
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
+						//No need to mask - same size
 
-						//../DeMiSTify/firmware/minfat.c, line 671
+						//../DeMiSTify/firmware/minfat.c, line 700
 						//call
 						//pcreltotemp
 	.lipcrel	_GetCluster
 	add	r7
 						// Flow control - popping 0 + 0 bytes
 						// freereg r1
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 671
-						// (getreturn)						// (save result) // not reg
-						// Store_reg to type 0x103, flags 0x2
+						//../DeMiSTify/firmware/minfat.c, line 700
+						// (getreturn)						// (save result) // isreg
+	mt	r0
+	mr	r1
+
+						//../DeMiSTify/firmware/minfat.c, line 700
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 103 to 104
 						// (prepobj tmp)
  						// static
-	.liabs	l177,4
+	.liabs	l194,4
 						// static pe not varadr
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
+						//sizemod based on type 0x104
+	stmpdec	r1
+						// freereg r1
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 130 with 130
-						// matchobj comparing flags 130 with 2
 						// var, auto|reg
 						// matchobj comparing flags 1 with 130
-						// matchobj comparing flags 1 with 2
 	.liconst	4
 	addt	r6
 	mr	r0
@@ -7928,7 +8470,7 @@ l204: #
 						// matchobj comparing flags 2 with 130
 						//static not varadr
 						//statictotemp (FIXME - make PC-relative?)
-	.liabs	l177,0
+	.liabs	l194,0
 						//static deref
 						//sizemod based on type 0x104
 	ldt
@@ -7936,7 +8478,7 @@ l204: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 2
@@ -7947,16 +8489,16 @@ l204: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l210
+	.lipcrel	l227
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 673
-						// (bitwise/arithmetic) 	//ops: 0, 5, 2
+						//../DeMiSTify/firmware/minfat.c, line 702
+						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 104
 						// matchobj comparing flags 2 with 2
 						// matchobj comparing flags 2 with 130
@@ -7967,90 +8509,75 @@ l204: #
 						//sizemod based on type 0x104
 	ldidx	r6
 	mr	r1
-						// (obj to tmp) flags 240 type 104
-						// matchobj comparing flags 576 with 2
-						// matchobj comparing flags 576 with 130
-						// reg r4 - only match against tmp
-	mt	r4
+						// (obj to tmp) flags 1 type 104
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+						// const
+						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 130
+	.liconst	268435448
 	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// Q1 disposable
 						// (compare) (q1 unsigned) (q2 unsigned)
-						// (obj to tmp) flags 240 type 104
-						// matchobj comparing flags 576 with 576
-						// matchobj comparing flags 576 with 130
-						// reg r4 - only match against tmp
-	mt	r4
+						// (obj to tmp) flags 1 type 104
+						// matchobj comparing flags 1 with 1
+
+			// required value found in tmp
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l212
+	.lipcrel	l229
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (a/p assign)
 						// (prepobj r0)
- 						// matchobj comparing flags 138 with 576
-						// matchobj comparing flags 138 with 130
-						// var, auto|reg
-						// matchobj comparing flags 1 with 576
+ 						// reg r4 - no need to prep
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 1
 						// matchobj comparing flags 1 with 130
-	.liconst	8
-	addt	r6
-	mr	r0
-
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 138
-						// matchobj comparing flags 1 with 138
 						// const
-						// matchobj comparing flags 1 with 138
-						// matchobj comparing flags 1 with 138
+						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 130
 	.liconst	0
-						// (save temp)store type 3
-	st	r0
+						// (save temp)isreg
+	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						//pcreltotemp
-	.lipcrel	l211
+	.lipcrel	l228
 	add	r7
-l212: # 
+l229: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (a/p assign)
 						// (prepobj r0)
- 						// var, auto|reg
-	.liconst	8
-	addt	r6
-	mr	r0
-
+ 						// reg r4 - no need to prep
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 138
-						// matchobj comparing flags 1 with 138
 						// const
-						// matchobj comparing flags 1 with 138
-						// matchobj comparing flags 1 with 138
 	.liconst	1
-						// (save temp)store type 3
-	st	r0
+						// (save temp)isreg
+	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						//pcreltotemp
-	.lipcrel	l211
+	.lipcrel	l228
 	add	r7
 						// freereg r1
-l210: # 
+l227: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 104
 						// var, auto|reg
@@ -8066,7 +8593,7 @@ l210: #
 	and	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// Q1 disposable
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 1 type 104
@@ -8076,21 +8603,21 @@ l210: #
 	cmp	r1
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l215
+	.lipcrel	l232
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (a/p assign)
 						// (prepobj r0)
  						// matchobj comparing flags 138 with 1
 						// var, auto|reg
 						// matchobj comparing flags 1 with 1
-	.liconst	12
+	.liconst	8
 	addt	r6
 	mr	r0
 
@@ -8105,17 +8632,17 @@ l210: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						//pcreltotemp
-	.lipcrel	l216
+	.lipcrel	l233
 	add	r7
-l215: # 
+l232: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (a/p assign)
 						// (prepobj r0)
  						// var, auto|reg
-	.liconst	12
+	.liconst	8
 	addt	r6
 	mr	r0
 
@@ -8129,53 +8656,46 @@ l215: #
 						// (save temp)store type 3
 	st	r0
 						//save_temp done
-l216: # 
+l233: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (a/p assign)
 						// (prepobj r0)
- 						// var, auto|reg
-	.liconst	8
-	addt	r6
-	mr	r0
-
+ 						// reg r4 - no need to prep
 						// (obj to tmp) flags a type 3
-						// matchobj comparing flags 10 with 138
-						// matchobj comparing flags 10 with 138
 						// var, auto|reg
-						// matchobj comparing flags 1 with 138
-						// matchobj comparing flags 1 with 138
-	.liconst	12
+	.liconst	8
 						//sizemod based on type 0x3
 	ldidx	r6
-						// (save temp)store type 3
-	st	r0
+						// (save temp)isreg
+	mr	r4
 						//save_temp done
-l211: # 
+l228: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 						// (test)
-						// (obj to tmp) flags a type 3
-						// var, auto|reg
-	.liconst	8
-						//sizemod based on type 0x3
-	ldidx	r6
+						// (obj to tmp) flags 4a type 3
+						// reg r4 - only match against tmp
+	mt	r4
+				// flags 4a
+	and	r4
 
-						//../DeMiSTify/firmware/minfat.c, line 673
+						//../DeMiSTify/firmware/minfat.c, line 702
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l221
+	.lipcrel	l238
 		add	r7
 						// freereg r1
+						// freereg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 676
+						//../DeMiSTify/firmware/minfat.c, line 705
 						// (bitwise/arithmetic) 	//ops: 0, 0, 2
 						// (obj to r1) flags 2 type 104
-						// matchobj comparing flags 2 with 10
+						// matchobj comparing flags 2 with 74
 						// var, auto|reg
-						// matchobj comparing flags 1 with 10
+						// matchobj comparing flags 1 with 74
 	.liconst	4
 						//sizemod based on type 0x104
 	ldidx	r6
@@ -8187,53 +8707,87 @@ l211: #
 	.liconst	2
 	sub	r1
 						// (save result) // isreg
+						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 676
-						// (bitwise/arithmetic) 	//ops: 0, 2, 2
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 2 type 104
+						//../DeMiSTify/firmware/minfat.c, line 705
+						//FIXME convert
+						// (convert - reducing type 103 to 104
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 1
 						// extern
 	.liabs	_cluster_size
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
+						//Saving to reg r2
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 705
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 4a type 104
+						// matchobj comparing flags 74 with 2
+						// reg r2 - only match against tmp
+	//mt
 	mul	r1
 						// (save result) // isreg
+						// freereg r2
+						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 676
-						// Q2 disposable
-						// (bitwise/arithmetic) 	//ops: 0, 2, 1
-						// (obj to r0) flags 2 type 104
+						//../DeMiSTify/firmware/minfat.c, line 705
+						//FIXME convert
+						// (convert - reducing type 103 to 104
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 2 type 103
 						// extern
 	.liabs	_data_start
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
+						//Saving to reg r2
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 705
+						// Q1 disposable
+						// Q2 disposable
+						// (bitwise/arithmetic) 	//ops: 3, 2, 1
+						//Special case - addt
+						// (prepobj r0)
+ 						// matchobj comparing flags 130 with 2
+						// static
+	.liabs	l193,0
+						// static pe not varadr
 	mr	r0
 						// (obj to tmp) flags 4a type 104
-						// matchobj comparing flags 74 with 2
-						// matchobj comparing flags 74 with 2
-						// reg r1 - only match against tmp
-	mt	r1
-	add	r0
-						// (save result) // not reg
-						// Store_reg to type 0x104, flags 0x2
-						// (prepobj tmp)
- 						// static
-	.liabs	l176,4
-						// static pe not varadr
-	stmpdec	r0
- 						// WARNING - check that 4 has been added.
-	// Volatile, or not int - not caching
+						// matchobj comparing flags 74 with 130
+						// matchobj comparing flags 74 with 130
+						// reg r2 - only match against tmp
+	mt	r2
+	addt	r1
+						// (save temp)store type 4
+	st	r0
+						//save_temp done
+						// matchobj comparing flags 2 with 2
+						// Obsoleting t1
+						// freereg r2
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 677
+						//../DeMiSTify/firmware/minfat.c, line 706
 						// (a/p assign)
 						// (prepobj r0)
- 						// matchobj comparing flags 130 with 130
+ 						// matchobj comparing flags 130 with 2
 						// static
-	.liabs	l178,0
+	.liabs	l195,0
 						// static pe not varadr
 	mr	r0
 						// (obj to tmp) flags 1 type 104
@@ -8247,61 +8801,40 @@ l211: #
 	st	r0
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 680
+						//../DeMiSTify/firmware/minfat.c, line 709
 						//pcreltotemp
-	.lipcrel	l219
+	.lipcrel	l236
 	add	r7
-l221: # 
+l238: # 
+						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 682
+						//../DeMiSTify/firmware/minfat.c, line 711
 						//setreturn
 						// (obj to r0) flags 1 type a
 						// const
 	.liconst	0
 	mr	r0
-l173: # 
-						// Z disposable
-						// (a/p assign)
-						// (prepobj r0)
- 						// reg r4 - no need to prep
-						// (obj to tmp) flags 1 type 104
-						// const
-	.liconst	268435448
-						// (save temp)isreg
-	mr	r4
-						//save_temp done
+l190: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
 						// freereg r4
 						// freereg r5
-						// matchobj comparing flags 1 with 1
-	.liconst	-16
+	.liconst	-12
 	sub	r6
-	ldinc	r6
-	mr	r5
+	.lipcrel	.functiontail, 0
+	add	r7
 
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
-
-	.section	.data
-	.align	4
-l175:
+	.section	.data.e
+l192:
 	.int	0
-	.section	.bss
-	.align	4
-	.lcomm	l176,4
-	.align	4
-	.lcomm	l177,4
-	.align	4
-	.lcomm	l178,4
+	.section	.bss.f
+	.lcomm	l193,4
+	.section	.bss.10
+	.lcomm	l194,4
+	.section	.bss.11
+	.lcomm	l195,4
 	//registers used:
 		//r1: yes
 		//r2: yes
@@ -8311,7 +8844,7 @@ l175:
 		//r6: yes
 		//r7: yes
 		//tmp: yes
-	.section	.text.e
+	.section	.text.12
 	.global	_FindByCluster
 _FindByCluster:
 	exg	r6
@@ -8320,12 +8853,45 @@ _FindByCluster:
 	stmpdec	r4
 	stmpdec	r5
 	exg	r6
+						// allocreg r3
+						// allocreg r1
+						// Q1 disposable
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r3 - no need to prep
+						// (obj to tmp) flags 40 type 103
+						// reg r1 - only match against tmp
+	mt	r1
+						// (save temp)isreg
+	mr	r3
+						//save_temp done
+						// freereg r1
 						// allocreg r5
 						// allocreg r4
-						// allocreg r3
 						// allocreg r2
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 718
+						// (a/p assign)
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 42 type 103
+						// matchobj comparing flags 66 with 64
+						// reg r3 - only match against tmp
+	mt	r3
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+
+						//../DeMiSTify/firmware/minfat.c, line 718
+						//call
+						//pcreltotemp
+	.lipcrel	_ChangeDirectoryByCluster
+	add	r7
+						// Deferred popping of 0 bytes (0 in total)
+						// freereg r1
+
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type a
@@ -8334,7 +8900,7 @@ _FindByCluster:
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8347,7 +8913,7 @@ _FindByCluster:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8359,7 +8925,7 @@ _FindByCluster:
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						//call
 						//pcreltotemp
 	.lipcrel	_NextDirEntry
@@ -8369,12 +8935,12 @@ _FindByCluster:
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (test)
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 66
@@ -8382,16 +8948,16 @@ _FindByCluster:
 				// flags 42
 	and	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l240
+	.lipcrel	l257
 		add	r7
-l239: # 
+l256: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 693
+						//../DeMiSTify/firmware/minfat.c, line 722
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -8404,7 +8970,7 @@ l239: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 693
+						//../DeMiSTify/firmware/minfat.c, line 722
 						// Q1 disposable
 						//FIXME convert
 						//Converting to wider type...
@@ -8421,7 +8987,7 @@ l239: #
 						//save_temp done
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 106
@@ -8431,15 +8997,15 @@ l239: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l232
+	.lipcrel	l249
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 						// (bitwise/arithmetic) 	//ops: 3, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -8454,7 +9020,7 @@ l239: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -8469,7 +9035,7 @@ l239: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 						// Q1 disposable
 						// (bitwise/arithmetic) 	//ops: 2, 0, 6
 						// (obj to r5) flags 4a type 3
@@ -8485,7 +9051,7 @@ l239: #
 	and	r5
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 						// (bitwise/arithmetic) 	//ops: 6, 0, 6
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -8497,14 +9063,14 @@ l239: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 						//pcreltotemp
-	.lipcrel	l233
+	.lipcrel	l250
 	add	r7
-l232: # 
+l249: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 694
+						//../DeMiSTify/firmware/minfat.c, line 723
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r5 - no need to prep
@@ -8514,22 +9080,41 @@ l232: #
 						// (save temp)isreg
 	mr	r5
 						//save_temp done
-l233: # 
+						// freereg r1
+l250: # 
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 694
-						// (bitwise/arithmetic) 	//ops: 6, 4, 4
+						//../DeMiSTify/firmware/minfat.c, line 723
+						//FIXME convert
+						// (convert - reducing type 3 to 103
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 4a type 3
+						// reg r5 - only match against tmp
+	mt	r5
+						//Saving to reg r1
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 723
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 2, 4, 4
 						//Special case - addt
 						// (prepobj r0)
  						// reg r3 - no need to prep
-						// (obj to tmp) flags 42 type 103
-						// reg r5 - only match against tmp
-	mt	r5
+						// (obj to tmp) flags 4a type 103
+						// matchobj comparing flags 74 with 74
+						// reg r1 - only match against tmp
+	//mt
 	addt	r3
 						// (save temp)isreg
 	mr	r3
 						//save_temp done
+						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 695
+						//../DeMiSTify/firmware/minfat.c, line 724
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 66
@@ -8539,14 +9124,15 @@ l233: #
 	ldidx	r6
 	cmp	r3
 
-						//../DeMiSTify/firmware/minfat.c, line 695
+						//../DeMiSTify/firmware/minfat.c, line 724
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l235
+	.lipcrel	l252
 		add	r7
+						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 696
+						//../DeMiSTify/firmware/minfat.c, line 725
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// matchobj comparing flags 1 with 2
@@ -8555,13 +9141,13 @@ l233: #
 	.liconst	1
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 697
+						//../DeMiSTify/firmware/minfat.c, line 726
 						//pcreltotemp
-	.lipcrel	l223
+	.lipcrel	l240
 	add	r7
-l235: # 
+l252: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 1 type a
@@ -8569,7 +9155,7 @@ l235: #
 	.liconst	0
 	stdec	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (test)
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 1
@@ -8578,14 +9164,14 @@ l235: #
 				// flags 42
 	and	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l236
+	.lipcrel	l253
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -8598,13 +9184,13 @@ l235: #
 	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						//pcreltotemp
-	.lipcrel	l237
+	.lipcrel	l254
 	add	r7
-l236: # 
+l253: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -8615,10 +9201,10 @@ l236: #
 	mr	r4
 						//save_temp done
 						// freereg r1
-l237: # 
+l254: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8629,7 +9215,7 @@ l237: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						//call
 						//pcreltotemp
 	.lipcrel	_NextDirEntry
@@ -8639,12 +9225,12 @@ l237: #
 	add	r6
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (getreturn)						// (save result) // isreg
 	mt	r0
 	mr	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 						// (test)
 						// (obj to tmp) flags 42 type a
 						// matchobj comparing flags 66 with 66
@@ -8652,38 +9238,29 @@ l237: #
 				// flags 42
 	and	r2
 
-						//../DeMiSTify/firmware/minfat.c, line 690
+						//../DeMiSTify/firmware/minfat.c, line 719
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l239
+	.lipcrel	l256
 		add	r7
-l240: # 
+l257: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 698
+						//../DeMiSTify/firmware/minfat.c, line 727
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// const
 	.liconst	0
 	mr	r0
-l223: # 
+l240: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
 						// freereg r4
 						// freereg r5
-	ldinc	r6
-	mr	r5
-
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
+	.lipcrel	.functiontail, 0
+	add	r7
 
 	//registers used:
 		//r1: yes
@@ -8694,7 +9271,7 @@ l223: #
 		//r6: yes
 		//r7: yes
 		//tmp: yes
-	.section	.text.f
+	.section	.text.13
 	.global	_ValidateDirectory
 _ValidateDirectory:
 	exg	r6
@@ -8705,132 +9282,179 @@ _ValidateDirectory:
 	exg	r6
 	.liconst	-12
 	add	r6
+						// allocreg r5
 						// allocreg r1
 						// Q1 disposable
 						// (a/p assign)
-						// (prepobj tmp)
- 						// var, auto|reg
-						// matchobj comparing flags 1 with 1
-	.liconst	8
-	addt	r6
-						//sizemod based on type 0x103
-	stmpdec	r1
+						// (prepobj r0)
+ 						// reg r5 - no need to prep
+						// (obj to tmp) flags 40 type 103
+						// matchobj comparing flags 64 with 1
+						// reg r1 - only match against tmp
+	mt	r1
+						// (save temp)isreg
+	mr	r5
+						//save_temp done
 						// freereg r1
-						// allocreg r5
 						// allocreg r4
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 712
+						//../DeMiSTify/firmware/minfat.c, line 741
 						// (test)
-						// (obj to tmp) flags 2 type 103
-						// var, auto|reg
-	.liconst	4
-						//sizemod based on type 0x103
-	ldidx	r6
+						// (obj to tmp) flags 42 type 103
+						// matchobj comparing flags 66 with 64
+						// reg r5 - only match against tmp
+	//mt
+				// flags 42
+	and	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 712
+						//../DeMiSTify/firmware/minfat.c, line 741
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l243
+	.lipcrel	l260
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 712
+						//../DeMiSTify/firmware/minfat.c, line 741
 						// (compare) (q1 unsigned) (q2 unsigned)
-						// (obj to r0) flags 2 type 103
-						// matchobj comparing flags 2 with 2
-
-			// required value found in tmp
-	mr	r0
-				//return 0
 						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 66
 						// extern
 	.liabs	_root_directory_cluster
 						//extern deref
 						//sizemod based on type 0x103
 	ldt
-	cmp	r0
+	cmp	r5
 
-						//../DeMiSTify/firmware/minfat.c, line 712
+						//../DeMiSTify/firmware/minfat.c, line 741
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l244
+	.lipcrel	l261
 		add	r7
-l243: # 
+l260: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 714
+						//../DeMiSTify/firmware/minfat.c, line 743
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// const
 	.liconst	1
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 715
+						//../DeMiSTify/firmware/minfat.c, line 744
 						//pcreltotemp
-	.lipcrel	l241
+	.lipcrel	l258
 	add	r7
 						// freereg r1
-l244: # 
+						// freereg r2
+l261: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 719
-						// (bitwise/arithmetic) 	//ops: 0, 0, 2
-						// (obj to r1) flags 2 type 104
-						// var, auto|reg
-	.liconst	4
-						//sizemod based on type 0x104
-	ldidx	r6
+						//../DeMiSTify/firmware/minfat.c, line 747
+						//FIXME convert
+						// (convert - reducing type 103 to 104
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 42 type 103
+						// reg r5 - only match against tmp
+	mt	r5
+						//Saving to reg r1
+						// (save temp)isreg
 	mr	r1
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 748
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
+						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 104
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 66
 						// const
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 66
 	.liconst	2
 	sub	r1
 						// (save result) // isreg
+						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 719
-						// (bitwise/arithmetic) 	//ops: 0, 2, 2
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 2 type 104
+						//../DeMiSTify/firmware/minfat.c, line 748
+						//FIXME convert
+						// (convert - reducing type 103 to 104
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 1
 						// extern
 	.liabs	_cluster_size
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
+						//Saving to reg r2
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 748
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						// WARNING - q1 and target collision - check code for correctness.
+						// (obj to tmp) flags 4a type 104
+						// matchobj comparing flags 74 with 2
+						// reg r2 - only match against tmp
+	//mt
 	mul	r1
 						// (save result) // isreg
+						// freereg r2
+						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 719
-						// (bitwise/arithmetic) 	//ops: 0, 2, 2
-						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 2 type 104
+						//../DeMiSTify/firmware/minfat.c, line 748
+						//FIXME convert
+						// (convert - reducing type 103 to 104
+						// (prepobj r0)
+ 						// reg r2 - no need to prep
+						// (obj to tmp) flags 2 type 103
 						// extern
 	.liabs	_data_start
 						//extern deref
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	ldt
-	add	r1
-						// (save result) // isreg
+						//Saving to reg r2
+						// (save temp)isreg
+	mr	r2
+						//save_temp done
+						//No need to mask - same size
 
-						//../DeMiSTify/firmware/minfat.c, line 722
+						//../DeMiSTify/firmware/minfat.c, line 748
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 3, 2, 2
+						//Special case - addt
+						// (prepobj r0)
+ 						// reg r1 - no need to prep
+						// (obj to tmp) flags 4a type 104
+						// matchobj comparing flags 74 with 2
+						// reg r2 - only match against tmp
+	//mt
+	addt	r1
+						// (save temp)isreg
+	mr	r1
+						//save_temp done
+						// freereg r2
+
+						//../DeMiSTify/firmware/minfat.c, line 751
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
 						// (obj to tmp) flags 82 type a
-						// matchobj comparing flags 130 with 2
+						// matchobj comparing flags 130 with 74
 						// (prepobj tmp)
- 						// matchobj comparing flags 130 with 2
+ 						// matchobj comparing flags 130 with 74
 						// extern (offset 0)
 	.liabs	_sector_buffer
 						// extern pe is varadr
 	stdec	r6
 
-						//../DeMiSTify/firmware/minfat.c, line 722
+						//../DeMiSTify/firmware/minfat.c, line 751
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -8842,7 +9466,7 @@ l244: #
 	//mr
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 722
+						//../DeMiSTify/firmware/minfat.c, line 751
 						//call
 						//pcreltotemp
 	.lipcrel	_sd_read_sector
@@ -8853,7 +9477,7 @@ l244: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 722
+						//../DeMiSTify/firmware/minfat.c, line 751
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 1
@@ -8863,15 +9487,16 @@ l244: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 722
+						//../DeMiSTify/firmware/minfat.c, line 751
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l248
+	.lipcrel	l265
 		add	r7
+						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 723
+						//../DeMiSTify/firmware/minfat.c, line 752
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// matchobj comparing flags 1 with 74
@@ -8880,13 +9505,13 @@ l244: #
 	.liconst	0
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 724
+						//../DeMiSTify/firmware/minfat.c, line 753
 						//pcreltotemp
-	.lipcrel	l241
+	.lipcrel	l258
 	add	r7
-l248: # 
+l265: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 724
+						//../DeMiSTify/firmware/minfat.c, line 753
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r4 - no need to prep
@@ -8899,7 +9524,7 @@ l248: #
 	mr	r4
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 725
+						//../DeMiSTify/firmware/minfat.c, line 754
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -8911,9 +9536,9 @@ l248: #
 						// (save temp)store type 4
 	st	r6
 						//save_temp done
-l268: # 
+l285: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 727
+						//../DeMiSTify/firmware/minfat.c, line 756
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -8928,12 +9553,12 @@ l268: #
  						// var, auto|reg
 						// matchobj comparing flags 1 with 98
 						// matchobj comparing flags 1 with 98
-	.liconst	12
+	.liconst	8
 	addt	r6
 	stmpdec	r0
  						// WARNING - check that 4 has been added.
 
-						//../DeMiSTify/firmware/minfat.c, line 727
+						//../DeMiSTify/firmware/minfat.c, line 756
 						// (test)
 						// (obj to tmp) flags 2 type 3
 						// matchobj comparing flags 2 with 130
@@ -8946,14 +9571,14 @@ l268: #
 	//mr
 	and	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 727
+						//../DeMiSTify/firmware/minfat.c, line 756
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l259
+	.lipcrel	l276
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 727
+						//../DeMiSTify/firmware/minfat.c, line 756
 						// (compare) (q1 signed) (q2 signed)
 						// (obj to r0) flags 2 type 3
 						// matchobj comparing flags 2 with 2
@@ -8968,16 +9593,16 @@ l268: #
 	.liconst	229
 	cmp	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 727
+						//../DeMiSTify/firmware/minfat.c, line 756
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l259
+	.lipcrel	l276
 		add	r7
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 729
+						//../DeMiSTify/firmware/minfat.c, line 758
 						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -8992,7 +9617,7 @@ l268: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 729
+						//../DeMiSTify/firmware/minfat.c, line 758
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -9007,7 +9632,7 @@ l268: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 729
+						//../DeMiSTify/firmware/minfat.c, line 758
 						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
@@ -9019,17 +9644,17 @@ l268: #
 						// (save result) // isreg
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 729
+						//../DeMiSTify/firmware/minfat.c, line 758
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l259
+	.lipcrel	l276
 		add	r7
 						// freereg r2
 						// freereg r3
 						// allocreg r2
 
-						//../DeMiSTify/firmware/minfat.c, line 731
+						//../DeMiSTify/firmware/minfat.c, line 760
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r2 - no need to prep
@@ -9042,7 +9667,7 @@ l268: #
 						//save_temp done
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 731
+						//../DeMiSTify/firmware/minfat.c, line 760
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -9051,14 +9676,14 @@ l268: #
 						// (prepobj tmp)
  						// matchobj comparing flags 130 with 66
 						// static
-	.liabs	l260,0
+	.liabs	l277,0
 						// static pe is varadr
 						// (save temp)isreg
 	mr	r1
 						//save_temp done
 						// allocreg r3
 
-						//../DeMiSTify/firmware/minfat.c, line 731
+						//../DeMiSTify/firmware/minfat.c, line 760
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r3 - no need to prep
@@ -9071,7 +9696,7 @@ l268: #
 	mr	r3
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 731
+						//../DeMiSTify/firmware/minfat.c, line 760
 						//call
 						//pcreltotemp
 	.lipcrel	___strncmp
@@ -9082,7 +9707,7 @@ l268: #
 						// freereg r3
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 731
+						//../DeMiSTify/firmware/minfat.c, line 760
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -9091,17 +9716,17 @@ l268: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 731
+						//../DeMiSTify/firmware/minfat.c, line 760
 	cond	NEQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l259
+	.lipcrel	l276
 		add	r7
 						// allocreg r3
 						// allocreg r2
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 						// (bitwise/arithmetic) 	//ops: 5, 0, 1
 						//Special case - addt
 						// (prepobj r0)
@@ -9116,7 +9741,7 @@ l268: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 						// (test)
 						// (obj to tmp) flags 2 type 103
 						// matchobj comparing flags 2 with 106
@@ -9126,16 +9751,16 @@ l268: #
 						//sizemod based on type 0x103
 	ldt
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l262
+	.lipcrel	l279
 		add	r7
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 						// (bitwise/arithmetic) 	//ops: 5, 0, 2
 						//Special case - addt
 						// (prepobj r0)
@@ -9150,7 +9775,7 @@ l268: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -9165,56 +9790,74 @@ l268: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 733
-						// Q1 disposable
-						// (bitwise/arithmetic) 	//ops: 2, 0, 6
-						// (obj to r5) flags 4a type 3
-						// matchobj comparing flags 74 with 106
-						// reg r1 - only match against tmp
-	//mt
-	mr	r5
-						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 74
-						// const
-						// matchobj comparing flags 1 with 74
-	.liconst	4095
-	and	r5
-						// (save result) // isreg
-
-						//../DeMiSTify/firmware/minfat.c, line 733
-						// (bitwise/arithmetic) 	//ops: 6, 0, 6
+						//../DeMiSTify/firmware/minfat.c, line 762
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type 3
-						// matchobj comparing flags 1 with 1
+						// matchobj comparing flags 1 with 106
 						// const
-						// matchobj comparing flags 1 with 1
-	.liconst	16
-	shl	r5
+						// matchobj comparing flags 1 with 106
+	.liconst	4095
+	and	r1
 						// (save result) // isreg
+
+						//../DeMiSTify/firmware/minfat.c, line 762
+						// Q1 disposable
+						// (bitwise/arithmetic) 	//ops: 2, 0, 1
+						// (obj to r0) flags 4a type 3
+						// matchobj comparing flags 74 with 1
+						// reg r1 - only match against tmp
+	mt	r1
+	mr	r0
+						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 74
+						// const
+						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 74
+	.liconst	16
+	shl	r0
+						// (save result) // not reg
+						// Store_reg to type 0x3, flags 0xa
+						// (prepobj tmp)
+ 						// var, auto|reg
+						// matchobj comparing flags 1 with 1
+	.liconst	8
+	addt	r6
+	stmpdec	r0
+ 						// WARNING - check that 4 has been added.
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 						//pcreltotemp
-	.lipcrel	l263
+	.lipcrel	l280
 	add	r7
-l262: # 
+l279: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 						// (a/p assign)
 						// (prepobj r0)
- 						// reg r5 - no need to prep
+ 						// var, auto|reg
+	.liconst	4
+	addt	r6
+	mr	r0
+
 						// (obj to tmp) flags 1 type 3
+						// matchobj comparing flags 1 with 138
+						// matchobj comparing flags 1 with 138
 						// const
+						// matchobj comparing flags 1 with 138
+						// matchobj comparing flags 1 with 138
 	.liconst	0
-						// (save temp)isreg
-	mr	r5
+						// (save temp)store type 3
+	st	r0
 						//save_temp done
 						// freereg r1
-l263: # 
+l280: # 
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 733
+						//../DeMiSTify/firmware/minfat.c, line 762
 						//FIXME convert
 						//Converting to wider type...
 						//But unsigned, so no need to extend
@@ -9234,31 +9877,39 @@ l263: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 733
-						// (bitwise/arithmetic) 	//ops: 2, 6, 2
+						//../DeMiSTify/firmware/minfat.c, line 762
+						// (bitwise/arithmetic) 	//ops: 2, 0, 2
 						// WARNING - q1 and target collision - check code for correctness.
-						// (obj to tmp) flags 4a type 3
-						// matchobj comparing flags 74 with 42
-						// reg r5 - only match against tmp
-	mt	r5
+						// (obj to tmp) flags a type 3
+						// matchobj comparing flags 10 with 42
+						// var, auto|reg
+						// matchobj comparing flags 1 with 42
+	.liconst	4
+						//sizemod based on type 0x3
+	ldidx	r6
 	add	r1
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 733
-						// Q1 disposable
+						//../DeMiSTify/firmware/minfat.c, line 762
 						//FIXME convert
 						// (convert - reducing type 3 to 104
+						//No need to mask - same size
+
+						//../DeMiSTify/firmware/minfat.c, line 765
+						// Q1 disposable
+						//FIXME convert
+						// (convert - reducing type 104 to 103
 						// (prepobj tmp)
  						// var, auto|reg
-						// matchobj comparing flags 1 with 74
+						// matchobj comparing flags 1 with 10
 	.liconst	12
 	addt	r6
-						//sizemod based on type 0x104
+						//sizemod based on type 0x103
 	stmpdec	r1
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
@@ -9273,7 +9924,7 @@ l263: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						//call
 						//pcreltotemp
 	.lipcrel	_ValidateDirectory
@@ -9282,7 +9933,7 @@ l263: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// reg r0 - only match against tmp
@@ -9291,34 +9942,31 @@ l263: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l266
+	.lipcrel	l283
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						// (a/p push)
 						// a: pushed 0, regnames[sp] r6
-						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 74
-						// var, auto|reg
-						// matchobj comparing flags 1 with 74
-	.liconst	4
-						//sizemod based on type 0x103
-	ldidx	r6
+						// (obj to tmp) flags 42 type 103
+						// matchobj comparing flags 66 with 74
+						// reg r5 - only match against tmp
+	mt	r5
 	stdec	r6
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r1 - no need to prep
 						// (obj to tmp) flags 2 type 103
-						// matchobj comparing flags 2 with 2
+						// matchobj comparing flags 2 with 66
 						// var, auto|reg
-						// matchobj comparing flags 1 with 2
+						// matchobj comparing flags 1 with 66
 	.liconst	12
 						//sizemod based on type 0x103
 	ldidx	r6
@@ -9326,7 +9974,7 @@ l263: #
 	mr	r1
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						//call
 						//pcreltotemp
 	.lipcrel	_FindByCluster
@@ -9337,7 +9985,7 @@ l263: #
 						// freereg r1
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						// (test)
 						// (obj to tmp) flags 4a type 3
 						// matchobj comparing flags 74 with 1
@@ -9347,15 +9995,15 @@ l263: #
 	and	r0
 						// freereg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 	cond	EQ
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l266
+	.lipcrel	l283
 		add	r7
 						// allocreg r1
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -9368,13 +10016,13 @@ l263: #
 	st	r6
 						//save_temp done
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						//pcreltotemp
-	.lipcrel	l267
+	.lipcrel	l284
 	add	r7
-l266: # 
+l283: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						// (a/p assign)
 						// (prepobj r0)
  						// reg r6 - no need to prep
@@ -9384,22 +10032,22 @@ l266: #
 						// (save temp)store type 3
 	st	r6
 						//save_temp done
-l267: # 
+l284: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 737
+						//../DeMiSTify/firmware/minfat.c, line 765
 						//setreturn
 						// (obj to r0) flags 6a type 3
 						// deref 
 	ld	r6
 	mr	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 741
+						//../DeMiSTify/firmware/minfat.c, line 769
 						//pcreltotemp
-	.lipcrel	l241
+	.lipcrel	l258
 	add	r7
-l259: # 
+l276: # 
 
-						//../DeMiSTify/firmware/minfat.c, line 744
+						//../DeMiSTify/firmware/minfat.c, line 772
 						// (bitwise/arithmetic) 	//ops: 5, 0, 5
 						// WARNING - q1 and target collision - check code for correctness.
 						// (obj to tmp) flags 1 type a
@@ -9408,7 +10056,7 @@ l259: #
 	add	r4
 						// (save result) // isreg
 
-						//../DeMiSTify/firmware/minfat.c, line 726
+						//../DeMiSTify/firmware/minfat.c, line 755
 						// (bitwise/arithmetic) 	//ops: 7, 0, 1
 						// (obj to r0) flags 62 type 104
 						// matchobj comparing flags 98 with 1
@@ -9429,7 +10077,7 @@ l259: #
 	st	r6
 	// Volatile, or not int - not caching
 
-						//../DeMiSTify/firmware/minfat.c, line 726
+						//../DeMiSTify/firmware/minfat.c, line 755
 						// (compare) (q1 unsigned) (q2 unsigned)
 						// (obj to r0) flags 62 type 104
 						// matchobj comparing flags 98 with 98
@@ -9444,14 +10092,14 @@ l259: #
 	.liconst	16
 	cmp	r0
 
-						//../DeMiSTify/firmware/minfat.c, line 726
+						//../DeMiSTify/firmware/minfat.c, line 755
 	cond	SLT
 						//conditional branch regular
 						//pcreltotemp
-	.lipcrel	l268
+	.lipcrel	l285
 		add	r7
 
-						//../DeMiSTify/firmware/minfat.c, line 746
+						//../DeMiSTify/firmware/minfat.c, line 774
 						//setreturn
 						// (obj to r0) flags 1 type 3
 						// matchobj comparing flags 1 with 1
@@ -9459,7 +10107,7 @@ l259: #
 						// matchobj comparing flags 1 with 1
 	.liconst	0
 	mr	r0
-l241: # 
+l258: # 
 						// freereg r1
 						// freereg r2
 						// freereg r3
@@ -9467,21 +10115,11 @@ l241: #
 						// freereg r5
 	.liconst	-12
 	sub	r6
-	ldinc	r6
-	mr	r5
+	.lipcrel	.functiontail, 0
+	add	r7
 
-	ldinc	r6
-	mr	r4
-
-	ldinc	r6
-	mr	r3
-
-	ldinc	r6
-	mr	r7
-
-	.section	.rodata
-	.align	4
-l260:
+	.section	.rodata.14
+l277:
 	.byte	46
 	.byte	46
 	.byte	32
@@ -9494,48 +10132,80 @@ l260:
 	.byte	32
 	.byte	32
 	.byte	0
-	.section	.data
-	.align	4
+	.section	.data.15
 	.global	_cachedsector
 _cachedsector:
 	.int	4294967295
-	.section	.bss
-	.align	4
+	.section	.data.16
+	.global	_FAT32_ID
+_FAT32_ID:
+						// Declaring from tree
+						// static
+	.ref	l1
+	.section	.data.17
+	.global	_FAT16_ID
+_FAT16_ID:
+						// Declaring from tree
+						// static
+	.ref	l2
+	.section	.bss.18
 	.global	_sector_buffer
 	.comm	_sector_buffer,512
-	.align	4
+	.section	.bss.19
 	.global	_cluster_size
 	.comm	_cluster_size,4
-	.align	4
+	.section	.bss.1a
 	.global	_cluster_mask
 	.comm	_cluster_mask,4
-	.align	4
+	.section	.bss.1b
 	.global	_fat32
 	.comm	_fat32,4
-	.align	4
+	.section	.bss.1c
 	.global	_dir_entries
 	.comm	_dir_entries,4
-	.align	4
+	.section	.bss.1d
 	.global	_longfilename
 	.comm	_longfilename,261
-	.align	4
+	.section	.bss.1e
 	.global	_fat_start
 	.comm	_fat_start,4
-	.align	4
+	.section	.bss.1f
 	.global	_data_start
 	.comm	_data_start,4
-	.align	4
+	.section	.bss.20
 	.global	_root_directory_cluster
 	.comm	_root_directory_cluster,4
-	.align	4
+	.section	.bss.21
 	.global	_root_directory_start
 	.comm	_root_directory_start,4
-	.align	4
+	.section	.bss.22
 	.global	_root_directory_size
 	.comm	_root_directory_size,4
-	.align	4
+	.section	.bss.23
 	.global	_current_directory_cluster
 	.comm	_current_directory_cluster,4
-	.align	4
+	.section	.bss.24
 	.global	_current_directory_start
 	.comm	_current_directory_start,4
+	.section	.rodata.25
+l1:
+	.byte	70
+	.byte	65
+	.byte	84
+	.byte	51
+	.byte	50
+	.byte	32
+	.byte	32
+	.byte	32
+	.byte	0
+	.section	.rodata.26
+l2:
+	.byte	70
+	.byte	65
+	.byte	84
+	.byte	49
+	.byte	54
+	.byte	32
+	.byte	32
+	.byte	32
+	.byte	0
